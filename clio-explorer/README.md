@@ -16,4 +16,4 @@ dotnet tool install clio -g
 <!-- Named links -->
 [clio]:https://github.com/Advance-Technologies-Foundation/clio
 
-[preview]:https://raw.githubusercontent.com/Advance-Technologies-Foundation/clio-docs/main/clio-epxplorer/clio_explorer_demo.gif
+[preview]:https://github.com/Advance-Technologies-Foundation/clio-docs/blob/main/clio-explorer/clio_explorer_demo.gif
