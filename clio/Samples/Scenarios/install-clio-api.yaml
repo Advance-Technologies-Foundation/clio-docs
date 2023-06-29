@@ -1,0 +1,18 @@
+settings:
+  Environment: my-env-name-registered-in-clio
+
+steps:
+- action: install-gate
+  description: download package from Creatio
+  options:
+    Environment: "{{settings.Environment}}"
+
+- action: restart
+  description: restart application
+  options:
+    Environment: "{{settings.Environment}}"
+
+- action: flushdb
+  description: flush Redis database
+  options:
+    Environment: "{{settings.Environment}}"

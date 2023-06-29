@@ -1,0 +1,23 @@
+settings:
+  Environment: my-env-name-registered-in-clio
+
+steps:
+
+- action: push-pkg
+  description: install package
+  # See all available options 
+  # https://github.com/Advance-Technologies-Foundation/clio/blob/master/README.md#installing-package
+  options:
+    Environment: "{{settings.Environment}}"
+    Name : C:\PackageStore\package.zip
+    ReportPath: C:\Logs\report.txt
+
+- action: restart
+  description: restart application
+  options:
+    Environment: "{{settings.Environment}}"
+
+- action: flushdb
+  description: flush Redis database
+  options:
+    Environment: "{{settings.Environment}}"

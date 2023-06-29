@@ -1,0 +1,8 @@
+settings:
+  Environment: my-prod-env-name-registered-in-clio
+
+steps:
+  values: install-package.yaml
+
+
+

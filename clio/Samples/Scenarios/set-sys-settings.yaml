@@ -1,0 +1,33 @@
+settings:
+  Environment: my-env-name-registered-in-clio
+  Maintainer: MyCompanyName
+
+steps:
+
+# this step works only with clio-api (You can install it with install-gate command)
+- action: set-syssetting
+  description: Update sys-setting Maintainer to MyCompanyName
+  options:
+    Code: Maintainer
+    Value: "{{settings.Maintainer}}"
+    Type: Text
+    Environment: "{{settings.Environment}}"
+
+- action: set-syssetting
+  description: Switch debug mode on
+  options:
+    Code: IsDebug
+    # 1 = true, 0 = false
+    Value: 1
+    Type: Boolean
+    Environment: "{{settings.Environment}}"
+
+- action: restart
+  description: restart application
+  options:
+    Environment: "{{settings.Environment}}"
+
+- action: flushdb
+  description: flush Redis database
+  options:
+    Environment: "{{settings.Environment}}"

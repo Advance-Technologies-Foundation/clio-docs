@@ -1,0 +1,5 @@
+settings:
+  Environment: my-QA-env-name-registered-in-clio
+
+steps:
+  values: install-package.yaml
