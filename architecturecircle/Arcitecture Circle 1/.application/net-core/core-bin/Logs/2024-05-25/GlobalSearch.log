@@ -1,0 +1,24 @@
+2024-05-25 08:55:58,463 [1] INFO  RunGlobalSearchConfigJob - Prepare GlobalSearchConfigsJob
+2024-05-25 08:55:58,474 [1] INFO  RemoveJobs - RemoveJobs GlobalSearchGroup 0 successfully
+2024-05-25 08:55:58,500 [1] INFO  RunGlobalSearchConfigJob - GlobalSearchConfigsJob started successfully
+2024-05-25 08:57:58,133 [.NET ThreadPool Worker] INFO  RunJobExecutor - Global search config job started
+2024-05-25 08:57:58,133 [.NET ThreadPool Worker] INFO  Execute - GlobalSearch_V2 feature is False
+2024-05-25 09:00:51,066 [.NET ThreadPool Worker] INFO Supervisor SendIndexationConfigs - GlobalSearch connection settings are empty.
+2024-05-25 09:01:06,304 [1] INFO  RunGlobalSearchConfigJob - Prepare GlobalSearchConfigsJob
+2024-05-25 09:01:06,315 [1] INFO  RemoveJobs - RemoveJobs GlobalSearchGroup 0 successfully
+2024-05-25 09:01:06,343 [1] INFO  RunGlobalSearchConfigJob - GlobalSearchConfigsJob started successfully
+2024-05-25 09:01:10,169 [1] INFO  RunGlobalSearchConfigJob - Prepare GlobalSearchConfigsJob
+2024-05-25 09:01:10,190 [1] INFO  RemoveJobs - RemoveJobs GlobalSearchGroup 1 successfully
+2024-05-25 09:01:10,228 [1] INFO  RunGlobalSearchConfigJob - GlobalSearchConfigsJob started successfully
+2024-05-25 09:03:04,390 [.NET ThreadPool Worker] INFO  RunJobExecutor - Global search config job started
+2024-05-25 09:03:04,390 [.NET ThreadPool Worker] INFO  Execute - GlobalSearch_V2 feature is False
+2024-05-25 09:10:11,780 [1] INFO  RunGlobalSearchConfigJob - Prepare GlobalSearchConfigsJob
+2024-05-25 09:10:11,780 [1] INFO  RemoveJobs - RemoveJobs GlobalSearchGroup 0 successfully
+2024-05-25 09:10:11,815 [1] INFO  RunGlobalSearchConfigJob - GlobalSearchConfigsJob started successfully
+2024-05-25 09:10:36,835 [.NET ThreadPool Worker] INFO  RunJobExecutor - Global search config job started
+2024-05-25 09:10:36,835 [.NET ThreadPool Worker] INFO  Execute - GlobalSearch_V2 feature is False
+2024-05-25 09:14:37,407 [1] INFO  RunGlobalSearchConfigJob - Prepare GlobalSearchConfigsJob
+2024-05-25 09:14:37,424 [1] INFO  RemoveJobs - RemoveJobs GlobalSearchGroup 0 successfully
+2024-05-25 09:14:37,468 [1] INFO  RunGlobalSearchConfigJob - GlobalSearchConfigsJob started successfully
+2024-05-25 09:14:45,550 [.NET ThreadPool Worker] INFO  RunJobExecutor - Global search config job started
+2024-05-25 09:14:45,550 [.NET ThreadPool Worker] INFO  Execute - GlobalSearch_V2 feature is False

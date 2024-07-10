@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.ActorSystem</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.ActorSystem.ActorUserConnection">
+            <summary>
+            Represents user connection which is used in actor's behaviour.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.ActorUserConnection.#ctor(Terrasoft.Core.AppConnection)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.ActorUserConnection"/> type.
+            </summary>
+            <param name="appConnection">Application connection.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.ActorUserConnection.ClearUserLicenseCache">
+            <summary>
+            Clears license cache.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.AppActor">
+            <summary>
+            Application-level actor.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.AppActor.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.AppActor"/> type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.AppActor.AppConnection">
+            <summary>
+            Gets application connection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.AppActor.AroundReceive(Akka.Actor.Receive,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.AppActor.InitEnvironment">
+            <summary>
+            Initializes the execution environment.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.AppConnectionProvider">
+            <summary>
+            Provides methods for obtaining application connection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.AppConnectionProvider.#ctor(Terrasoft.Core.AppConnection)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.AppConnectionProvider"/> type.
+            </summary>
+            <param name="appConnection">Application connection.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.AppConnectionProvider.GetAppConnection">
+            <summary>
+            Returns application connection.
+            </summary>
+            <returns>Instance of the <see cref="T:Terrasoft.Core.AppConnection"/> type.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Entities.EntityActorMessage">
+            <summary>
+            Describes a message for EntityActor.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Entities.EntityActorMessage.Arguments">
+            <summary>
+            Async operation arguments.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Entities.EntityActorMessage.OperationType">
+            <summary>
+            Async operation type name.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Entities.EntityActorsAssemblyProvider">
+            <summary>
+            Represents entity actors assembly provider.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Entities.EntityActorsAssemblyProvider.GetActorRootAssemblies">
+            <summary>
+            Returns assemblies containing classes of the root actors.
+            </summary>
+            <returns>A list of assemblies.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Entities.EntityActorsAssemblyProvider.GetRegistratorAssemblies">
+            <summary>
+            Returns assemblies containing classes that implements <see cref="T:Terrasoft.ActorSystem.IActorRegistrator"/> interface.
+            </summary>
+            <returns>An array of assemblies.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Entities.EntityActorsRegistrator">
+            <summary>
+            Represents entity actors registrator.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Entities.EntityActorsRegistrator.#ctor">
+            <summary>
+            Entity actors registration method.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Entities.EntityEventAsyncExecutor">
+            <summary>
+            Entity events asynchronous operations executor.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Entities.EntityEventsActor">
+            <summary>
+            Actor to execute asynchronous entity events operations.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.IAppConnectionProvider">
+            <summary>
+            Provides methods for obtaining application connection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.IAppConnectionProvider.GetAppConnection">
+            <summary>
+            Retuns application connection.
+            </summary>
+            <returns>Instance of the <see cref="T:Terrasoft.Core.AppConnection"/> type.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.IThreadInitializer">
+            <summary>
+            Represents method for initializing the thread's current context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.IThreadInitializer.Initialize(Terrasoft.ServiceBus.UserContext)">
+            <summary>
+            Initializes the thread's context.
+            </summary>
+            <param name="context">Instance of the <see cref="T:Terrasoft.ServiceBus.UserContext"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.IThreadInitializer.InitializeSystemUser(System.String)">
+            <summary>
+            Initializes the thread's context for system user.
+            </summary>
+            <param name="userName">System user principal name.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.ActorTaskRunner">
+            <summary>
+            Executes <see cref="T:Terrasoft.Core.Tasks.IBackgroundTask`1"/> tasks using <see cref="T:Terrasoft.Core.ActorSystem.Tasks.TaskExecutorActor"/> actor.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Tasks.ITaskRunner" />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.ActorTaskRunner.#ctor(Terrasoft.Common.Serialization.IBinarySerializer)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.Core.ActorSystem.Tasks.ActorTaskRunner"/>.
+            </summary>
+            <param name="binarySerializer">Binary serializer.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.ActorTaskRunner.Run``2(``1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.ActorTaskRunner.RunWithUserConnection``2(``1)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.ITaskActors">
+            <summary>
+            Stores <see cref="T:Terrasoft.ActorSystem.ActorReference"/> to root actors, used to execute background tasks.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.ITaskActors.TaskExecutorActor">
+            <summary>
+            Gets the background task executor actor.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.ITaskMessage">
+            <summary>
+            Represents background task data.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.ITaskMessage.ContextId">
+            <summary>
+            Gets the id of the task execution context.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.ITaskMessage.TaskType">
+            <summary>
+            Gets the type of the task.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.ITaskMessage.ParametersType">
+            <summary>
+            Gets the type of the parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.ITaskMessage.Parameters">
+            <summary>
+            Gets the serialized parameters value.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage">
+            <summary>
+            Stores <see cref="T:Terrasoft.Core.Tasks.IBackgroundTask`1"/> data.
+            </summary>
+            <seealso cref="T:Terrasoft.ServiceBus.AppContextMessage" />
+            <seealso cref="T:Terrasoft.Core.ActorSystem.Tasks.ITaskMessage" />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage"/> class using the specified serialization 
+            information and context when deserializing a stream into a <see cref="T:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage"/> object.
+            </summary>
+            <param name="info">The serialization information necessary to reconstruct the
+            <see cref="T:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage"/>
+            object from a stream.</param>
+            <param name="context">The streaming context required to reconstruct the <see cref="T:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage"/>
+            object.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage.#ctor(System.Type,System.Type,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage"/> class.
+            </summary>
+            <param name="taskType">The type that implements task.</param>
+            <param name="parametersType">Task parameter type.</param>
+            <param name="parameters">Serialized task parameters value.</param>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage.ContextId">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage.TaskType">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage.ParametersType">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage.Parameters">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.RunAppTaskMessage.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage">
+            <summary>
+            Stores <see cref="T:Terrasoft.Core.Tasks.IBackgroundTask`1"/> data for tasks that requires <see cref="T:Terrasoft.Core.UserConnection"/>.
+            </summary>
+            <seealso cref="T:Terrasoft.ServiceBus.UserContextMessage" />
+            <seealso cref="T:Terrasoft.Core.ActorSystem.Tasks.ITaskMessage" />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage"/> class.
+            </summary>
+            <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> instance.</param>
+            <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage.#ctor(System.Type,System.Type,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage"/> class.
+            </summary>
+            <param name="taskType">Type of the task.</param>
+            <param name="parametersType">Type of the parameters.</param>
+            <param name="parameters">The parameters.</param>
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage.ContextId">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage.TaskType">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage.ParametersType">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage.Parameters">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.RunUserTaskMessage.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.TaskActorsAssemblyProvider">
+            <summary>
+            Provides assemblies where task actors are declared.
+            </summary>
+            <seealso cref="T:Terrasoft.ActorSystem.IActorAssemblyProvider" />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.TaskActorsAssemblyProvider.GetActorRootAssemblies">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.TaskActorsAssemblyProvider.GetRegistratorAssemblies">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.TaskActorsRegistrator">
+            <summary>
+            Registers actors for <see cref="T:Terrasoft.Core.ActorSystem.Tasks.ITaskActors"/> instance.
+            </summary>
+            <seealso cref="T:Terrasoft.ActorSystem.BaseActorsRegistrator" />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.TaskActorsRegistrator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.Tasks.TaskActorsRegistrator"/> class.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.Tasks.TaskExecutorActor">
+            <summary>
+            Actor that runs <see cref="T:Terrasoft.Core.Tasks.IBackgroundTask`1"/> implementations.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.ActorSystem.UserActor" />
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.Tasks.TaskExecutorActor.#ctor(System.Boolean,System.TimeSpan,Common.Logging.ILog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.Tasks.TaskExecutorActor"/> class.
+            </summary>
+            <param name="loggingEnabled">If set to <c>true</c> long running tasks will be logged.</param>
+            <param name="loggingThreshold">The minimal duration that triggers logging of task execution .</param>
+            <param name="log">Logger.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.ThreadInitializer">
+            <summary>
+            Represents method for initializing the thread's current principal.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.ThreadInitializer.Initialize(Terrasoft.ServiceBus.UserContext)">
+            <summary>
+            Initializes the thread's current principal.
+            </summary>
+            <param name="context">Instance of the <see cref="T:Terrasoft.ServiceBus.UserContext"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.ThreadInitializer.InitializeSystemUser(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.UserActor">
+            <summary>
+            Actor handles messages with user connection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.UserActor.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.ActorSystem.UserActor"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.UserActor.Receive``1(System.Action{Terrasoft.Core.UserConnection,``0})">
+            <summary>
+            Handles messages of the specified type <typeparamref name="TMessage"/>.
+            </summary>
+            <typeparam name="TMessage">The type of the message</typeparam>
+            <param name="action">The message handler that is invoked for incoming messages of the
+            specified type <typeparamref name="TMessage" />.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.UserActor.ReceiveAsSystemUser``1(System.Action{Terrasoft.Core.UserConnection,``0},System.Boolean)">
+            <summary>
+            Handles messages of the specified type <typeparamref name="TMessage"/>.
+            </summary>
+            <typeparam name="TMessage">The type of the message</typeparam>
+            <param name="action">The message handler that is invoked for incoming messages of the
+            specified type <typeparamref name="TMessage" />.</param>
+            <param name="useContextUserInfo">Sign of using user info from context.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ActorSystem.UserConnectionProvider">
+            <summary>
+            Provides methods for obtaining user connection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.UserConnectionProvider.#ctor(Terrasoft.Core.ActorSystem.IAppConnectionProvider,Terrasoft.Core.ActorSystem.IThreadInitializer)">
+            <summary>
+            Creates instance of the <see cref="T:Terrasoft.Core.ActorSystem.UserConnectionProvider"/> type.
+            </summary>
+            <param name="provider">Instance that implements the <see cref="T:Terrasoft.Core.ActorSystem.IAppConnectionProvider"/> interface.
+            </param>
+            <param name="threadInitializer">Instance that implements the <see cref="T:Terrasoft.Core.ActorSystem.IThreadInitializer"/> interface.
+            </param>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.UserConnectionProvider.GetUserConnection(Terrasoft.ServiceBus.IUserContextContainer)">
+            <summary>
+            Returns user connection.
+            </summary>
+            <param name="contextContainer">Container of the user context.</param>
+            <returns>Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.UserConnectionProvider.GetUserConnection(Terrasoft.ServiceBus.UserContext)">
+            <summary>
+            Returns user connection.
+            </summary>
+            <returns>Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ActorSystem.UserConnectionProvider.GetUserConnection(Terrasoft.ServiceBus.IUserContextContainer,System.Boolean,System.Boolean)">
+            <summary>
+            Returns user connection.
+            </summary>
+            <param name="contextContainer">Container of the user context.</param>
+            <param name="isSystemUser">Sign of system user.</param>
+            <param name="useContextUserInfo">Sign of using user info from context.</param>
+            <returns>Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> type.</returns>
+        </member>
+    </members>
+</doc>

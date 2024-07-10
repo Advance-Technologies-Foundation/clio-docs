@@ -1,0 +1,1094 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Social</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Social.ConsumerTokenManager.#ctor(System.String,System.String,Terrasoft.Social.SocialNetwork,Terrasoft.Core.Store.ICacheStore)">
+            <summary>
+            Used by tests only.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.ConsumerTokenManager._googleConsumerInfo">
+            <summary>
+            Returns consumer information about google shared application.
+            </summary>
+            <value>Consumer information.</value>
+        </member>
+        <member name="P:Terrasoft.Social.ConsumerTokenManager.UseGoogleSharedApplication">
+            <summary>
+            Returns boolean value of "Use shared Google application" system setting.
+            </summary>
+            <value>Boolean value of "Use shared Google application" system setting.</value>
+        </member>
+        <member name="F:Terrasoft.Social.ConsumerTokenManager._consumerKey">
+            <summary>
+            Returns value of "GoogleConsumerKey" system setting.
+            </summary>
+            <value>Boolean value of "GoogleConsumerKey" system setting.</value>
+        </member>
+        <member name="F:Terrasoft.Social.ConsumerTokenManager._consumerSecret">
+            <summary>
+            Returns value of "GoogleConsumerSecret" system setting.
+            </summary>
+            <value>Boolean value of "GoogleConsumerSecret" system setting.</value>
+        </member>
+        <member name="M:Terrasoft.Social.ConsumerTokenManager.GetSysSettingValue``1(Terrasoft.Core.UserConnection,System.String)">
+            <summary>
+            Returns system setting value.
+            <param name="userConnection">User connection.</param>
+            <param name="code">System setting code.</param>
+            </summary>
+            <returns>System setting value.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.ConsumerTokenManager.GetKeyFromSysSettings(Terrasoft.Core.UserConnection,System.String)">
+            <summary>
+            Returns key value.
+            <param name="userConnection">User connection.</param>
+            <param name="keyName">Key name.</param>
+            </summary>
+            <returns>Key value.</returns>
+        </member>
+        <member name="F:Terrasoft.Social.Google.GoogleConsumer._googleServerConnector">
+            <summary>
+            Returns instance of google server connector.
+            </summary>
+            <value>Instance of google server connector.</value>
+        </member>
+        <member name="F:Terrasoft.Social.Google.GoogleConsumer._sharedConsumerInfo">
+            <summary>
+            Returns shared google application consumer info.
+            </summary>
+            <value>Shared consumer info.</value>
+        </member>
+        <member name="F:Terrasoft.Social.Google.GoogleConsumer._consumerInfoServiceAccessInfoPageUri">
+            <summary>
+            Returns URI of social service AccessInfoPage.aspx.
+            </summary>
+            <value>URI of social service AccessInfoPage.aspx.</value>
+        </member>
+        <member name="P:Terrasoft.Social.Google.GoogleConsumer.UseSharedApplication">
+            <summary>
+            Returns boolean value of "Use shared Google application" system setting.
+            </summary>
+            <value>Boolean value of "Use shared Google application" system setting.</value>
+        </member>
+        <member name="P:Terrasoft.Social.Google.GoogleConsumer.ConsumerKey">
+            <summary>
+            Returns google application consumer key.
+            </summary>
+            <value>Consumer key.</value>
+        </member>
+        <member name="P:Terrasoft.Social.Google.GoogleConsumer.ConsumerSecret">
+            <summary>
+            Returns google application consumer secret.
+            </summary>
+            <value>Consumer secret.</value>
+        </member>
+        <member name="F:Terrasoft.Social.Google.GoogleConsumer._httpContext">
+            <summary>
+            Returns current <see cref="P:Terrasoft.Social.Google.GoogleConsumer.HttpContext"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.Google.GoogleConsumer.GetUserInfo(System.String,System.String)">
+            <summary>
+            Gets user info by <paramref name="userInfoParamName"/> param.
+            </summary>
+            <param name="accessToken">Access token.</param>
+            <param name="userInfoParamName"></param>
+            <returns>User info by <paramref name="userInfoParamName"/> param.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.Google.GoogleConsumer.AuthorizeUserInApp(System.String@,System.String@,System.String@)">
+            <summary>
+            Gets access tokens for user.
+            <param name="accessToken">Access token.</param>
+            <param name="accessSecretToken">Access secret token.</param>
+            <param name="redirectUri">Redirect uri.</param>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.Google.GoogleConsumer.ExchangeAuthCodeToToken(System.String@,System.String@,System.String@)">
+            <summary>
+            Exchange auth code to access token.
+            </summary>
+            <param name="accessToken">Access token.</param>
+            <param name="accessSecretToken">Access secret token.</param>
+            <param name="redirectUri">Redirect uri.</param>
+        </member>
+        <member name="M:Terrasoft.Social.Google.GoogleConsumer.SetOAuthUserCredentials(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            Set <paramref name="accessToken"/>, <paramref name="accessSecretToken"/>
+            and <paramref name="redirectUri"/> from response.
+            </summary>
+            <param name="response">Response.</param>
+            <param name="accessToken">Access token.</param>
+            <param name="accessSecretToken">Access secret token.</param>
+            <param name="redirectUri">Redirect uri.</param>
+            <returns>Access token and access secret token.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.Google.GoogleConsumer.GetUserEmail(System.String)">
+            <summary>
+            Get user email.
+            </summary>
+            <param name="accessToken">Access token.</param>
+            <returns>User email.</returns>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.CredentialsLocation">
+            <summary>
+            Describes credential location in request.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.CredentialsLocation.RequestBody">
+            <summary>
+            Parameter placed in body.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.CredentialsLocation.BasicHeader">
+            <summary>
+            Parameter placed in Basic auth HTTP header parameter.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.CredentialsLocation.QueryString">
+            <summary>
+            Parameter placed in uri query part.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.IOAuthAuthenticator">
+            <summary>
+            Represents an OAuth authentication interface.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.IOAuthAuthenticator.RedirectUrl">
+            <summary>
+            OAuth application redirect url.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.IOAuthAuthenticator.AuthenticationUrl">
+            <summary>
+            OAuth application authentication url.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IOAuthAuthenticator.AuthenticateUser(System.String)">
+            <summary>
+            Authentications user in the specific OAuth application.
+            </summary>
+            <param name="userLogin">User login to the application.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IOAuthAuthenticator.ProcessAuthenticationCode(System.String)">
+            <summary>
+            Processes authentication code from OAuth application.
+            </summary>
+            <param name="code">Authentication code.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IOAuthAuthenticator.RefreshAccessToken(System.String)">
+            <summary>
+            Returns access token for the specific user before saves it in the DB.
+            </summary>
+            <param name="userLogin">User login to the application.</param>
+            <returns>New access token.</returns>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.ServiceOAuthAuthenticatorFactory">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator"/> type.
+            </summary>
+            <param name="userConnection">Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> to pass to instantiated type.</param>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator">
+            <summary>
+            Represents methods than allow to obtain access token.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.GetAccessToken(System.Guid)">
+            <summary>
+            Gets access token using system user id and application id.
+            </summary>
+            <param name="applicationId">Application id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.ProcessAuthorizationCode(Terrasoft.Web.Http.Abstractions.HttpRequest,System.String,System.Guid,System.Guid)">
+            <summary>
+            Process authorization code recieved from external OAuth application.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/>.</param>
+            <param name="authorizationCode">Authorization code.</param>
+            <param name="sysUserId">User id.</param>
+            <param name="applicationId">OAuth application id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.GetAuthorizationGrantUrl(Terrasoft.Web.Http.Abstractions.HttpRequest,System.Guid,System.Guid)">
+            <summary>
+            Returns callback url.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/>.</param>
+            <param name="appId">OAuth application id.</param>
+            <param name="userId">User id.</param>
+            <returns>Grant url.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.GetClientSecret(System.Guid)">
+            <summary>
+            Returns OAuth client secret key.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+            <returns>Client secret key.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.RemoveAccessToken(System.Guid,System.Guid)">
+            <summary>
+            Removes auth token.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+            <param name="userId">System user id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.RemoveOAuthApplication(System.Guid)">
+            <summary>
+            Removes OAuth application.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.GetOAuthApplicationUseSharedUser(System.Guid)">
+            <summary>
+            Return OAuth application UseSharedUser value.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IServiceOAuthAuthenticator.GetApplicationCredentials(System.Guid,System.Guid)">
+            <summary>
+            Returns application credentials.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+            <param name="userId">System user id.</param>
+            <returns>Application credentials.</returns>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.OAuthAccessType">
+            <summary>
+            OAuth access type type.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.OAuthAuthenticator">
+            <summary>
+            Represents an OAuth authentication class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Constructor with initialization instance of <see cref="P:Terrasoft.Social.OAuth.OAuthAuthenticator.UserConnection"/>.
+            </summary>
+            <param name="userConnection"><see cref="P:Terrasoft.Social.OAuth.OAuthAuthenticator.UserConnection"/> instance.</param>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.AuthorizeUrl">
+            <summary>
+            Application authorization url.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.TokenUrl">
+            <summary>
+            Application tokens url.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.Scope">
+            <summary>
+            Impersonation permissions granted to the client application.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.OAuthAuthenticator._userConnection">
+            <summary>
+            <see cref="T:Terrasoft.Core.UserConnection"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.OAuthAuthenticator._request">
+            <summary>
+            Returns current <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.OAuthAuthenticator._response">
+            <summary>
+            Returns current <see cref="T:Terrasoft.Web.Http.Abstractions.HttpResponse"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.SecretKey">
+            <summary>
+            Application secret key.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.ClientId">
+            <summary>
+            Application client identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.ApplicationId">
+            <summary>
+            OAuth application identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.Resource">
+            <summary>
+            The App ID URI of the web API. Required for some applications.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.BpmDomainApplicationUrl">
+            <summary>
+            Bpm application domain url.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.OAuthAuthenticator._aditionalUrlParams">
+            <summary>
+            <see cref="P:Terrasoft.Social.OAuth.OAuthAuthenticator.AuthenticationUrl"/> query additional parameters. Used to add oauth parameters, 
+            described for particular implementation and not described in protocol.
+            For example, prompt property in google oauth flow.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.UseShell">
+            <summary>
+            Use new application shell flag.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.OAuthAuthenticator._tokenManager">
+            <summary>
+            <see cref="T:Terrasoft.Social.OAuth.OAuthTokenManager"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.State">
+            <summary>
+            Current context state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.RedirectUrl">
+            <summary>
+            OAuth application redirect url.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.FinalStageRedirectUrl">
+            <summary>
+            Redirect url after completion of the authorization process.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.AuthenticationUrl">
+            <summary>
+            Application authentication url.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthAuthenticator.ApplicationClassName">
+            <summary>
+            Current application class name.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetTokenUrlParameters(System.String)">
+            <summary>
+            Returns parameters for request of getting access token.
+            </summary>
+            <param name="code">OAuth autenticated code.</param>
+            <returns><see cref="T:System.Collections.Specialized.NameValueCollection"/> 
+            instance with specified parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetRefreshUrlParameters(System.String)">
+            <summary>
+            Returns parameters for request an access token refresh.
+            </summary>
+            <param name="refreshToken">OAuth refresh token.</param>
+            <returns><see cref="T:System.Collections.Specialized.NameValueCollection"/> 
+            instance with specified parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetExpiresOn(System.Int32)">
+            <summary>
+            Returns time when the access token expires. The date is represented as the number 
+            of seconds from 1970-01-01T0:0:0Z UTC until the expiration time. 
+            </summary>
+            <param name="tokenLiveTime">How long the access token is valid (in seconds).</param>
+            <returns>The date is represented as the number of seconds.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.TryParseJObject(System.String,Newtonsoft.Json.Linq.JObject@)">
+            <summary>
+            Try parse response content to <see cref="T:Newtonsoft.Json.Linq.JObject"/>.
+            </summary>
+            <param name="responseContent">Response content.</param>
+            <param name="jobject">Out <see cref="T:Newtonsoft.Json.Linq.JObject"/> parameter.</param>
+            <returns><c>True</c> when response content is successfully parsed to <see cref="T:Newtonsoft.Json.Linq.JObject"/>,
+            otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetSysSettingsIntValue(System.String,System.Int32)">
+            <summary>
+            Returns <paramref name="code"/> system setting integer value.
+            </summary>
+            <param name="code">System setting code.</param>
+            <param name="defValue">System setting default value.</param>
+            <returns>System setting integer value.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.PingOauthService(System.String,System.String)">
+            <summary>
+            Ping oauth <paramref name="url"/> address.
+            </summary>
+            <param name="url">Url address.</param>
+            <param name="encryptMailboxName">Encrypted mailbox name.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.TryPingOauthService(System.String,System.String)">
+            <summary>
+            Send post request to <paramref name="pingUrl"/> address.
+            </summary>
+            <param name="pingUrl">Ping url address.</param>
+            <param name="mailbox">Encrypted mailbox name.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.LogException(System.Exception,System.String)">
+            <summary>
+            Log <paramref name="ex"/> exception.
+            </summary>
+            <param name="ex"><see cref="T:System.Exception"/> instance.</param>
+            <param name="logMessage">Log message.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.PostprocessAuthentication(System.String,System.Guid)">
+            <summary>
+            Called at the end of the authorization process.
+            </summary>
+            <param name="userLogin">OAuth application user login.</param>
+            <param name="tokenStorageId">Created token storage identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.ProcessSavingCredentialsFinish(System.Guid)">
+            <summary>
+            Processes saving credentials finish event.
+            </summary>
+            <param name="tokenStorageId">Created token storage identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetResponseErrorValuesFromUrl">
+            <summary>
+            Gets failed authorization flow result data from redirect URL.
+            </summary>
+            <returns>Failed response values.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetResponseErrorValuesFromJObject(System.Exception,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Appends error info into response cookies.
+            </summary>
+            <param name="ex">Cought excheption.</param>
+            <param name="jobject">Parsed <see cref="T:Newtonsoft.Json.Linq.JObject"/> with error info from mail server response.</param>
+            <returns>Failed response values.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.Initialize">
+            <summary>
+            Initializations OAuth application settings.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetDeserializedState(System.String)">
+            <summary>
+            Get deserialized state object.
+            </summary>
+            <param name="stateString">Serialized json string.</param>
+            <returns><see cref="T:System.Collections.Generic.Dictionary`2"/> state object instance</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetOAuthUserCredentials(System.String)">
+            <summary>
+            Gets OAuth user credentials from the response after request an access token.
+            </summary>
+            <param name="response">Response as a <c>string</c> from the executed request.</param>
+            <returns><see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.UpdateUserCredentials(Terrasoft.Social.OAuth.OAuthUserCredentials,System.String)">
+            <summary>
+            Updates OAuth user credentials from the response after request an refreshing the access token.
+            </summary>
+            <param name="credentials">Current user credentials what will be updated.</param>
+            <param name="response">Response as a <c>string</c> from the executed request.</param>
+            <returns>Refreshed <see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.SaveCredentials(Terrasoft.Social.OAuth.OAuthUserCredentials)">
+            <summary>
+            Saves received <paramref name="credentials"/> to token storage and redirects to success authorization page.
+            </summary>
+            <param name="credentials"><see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetStateAsString">
+            <summary>
+            Returns value of <see cref="P:Terrasoft.Social.OAuth.OAuthAuthenticator.State"/> property as a string.
+            </summary>
+            <returns><see cref="T:System.String"/> object.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.AppendCookieToResponse(System.Boolean,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Appends into response cookies result of authorization state.
+            </summary>
+            <param name="success"><c>True</c> if authorization is success.</param>
+            <param name="values">Additional parameters.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.AppendError(System.Exception,System.String)">
+            <summary>
+            Appends error info into response cookies.
+            </summary>
+            <param name="ex">Cought excheption.</param>
+            <param name="mailServerMessage">Mail server error message.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.AppendErrorFromUrl">
+            <summary>
+            Appends error info into response cookies.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.AppendErrorFromJObject(System.Exception,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Appends error info into response cookies.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetSuccessResultObject(Terrasoft.Social.OAuth.OAuthUserCredentials)">
+            <summary>
+            Returns success authorization flow result data.
+            </summary>
+            <param name="credentials">User OAuth credentials.</param>
+            <returns><see cref="T:Newtonsoft.Json.Linq.JObject"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.GetResponseErrorValues(System.String,System.String,System.String)">
+            <summary>
+            Returns failed authorization flow result data from response.
+            </summary>
+            <param name="errorType">Error type.</param>
+            <param name="message">Error message.</param>
+            <param name="mailServerMessage">Mail server error message.</param>
+            <returns>Failed authorization flow result data from response.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.SendRequest(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sends get request with <paramref name="parameters"/> to <paramref name="url"/>.
+            </summary>
+            <param name="url">Request service url.</param>
+            <param name="parameters">Get parameters collection.</param>
+            <returns>Response bytes array.</returns>
+            <remarks>External dependency realocation.</remarks>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.RedirectToBpm(System.String)">
+            <summary>
+            Redirects <see cref="P:Terrasoft.Social.OAuth.OAuthAuthenticator.Response"/> to <paramref name="bpmUrl"/>.
+            All server side redirects in OAuth flow must use this method for redirect.
+            </summary>
+            <param name="bpmUrl">Full bpm'online page url string.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.ValidateCredentials(Terrasoft.Social.OAuth.OAuthUserCredentials)">
+            <summary>
+            Validates <paramref name="credentials"/> due for particular implementation logic.
+            </summary>
+            <param name="credentials"><see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.</param>
+            <returns><c>True</c> when credentials valid, <c>false otherwise.</c></returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.AuthenticateUser(System.String)">
+            <summary>
+            Authentications user in the specific OAuth application.
+            </summary>
+            <param name="userLogin">User login to the application.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.ProcessAuthenticationCode(System.String)">
+            <summary>
+            Processes authentication code flow from OAuth application.
+            </summary>
+            <param name="code">Authentication code.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.ProcessAuthenticationCodeError">
+            <summary>
+            Processes authentication code flow with errors from OAuth application.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticator.RefreshAccessToken(System.String)">
+            <summary>
+            Returns access token for the specific user before saves it in the DB.
+            </summary>
+            <param name="userLogin">User login to the application.</param>
+            <returns>New access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.GetRequestAsBody(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns get credentials request with <paramref name="parameters"/> to <paramref name="url"/>
+            when credentials location is request body.
+            </summary>
+            <param name="url">Request service url.</param>
+            <param name="parameters">Get parameters collection.</param>
+            <returns>Web request object.</returns>
+            <remarks>External dependency realocation.</remarks>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.GetRequestAsQuery(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns get credentials request with <paramref name="parameters"/> to <paramref name="url"/>
+            when credentials location is get query request.
+            </summary>
+            <param name="url">Request service url.</param>
+            <param name="parameters">Request parameters collection.</param>
+            <returns>Web request object.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.GetRequestAsBasicHeader(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns credentials request with <paramref name="parameters"/> to <paramref name="url"/>
+            when credentials location is basic authorization header parameters.
+            </summary>
+            <param name="url">Request service url.</param>
+            <param name="parameters">Request parameters collection.</param>
+            <returns>Web request object.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.PrepareParameters(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns concatenated string of a given parameters.
+            </summary>
+            <param name="parameters">Request parameters collection.</param>
+            <returns>Prepared string.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.PrepareBasicBodyParameters(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns concatenated string of a given parameters for credentials request as Basic auth.
+            </summary>
+            <param name="parameters">Request parameters collection.</param>
+            <returns>Prepared string.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.GetRequestBodyParameters(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns body parameters collection for credentials request as Basic auth.
+            </summary>
+            <param name="parameters">Request parameters collection.</param>
+            <returns>Prepared parameters collection.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.SendRequest(System.Net.HttpWebRequest,System.Int32)">
+            <summary>
+            Sends credential request.
+            </summary>
+            <param name="request">Prepared request.</param>
+            <param name="timeout">Request timeout.</param>
+            <returns>Response string.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.EncodeBasicAuthData(System.String,System.String)">
+            <summary>
+            Encode Base64 <paramref name="login"/> and <paramref name="password"/> for Basic authorization
+            header.
+            </summary>
+            <param name="login">User login.</param>
+            <param name="password">User password.</param>
+            <returns>Base64 encoded string.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.SendRequest(System.String,System.Collections.Specialized.NameValueCollection,Terrasoft.Social.OAuth.CredentialsLocation)">
+            <summary>
+            Sends credential request with defined parameters location.
+            </summary>
+            <param name="url">Request service url.</param>
+            <param name="parameters">Credentials parameters collection.</param>
+            <param name="credentialsLocation"><see cref="T:Terrasoft.Social.OAuth.CredentialsLocation"/></param>
+            <returns>Response string.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.SendRequest(System.String,System.Collections.Specialized.NameValueCollection,Terrasoft.Social.OAuth.CredentialsLocation,System.Int32)">
+            <summary>
+            Sends credential request with defined parameters location.
+            </summary>
+            <param name="url">Request service url.</param>
+            <param name="parameters">Credentials parameters collection.</param>
+            <param name="credentialsLocation"><see cref="T:Terrasoft.Social.OAuth.CredentialsLocation"/></param>
+            <param name="timeout">Request timeout</param>
+            <returns>Response string.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.GetRefreshUrlParameters(System.String,System.String,System.String)">
+            <summary>
+            Returns parameters for request an access token refresh.
+            </summary>
+            <param name="refreshToken">OAuth refresh token.</param>
+            <param name="clientId">Client id.</param>
+            <param name="secretKey">Secret key.</param>
+            <returns><see cref="T:System.Collections.Specialized.NameValueCollection"/> 
+            instance with specified parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.AppendResultToCookie(Terrasoft.Web.Http.Abstractions.HttpResponse,System.Boolean,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Append result value to response cookies.
+            </summary>
+            <param name="response">Instance of <see cref="T:Terrasoft.Web.Http.Abstractions.HttpResponse"/>.</param>
+            <param name="success">True if result is success.</param>
+            <param name="values">Values to append.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthAuthenticatorUtilities.GetTokenUrlParameters(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Returns parameters for request of getting access token.
+            </summary>
+            <param name="code">OAuth autenticated code.</param>
+            <param name="clientId">Client id.</param>
+            <param name="secretKey">Secret key.</param>
+            <param name="redirectUrl">Redirect url.</param>
+            <param name="resource">Resources.</param>
+            <returns><see cref="T:System.Collections.Specialized.NameValueCollection"/> 
+            instance with specified parameters.</returns>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.IOAuthClient">
+            <summary>
+            Represents an OAuth client interface.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.IOAuthClient.UserLogin">
+            <summary>
+            User login to the OAuth application.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.IOAuthClient.GetAccessToken">
+            <summary>
+            Returns valid access token.
+            </summary>
+            <returns>Access token.</returns>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.OAuthClient">
+            <summary>
+            Represents an OAuth client class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthClient.#ctor(System.String,Terrasoft.Core.UserConnection)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="userLogin">User login to the OAuth application.</param>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance. 
+            Used for <see cref="T:Terrasoft.Social.OAuth.IOAuthAuthenticator"/> instance creation.</param>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthClient.Authenticator">
+            <summary>
+            <see cref = "T:Terrasoft.Social.OAuth.IOAuthAuthenticator" /> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthClient.UserLogin">
+            <summary>
+            User login to the OAuth application.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthClient.GetAuthenticator(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns OAuth authenticator for the current client.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance. 
+            Used for <see cref="T:Terrasoft.Social.OAuth.IOAuthAuthenticator"/> instance creation.</param>
+            <returns><see cref="T:Terrasoft.Social.OAuth.IOAuthAuthenticator"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthClient.GetAccessToken">
+            <summary>
+            Returns valid access token.
+            </summary>
+            <returns>Access token.</returns>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.OAuthUserCredentials">
+            <summary>
+            OAuth user credentials class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthUserCredentials.ApplicationId">
+            <summary>
+            OAuth application identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthUserCredentials.UserLogin">
+            <summary>
+            User login to the application.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthUserCredentials.AccessToken">
+            <summary>
+            OAuth access token.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthUserCredentials.RefreshToken">
+            <summary>
+            OAuth refresh token.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthUserCredentials.ExpiresOn">
+            <summary>
+            Time in seconds since 1970.01.01 after which the access token expires.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.OAuthApplicationCredentials">
+            <summary>
+            OAuth application credentials class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthApplicationCredentials.ApplicationId">
+            <summary>
+            OAuth application identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthApplicationCredentials.ApplicationClassName">
+            <summary>
+            OAuth application name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthApplicationCredentials.ClientId">
+            <summary>
+            Application client identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.OAuthApplicationCredentials.SecretKey">
+            <summary>
+            Application secret key.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Social.OAuth.OAuthTokenManager">
+            <summary>
+            OAuth token manager class.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.OAuthTokenManager._userConnection">
+            <summary>
+            <see cref="T:Terrasoft.Core.UserConnection"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Social.OAuth.OAuthTokenManager._secureTextDataValueType">
+            <summary>
+            <see cref="T:Terrasoft.Core.DataValueType"/> SecureText instance.
+            </summary>
+            <remarks>The type to store in the database uses a default text length of 250 characters,
+            which can not be overridden</remarks>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.EncryptSecretKey(System.String)">
+            <summary>
+            Encrypts secret key.
+            </summary>
+            <param name="decryptValue">Secret key on decrypted state.</param>
+            <returns>Decrypted secret key.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.DecryptSecretKey(System.String)">
+            <summary>
+            Decrypts secret key.
+            </summary>
+            <param name="encryptValue">Secret key on encrypted state.</param>
+            <returns>Encrypted secret key.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.SaveUserCredentials(Terrasoft.Social.OAuth.OAuthUserCredentials,System.Guid,System.Guid)">
+            <summary>
+            Save user credentials to database.
+            </summary>
+            <param name="credentials">User credentials.</param>
+            <param name="tokenId">Token id.</param>
+            <param name="sysUserId">User id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.GetApplicationCredentials(System.String,System.Guid)">
+            <summary>
+            Get OAuth application credentials from the DB by class name or by appicationId.
+            </summary>
+            <param name="applicationClassName">OAuth application class name.</param>
+            <param name="id">OAuth application Id.</param>
+            <returns><see cref="T:Terrasoft.Social.OAuth.OAuthApplicationCredentials"/> instance.
+            <c>null</c> if there is no such.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.LoadApplicationCredentials(System.String)">
+            <summary>
+            Loads OAuth application credentials from the DB by class name.
+            </summary>
+            <param name="applicationClassName">OAuth application class name.</param>
+            <returns><see cref="T:Terrasoft.Social.OAuth.OAuthApplicationCredentials"/> instance.
+            <c>null</c> if there is no such.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.LoadApplicationCredentials(System.Guid)">
+            <summary>
+            Loads OAuth application credentials from the DB by id.
+            </summary>
+            <param name="id">OAuth application Id.</param>
+            <returns><see cref="T:Terrasoft.Social.OAuth.OAuthApplicationCredentials"/> instance.
+            <c>null</c> if there is no such.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.LoadUserCredentials(System.String)">
+            <summary>
+            Loads OAuth user credentials from the DB.
+            </summary>
+            <param name="userLogin">User OAuth application login.</param>
+            <returns><see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.
+            <c>null</c> if there is no such.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.LoadUserCredentials(System.Guid,System.Guid)">
+            <summary>
+            Loads OAuth user credentials from the DB.
+            </summary>
+            <param name="sysUserId">System user od.</param>
+            <param name="applicationId">Application id.</param>
+            <returns><see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.
+            <c>null</c> if there is no such.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.RemoveToken(System.Guid,System.Guid)">
+            <summary>
+            Removes OAuth token from the DB.
+            </summary>
+            <param name="sysUserId">System user od.</param>
+            <param name="applicationId">Application id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.SaveUserCredentials(Terrasoft.Social.OAuth.OAuthUserCredentials)">
+            <summary>
+            Saves <see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance to the DB.
+            </summary>
+            <param name="credentials"><see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.SaveUserCredentials(Terrasoft.Social.OAuth.OAuthUserCredentials,System.Guid)">
+            <summary>
+            Saves <see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance to the DB.
+            </summary>
+            <param name="credentials"><see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.</param>
+            <param name="userId">User id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.GetTokenStorageId(System.String)">
+            <summary>
+            Returns token storage identifier by user login.
+            </summary>
+            <param name="userLogin">OAuth user login.</param>
+            <returns><see cref="T:System.Guid"/> token storage identifier,
+            <see cref="F:System.Guid.Empty"/> if login doesn't exists.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.GetTokenStorageId(System.Guid,System.Guid)">
+            <summary>
+            Returns token storage identifier by application id and user id.
+            </summary>
+            <param name="userId">User id.</param>
+            <param name="applicationId">Application id.</param>
+            <returns>Token storage id.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.OAuthTokenManager.LoadAllUsers(System.Guid)">
+            <summary>
+            Loads ids of all user by application id.
+            </summary>
+            <param name="applicationId">Application id.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.TokenRevokeParameters.RevokeTokenUrl">
+            <summary>
+            Revoke token URL.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.TokenRevokeParameters.SharedUserId">
+            <summary>
+            Shared User Id.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.DateTimeProvider">
+            <summary>
+            Gets instance of <see cref="T:Terrasoft.Core.IDateTimeProvider"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.TokenManager">
+            <summary>
+            Gets instance of <see cref="T:Terrasoft.Social.OAuth.OAuthTokenManager"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetExpiresOn(System.Int32)">
+            <summary>
+            Returns time when the access token expires. The date is represented as the number 
+            of seconds from 1970-01-01T0:0:0Z UTC until the expiration time. 
+            </summary>
+            <param name="tokenLiveTime">How long the access token is valid (in seconds).</param>
+            <returns>The date is represented as the number of seconds.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.UpdateUserCredentials(Terrasoft.Social.OAuth.OAuthUserCredentials,System.String)">
+            <summary>
+            Updates OAuth user credentials from the response after request an refreshing the access token.
+            </summary>
+            <param name="credentials">Current user credentials what will be updated.</param>
+            <param name="response">Response as a <c>string</c> from the executed request.</param>
+            <returns>Refreshed <see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetTokenUrlParameters(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Returns parameters for request of getting access token.
+            </summary>
+            <param name="code">OAuth autenticated code.</param>
+            <param name="clientId">Client id.</param>
+            <param name="secretKey">Secret key.</param>
+            <param name="redirectUrl">Redirect url.</param>
+            <param name="resource">Resources.</param>
+            <returns><see cref="T:System.Collections.Specialized.NameValueCollection"/> 
+            instance with specified parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetOAuthApplicationScope(System.Guid)">
+            <summary>
+            Returns application auth scopes.
+            </summary>
+            <param name="applicationId">Application Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.SendRequest(System.String,System.Collections.Specialized.NameValueCollection,Terrasoft.Social.OAuth.CredentialsLocation)">
+            <summary>
+            Send request to remote server.
+            </summary>
+            <param name="tokenUrl">Remote URL.</param>
+            <param name="parameters">Parameters.</param>
+            <param name="credentialsLocation"></param>
+            <returns>Response bytes.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetRedirectUrl(Terrasoft.Web.Http.Abstractions.HttpRequest)">
+            <summary>
+            Returns redirect url.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/>.</param>
+            <returns>Redirect url.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.CreateOAuthUserCredentials(System.Guid,System.String)">
+            <summary>
+            Creates user createntials from response.
+            </summary>
+            <param name="applicationId">Application id.</param>
+            <param name="response">Response.</param>
+            <returns>Instance of <see cref="T:Terrasoft.Social.OAuth.OAuthUserCredentials"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.RevokeToken(System.Guid,System.Guid,System.String)">
+            <summary>
+            Revokes user token in OAuth application.
+            </summary>
+            <param name="userId">User id.</param>
+            <param name="appId">OAuth application id.</param>
+            <param name="revokeUrl">Token revoke URL</param>
+            <returns>Returns true if revoke was success.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.RemoveSharedUser(System.Guid)">
+            <summary>
+            Removes shared user from OAuth application.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetAccessToken(System.Guid)">
+            <summary>
+            Gets access token using system user id and application id.
+            </summary>
+            <param name="applicationId">Application id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetClientSecret(System.Guid)">
+            <summary>
+            Returns OAuth client secret key.
+            </summary>
+            <param name="applicationId">OAuth application id.</param>
+            <returns>Client secret key.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.ProcessAuthorizationCode(Terrasoft.Web.Http.Abstractions.HttpRequest,System.String,System.Guid,System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.RemoveAccessToken(System.Guid,System.Guid)">
+            <summary>
+            Removes auth token.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+            <param name="userId">User id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.RemoveOAuthApplication(System.Guid)">
+            <summary>
+            Removes OAuth application.
+            </summary>
+            <param name="appId">OAuth application id.</param>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetOAuthApplicationUseSharedUser(System.Guid)">
+            <summary>
+            Returns OAuthApplication UseSharedUser value.
+            </summary>
+            <param name="applicationId"></param>
+            <returns>UseSharedUser value.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetApplicationCredentials(System.Guid,System.Guid)">
+            <summary>
+            Returns OAuthApplication credentials for user.
+            </summary>
+            <param name="userId">User Id</param>
+            <param name="appId">Application Id</param>
+            <returns>Application credentials.</returns>
+        </member>
+        <member name="M:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator.GetAuthorizationGrantUrl(Terrasoft.Web.Http.Abstractions.HttpRequest,System.Guid,System.Guid)">
+            <summary>
+            Returns authorization grant url.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/>.</param>
+            <param name="appId">OAuth application id.</param>
+            <param name="userId">User id.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

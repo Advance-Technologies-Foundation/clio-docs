@@ -1,0 +1,17 @@
+2024-05-25 09:00:45,443 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild .ctor - Operation [BuildChanged] started
+2024-05-25 09:00:46,100 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild .ctor - Operation [GenerateFileContentDescriptors] started
+2024-05-25 09:00:46,634 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Stop - Operation [GenerateFileContentDescriptors] took 0 s 534 ms
+2024-05-25 09:00:46,634 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild .ctor - Operation [GenerateFileContentBootstraps] started
+2024-05-25 09:00:46,644 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Stop - Operation [GenerateFileContentBootstraps] took 0 s 8 ms
+2024-05-25 09:00:51,014 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Write - Ordered by CPU time (top 10)
+2024-05-25 09:00:51,014 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Write - [ClientUnitSchemaManager.SystemDesigner] - Total: 4819 ms, GetInstance: 763 ms, Less: 7 ms, Images: 9 ms, SourceCode: 3762 ms, Resources: 278 ms
+2024-05-25 09:00:51,014 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Write - Total CPU time - GetInstance: 0 s, Less: 0 s, Images: 0 s, SourceCode: 3 s, Resources: 0 s
+2024-05-25 09:00:51,014 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild LogGenerationResult - Schema count: 1
+2024-05-25 09:00:51,014 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Stop - Operation [BuildChanged] took 5 s 572 ms
+2024-05-25 09:14:20,768 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild .ctor - Operation [BuildChanged] started
+2024-05-25 09:14:21,332 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild LogGenerationResult - Schema count: 0
+2024-05-25 09:14:21,332 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild .ctor - Operation [GenerateFileContentDescriptors] started
+2024-05-25 09:14:21,890 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Stop - Operation [GenerateFileContentDescriptors] took 0 s 552 ms
+2024-05-25 09:14:21,890 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild .ctor - Operation [GenerateFileContentBootstraps] started
+2024-05-25 09:14:21,890 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Stop - Operation [GenerateFileContentBootstraps] took 0 s 6 ms
+2024-05-25 09:14:21,890 [.NET ThreadPool Worker] INFO Supervisor ConfigurationBuild Stop - Operation [BuildChanged] took 1 s 123 ms

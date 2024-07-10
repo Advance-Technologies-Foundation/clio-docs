@@ -1,0 +1,613 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Web.Http.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Web.Http.Abstractions.FormCollection">
+            <summary>
+            Contains the form value providers for the application.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HeaderCollection">
+            <summary>
+            A collection of headers and their values.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HeaderCollection.AllKeys">
+            <summary>
+            Gets all the keys in the collection of headers.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HostString">
+            <summary>
+            Represents the host portion of a URI can be used to construct URI's properly formatted and encoded for use in
+            HTTP headers.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.#ctor(System.String)">
+            <summary>
+            Creates a new HostString without modification. The value should be Unicode rather than punycode,
+            and may have a port.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates a new HostString from its host and port parts.
+            </summary>
+            <param name="host">The value should be Unicode rather than punycode. IPv6 addresses must use square braces.
+            </param>
+            <param name="port"> A positive, greater than 0 value representing the port in the host string.</param>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HostString.Value">
+            <summary>
+            Returns the original value from the constructor.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HostString.HasValue">
+            <summary>
+            Indicates whether the value is not <see langword="null" />
+            or an <see cref="F:System.String.Empty" /> string.</summary>
+            <returns>
+            <see langword="true" /> if the value is not <see langword="null" />
+            or an empty string (""); otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HostString.Host">
+            <summary>
+            Returns the value of the host part of the value. The port is removed if it was present.
+            </summary>
+            <returns>The host.</returns>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HostString.Port">
+            <summary>
+            Returns the value of the port part of the host, or <value>null</value> if none is found.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.op_Equality(Terrasoft.Web.Http.Abstractions.HostString,Terrasoft.Web.Http.Abstractions.HostString)">
+            <summary>
+            Compares the two instances for equality.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.op_Inequality(Terrasoft.Web.Http.Abstractions.HostString,Terrasoft.Web.Http.Abstractions.HostString)">
+            <summary>
+            Compares the two instances for inequality.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.Equals(System.Object)">
+            <summary>
+            Compares against the given object only if it is a HostString.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.ToString">
+            <summary>
+            Returns the value as normalized by ToUriComponent().
+            </summary>
+            <returns>A string representation.</returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.GetHashCode">
+            <summary>
+            Gets a hash code for the value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HostString.Equals(Terrasoft.Web.Http.Abstractions.HostString)">
+            <summary>
+            Compares the equality of the Value property, ignoring case.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpApplicationState">
+            <summary>
+            Enables sharing of global information across multiple sessions and requests within an application.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpBrowserCapabilities">
+            <summary>
+            Enables the server to gather information on the capabilities of the browser that is running on the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpBrowserCapabilities.Browser">
+            <summary>
+            Gets the browser string (if any) that was sent by the browser in the User-Agent request header.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpBrowserCapabilities.Version">
+            <summary>
+            Gets the full version number (integer and decimal) of the browser as a string.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpContext">
+            <summary>
+            Encapsulates all HTTP-specific information about an individual HTTP request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.SafeSession">
+            <summary>
+            Gets the HttpSessionState object for the current HTTP request. This API returns <c>null</c> even when
+            session is not configured (i.e. for cases when we need to use this api before session middleware
+            is executed).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.HttpContextAccessor">
+            <summary>
+            Initializes the HttpContext abstraction with a concrete implementation provider.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.Current">
+            <summary>
+            Gets the HttpContext object for the current HTTP request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.Application">
+            <summary>
+            Gets the HttpApplicationState object for the current HTTP request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.Items">
+            <summary>
+            Gets a key/value collection that can be used to organize and share data within the scope of this request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.Request">
+            <summary>
+            Gets the HttpRequest object for the current HTTP request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.Response">
+            <summary>
+            Gets the HttpResponse object for the current HTTP response.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.Session">
+            <summary>
+            Gets the HttpSessionState object for the current HTTP request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpContext.User">
+            <summary>
+            Gets or sets security information for the current HTTP request.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpCookie">
+            <summary>
+            Provides a type-safe way to create and manipulate individual HTTP cookies.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpCookie.Value">
+            <summary>
+            Value of cookie.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpCookieCollection">
+            <summary>
+            Provides a type-safe way to manipulate HTTP cookies.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpCookieCollection.Get(System.String)">
+            <summary>
+            Returns the cookie with the specified name from the cookie collection.
+            </summary>
+            <param name="name">The name of the cookie to retrieve from the collection.</param>
+            <returns>The HttpCookie specified by name.</returns>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpCookieOptions.HttpOnly">
+            <summary>
+            Gets or sets a Sign that specifies whether a cookie is accessible by client-side.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpCookieOptions.Secure">
+            <summary>
+            Gets or sets a value that indicates whether to transmit the cookie using Secure Sockets Layer (SSL),
+            over HTTPS only.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpCookieOptions.SameSiteMode">
+            <summary>
+            Sets SameSite mode for cookie.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpException">
+            <summary>
+            Describes an exception that occurred during the processing of HTTP requests.
+            </summary>
+            <seealso cref="T:System.Runtime.InteropServices.ExternalException" />
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="message">The error message that specifies the reason for the exception.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.Int32,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="httpCode">The HTTP code.</param>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="httpCode">The HTTP code.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="httpCode">The HTTP code.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="hr">The <see cref="P:System.Exception.HResult"/> value.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.Net.HttpStatusCode,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="httpCode">The HTTP code.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Http.Abstractions.HttpException"/> class.
+            </summary>
+            <param name="httpCode">The HTTP code.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.GetHttpCode">
+            <summary>
+            Gets the HTTP response status code to return to the client.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpException.GetHttpStatusCode">
+            <summary>
+            Gets the HTTP response status code to return to the client.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpFileCollection">
+            <summary>
+            Provides access to and organizes files uploaded by a client.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpItemCollection">
+            <summary>
+            A key/value collection that can be used to organize and share data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpItemCollection.Contains(System.Object)">
+            <summary>Determines whether the collection contains an element with the specified key.</summary>
+            <param name="key">The key to locate.</param>
+            <returns>true if collection contains an element with the key; otherwise, false.</returns>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpPostedFile">
+            <summary>
+            Provides access to individual file that have been uploaded by a client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpPostedFile.FileName">
+            <summary>
+            Gets the fully qualified name of the file on the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpPostedFile.InputStream">
+            <summary>
+            Gets a Stream object that points to an uploaded file to prepare for reading the contents of the file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpPostedFile.ContentType">
+            <summary>
+            Gets the MIME content type of the uploaded file.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpRequest">
+            <summary>
+            Represents the incoming side of an individual HTTP request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Cookies">
+            <summary>
+            Gets a collection of cookies sent by the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Files">
+            <summary>
+            Gets the collection of files uploaded by the client, in multipart MIME format.
+            Warning: Not implemented in ASP.NET Core.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Form">
+            <summary>
+            Gets a collection of form variables.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Headers">
+            <summary>
+            Gets the collection of request headers.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.HttpMethod">
+            <summary>
+            Gets the HTTP data transfer method (such as GET, POST, or HEAD) used by the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.QueryString">
+            <summary>
+            Gets the collection of HTTP query string variables.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.TotalBytes">
+            <summary>
+            Gets the number of bytes in the current input stream.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Url">
+            <summary>
+            Gets information about the URL of the current request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.UrlReferrer">
+            <summary>
+            Gets information about the URL of the client's previous request that linked to the current URL.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.UserAgent">
+            <summary>
+            Gets the raw user agent string of the client browser that has been provided. Please note it may be null.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.UserLanguages">
+            <summary>
+            Gets a sorted string array of client language preferences.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.BaseUrl">
+            <summary>
+            Gets the base URL of the current request (without trailing slash).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Scheme">
+            <summary>
+            Gets the HTTP request scheme.
+            </summary>
+            <returns>The HTTP request scheme.</returns>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Host">
+            <summary>
+            Gets the Host header. May include the port.
+            </summary>
+            <return>The Host header.</return>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.ApplicationPath">
+            <summary>
+            Get the virtual root path of the application on the server.
+            </summary>
+            <returns>
+            The virtual path of the current application.
+            </returns>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Path">
+            <summary>
+            Gets the request path from RequestPath.
+            </summary>
+            <returns>The request path from RequestPath.</returns>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpRequest.Endpoint">
+            <summary>
+            Gets endpoint without application name for URL from HTTP request.
+            </summary>
+            <exception cref="T:System.ArgumentException">If path of the HTTP request
+            doesn't start with the application name.</exception>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpRequestHelper">
+            <summary>
+            Provides auxiliary methods to get data of the HTTP request.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Http.Abstractions.HttpRequestHelper.ForwardedProtoHeader">
+            <summary>
+            Header name that identifies the protocol (HTTP or HTTPS).
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Http.Abstractions.HttpRequestHelper.HttpsForwardedHeader">
+            <summary>
+            Header name that identifies the IP address.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Http.Abstractions.HttpRequestHelper.ForwardedPortHeader">
+            <summary>
+            Header name that identifies the port.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpRequestHelper.GetUriScheme(System.Uri,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns the HTTP request scheme.
+            </summary>
+            <param name="requestUrl">The URL of the current request.</param>
+            <param name="serverVariables">A collection of Web server variables.</param>
+            <returns>String that represents the HTTP request scheme.</returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpRequestHelper.GetUriPort(System.Uri,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns the HTTP request port.
+            </summary>
+            <param name="requestUrl">The URL of the current request.</param>
+            <param name="serverVariables">A collection of Web server variables.</param>
+            <returns>Number that represents the HTTP request port.</returns>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpRequestHelper.ToUriComponent(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns the value properly formatted and encoded for use in a URI.
+            </summary>
+            <returns>String value.</returns>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpResponse">
+            <summary>
+            Represents the outgoing side of an individual HTTP request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpResponse.ContentType">
+            <summary>
+            Gets or sets the HTTP MIME type of the output stream.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpResponse.ClientDisconnectedToken">
+            <summary>
+            Gets a CancellationToken object that is tripped when the client disconnects.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpResponse.Headers">
+            <summary>
+            Gets the collection of response headers.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpResponse.Location">
+            <summary>
+            Gets or sets the value of the HTTP Location header.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpResponse.OutputStream">
+            <summary>
+            Enables binary output to the outgoing HTTP content body.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpResponse.StatusCode">
+            <summary>
+            Gets or sets the HTTP status code of the output returned to the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.HttpResponse.StatusDescription">
+            <summary>
+            Gets or sets the HTTP status string of the output returned to the client.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.AddHeader(System.String,System.String)">
+            <summary>
+            Adds an HTTP header to the output stream.
+            AddHeader(String, String) is provided for compatibility with earlier versions of ASP.
+            </summary>
+            <param name="name">The name of the HTTP header to add value to.</param>
+            <param name="value">The string to add to the header.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.Write(System.Object)">
+            <summary>
+            Writes an Object to an HTTP response stream.
+            </summary>
+            <param name="obj">The Object to write to the HTTP output stream.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.Write(System.String)">
+            <summary>
+            Writes a string to an HTTP response output stream.
+            </summary>
+            <param name="s">The string to write to the HTTP output stream.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.Write(System.Char)">
+            <summary>
+            Writes a character to an HTTP response output stream.
+            </summary>
+            <param name="ch">The character to write to the HTTP output stream.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.Write(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Writes an array of characters to an HTTP response output stream.
+            </summary>
+            <param name="buffer">The character array to write.</param>
+            <param name="index">The position in the character array where writing starts.</param>
+            <param name="count">The number of characters to write, beginning at index.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.ClearHeaders">
+            <summary>
+            Clears all headers from the current response.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.Redirect(System.String,System.Boolean)">
+            <summary>
+            Redirects a request to the specified URL and specifies whether execution of the
+            current process should terminate.
+            </summary>
+            <param name="url">The target location.</param>
+            <param name="endResponse">True to terminate the current process.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.AppendCookie(Terrasoft.Web.Http.Abstractions.HttpCookieOptions)">
+            <summary>
+            Adds an HTTP cookie to the HTTP response cookie collection.
+            </summary>
+            <param name="cookieOptions">Various cookie options.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.AppendCookie(System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Adds an HTTP cookie to the HTTP response cookie collection.
+            </summary>
+            <param name="name">Cookie name.</param>
+            <param name="value">Cookie value.</param>
+            <param name="httpOnly">It specifies a http only cookie. If omitted, false is implied.</param>
+            <param name="secure">A cookie uses Secure Sockets Layer (SSL). If omitted, false is implied.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.AppendCookie(System.String,System.String)">
+            <summary>
+            Adds an HTTP cookie to the HTTP response cookie collection.
+            </summary>
+            <param name="name">Cookie name.</param>
+            <param name="value">Cookie value.</param>
+            <remarks>
+            Params httpOnly and secure are omitted. 
+            It doesn't specify a http only cookie. 
+            A cookie doesn't use Secure Sockets Layer (SSL).
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Web.Http.Abstractions.HttpResponse.Flush">
+            <summary>
+            Immediately send the response and finish processing.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.HttpSessionState">
+            <summary>
+            Provides access to session-state values as well as session-level settings.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Http.Abstractions.QueryStringCollection">
+            <summary>
+            A collection of HTTP query string variables.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Http.Abstractions.QueryStringCollection.Keys">
+            <summary>
+            Gets all the keys in the collection.
+            </summary>
+        </member>
+    </members>
+</doc>

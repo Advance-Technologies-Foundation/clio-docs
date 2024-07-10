@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.ServiceBus.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.ServiceBus.AppContext">
+            <summary>
+            Represents application context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.AppContext.#ctor">
+            <summary>
+            Creates a new instance of the application context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.AppContext.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ServiceBus.AppContext"/> class by serializer.
+            </summary>
+            <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo"/> instance.</param>
+            <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.AppContext.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.ServiceBus.Abstractions.BackgroundCallContextProvider">
+            <summary>
+            Provides a method to retrieve a call context for a background operation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.Abstractions.BackgroundCallContextProvider.GetContext">
+            <summary>
+            Returns context.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ServiceBus.Abstractions.BusAccessor">
+            <summary>
+            Bus accessor.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.Abstractions.BusAccessor.Bus">
+            <summary>
+            Bus.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ServiceBus.Abstractions.IBackgroundCallContextInitializer">
+            <summary>
+            Background call context initializer.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.Abstractions.IBackgroundCallContextInitializer.InitializeCallContext(System.Collections.Generic.Dictionary{System.String,System.Byte[]})">
+            <summary>
+            Initializes call context.
+            </summary>
+            <param name="logicalCallContext">Context data to initialize.</param>
+        </member>
+        <member name="T:Terrasoft.ServiceBus.Abstractions.SendContext">
+            <summary>
+            Stores an instance of the <see cref="P:Terrasoft.ServiceBus.Abstractions.SendContext.UserContext"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.Abstractions.SendContext.#ctor(Terrasoft.ServiceBus.UserContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ServiceBus.Abstractions.SendContext"/>.
+            </summary>
+            <param name="userContext">An instance of the <see cref="P:Terrasoft.ServiceBus.Abstractions.SendContext.UserContext"/> to store.</param>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.Abstractions.SendContext.UserContext">
+            <summary>
+            User context.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.Abstractions.SendContext.LogicalCallContext">
+            <summary>
+            Logical call context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.Abstractions.SendContext.GetCurrent">
+            <inheritdoc cref="M:Creatio.Messaging.MessageBus.ISendContextWithCallContextState.GetCurrent"/>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.Abstractions.SendContext.Restore(System.Collections.Generic.Dictionary{System.String,System.Byte[]})">
+            <inheritdoc cref="M:Creatio.Messaging.MessageBus.ISendContextWithCallContextState.Restore(System.Collections.Generic.Dictionary{System.String,System.Byte[]})"/>
+        </member>
+        <member name="T:Terrasoft.ServiceBus.UserContext">
+            <summary>
+            Represents user context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.UserContext.#ctor(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Creates a new instance of the user context.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="sessionId">Identifier of the session.</param>
+            <param name="cultureName">Culture name.</param>
+            <param name="dontGenerateSessionId">Flag that prevent session id generation.
+            When True, uses passed sessionId. Default value is False</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="userName"/> or <paramref name="sessionId"/> is null or empty.
+            </exception>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.UserContext.#ctor(System.String,System.String,System.String,System.Guid,System.Boolean)">
+            <summary>
+            Creates a new instance of the user context.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="sessionId">Identifier of the session.</param>
+            <param name="cultureName">Culture name.</param>
+            <param name="externalAccessId">The external access.</param>
+            <param name="dontGenerateSessionId">Flag that prevent session id generation.
+            When True, uses passed sessionId. Default value is False</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="userName" /> or <paramref name="sessionId" /> is null or empty.</exception>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.UserContext.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ServiceBus.UserContext"/> class by serializer.
+            </summary>
+            <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo"/> instance.</param>
+            <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext"/> instance.</param>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.UserContext.Nobody">
+            <summary>
+            Empty User, nobody.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.UserContext.UserName">
+            <summary>
+            Gets name of the user.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.UserContext.SessionId">
+            <summary>
+            Gets identifier of the session.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.UserContext.IsNobody">
+            <summary>
+            Gets value that indicates the current user context is nobody.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.UserContext.CultureName">
+            <summary>
+            Gets or sets the name of the culture.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ServiceBus.UserContext.ExternalAccessId">
+            <summary>
+            Gets the external access identifier.
+            </summary>
+            <value>
+            The external access identifier.
+            </value>
+        </member>
+        <member name="M:Terrasoft.ServiceBus.UserContext.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

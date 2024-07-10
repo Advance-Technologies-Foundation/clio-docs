@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.GoogleServices</name>
+    </assembly>
+    <members>
+        <member name="P:Terrasoft.GoogleServices.GActivitySyncProvider.CurrentUserEmail">
+            <summary>
+            Current user google calendar address.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GActivitySyncProvider.UserConnection">
+            <summary>
+            <see cref="P:Terrasoft.GoogleServices.GActivitySyncProvider.UserConnection"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GActivitySyncProvider.RequestPageSize">
+            <summary>
+            Items per request count.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.GoogleServices.GActivitySyncProvider._commitErrors">
+            <summary>
+            Commit error messages list.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.GoogleServices.GActivitySyncProvider._processedEntities">
+            <summary>
+            Google calendat items list.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.Authenticate(System.String)">
+            <summary>
+            Creates google api connection instance.
+            </summary>
+            <param name="authToken">OAuth access token.</param>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.Authenticate(System.String,System.String)">
+            <summary>
+            Creates google api connection instance.
+            </summary>
+            <param name="authToken">OAuth access token.</param>
+            <param name="refreshToken">OAuth refresh token.</param>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.Authenticate(System.String,System.String,System.String)">
+            <summary>
+            Creates google api connection instance.
+            </summary>
+            <param name="authToken">OAuth access token.</param>
+            <param name="refreshToken">OAuth refresh token.</param>
+            <param name="userEmail">User email.</param>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.GetModifiedEntities(System.DateTime)">
+            <summary>
+            Returns google appointments modified since <paramref name="modifiedSince"/> date.
+            </summary>
+            <param name="modifiedSince">Modified since filter value.</param>
+            <returns><see cref="T:Terrasoft.GoogleServices.SyncEntity`1"/> collection.</returns>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.CreateEntities(System.Collections.Generic.IEnumerable{Terrasoft.GoogleServices.GoogleActivity})">
+            <summary>
+            Creates <paramref name="entities"/> in google calendar.
+            </summary>
+            <param name="entities"><see cref="T:Terrasoft.GoogleServices.GoogleActivity"/> collection.</param>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.UpdateEntities(System.Collections.Generic.IEnumerable{Terrasoft.GoogleServices.GoogleActivity})">
+            <summary>
+            Updates <paramref name="entities"/> in google calendar.
+            </summary>
+            <param name="entities"><see cref="T:Terrasoft.GoogleServices.GoogleActivity"/> collection.</param>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.DeleteEntities(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Removes <paramref name="entityIds"/> in google calendar.
+            </summary>
+            <param name="entityIds"><see cref="T:Terrasoft.GoogleServices.GoogleActivity"/> identifiers collection.</param>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GActivitySyncProvider.Commit">
+            <summary>
+            Commits all changes to google calendar.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GoogleServices.GoogleActivity">
+            <summary>
+            Google calendar appointment instance wrap class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GoogleActivity.#ctor">
+            <summary>
+            .ctor
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.TimeZoneId">
+            <summary>
+            Windows time zone identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.Title">
+            <summary>
+            Appointment title.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.AuthorEmail">
+            <summary>
+            Appointment author email.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.Description">
+            <summary>
+            Appointment description.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.StartDate">
+            <summary>
+            Appointment start date.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.DueDate">
+            <summary>
+            Appointment due date.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.ParticipantEmails">
+            <summary>
+            Appointment participants emails list.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.Participants">
+            <summary>
+            Appointment participanst list.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.Reminders">
+            <summary>
+            Google calendar reminders.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.SourceId">
+            <summary>
+            Appointment identifier in google calendar.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.Loaded">
+            <summary>
+            Appointment loaded from google flag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.UpdatedUTC">
+            <summary>
+            Appointment last update date.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.ExtId">
+            <summary>
+            Appointment identifier in creatio system.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivity.IsPrivate">
+            <summary>
+            Is appointment private flag.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GoogleActivity.Load(Terrasoft.GoogleServices.GActivitySyncProvider)">
+            <summary>
+            Loads appointment from google.
+            </summary>
+            <param name="syncProvider"><see cref="T:Terrasoft.GoogleServices.GActivitySyncProvider"/> instance.</param>
+            <returns><c>True</c> if appointment loaded. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GoogleActivity.Load(Terrasoft.GoogleServices.GActivitySyncProvider,System.String)">
+            <summary>
+            Loads appointment from google.
+            </summary>
+            <param name="syncProvider"><see cref="T:Terrasoft.GoogleServices.GActivitySyncProvider"/> instance.</param>
+            <param name="entryId">Appointment identifier in google calendar.</param>
+            <returns><c>True</c> if appointment loaded. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="T:Terrasoft.GoogleServices.GoogleActivityParticipant">
+            <summary>
+            Google calendar appointment participant instance wrap class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GoogleActivityParticipant.#ctor">
+            <summary>
+            .ctor.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivityParticipant.Email">
+            <summary>
+            Participant email address.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivityParticipant.ResponseStatus">
+            <summary>
+            Participant invite response.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivityParticipant.Organizer">
+            <summary>
+            Is current participant appointment organizer flag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleActivityParticipant.Loaded">
+            <summary>
+            Is participant loaded from google calendar flag.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GContactSyncProvider.CheckMembership(Google.Contacts.Contact)">
+            <summary>
+            Проверяет, входит ли контакт в группу.
+            </summary>
+            <param name="contact">Контакт</param>
+            <returns>Результат проверки.</returns>
+        </member>
+        <member name="F:Terrasoft.GoogleServices.GoogleServicesUtilities._googleServerConnector">
+            <summary>
+            Returns instance of google server connector.
+            </summary>
+            <value>Instance of google server connector.</value>
+        </member>
+        <member name="F:Terrasoft.GoogleServices.GoogleServicesUtilities._googleConsumerInfo">
+            <summary>
+            Returns consumer information about google shared application.
+            </summary>
+            <value>Consumer information.</value>
+        </member>
+        <member name="P:Terrasoft.GoogleServices.GoogleServicesUtilities.UseSharedApplication">
+            <summary>
+            Returns boolean value of "Use shared Google application" system setting.
+            </summary>
+            <value>Boolean value of "Use shared Google application" system setting.</value>
+        </member>
+        <member name="F:Terrasoft.GoogleServices.GoogleServicesUtilities._consumerKey">
+            <summary>
+            Returns google shared application consumer key.
+            </summary>
+            <value>Consumer key.</value>
+        </member>
+        <member name="F:Terrasoft.GoogleServices.GoogleServicesUtilities._consumerSecret">
+            <summary>
+            Returns google shared application consumer secret.
+            </summary>
+            <value>Consumer secret.</value>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GoogleServicesUtilities.GetSysSettingValue``1(System.String)">
+            <summary>
+            Returns system setting value.
+            <param name="code">System setting code.</param>
+            </summary>
+            <returns>System setting value.</returns>
+        </member>
+        <member name="M:Terrasoft.GoogleServices.GoogleServicesUtilities.GetConsumerInfo">
+            <summary>
+            Returns consumer information about google shared application.
+            </summary>
+            <returns>Consumer information.</returns>
+        </member>
+    </members>
+</doc>

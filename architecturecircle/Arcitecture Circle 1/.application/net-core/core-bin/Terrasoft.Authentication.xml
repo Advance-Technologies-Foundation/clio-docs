@@ -1,0 +1,1845 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Authentication</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.GetAuthData(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Returns authenticated user data for provided <paramref name="token"/>.
+            </summary>
+            <param name="token">User authentication parameters.</param>
+            <returns>Authenticated user data.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.ChangePassword(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Changes user password.
+            </summary>
+            <param name="token"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance.</param>
+            <returns>Authenticated user data.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.TryDoAuthAction(System.String,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Calls <paramref name="action"/> and handles thrown exceptions.
+            </summary>
+            <param name="userName">User name for login.</param>
+            <param name="action">Authentication action.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.GetLoginResponse">
+            <summary>
+            Creates success login response.
+            </summary>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.GetLoginResponse(System.Exception)">
+            <summary>
+            Creates failed login response.
+            </summary>
+            <param name="exception">Exception instance.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.GetLoginResponseCode(System.Exception)">
+            <summary>
+            Returns login response code for <paramref name="exception"/>.
+            </summary>
+            <param name="exception"><see cref="T:System.Exception"/> instance.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponseCode"/> value.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.ValidateToken(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Checks <paramref name="token"/> required properties.
+            </summary>
+            <param name="token"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.CheckNeedPasswordRemind(System.String)">
+            <summary>
+            Checks that user password needs reminding.
+            </summary>
+            <param name="userName">User name.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.Login(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Logs in to system.
+            </summary>
+            <param name="authToken"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.DomainLoginEndpoint">
+            <summary>
+            Logs in to system using domain auth.
+            </summary>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.DomainLoginPage">
+            <summary>
+            Page to perform domain auth. Used for path through authentication.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.OAuthTokenLogin(System.Int32,System.String)">
+            <summary>
+            Logs into system using OAuth access token.
+            </summary>
+            <param name="timeZoneOffset">User's time zone offset.</param>
+            <param name="authorization">Authorization header with OAuth access token.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.DoChangePasswordLogin(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Changes user password.
+            </summary>
+            <param name="token"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LoginResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.GetDefaultWorkspacePath">
+            <summary>
+            Returns workspace path for default workspace.
+            Method was added for compatibility with .Net Framework implementation.
+            </summary>
+            <returns>Workspace path for default workspace.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.GetAuthenticationSettings">
+            <summary>
+            Returns various authentication settings (like 2FA settings, etc).
+            </summary>
+            <returns>Authentication settings.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.AuthController.StartTextCodeAuthFlow(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Returns result of text code auth flow initiation.
+            </summary>
+            <param name="authToken"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance.</param>
+            <returns>Result of text code auth flow initiation</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Controllers.BaseAuthController">
+            <summary>
+            Class provides base authentication controllers methods.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.BaseAuthController.AuthEngine">
+            <summary>
+            <see cref="T:Terrasoft.Authentication.Core.IAuthEngine"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.BaseAuthController.UserSessionManager">
+            <summary>
+            <see cref="T:Terrasoft.Web.Common.IUserSessionManager"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.BaseAuthController.AuthIdStore">
+            <summary>
+            <see cref="T:Terrasoft.Core.Store.IAuthIdStore"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.BaseAuthController.LoginPagePath">
+            <summary>
+            Login page path.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.BaseAuthController.GetApplicationUrl">
+            <summary>
+            Creates user success login redirect url.
+            </summary>
+            <returns>Redirect url.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.BaseAuthController.CreateAuthData(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Creates <see cref="T:Terrasoft.Core.AuthData"/> instance using <paramref name="token"/>.
+            </summary>
+            <param name="token"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance.</param>
+            <returns><see cref="T:Terrasoft.Core.AuthData"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.BaseAuthController.ExecuteSignInAsync(System.String,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            Creates <see cref="T:System.Security.Claims.ClaimsPrincipal"/> instance by user name and signs it in
+            for the <see cref="F:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme"/> scheme.
+            </summary>
+            <param name="userName">User name.</param>
+            <param name="extraClaims">Additional set of claims to be added to identity.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.BaseAuthController.ExecuteSignInAsync(Terrasoft.Core.AuthData,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            Creates <see cref="T:System.Security.Claims.ClaimsPrincipal"/> instance by user name and signs it in
+            for the <see cref="F:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme"/> scheme.
+            </summary>
+            <param name="authData">Authentication token.</param>
+            <param name="extraClaims">Additional set of claims to be added to identity.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.BaseAuthController.ExecuteSignOutAsync">
+            <summary>
+            Signs out.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.BaseAuthController.CheckLoginLicense">
+            <summary>
+            Checks that user has a license to login.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.BaseAuthController.RedistributeUserLicenses">
+            <summary>
+            Redistributed user licenses.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.DotNetPasswordRecoveryController.Begin(System.String,System.String)">
+            <summary>
+            Initiates password recovery flow and assigns recovery cookie.
+            </summary>
+            <param name="token">One time recovery token.</param>
+            <param name="returnPage">Page name to return after the flow is finished.</param>
+            <returns>Redirect to the recovery page.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.DotNetPasswordRecoveryController.Complete(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Completes password recovery flow.
+            </summary>
+            <param name="token"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance</param>
+            <returns>Returns <see cref="T:Terrasoft.Core.ServiceModelContract.BaseResponse"/> if password recovery has been completed successfully or not.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.DotNetPasswordRecoveryController.SendRecoveryLink(Terrasoft.Authentication.PasswordRecovery.SendRecoveryLinkRequest)">
+            <summary>
+            Sends password recovery token via email.
+            </summary>
+            <param name="requestData">Recovery password request data.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.BaseResponse"/></returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.DotNetPasswordRecoveryController.GetRecoveryModuleSettings">
+            <summary>
+            Responsible for the recovery module settings obtaining.
+            </summary>
+            <returns><see cref="T:Terrasoft.Authentication.PasswordRecovery.RecoveryPasswordModuleSettingsResponse"/></returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.OpenIdController.GetOpenIdAuthorizeUrl(Terrasoft.Core.Contracts.GetOpenIdAuthorizeUrlRequest)">
+            <summary>
+            Returns url to authorize using OpenID.
+            </summary>
+            <param name="request">Object with request data.</param>
+            <returns>OpenID Authorize endpoint url with params.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.OpenIdController.OpenIdLogoutCallback(System.String)">
+            <summary>
+            Finishes logout process initiated by OpenID EndSession request.
+            </summary>
+            <param name="state">Optional param with url</param>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.SamlController._defUserType">
+            <summary>
+            Default user type for JIT user creation.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.SamlController._samlServiceProviderApi">
+            <summary>
+            <see cref="T:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi"/> implementation intance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.SamlController._httpContextAccessor">
+            <summary>
+            <see cref="T:Microsoft.AspNetCore.Http.IHttpContextAccessor"/> implementation intance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.SamlController._samlSessionStore">
+            <summary>
+            <see cref="T:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore"/> implementation intance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.SamlController._ssoLoginPagePath">
+            <summary>
+            Single login page path.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Controllers.SamlController._ssoLoginPageWithSessionEndPath">
+            <summary>
+            Single login page with force logout on slo path.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SamlController.GetRedirectUrl(System.String)">
+            <summary>
+            Makes redirect Url.
+            </summary>
+            <param name="userName"></param>
+            <returns>Redirect Url</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SamlController.SsoLoginInternal">
+            <summary>
+            Signs in users using Single Sign On providers.
+            </summary>
+            <returns>Authenticated user name.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SamlController.GetApplicationUrl">
+            <summary>
+            Makes redirect Url with hash from <see cref="T:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore"/> storage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SamlController.CreateAuthData(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Controllers.BaseAuthController.CreateAuthData(Terrasoft.Core.ServiceModelContract.AuthToken)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SamlController.AddSsoUnauthorizedCookie(System.String,System.String)">
+            <summary>
+            Creates and adds sso logout cookie to current response.
+            </summary>
+            <param name="reason">Sso logout reason.</param>
+            <param name="message">Sso logout message.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SamlController.SafeInvokeSsoAction(System.Func{System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}})">
+            <summary>
+            Runs <paramref name="action"/>. Handles thrown exceptions.
+            Redirects to login page on error.
+            </summary>
+            <param name="action">Action instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SamlController.StartSsoLogin">
+            <summary>
+            Starts single login flow.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SSPController.PasswordRecovery(System.Guid)">
+            <summary>
+            Handles password recovery.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SSPController.UserRegistration(System.Guid)">
+            <summary>
+            Handles user registration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SSPController.RegisterAsync">
+            <summary>
+            Handles ssp user self registration route. Log in to system
+            by SysPortalConnection while handling request.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SSPController.RemindPassword">
+            <summary>
+            Handles ssp user remind password route. Log in to system
+            by SysPortalConnection while handling request.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Controllers.SSPController.Feedback(System.String,System.Guid,System.String)">
+            <summary>
+            Redirects to Feedback.html page using old request path (Nui/Feedback.aspx).
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.AuthErrorMessages">
+            <summary>
+            Class provides methods for authentication error messages creation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.AuthErrorMessages.GetLoginErrorMessage(System.Boolean,System.Boolean)">
+            <summary>
+            Returns login incorrect error messages.
+            </summary>
+            <param name="displayIncorrectPassword">Show wrong password message flag.</param>
+            <param name="displayAccountLockout">Show account locked message flag.</param>
+            <returns>Login incorrect error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.AuthErrorMessages.GetPasswordErrorMessage(System.Boolean,System.Boolean)">
+            <summary>
+            Returns password incorrect error messages.
+            </summary>
+            <param name="displayIncorrectPassword">Show wrong password message flag.</param>
+            <param name="displayAccountLockout">Show account locked message flag.</param>
+            <returns>Password incorrect error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.AuthErrorMessages.GetBlockedErrorMessage(System.Boolean,System.Boolean)">
+            <summary>
+            Returns account blocked error messages.
+            </summary>
+            <param name="displayIncorrectPassword">Show wrong password message flag.</param>
+            <param name="displayAccountLockout">Show account locked message flag.</param>
+            <returns>Account blocked error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.AuthErrorMessages.GetNotActiveStateErrorMessage">
+            <summary>
+            Returns user not active error message.
+            </summary>
+            <returns>User not active error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.AuthErrorMessages.GetAuthErrorMessage(Terrasoft.Core.Configuration.UserValidateResult,System.Boolean,System.Boolean)">
+            <summary>
+            Returns authentication error message for <paramref name="passwordValidateError"/>.
+            </summary>
+            <param name="passwordValidateError">Authentication error.</param>
+            <param name="displayIncorrectPassword">Show wrong password message flag.</param>
+            <param name="displayAccountLockout">Show account locked message flag.</param>
+            <returns>Authentication error message</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.AuthErrorMessages.GetLoginUsingProviderFailMessage(Terrasoft.Core.AuthData,System.String)">
+            <summary>
+            Returns authentication using <paramref name="providerName"/> failed message.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="providerName">Authentication provider name.</param>
+            <returns>Authentication using authentication provider failed message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.AuthErrorMessages.GetLoginAttemptFailedMessage(System.Int32,System.Int32)">
+            <summary>
+            Returns user login attempts error message.
+            </summary>
+            <param name="lockoutDuration">User lockout duration in minutes.</param>
+            <param name="currentCount">Current login attempt number.</param>
+            <returns>User login attempts error message.</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.AuthProvider">
+            <summary>
+            Public base class for authentication provider implementations.
+            </summary>
+            <remarks>Used as base class for authentication provider implementations.</remarks>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.BaseAuthEngine">
+            <summary>
+            Class provides base authentication methods.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.BaseAuthEngine.AppConnection">
+            <summary>
+            <see cref="P:Terrasoft.Authentication.Core.BaseAuthEngine.AppConnection"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.BaseAuthEngine.CredentialInputProviders">
+            <summary>
+            Authentication providers that supports credential input.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.BaseAuthEngine.ErrorMessagesProvider">
+            <summary>
+            <see cref="T:Terrasoft.Authentication.Core.AuthErrorMessages"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.LoginUsingCredentialsProviders(Terrasoft.Core.AuthData)">
+            <summary>
+            Authenticates user using credentials input.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.GetUserNameByCredentials(Terrasoft.Core.AuthData)">
+            <summary>
+            Returns authenticated using <paramref name="authData"/> credentials user name.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <returns>Authenticated user name.</returns>
+            <remarks>All <see cref="P:Terrasoft.Authentication.Core.BaseAuthEngine.CredentialInputProviders"/> fill be tried. Provider name,
+            that authenticated user will be set in authData.ProviderName property.</remarks>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ValidateCredentialsLoginResult(System.String,System.String)">
+            <summary>
+            Validates <paramref name="userName"/>.
+            </summary>
+            <param name="userName">Credentials providers user login result.</param>
+            <param name="login">User login.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ProcessInvalidLogin(System.String)">
+            <summary>
+            Process invalid login.
+            </summary>
+            <param name="login">User login.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ProcessTwoFactorInvalidLogin(System.String)">
+            <summary>
+            Process two factor invalid login.
+            </summary>
+            <param name="login">User login.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ProcessInvalidLogin(System.String,System.String)">
+            <summary>
+            Process invalid login.
+            </summary>
+            <param name="login">User login.</param>
+            <param name="errorMessage">Error message.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.LoginUsingProvider(Terrasoft.Core.AuthData,Terrasoft.Authentication.Core.IBaseAuthProvider)">
+            <summary>
+            Authenticates user using passed <paramref name="provider"/>.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="provider"><see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.CheckUserBlocked(System.String)">
+            <summary>
+            Checks is user blocked in bpmonline.
+            </summary>
+            <param name="userName">User name.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.GetAdminUnitCulture(System.String)">
+            <summary>
+            Returns user culture info instance.
+            </summary>
+            <param name="adminUnitName">User name.</param>
+            <returns><see cref="T:System.Globalization.CultureInfo"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.GetAuthErrorMessage(Terrasoft.Core.Configuration.UserValidateResult)">
+            <summary>
+            Creates authentication error message for <paramref name="passwordValidateError"/>.
+            </summary>
+            <param name="passwordValidateError">Password valudation error.</param>
+            <returns>Authentication error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.GetSysSettingsIntValue(System.String,System.Int32)">
+            <summary>
+            Returns <paramref name="code"/> system setting integer value.
+            </summary>
+            <param name="code">System setting code.</param>
+            <param name="defValue">System setting default value.</param>
+            <returns>System setting integer value.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.GetSysSettingsBoolValue(System.String)">
+            <summary>
+            Returns <paramref name="code"/> system setting boolean value.
+            </summary>
+            <param name="code">System setting code.</param>
+            <returns>System setting boolean value.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.GetProvider(System.String)">
+            <summary>
+            Returns <see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance from <see cref="F:Terrasoft.Authentication.Core.BaseAuthEngine._providers"/> dictionary.
+            </summary>
+            <param name="providerName">Requested provider name.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.CreateProvider(Terrasoft.Web.Common.ProviderSectionElement)">
+            <summary>
+            Creates <see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance using <paramref name="providerConfig"/>.
+            </summary>
+            <param name="providerConfig">Authentication providers configuration.</param>
+            <returns><see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.SetUserConnection(Terrasoft.Authentication.Core.IBaseAuthProvider)">
+            <summary>
+            Sets <see cref="T:Terrasoft.Core.UserConnection"/> instance to <paramref name="provider"/>.
+            </summary>
+            <param name="provider"><see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.InitializeAuthData(Terrasoft.Core.AuthData,System.String)">
+            <summary>
+            Initialize specified authentication data by user name from specified password recovery token
+            and user data from the database.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="recoveryToken">Password recovery token.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ClearPasswordRecoveryCache(System.String)">
+            <summary>
+            Clears <paramref name="key"/> password recovery cache.
+            </summary>
+            <param name="key">Password recovery cache key.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.CheckPasswordAvaliable(Terrasoft.Core.AuthData,System.String)">
+            <summary>
+            Checks is password information passed.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="recoveryToken">Password recovery token.</param>
+            <returns><c>True</c> if required password information passed. Returns <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.Initialize(Terrasoft.Web.Common.AuthConfigurationSection)">
+            <summary>
+            Creates authentication providers, that set in <paramref name="configuration"/>.
+            </summary>
+            <param name="configuration"><see cref="T:Terrasoft.Web.Common.AuthConfigurationSection"/> instance.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Terrasoft.Authentication.Core.BaseAuthEngine.ChangePasswordInternal(Terrasoft.Core.AuthData,System.String,System.String)" -->
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.AddProvider(Terrasoft.Authentication.Core.IBaseAuthProvider)">
+            <summary>
+            Adds <paramref name="provider"/> to <see cref="F:Terrasoft.Authentication.Core.BaseAuthEngine._providers"/> dictionary.
+            </summary>
+            <param name="provider"><see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ValidateChangePasswordData(Terrasoft.Core.AuthData,System.String)">
+            <summary>
+            Validate passed password change parameters.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="recoveryToken">Password recovery token.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.GetUserName(Terrasoft.Authentication.Core.IBaseAuthProvider,Terrasoft.Core.AuthData)">
+            <summary>
+            Returns authenticated user name using passed <paramref name="provider"/> instance.
+            </summary>
+            <param name="provider"><see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance.</param>
+            <param name="authData">User authentication parameters.</param>
+            <returns>Authenticated user name.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.SetUserCultureInfo(Terrasoft.Core.AuthData)">
+            <summary>
+            Sets user culture to <paramref name="authData"/>.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.SetAuthDataProperties(Terrasoft.Core.AuthData,System.String,Terrasoft.Authentication.Core.IBaseAuthProvider)">
+            <summary>
+            Sets authenticated user provider information to <paramref name="authData"/>.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="userName">User name.</param>
+            <param name="provider"><see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.Login(Terrasoft.Core.AuthData)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.Login(Terrasoft.Core.AuthData)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.SetUserStateHash(Terrasoft.Core.UserConnection,Terrasoft.Core.AuthData,System.String)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.SetUserStateHash(Terrasoft.Core.UserConnection,Terrasoft.Core.AuthData,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ChangePassword(Terrasoft.Core.AuthData,System.String,System.String,System.String,System.Boolean)">
+            <inheritdoc cref="!:IAuthEngine.ChangePassword(AuthData, string, string)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.ShowPasswordChangeReminding(System.String,System.String@)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.ShowPasswordChangeReminding(System.String,System.String@)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.SignOutAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.SignOutAsync(Microsoft.AspNetCore.Http.HttpContext)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.SsoLogin(Terrasoft.Core.AuthData)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.SsoLogin(Terrasoft.Core.AuthData)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.IsInternalPasswordProviderName(System.String)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.IsInternalPasswordProviderName(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.CheckIsPasswordExpired(Terrasoft.Core.Configuration.SysUserInfo)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.CheckIsPasswordExpired(Terrasoft.Core.Configuration.SysUserInfo)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.CheckIsPasswordNeedChange(Terrasoft.Core.Configuration.SysUserInfo)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.CheckIsPasswordNeedChange(Terrasoft.Core.Configuration.SysUserInfo)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthEngine.StartTextCodeAuthFlow(Terrasoft.Core.AuthData,System.Boolean)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.IAuthEngine.StartTextCodeAuthFlow(Terrasoft.Core.AuthData,System.Boolean)"/>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.BaseAuthProvider">
+            <summary>
+            Public <see cref="T:Terrasoft.Authentication.Core.IBaseAuthProvider"/> implementation.
+            </summary>
+            <remarks>Used as base class for authentication provider implementations.</remarks>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.BaseAuthProvider.Name">
+            <seealso cref="P:Terrasoft.Authentication.Core.IBaseAuthProvider.Name"/>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.BaseAuthProvider.UseCredentialsInput">
+            <seealso cref="P:Terrasoft.Authentication.Core.IBaseAuthProvider.UseCredentialsInput"/>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.BaseAuthProvider.UserType">
+            <seealso cref="P:Terrasoft.Authentication.Core.IBaseAuthProvider.UserType"/>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.BaseAuthProvider.UserConnectionInstance">
+            <summary>
+            <see cref="T:Terrasoft.Core.UserConnection"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthProvider.GetLogin">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthProvider.GetLogin(System.String,System.String)">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthProvider.GetLogin(Terrasoft.Core.AuthData)">
+            <summary>
+            Returns user login if user exists. User search parameters stored in <paramref name="authData"/>.
+            </summary>
+            <param name="authData"><see cref="T:Terrasoft.Core.AuthData"/> instance.</param>
+            <returns>User login if user exists, null otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthProvider.OnGetRedirectUrl(System.String@)">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.OnGetRedirectUrl(System.String@)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.BaseAuthProvider.OnUserLogout">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.OnUserLogout"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.DomainAuth.DomainAuthLoginScriptGenerator.Generate">
+            <summary>
+            Generates configuration script.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.DomainAuth.DomainAuthProvider.GetLogin">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.DomainAuth.DomainAuthProvider.GetLogin(System.String,System.String)">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.DomainAuth.DomainAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})"/>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.DotNetCookieEncryptor">
+            <inheritdoc cref="T:Terrasoft.Authentication.Core.ICookieEncryptor"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.DotNetCookieEncryptor.Encrypt(System.String)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.ICookieEncryptor.Encrypt(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.DotNetCookieEncryptor.Decrypt(System.String)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.ICookieEncryptor.Decrypt(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.Login(Terrasoft.Core.AuthData)">
+            <summary>
+            Authenticate user using passed <paramref name="authData"/> instance.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <returns>Authenticated user name.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.SetUserStateHash(Terrasoft.Core.UserConnection,Terrasoft.Core.AuthData,System.String)">
+            <summary>
+            Sets authenticates user state hash value to <paramref name="authData"/>.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <param name="authData">User authentication parameters.</param>
+            <param name="userName">Authenticated user name.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.ChangePassword(Terrasoft.Core.AuthData,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Changes user password.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="newPassword">New user password.</param>
+            <param name="recoveryToken">Password recovery token.</param>
+            <param name="clientIP">Client IP.</param>
+            /// <param name="skipValidate">Flag to skip password and recovery token validation.</param>
+            <returns>Authenticated user name.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.ShowPasswordChangeReminding(System.String,System.String@)">
+            <summary>
+            Check change password message need to be shown.
+            </summary>
+            <param name="userName">User name.</param>
+            <param name="message">Change password message.</param>
+            <returns><c>True</c> if change password message need to be shown. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.SignOutAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Signs out current user and removes auth cookie.
+            </summary>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.SsoLogin(Terrasoft.Core.AuthData)">
+            <summary>
+            Signs in users using Single Sign On providers.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <returns>Authenticated user name.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.IsInternalPasswordProviderName(System.String)">
+            <summary>
+            Determines whether specified provider name is internal password provider.
+            </summary>
+            <param name="providerName">Provider name.</param>
+            <returns><b>true</b>, if specified provider name is internal password provider, otherwise <b>false</b>.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.CheckIsPasswordExpired(Terrasoft.Core.Configuration.SysUserInfo)">
+            <summary>
+            Checks user password is expired.
+            Throws <see cref="T:Terrasoft.Common.PasswordExpiredException"/> if password is expired.
+            </summary>
+            <param name="userInfo">User info.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.CheckIsPasswordNeedChange(Terrasoft.Core.Configuration.SysUserInfo)">
+            <summary>
+            Checks user password force change is set.
+            Throws <see cref="T:Terrasoft.Common.PasswordExpiredException"/> if force change is set.
+            </summary>
+            <param name="userInfo">User info.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.OpenIdLogin(Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthorizeResponse,Terrasoft.Core.AuthData@,System.String)">
+            <summary>
+            Performs user login into Creatio using OpenID callback parameters.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.GetUseNewShellForUser(System.String)">
+            <summary>
+            Returns if user should be redirected to Shell UI.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.GetAuthenticationSettings">
+            <summary>
+            Returns an object with system authentication settings.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IAuthEngine.StartTextCodeAuthFlow(Terrasoft.Core.AuthData,System.Boolean)">
+            <summary>
+            Begin authentication with text code second factor.
+            </summary>
+            <param name="authData">User authentication parameters.</param>
+            <param name="skipValidate">Flag to skip user validation.</param>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.IBaseAuthProvider.Name">
+            <summary>
+            Provider name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.IBaseAuthProvider.UseCredentialsInput">
+            <summary>
+            Is using user input in provider implementation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.IBaseAuthProvider.UserType">
+            <summary>
+            <see cref="P:Terrasoft.Authentication.Core.IBaseAuthProvider.UserType"/> used in provider implementation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin">
+            <summary>
+            Returns user login if user exists.
+            </summary>
+            <returns>User login if user exists, null otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin(System.String,System.String)">
+            <summary>
+            Returns user login if user exists. Use <paramref name="userName"/> and <paramref name="userPassword"/>
+            for user search.
+            </summary>
+            <param name="userName">User name.</param>
+            <param name="userPassword">User password.</param>
+            <returns>User login if user exists, null otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IBaseAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Initializes provider instance with <paramref name="parameters"/> from web.config.
+            </summary>
+            <param name="parameters">Parameters values from config file.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IBaseAuthProvider.OnGetRedirectUrl(System.String@)">
+            <summary>
+            Creates redirect url for success authentication.
+            </summary>
+            <param name="redirectUrl">Default return url value.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.IBaseAuthProvider.OnUserLogout">
+            <summary>
+            User logout event handler.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.ICookieEncryptor">
+            <summary>
+            Class provides basic cookie encryption functionality.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.ICookieEncryptor.Encrypt(System.String)">
+            <summary>
+            Encrypts cookie.
+            </summary>
+            <param name="value">Cookie value.</param>
+            <returns>Encrypted cookie value.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.ICookieEncryptor.Decrypt(System.String)">
+            <summary>
+            Decrypts cookie.
+            </summary>
+            <param name="value">Encrypted cookie value.</param>
+            <returns>Decrypted cookie value.</returns>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.InternalUserPassword.BaseInternalUserPasswordProvider.UseCredentialsInput">
+            <seealso cref="P:Terrasoft.Authentication.Core.IBaseAuthProvider.UseCredentialsInput"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.InternalUserPassword.BaseInternalUserPasswordProvider.GetLogin">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.InternalUserPassword.BaseInternalUserPasswordProvider.GetLogin(System.String,System.String)">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin(System.String,System.String)"/>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.InternalUserPassword.BaseSspUserPasswordProvider._userPrefix">
+            <summary>
+            Portal user name prefix.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.InternalUserPassword.BaseSspUserPasswordProvider.UseCredentialsInput">
+            <summary>
+            <see cref="P:Terrasoft.Authentication.Core.BaseAuthProvider.UseCredentialsInput"/>
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.InternalUserPassword.BaseSspUserPasswordProvider.UserType">
+            <summary>
+            <see cref="P:Terrasoft.Authentication.Core.BaseAuthProvider.UserType"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.InternalUserPassword.BaseSspUserPasswordProvider.FixSspUserName(System.String)">
+            <summary>
+            Removes ssp user name prefix from <paramref name="userName"/>.
+            </summary>
+            <param name="userName">SSP user name.</param>
+            <returns>Fixed SSP user name.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.InternalUserPassword.BaseSspUserPasswordProvider.GetLogin(System.String,System.String)">
+            <summary>
+            <see cref="M:Terrasoft.Authentication.Core.BaseAuthProvider.GetLogin(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.InternalUserPassword.BaseSspUserPasswordProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            <see cref="M:Terrasoft.Authentication.Core.BaseAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})"/>
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.InvalidCredentialsErrorCode">
+            <summary>
+            Invalid credentials error code.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.DefaultSearchPattern">
+            <summary>
+            Default search pattern.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.UseCredentialsInput">
+            <seealso cref="P:Terrasoft.Authentication.Core.IBaseAuthProvider.UseCredentialsInput"/>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.ServerPath">
+            <summary>
+            LDAP server path.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.DistinguishedName">
+            <summary>
+            Distinguished name. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.UseLoginUserLDAPEntryDN">
+            <summary>
+            Sign that LDAP unique entry login user is used. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.KeyDistributionCenter">
+            <summary>
+            Key distribution center. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.SearchPattern">
+            <summary>
+            Search pattern. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.AuthType">
+            <summary>
+            <see cref="T:System.DirectoryServices.Protocols.AuthType"/> enumeration.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.SecureSocketLayer">
+            <summary>
+            Indicates that secure socket layer used. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.CertificateFileName">
+            <summary>
+            Certificate file name. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.CheckCanConnectToLdapServer(System.String,System.String)">
+            <summary>
+            Checks that it is possible to successfully connect to LDAP server with specified parameters.
+            </summary>
+            <param name="ldapLogin">Ldap login.</param>
+            <param name="userPassword">User password.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.CheckIsInvalidCredentialsError(System.Exception)">
+            <summary>
+            Checks that it is invalid credentials error occurred during connection to LDAP server.
+            </summary>
+            <param name="ex"><see cref="T:System.Exception"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.GetUserName(System.String)">
+            <summary>
+            Gets user name without domain.
+            </summary>
+            <param name="domainUserName">User name with domain prefix.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.GetLogin">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.GetLogin(System.String,System.String)">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.GetLogin(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <seealso cref="M:Terrasoft.Authentication.Core.IBaseAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.NetFrameworkLdapProvider.GetKeyDistributionCenter">
+            <summary>
+            Gets distribution center key.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.NetFrameworkLdapProvider.CheckCanConnectToLdapServer(System.String,System.String)">
+            <seealso cref="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.CheckCanConnectToLdapServer(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.NetFrameworkLdapProvider.CheckIsInvalidCredentialsError(System.Exception)">
+            <seealso cref="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.CheckIsInvalidCredentialsError(System.Exception)"/>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.Ldap.NetStandardLdapProvider.InsecurePort">
+            <summary>
+            Insecure (not for SSL connection) port.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.Ldap.NetStandardLdapProvider.SecurePort">
+            <summary>
+            Secure (for SSL connection) port.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.Ldap.NetStandardLdapProvider._log">
+            <summary>
+            <see cref="T:Common.Logging.ILog"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.NetStandardLdapProvider.CertificateValidationCallback(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <see cref="E:Novell.Directory.Ldap.LdapConnection.UserDefinedServerCertValidationDelegate"/> handler.
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.NetStandardLdapProvider.CheckCanConnectToLdapServer(System.String,System.String)">
+            <seealso cref="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.CheckCanConnectToLdapServer(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.Ldap.NetStandardLdapProvider.CheckIsInvalidCredentialsError(System.Exception)">
+            <seealso cref="M:Terrasoft.Authentication.Core.Ldap.BaseLdapProvider.CheckIsInvalidCredentialsError(System.Exception)"/>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.LoginAttemptCounter.ErrorMessagesProvider">
+            <summary>
+            <see cref="T:Terrasoft.Authentication.Core.AuthErrorMessages"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.GetSysSettingsIntValue(System.String,System.Int32)">
+            <summary>
+            Returns <paramref name="code"/> system setting integer value.
+            </summary>
+            <param name="code">System setting code.</param>
+            <param name="defValue">System setting default value.</param>
+            <returns>System setting integer value.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.UseLoginAttemptCount">
+            <summary>
+            Checks is user login attempt count enabled.
+            </summary>
+            <returns><c>True</c> when user login attempt count enabled. returns <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.GetUserLoginAttemptCountUpdate(Terrasoft.Core.UserConnection,System.String,System.Int32)">
+            <summary>
+            Creates user login attempt count <see cref="T:Terrasoft.Core.DB.Update"/> instance.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <param name="userName">User name.</param>
+            <param name="loginAttemptCount">New login attempt count value.</param>
+            <returns><see cref="T:Terrasoft.Core.DB.Update"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.LockUserAndResetUserLoginFailedCount(System.String,System.Int32)">
+            <summary>
+            Sets user locked for <paramref name="blockMinutes"/> minutes.
+            </summary>
+            <param name="userName">User name.</param>
+            <param name="blockMinutes">User block period in minutes.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.CheckUserLoginAttemptCount(System.String,System.Int32)">
+            <summary>
+            Checks current user login attempt allowed.
+            </summary>
+            <param name="userName">User name.</param>
+            <param name="currentCount">Current attempts count.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.SetUserLoginAttemptCount(Terrasoft.Core.UserConnection,System.String,System.Int32)">
+            <summary>
+            Sets user login attempt count
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <param name="userName">User name.</param>
+            <param name="loginAttemptCount">New login attempt count value.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.Increase(System.String)">
+            <summary>
+            Increments user login attempts count.
+            </summary>
+            <param name="userName">User name.</param>
+            <returns>Current attempts count.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.LoginAttemptCounter.Reset(System.String)">
+            <summary>
+            Clears user login attempt count.
+            </summary>
+            <param name="userName">User name.</param>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider">
+            <summary>
+            Provides methods for Single Sign On authentication.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider._userType">
+            <summary>
+            <see cref="P:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.UserType"/> instance, which is used by provider instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider._useJit">
+            <summary>
+            Signs that "Just in time" (JIT) is enabled for SSO provider.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.UserConnection">
+            <summary>
+            <see cref="P:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.UserConnection"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider._sysAdminUtilities">
+            <summary>
+            <see cref="P:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.SysAdminUtilities"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.DistributeLicensesForUser(System.Guid)">
+            <summary>
+            Distribute licenses for user.
+            </summary>
+            <param name="userId">User identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.CreateContact(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Creates <see cref="T:Terrasoft.Core.Configuration.Contact"/> record.
+            </summary>
+            <param name="name">User name.</param>
+            <param name="claimList">Claim data.</param>
+            <returns>Contact values.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.CreateUser(System.String,Terrasoft.Core.AuthData)">
+            <summary>
+            Creates user, his contact, roles and distributes license user.
+            </summary>
+            <param name="name">User name.</param>
+            <param name="authData"><see cref="T:Terrasoft.Core.AuthData"/> instance.</param>
+            <returns><c>True</c> if user created, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.TryFillContactFields(System.Collections.Generic.Dictionary{System.String,System.Object},Terrasoft.Core.AuthData)">
+            <summary>
+            Calls update contact process. Catches all exceptions thrown.
+            </summary>
+            <param name="contactValues">Contact column values.</param>
+            <param name="authData"><see cref="T:Terrasoft.Core.AuthData"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.RemoveExistingRoles(System.Guid)">
+            <summary>
+            Removes existing user roles.
+            </summary>
+            <param name="userId">User id.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.AddUserRoles(System.Guid,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Creates user roles.
+            </summary>
+            <param name="userId">User id.</param>
+            <param name="claimList">Saml assertion parameters list.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.UpdateUserRoles(System.Guid,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Updates user roles.
+            </summary>
+            <param name="userId">User id.</param>
+            <param name="claimList">Saml assertion parameters list.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.UpdateUser(System.Guid,System.Guid,Terrasoft.Core.AuthData)">
+            <summary>
+            Updates user roles and user contact.
+            </summary>
+            <param name="userId"><see cref="T:Terrasoft.Core.Configuration.SysAdminUnit"/> instance id.</param>
+            <param name="contactId"><see cref="T:Terrasoft.Core.Configuration.Contact"/> instance id.</param>
+            <param name="authData"><see cref="T:Terrasoft.Core.AuthData"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.GetIsRolesChanged(System.Guid,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Checks if user roles have been changed.
+            </summary>
+            <param name="userId"><see cref="T:Terrasoft.Core.Configuration.SysAdminUnit"/> instance id.</param>
+            <param name="claimList">Saml assertion parameters list.</param>
+            <returns><c>true</c> if user role list was changed, <c>fasle</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.GetSysAdminUnit(Terrasoft.Core.AuthData)">
+            <summary>
+            Search active <see cref="T:Terrasoft.Core.Configuration.SysAdminUnit"/> by <paramref name="authData"/>.
+            </summary>
+            <param name="authData"><see cref="T:Terrasoft.Core.AuthData"/> instance.</param>
+            <returns><see cref="T:Terrasoft.Core.Configuration.SysAdminUnit"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.ReadSAMLFieldNameConverterValue(System.Data.IDataReader,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Reads SAML fileds to contact columns lookup row from <paramref name="dataReader"/>.
+            </summary>
+            <param name="dataReader"><see cref="T:System.Data.IDataReader"/> implementation instance.</param>
+            <param name="claimList">Saml assertion parameters list.</param>
+            <returns>SAML fileds to contact columns lookup row.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.GetUseJit">
+            <summary>
+            Determines whether Just-in-Time (JIT) Provisioning is enabled.
+            </summary>
+            <returns><c>True</c> when JIT enabled. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.CreateContactValues(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Creates values for Contact record.
+            </summary>
+            <param name="claimList">Claim data.</param>
+            <returns>Values for corresponding Contact fields.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.GetLogin">
+            <summary>
+            <see cref="M:Terrasoft.Authentication.Core.BaseAuthProvider.GetLogin"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.GetLogin(System.String,System.String)">
+            <summary>
+            <see cref="M:Terrasoft.Authentication.Core.BaseAuthProvider.GetLogin(System.String,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.GetLogin(Terrasoft.Core.AuthData)">
+            <summary>
+            <see cref="M:Terrasoft.Authentication.Core.BaseAuthProvider.GetLogin(Terrasoft.Core.AuthData)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            <see cref="M:Terrasoft.Authentication.Core.BaseAuthProvider.Initialize(System.Collections.Generic.IDictionary{System.String,System.String})"/>
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientCache">
+            <summary>
+            Interface for cache of OpenID clients. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientCache.Set(System.String,Terrasoft.Services.IOpenIdIdentityClient)">
+            <summary>
+            Sets OpenID client to cache.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientCache.Get(System.String)">
+            <summary>
+            Gets OpenId client from cache.
+            </summary>
+            <returns>OpenID Client or null if it's not in cache.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientCache.Clear(System.String)">
+            <summary>
+            Clears specified providers client from cache.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdDeprovisioner.DeprovisionUser(System.String)">
+            <summary>
+            Deprovision User. Use <paramref name="openIdSub"/>
+            </summary>
+            <param name="openIdSub">OpenID subject</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.TryTransformUrlDomain(Terrasoft.Core.UserConnection,System.Uri,System.String,System.String@)">
+            <summary>
+            Transforms url replacing its domain with domain of the given <paramref name="requestUrl"/>.
+            </summary>
+            <remarks>For transformation should be used Regex pattern like
+            ^(?&lt;start&gt;(?:(?:http:|https:|)[\/][\/])?(?:[^\/]+[.])*)
+            (?&lt;domain&gt;terrasoft.ua|terrasoft.ru|creatio.com)(?&lt;end&gt;.+)$
+            </remarks>
+            <param name="userConnection">User connection.</param>
+            <param name="url">Url to be transformed.</param>
+            <param name="requestUrl">Request url, domain of which will be used.</param>
+            <param name="transformedUrl">Transformed url.</param>
+            <returns><c>true</c> if transformation succeeded, otherwise - <c>false</c>.</returns>
+            <exception cref="T:System.FormatException">Pattern of transformation Regex not includes required groups:
+            'start', 'domain', 'end'.</exception>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.GetOpenIdAuthorizeResponse(System.String,System.String,System.String,System.String)">
+            <summary>
+            Forms correct authorization response from OpenId callback parameters.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.GetSsoSettingCodeFromState(System.String)">
+            <summary>
+            Extracts provider code from OpenId state.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.ValidateRequiredOpenIdParameters(System.String)">
+            <summary>
+            Validates Open Id parameters.
+            </summary>
+            <param name="code">Authorization code.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.GetReturnUrlFromState(System.String)">
+            <summary>
+            Extracts return url from OpenId state.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.GetUserTypeFromState(System.String)">
+            <summary>
+            Extracts user type from OpenId state.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientFactory">
+            <summary>
+            Provides methods to obtain OpenID client depending on used identity provider. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientFactory.GetClient(System.String)">
+            <summary>
+            Get client by provider code.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdProvisioner.ProvisionUser(System.Collections.Generic.List{System.Security.Claims.Claim},Terrasoft.Core.UserType)">
+            <summary>
+            Provision User. Use <paramref name="claims"/>
+            </summary>
+            <param name="claims">Claim data.</param>
+            <param name="userType">User type.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthorizeInitiator.IsAuthenticatedUsingOpenId(Terrasoft.Core.UserConnection)">
+            <summary>
+            Determines if user was authenticated using OpenID.
+            </summary>
+            <param name="userConnection">User connection.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthorizeInitiator.IsOpenIdAutoLogin">
+            <summary>
+            Determines if the request prefers OpenID protocol as automatic authentication method. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthorizeInitiator.GetOpenIdAuthorizeUrl(System.String,System.String,System.String)">
+            <summary>
+            Returns url to authorize OpenID session. After auth server authorized the session
+            <see cref="F:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdConstants.AuthorizeCallbackEndpoint"/> endpoint will handle the result.
+            </summary>
+            <param name="returnUrl">Url to be redirected after session was authorized.</param>
+            <param name="providerCode">Authorization provider code</param>
+            <param name="userType">User type.</param>
+            <returns>OpenID Authorize endpoint url with params.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthorizeInitiator.TryRedirectToOpenIdAuthorizeEndpoint">
+            <summary>
+            Tries to redirect web user to OpenID auth server for authentication and returning with OpenID token.
+            </summary>
+            <returns><c>True</c> if succeeded to redirect.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthorizeInitiator.GetOpenIdEndSessionUrl(Terrasoft.Core.UserConnection,System.String)">
+            <summary>
+            Returns url to end OpenID session. After auth server has finished the session
+            <see cref="F:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdConstants.EndSessionCallbackEndpoint"/> endpoint will handle the result.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="redirectUrl">Optional url to be redirected after session was ended.</param>
+            <returns>OpenID EndSession endpoint url with params.</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthenticationDisabledException">
+            <summary>
+            Class provides exception if open id authentication disabled.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdAuthenticationException">
+            <summary>
+            Class provides exception for open id authentication on errors handling.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdProvisionerException">
+            <summary>
+            Class provides exception for open id provisioning on errors handling.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdHelper.TryTransformUrlDomain(Terrasoft.Core.UserConnection,System.Uri,System.String,System.String@)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.TryTransformUrlDomain(Terrasoft.Core.UserConnection,System.Uri,System.String,System.String@)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdHelper.GetUserTypeFromState(System.String)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdHelper.GetUserTypeFromState(System.String)"/>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdIdentityClientFactory">
+            <summary>
+            Default implementation for <see cref="T:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientFactory"/> with OpenID clients caching.
+            For each provider client is created only once.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdIdentityClientFactory.GetClient(System.String)">
+            <inheritdoc cref="T:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdIdentityClientFactory"></inheritdoc>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdLoginScriptGenerator.Generate">
+            <summary>
+            Generates configuration script.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdProvisioner">
+            <summary>
+            Provides methods for Provision User.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.OpenId.OpenIdProvisioner.ProvisionUser(System.Collections.Generic.List{System.Security.Claims.Claim},Terrasoft.Core.UserType)">
+            <seealso cref="M:Terrasoft.Authentication.Core.SSO.OpenId.IOpenIdProvisioner.ProvisionUser(System.Collections.Generic.List{System.Security.Claims.Claim},Terrasoft.Core.UserType)"/>
+        </member>
+        <member name="F:Terrasoft.Authentication.Core.SSO.SsoAuthLoginScriptGenerator._ssoSettings">
+            <summary>
+            Returns <see cref="P:Terrasoft.Authentication.Core.SSO.SsoAuthLoginScriptGenerator.SsoSettings"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.SsoAuthLoginScriptGenerator.Generate">
+            <summary>
+            Generates configuration script.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.SsoAuthProviderException">
+            <summary>
+            Class provides exception for single sign on errors handling.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Extensions.AuthenticationServiceCollectionExtensions">
+            <summary>
+            Class provides extension methods for cookie based authentication scheme enabling.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Extensions.AuthenticationServiceCollectionExtensions.AddAuthenticationHandlers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers authentication schemes.
+            </summary>
+            <param name="source"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> instance.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Extensions.AuthenticationServiceCollectionExtensions.UseBpmonlineCookieAuthentication(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Enables cookie-based authentication.
+            </summary>
+            <param name="source"><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> instance.</param>
+            <returns><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Extensions.AuthenticationServiceCollectionExtensions.SetBpmonlineAuthorizationPolicy(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Sets authorized user required by default.
+            </summary>
+            <param name="source"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> instance.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Extensions.AuthenticationServiceCollectionExtensions.UseSamlMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Adds saml middleware for service initiated slo request.
+            </summary>
+            <param name="source"><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> implementation instance.</param>
+            <returns><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> implementation instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Extensions.ClaimsExtensions">
+            <summary>
+            Extension methods for work with <see cref="T:System.Security.Claims.Claim"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Extensions.ClaimsExtensions.FindValue``1(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.String)">
+            <summary>
+            Searches for claim with given type. If found returns its value converted to the given
+            <typeparamref name="T"/> type. Otherwise returns default value of this type.
+            </summary>
+            <returns>Found value or default(T).</returns>
+            <exception cref="T:System.InvalidOperationException">Claim list contains more than one element with the given type.
+            </exception>
+        </member>
+        <member name="T:Terrasoft.Authentication.Middleware.AuthPathThroughMiddleware">
+            <summary>
+            Middleware to handle path through domain authentication.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Middleware.OpenIdMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,Terrasoft.Web.Common.SSO.OpenId.IOpenIdAuthorizeInitiator)">
+            <summary>
+            Initiates OpenID flow.
+            </summary>
+            <param name="httpContext"><see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> instance.</param>
+            <param name="openIdAuthorizeInitiator"><see cref="T:Terrasoft.Web.Common.SSO.OpenId.IOpenIdAuthorizeInitiator"/>
+            implementation instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Middleware.SsoRequestMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi,Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore,Terrasoft.Web.Common.IUserSessionManager)">
+            <summary>
+            Initiates service inititated SSO flow.
+            </summary>
+            <param name="httpContext"><see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> instance.</param>
+            <param name="samlServiceProviderApi"><see cref="T:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi"/> implementation instance.</param>
+            <param name="samlSessionStore"><see cref="T:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore"/> implementation instance.</param>
+            <param name="manager"><see cref="T:Terrasoft.Web.Common.IUserSessionManager"/> implementation instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.EnableSendNotificationForRecoveryPasswordFailed.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Authentication.PasswordRecovery.EnableSendNotificationForRecoveryPasswordFailed"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService">
+            <summary>
+            Defines methods of password recovery service.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.BeginPasswordRecovery(System.String,System.String)">
+            <summary>
+            Initiates password recovery flow and assigns recovery cookie.
+            </summary>
+            <param name="token">One time recovery token.</param>
+            <param name="returnPage">Page name to return after the flow is finished.</param>
+            <returns>Redirect Uri for the recovery page.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.CompletePasswordRecovery(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <summary>
+            Completes password recovery flow.
+            </summary>
+            <param name="token"><see cref="T:Terrasoft.Core.ServiceModelContract.AuthToken"/> instance</param>
+            <returns>Sending status is <c>true</c> if password change has been completed successfully;
+            otherwise <c>false</c>. At the same time, ErrorInfo contains the error message.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.SendRecoveryLink(Terrasoft.Authentication.PasswordRecovery.SendRecoveryLinkRequest)">
+            <summary>
+            Sends password recovery token via email.
+            </summary>
+            <param name="requestData">Recovery password request data.</param>
+            <returns>Sending status is <c>true</c> if sending has been completed successfully; otherwise <c>false</c>.
+            At the same time, ErrorInfo contains the error message.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.GetRecoveryModuleSettings">
+            <summary>
+            Responsible for the recovery module settings obtaining.
+            </summary>
+            <returns>Password module settings.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.PasswordRecoveryService.BeginPasswordRecovery(System.String,System.String)">
+            <inheritdoc cref="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.BeginPasswordRecovery(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.PasswordRecoveryService.CompletePasswordRecovery(Terrasoft.Core.ServiceModelContract.AuthToken)">
+            <inheritdoc cref="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.CompletePasswordRecovery(Terrasoft.Core.ServiceModelContract.AuthToken)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.PasswordRecoveryService.SendRecoveryLink(Terrasoft.Authentication.PasswordRecovery.SendRecoveryLinkRequest)">
+            <inheritdoc cref="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.SendRecoveryLink(Terrasoft.Authentication.PasswordRecovery.SendRecoveryLinkRequest)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.PasswordRecovery.PasswordRecoveryService.GetRecoveryModuleSettings">
+            <inheritdoc cref="M:Terrasoft.Authentication.PasswordRecovery.IPasswordRecoveryService.GetRecoveryModuleSettings"/>
+        </member>
+        <member name="T:Terrasoft.Authentication.PasswordRecovery.RecoveryPasswordModuleSettingsResponse">
+            <summary>
+            Class for recovery password module settings response.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.PasswordRecovery.RecoveryPasswordModuleSettingsResponse.LogoImageUrls">
+            <summary>
+            Url for the logo image. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.PasswordRecovery.RecoveryPasswordModuleSettingsResponse.AppFramework">
+            <summary>
+            Application framework.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.PasswordRecovery.RecoveryPasswordModuleSettingsResponse.PasswordComplexitySettings">
+            <summary>
+            System settings for the password complexity validation.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.PasswordRecovery.SendRecoveryLinkRequest">
+            <summary>
+            Class which represents request for send recovery link.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.PasswordRecovery.SendRecoveryLinkRequest.Email">
+            <summary>
+            Email where the recovery link needs to be sent.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Authentication.PasswordRecovery.SendRecoveryLinkRequest.ReturnPage">
+            <summary>
+            Email where the recovery link needs to be sent.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.TOTP.TwoFactorTotpAuthenticator.Authenticate(Terrasoft.Core.AuthData)">
+            <summary>
+            Checks only first factor if TOTP is disabled.
+            Checks both factors if TOTP is enabled.
+            </summary>
+            <param name="authData"></param>
+            <returns>Verification Result</returns>
+            <exception cref="T:Terrasoft.Authentication.TOTP.Exceptions.TotpIsNotEnabledException"></exception>
+        </member>
+        <member name="T:Terrasoft.Authentication.TwoFactor.Enabled2FAFlow">
+            <summary>
+            Indicates whether to enable two-factor authentication flow.
+            </summary>
+            <inheritdoc cref="T:Creatio.FeatureToggling.FeatureMetadata"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.TwoFactor.Enabled2FAFlow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Authentication.TwoFactor.Enabled2FAFlow"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.TwoFactor.SysTwoFactorAuthFlowListener">
+            <summary>
+            Listener for 'SysTwoFactorAuthFlow' entity events.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Entities.Events.BaseEntityEventListener" />
+        </member>
+        <member name="M:Terrasoft.Authentication.TwoFactor.SysTwoFactorAuthFlowListener.OnUpdating(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Updating event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing
+            the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.TwoFactor.SysTwoFactorAuthFlowListener.OnDeleting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Deleting event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing the
+            event data.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.TwoFactor.SysTwoFactorAuthFlowListener.OnSaving(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Saving event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.TwoFactor.SysTwoFactorAuthFlowListener.OnInserting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Inserting event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.TwoFactor.TwoFactorLoginScriptGenerator.Generate">
+            <summary>
+            Generates configuration script.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.AuthDataValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Checks current user <see cref="T:Terrasoft.Core.AuthData"/> valid.
+            </summary>
+            <param name="user">User info.</param>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><c>True</c> if user <see cref="T:Terrasoft.Core.AuthData"/> valid.
+            Otherwise returns <c>false</c>.</returns>
+            <seealso cref="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)"/>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator">
+            <summary>
+            Base functionality of validate user principal.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Validate cookie user principal.
+            </summary>
+            <param name="user">User record instance.</param>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><c>True</c>, if user validation passed, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.GetErrorMessage">
+            <summary>
+            Get error message.
+            </summary>
+            <returns>Error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.CheckUser(Terrasoft.Core.Configuration.SysUserInfo)">
+            <summary>
+            Checks base user properties.
+            </summary>
+            <param name="user">User record instance.</param>
+            <returns><c>True</c>, if user valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.RedirectToLoginWithErrorCode(Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext,Terrasoft.Web.Common.LoginErrorCode)">
+            <summary>
+            Redirect to Login page with error code in query string.
+            </summary>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <param name="errorCode"><see cref="T:Terrasoft.Web.Common.LoginErrorCode"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.TryValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <inheritdoc cref="M:Terrasoft.Authentication.Validators.ISysUserInfoValidator.TryValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)"/>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler">
+            <summary>
+            Called all implementations of <see cref="T:Terrasoft.Authentication.Validators.ISysUserInfoValidator"/>,
+            which validated user principal.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.SetLocationHeader(Microsoft.AspNetCore.Authentication.RedirectContext{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions})">
+            <summary>
+            Set value from response header location to RedirectUri.
+            </summary>
+            <param name="context">Context.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.FindSysUserInfo(Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Get and validate <see cref="T:Terrasoft.Core.Configuration.SysUserInfo"/> instance.
+            </summary>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><see cref="T:Terrasoft.Core.Configuration.SysUserInfo"/> instance if validation is passed
+            <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.GetUserName(Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Get <see cref="T:System.Security.Claims.ClaimsPrincipal"/> user name from <see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.
+            </summary>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><see cref="T:System.Security.Claims.ClaimsPrincipal"/> user name.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.GetErrorMessage">
+            <summary>
+            Get error message.
+            </summary>
+            <returns>Error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.SetRedirectUri(Microsoft.AspNetCore.Authentication.RedirectContext{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions})">
+            <summary>
+            Sets location header from response to <paramref name="context"/> RedirectUri property.
+            </summary>
+            <param name="context">Redirect context instance.</param>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.ValidatePrincipal(Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Validate user principal.
+            </summary>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns>Validate principal task.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.RedirectToLogin(Microsoft.AspNetCore.Authentication.RedirectContext{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions})">
+            <inheritdoc cref="M:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationEvents.RedirectToLogin(Microsoft.AspNetCore.Authentication.RedirectContext{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions})"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.CookieAuthenticationEventsHandler.SignedIn(Microsoft.AspNetCore.Authentication.Cookies.CookieSignedInContext)">
+            <inheritdoc cref="M:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationEvents.SignedIn(Microsoft.AspNetCore.Authentication.Cookies.CookieSignedInContext)"/>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.Exception.UserPrincipalValidationException">
+            <summary>
+            Exception that indicate a user principal validation.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.ExternalAccessValidator">
+            <summary>
+            Validates external access information.
+            </summary>
+            <seealso cref="T:Terrasoft.Authentication.Validators.IExternalAccessValidator" />
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.ExternalAccessValidator.ValidateExternalAccessToken(System.String,Terrasoft.Core.UserConnection)">
+            <summary>
+            Authorizes user using OAuth access token.
+            </summary>
+            <param name="accessToken">The access token.</param>
+            <param name="userConnection"></param>
+            <returns>Validated user name and external access identifier.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.ExternalAccessValidator.Validate(Terrasoft.Core.UserConnection,System.String,System.Guid)">
+            <summary>
+            Validates the specified external access.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="externalAccessId">The external access identifier.</param>
+            <param name="sysAdminUnitId">User identifier.</param>
+            <returns><b>true</b> if information is valid. Otherwise - <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.ExternalAccessValidator.Validate(Terrasoft.Core.UserConnection,System.String,System.Guid,System.String@)">
+            <summary>
+            Validates the specified external access.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="externalAccessId">The external access identifier.</param>
+            <param name="sysAdminUnitId">User identifier.</param>
+            <param name="message">Error message in case access is invalid.</param>
+            <returns><b>true</b> if information is valid. Otherwise - <b>false</b>.</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.IExternalAccessValidator">
+            <summary>
+            Interface for validating external access information.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.IExternalAccessValidator.Validate(Terrasoft.Core.UserConnection,System.String,System.Guid)">
+            <summary>
+            Validates the specified external access.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="externalAccessId">The external access identifier.</param>
+            <param name="sysAdminUnitId">User identifier.</param>
+            <returns><b>true</b> if information is valid. Otherwise - <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.IExternalAccessValidator.Validate(Terrasoft.Core.UserConnection,System.String,System.Guid,System.String@)">
+            <summary>
+            Validates the specified external access.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="externalAccessId">The external access identifier.</param>
+            <param name="sysAdminUnitId">User identifier.</param>
+            <param name="message">Error message in case access is invalid.</param>
+            <returns><b>true</b> if information is valid. Otherwise - <b>false</b>.</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.ISysUserInfoValidator">
+            <summary>
+            Provides methods of validate <see cref="T:Terrasoft.Core.Configuration.SysUserInfo"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.ISysUserInfoValidator.TryValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Try validate <see cref="T:Terrasoft.Core.Configuration.SysUserInfo"/>.
+            </summary>
+            <param name="user"><see cref="T:Terrasoft.Core.Configuration.SysUserInfo"/> instance.</param>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><c>True</c>, if user validation is passed, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.UserIsActiveValidator">
+            <summary>
+            Class validate activity of user.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.UserIsActiveValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Validate user activity flag.
+            </summary>
+            <param name="user">User info.</param>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><c>True</c>, if user is active, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Terrasoft.Authentication.Validators.UserLicenseValidator">
+            <summary>
+            Class validate user license existence.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.UserLicenseValidator.GetUserId(Terrasoft.Core.Configuration.SysUserInfo)">
+            <summary>
+            Get user identifier.
+            </summary>
+            <param name="user"><see cref="T:Terrasoft.Core.Configuration.SysUserInfo"/> instance.</param>
+            <returns>User identifier</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.UserLicenseValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Validate user license existence.
+            </summary>
+            <param name="user">User info.</param>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><c>True</c>, if user has license, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.UserPasswordExpiredValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Checks current user password actual.
+            </summary>
+            <param name="user">User info.</param>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><c>True</c> if user password actual. Otherwise returns <c>false</c>.</returns>
+            <seealso cref="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)"/>
+        </member>
+        <member name="M:Terrasoft.Authentication.Validators.UserTimeZoneValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)">
+            <summary>
+            Checks existing current user time zone.
+            </summary>
+            <param name="user">USer info.</param>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext"/> instance.</param>
+            <returns><c>True</c> if user time zone identifier is empty or time zone is found.
+            Otherwise returns <c>false</c>.</returns>
+            <seealso cref="M:Terrasoft.Authentication.Validators.BaseSysUserInfoValidator.ValidateSysUserInfo(Terrasoft.Core.Configuration.SysUserInfo,Microsoft.AspNetCore.Authentication.Cookies.CookieValidatePrincipalContext)"/>
+        </member>
+        <member name="T:Terrasoft.Core.BpmClaimTypes">
+            <summary>
+            Describes custom claim types, that used in application.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.BpmClaimTypes.TimeZoneOffset">
+            <summary>
+            Time zone offset claim.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.BpmClaimTypes.ExternalAccessId">
+            <summary>
+            External access identifier claim.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.BpmClaimTypes.UserConnectionType">
+            <summary>
+            Type of user connection.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.BpmClaimTypes.ProviderNameType">
+            <summary>
+            Provider name type claim.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.BpmClaimTypes.AuthCookieId">
+            <summary>
+            Auth Cookie Id claim.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.BpmClaimTypes.PasswordHash">
+            <summary>
+            Password hash.
+            </summary>
+        </member>
+    </members>
+</doc>

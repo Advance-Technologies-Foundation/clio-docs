@@ -1,0 +1,1046 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Sync</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Sync.SyncEntity.#ctor(Terrasoft.Core.UserConnection,System.String,System.Guid)">
+            <summary>
+            Создать SyncEntity помеченую на удаление в BPMonline </summary>
+            <param name="userConnection">userConnection </param>
+            <param name="entitySchemaName">Имя схемы из которой будет удалена сущность </param>
+            <param name="entityId">Id сущности, которая будет удалена при применении изменений в BPM </param>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncEntity.State">
+            <summary>
+            Последнее действие произведенное над ентити </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncEntity.Action">
+            <summary>
+            Действие которое необходимо сделать с этой ентити </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncEntity.ExtraParameters">
+            <summary>
+            Дополнительная информация, которую может привязать к конкретной ентити
+            внешний провайдер для своих нужд </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncEntity.ProcessRecurringMasterLocalItem(Terrasoft.Sync.SyncContext)">
+            <summary>Processes recurring master local item.</summary>
+            <param name="context"><see cref="T:Terrasoft.Sync.SyncContext"/> instance.</param>
+        </member>
+        <member name="P:Terrasoft.Sync.LocalItem.Entities">
+            <summary>
+            Коллекция ентитей в которые мапится один SyncItem.
+            Содержит имя схемы + коллекцию ентитей этой схемы</summary>
+            <remarks> Гарантировано содержит проинициализированые списки 
+            для всех схем указаных в атрибуте Map класса наследника SyncItemValue </remarks>
+        </member>
+        <member name="M:Terrasoft.Sync.LocalItem.AddOrReplace(System.String,Terrasoft.Sync.SyncEntity)">
+            <summary>
+            Добавляет новый SyncEntity в колекцию,
+            в случае если SyncEntity с таким EntityId уже существует, заменяет его </summary>
+            <param name="schemaName"></param>
+            <param name="syncEntity"></param>
+        </member>
+        <member name="M:Terrasoft.Sync.LocalItem.Add(Terrasoft.Core.UserConnection,System.String)">
+            <summary>
+            Создает и добавляет новый SyncEntity в колекцию </summary>
+            <param name="userConnection"></param>
+            <param name="schemaName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Sync.LocalProvider">
+            <summary>
+            Provides methods for working with local store items.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.LocalProvider.StoreId">
+            <summary>
+            Local storage id.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.LocalProvider._userConnection">
+            <summary>
+            <see cref="P:Terrasoft.Sync.LocalProvider.UserConnection"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.LocalProvider._maxItemsPerSelect">
+            <summary>
+            Max items in select count.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.LocalProvider.AddItemSchemaColumns(Terrasoft.Core.Entities.EntitySchemaQuery,Terrasoft.Sync.EntityConfig)">
+            <summary>
+            Adds columns from <paramref name="entityConfig"/> into <paramref name="esqForFetching"/> query.
+            </summary>
+            <param name="esqForFetching"><see cref="T:Terrasoft.Core.Entities.EntitySchemaQuery"/> instance.</param>
+            <param name="entityConfig"><see cref="T:Terrasoft.Sync.EntityConfig"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.LocalProvider.ApplyChanges(Terrasoft.Sync.SyncContext,Terrasoft.Sync.LocalItem)">
+            <summary>
+            Applies chenges of <paramref name="entities"/> to local store.
+            </summary>
+            <param name="context"><see cref="T:Terrasoft.Sync.SyncContext"/> instance.</param>
+            <param name="entities"><see cref="T:Terrasoft.Sync.LocalItem"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.LocalProvider.FetchItem(Terrasoft.Sync.ItemMetadata,Terrasoft.Sync.SyncItemSchema,System.Boolean)">
+            <summary>
+            Creates <see cref="T:Terrasoft.Sync.LocalItem"/> instance by <paramref name="itemMetaData"/>.
+            </summary>
+            <param name="itemMetaData"><see cref="T:Terrasoft.Sync.ItemMetadata"/> instance.</param>
+            <param name="itemSchema"><see cref="T:Terrasoft.Sync.SyncItemSchema"/> instance.</param>
+            <param name="loadAllColumns">If <c>true</c>, loads all entities columns, loads only columns from entity
+            <see cref="T:Terrasoft.Sync.EntityConfig"/> instance.</param>
+            <returns>Initiated <see cref="T:Terrasoft.Sync.LocalItem"/> instance.</returns>
+            <remarks>
+            <see cref="T:Terrasoft.Sync.LocalItem" /> also contains deleted items metadata.
+            <example>new SyncEntity(null, SyncState.Deleted)</example>.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Sync.LookupResolver.GetLookupColumnResolvedValues(Terrasoft.Core.UserConnection,System.String,System.Guid)">
+            <summary>
+            Возращает конфликтное значение, для которого было установлено соответствие в BPMonline
+            </summary>
+            <param name="userConnection"> userConnection</param>
+            <param name="lookupSchemaName"> Имя справочника</param>
+            <param name="lookupRecordId"> Id записи из справочника, для которого возвращаются соответствия</param>
+        </member>
+        <member name="T:Terrasoft.Sync.IRemoteItem">
+            <summary>
+            Интерфейс элемента внешнего хранилища.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.IRemoteItem.Id">
+            <summary>
+            Идентификатор элемента во внешнем хранилище.</summary>
+        </member>
+        <member name="P:Terrasoft.Sync.IRemoteItem.Version">
+            <summary>
+            Версия элемента в текущем хранилище (дата последней модификации). Используется для сравнения двух элементов
+            из разных хранилищ.</summary>
+        </member>
+        <member name="P:Terrasoft.Sync.IRemoteItem.Schema">
+            <summary>
+            Описание схемы соответствия синхронизируемого элемента.</summary>
+        </member>
+        <member name="P:Terrasoft.Sync.IRemoteItem.State">
+            <summary>
+            Действие, произведенное над элементом с даты последеней синхронизации.</summary>
+        </member>
+        <member name="P:Terrasoft.Sync.IRemoteItem.Action">
+            <summary>
+            Действие, которое необходимо выполнить над элементом.</summary>
+        </member>
+        <member name="M:Terrasoft.Sync.IRemoteItem.FillLocalItem(Terrasoft.Sync.SyncContext,Terrasoft.Sync.LocalItem@)">
+            <summary>
+            Заполняет элемент локального хранилища <paramref name="localItem"/> значениями элемента внешнего хранилища.
+            Используется для применения изменений в локальном хранилище.</summary>
+            <param name="context">Контекст синхронизации.</param>
+            <param name="localItem">Элемент локального хранилища, который соответствует данному элементу внешнего
+            хранилища.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.IRemoteItem.FillRemoteItem(Terrasoft.Sync.SyncContext,Terrasoft.Sync.LocalItem)">
+            <summary>
+            Заполняет элемент внешнего значениями из элемента локального хранилища <paramref name="localItem"/>.
+            Используется для применения изменений во внешнем хранилище. </summary>
+            <param name="context">Контекст синхронизации.</param>
+            <param name="localItem">Элемент локального хранилища, который соответствует данному элементу внешнего
+            хранилища.</param>
+        </member>
+        <member name="T:Terrasoft.Sync.RemoteProvider">
+            <summary>
+            Remote provider.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.OperationInfoLczStrings">
+            <summary>
+            Localized info strings to export messages to an external storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.OperationErrorLczStrings">
+            <summary>
+            Localized error strings to export messages to an external storage
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.Log">
+            <summary>
+            The object to write to the system log.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.StoreId">
+            <summary>
+            Remote store identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.Version">
+            <summary>
+            Date and time of synchronization. It contains the end date of the last synchronization.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.RemoteChangesCount">
+            <summary>
+            Count number of elements that were imported from external storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.LocalChangesCount">
+            <summary>
+            Count number of elements that were imported from local storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.SyncItemSchemaCollection">
+            <summary>
+            Collection schemes setting of remote storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.UseMetadata">
+            <summary>
+            Metadata storage usage flag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.RemoteProvider.SessionInfo">
+            <summary>
+            Session information.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.LogInfo(System.String,System.Object[])">
+            <summary>
+            Writes information message to the log.
+            </summary>
+            <param name="format">Format string with an informational message.</param>
+            <param name="args">Message format.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.LogError(System.String,System.Object[])">
+            <summary>
+            Writes error message to the log.
+            </summary>
+            <param name="format">Format string with an informational message.</param>
+            <param name="args">Message format.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.FindSchemaBySyncValueName(System.String)">
+            <summary>
+            Searches the synchronized scheme on the name of the entity type.
+            </summary>
+            <param name="syncValueName">Synchronization scheme name.</param>
+            <returns>Found synchronization scheme or <c>null</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.ApplyChanges(Terrasoft.Sync.SyncContext,Terrasoft.Sync.IRemoteItem)">
+            <summary>
+            Migrate the changes from local to remote storage.
+            </summary>
+            <param name="context">Synchronization context.</param>
+            <param name="syncItem">Item of the synchronization.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.CommitChanges(Terrasoft.Sync.SyncContext)">
+            <summary>
+            Commit changes.
+            </summary>
+            <param name="context">Synchronization context.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.CollectNewItems(Terrasoft.Sync.SyncContext)">
+            <summary>
+            Returns an enumerator new elements to synchronize the local store.
+            </summary>
+            <param name="context">Synchronization context.</param>
+            <returns>The enumerator elements of local storage synchronization.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.EnumerateChanges(Terrasoft.Sync.SyncContext)">
+            <summary>
+            Returns an enumerator elements to synchronize the remote store.
+            </summary>
+            <param name="context">Synchronization context.</param>
+            <returns>The enumerator elements of remote storage synchronization.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.LoadSyncItem(Terrasoft.Sync.SyncItemSchema,System.String)">
+            <summary>
+            Returns the external data repository synchronization object by a unique foreign key.
+            </summary>
+            <param name="schema">Schema.</param>
+            <param name="id">Unique foreign key.</param>
+            <returns>Created instance of <see cref="T:Terrasoft.Sync.IRemoteItem"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.CreateNewSyncItem(Terrasoft.Sync.SyncItemSchema)">
+            <summary>
+            Returns remote item synchronized for a given element.
+            </summary>
+            <param name="schema">Schema.</param>
+            <returns>Created instance of <see cref="T:Terrasoft.Sync.IRemoteItem"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.KnownTypes">
+            <summary>
+            Gets the types of all types of external synchronization elements. 
+            The order type determines the order in which items are synced.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.GetNumberPageElements(Terrasoft.Sync.SyncContext)">
+            <summary>
+            Returns the number of elements to be processed in the BPM in a single page.
+            </summary>
+            <param name="context">Synchronization context.</param>
+            <returns>Number of elements.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.LoadSyncItem(Terrasoft.Sync.SyncItemSchema,Terrasoft.Sync.ItemMetadata)">
+            <summary>
+            Returns synchronization object by value of metadata .</summary>
+            <param name="schema">Synchronization schema.</param>
+            <param name="itemMetadata">Synchronization metadata.</param>
+            <returns>Synchronization object.<see cref="T:Terrasoft.Sync.IRemoteItem"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.ResolveConflict(Terrasoft.Sync.IRemoteItem,Terrasoft.Sync.ItemMetadata,System.Guid)">
+            <summary>
+            It resolves conflicts between the versions of the element of local and external storage.
+            </summary>
+            <returns>The result of the resolution of conflict.</returns>
+            <remarks>It is believed that the latter was a change in the local storage if the at least one item
+            was changed later than in the external storage - the priority changes from the local store.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.RealeaseItem(Terrasoft.Sync.IRemoteItem@)">
+            <summary>
+            Releases <paramref name = "remoteItem"/> from enumerator.
+            </summary>
+            <param name="remoteItem">Remote item.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.NeedMetaDataActualization">
+            <summary>
+            Returns a flag that requires actualized metadata.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.GetLocallyModifiedItemsMetadata(Terrasoft.Sync.SyncContext,Terrasoft.Core.Entities.EntitySchemaQuery)">
+            <summary>
+            It returns an enumerator metadata synchronization objects that have been changed in the
+            local store with the last synchronization date.
+            </summary>
+            <param name="context">Synchronization Context.</param>
+            <param name="modifiedItemsEsq">Request to the scheme object <see cref="T:Terrasoft.Core.Configuration.SysSyncMetaData"/>.</param>
+            <returns>
+            The enumerator object synchronization of external data storage.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Sync.RemoteProvider.LogError(System.String,System.Exception,System.Object[])">
+            <summary>
+            Writes error message to the log, including information about the exception that caused this error.
+            </summary>
+            <param name="format">Format string with an informational message.</param>
+            <param name="exception">Exception.</param>
+            <param name="args">Message format.</param>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncContext">
+            <summary>
+            Synchronization context.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncContext.IntegrationSystemTableName">
+            <summary>
+            Name of integration system table.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncContext.Logger">
+            <summary>
+            Object, that saves information to integration log.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncContext.MsgLogger">
+            <summary>
+            Message logger for synchronization engine.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncContext.LocalProvider">
+            <summary> 
+            Object, that can gets or sets changes to local storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncContext.RemoteProvider">
+            <summary>
+            Object, that can gets or sets changes to remote storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncContext.UserConnection">
+            <summary>
+            User connection.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncContext.LastSyncVersion">
+            <summary>
+            Last sync date and time (Utc).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncContext.CurrentSyncStartVersion">
+            <summary>
+            Current sync date and time (Utc). Sets after updating metadata.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncContext.GetLogFormat(System.String,System.String)">
+            <summary>
+            Gets localizable format string.
+            </summary>
+            <param name="resourceManagerName">Resources manager name.</param>
+            <param name="resourceItemName">Resources item name.</param>
+            <returns>Localizable format string</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncContext.GetIntegrationSystemName(System.Guid)">
+            <summary>
+            Set integration system name.
+            </summary>
+            <param name="integrationSystemId">Integration system identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncContext.SetLookupColumnValue(Terrasoft.Core.Entities.Entity,System.String,System.String)">
+            <summary>
+            Sets entity lookup column value.
+            </summary>
+            <param name="entity"><see cref="T:Terrasoft.Core.Entities.Entity"/> instance.</param>
+            <param name="lookupColumnName">Lookup column name.</param>
+            <param name="lookupDisplayValue">Lookup column display value.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncContext.SetLookupColumnValue(Terrasoft.Core.Entities.Entity,System.String,System.String,System.String)">
+            <summary>
+            Sets entity lookup column value.
+            </summary>
+            <param name="entity"><see cref="T:Terrasoft.Core.Entities.Entity"/> instance.</param>
+            <param name="lookupColumnName">Lookup column name.</param>
+            <param name="lookupDisplayValue">Lookup column display value.</param>
+            <param name="lookupDisplayColumnName">Lookup display column name.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncContext.LogInfo(Terrasoft.Sync.SyncAction,Terrasoft.Sync.SyncDirection,System.String,System.Object[])">
+            <summary>
+            Writes information message to the log.
+            </summary>
+            <param name="operation"> Log action for an object synchronization.</param>
+            <param name="direction">Synchronization direction.</param>
+            <param name="format">Format.</param>
+            <param name="args">Format patameters.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncContext.LogError(Terrasoft.Sync.SyncAction,Terrasoft.Sync.SyncDirection,System.String,System.Object[])">
+            <summary>
+            Writes error message to the log.
+            </summary>
+            <param name="operation">Log action for an object synchronization.</param>
+            <param name="direction">Synchronization direction.</param>
+            <param name="format">Format.</param>
+            <param name="args">Format patameters.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncContext.LogError(Terrasoft.Sync.SyncAction,Terrasoft.Sync.SyncDirection,System.String,System.Exception,System.Object[])">
+            <summary>
+            Writes error message to the log, including information about the exception that caused this error.
+            </summary>
+            <param name="operation">Log action for an object synchronization.</param>
+            <param name="direction">Synchronization direction.</param>
+            <param name="format">Format.</param>
+            <param name="exception">Exception.</param>
+            <param name="args">Format parameters.</param>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncAgent">
+            <summary>
+            The agent is responsible for synchronizing data between two repositories.
+            </summary>
+            <remarks>
+            The agent doesn't know how he can resolve the conflicts if he fints conflict he redirects it
+            to IConflictResolver that returns SyncConflictResolution object and 
+            based SyncConflictResolution agent conducts the necessary actions over providers.
+            </remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncAgent.LocalProvider">
+            <summary> 
+            The object allows to get changes or apply the changes in BPMonline.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncAgent.RemoteProvider">
+            <summary>
+            The object allows to get changes or apply the changes in remote storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncAgent.SyncContext">
+            <summary>
+            Synchronization context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncAgent.ActualizeMetadata">
+            <summary>
+            Actualizes the state metadata repository before syncing.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncAgent.ClearMetadata">
+            <summary>
+            Clears metadata for records, deleted in local and remote storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncAgent.ConvertLocalItemToRemoteItemAndSave(Terrasoft.Sync.IRemoteItem,Terrasoft.Sync.LocalItem,Terrasoft.Sync.ItemMetadata)">
+            <summary>
+            Applyes changes in syncItem or from localItem or reads localItem by itemMetaData
+            If It passed both parameters priority is localItem. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncAgent.ApplyChangesInTransaction(System.Action)">
+            <summary>
+            Call <see cref="T:System.Action"/>, when applying changes in transaction.
+            </summary>
+            <param name="applyChangesAction"><see cref="T:System.Action"/>, when applying changes.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncAgent.ProcessRemoteChanges">
+            <summary>
+            It processes the changed items in remote storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncAgent.Synchronize">
+            <summary>
+            Starts the synchronization process.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Sync.MapAttribute">
+            <summary>
+            Атрибуты сущности элемента синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.DirectionSetByUser">
+            <remarks>
+            Если направление не было напрямую указано пользователем, будет браться направление из DirectionAttribute
+            </remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.SchemaName">
+            <summary>
+            Имя объекта <see cref="T:Terrasoft.Core.Entities.EntitySchema"/> в локальном хранилище.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.Order">
+            <summary>
+            Порядок обработки сущности для элемента синхронизации.
+            </summary>
+            <remarks>Чем меньше значение - тем раньше сущность будет обработана при обработке элемента
+            синхронизации.</remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.Direction">
+            <summary>
+            Определяет направление синхронизации сущности. Значение по умолчанию -
+            <see cref="F:Terrasoft.Sync.SyncDirection.DownloadAndUpload"/>.</summary>
+            <remarks> В итоге значение переносится в свойство <see cref="T:Terrasoft.Sync.EntityConfig"/>.
+            Если значение свойства не содержит флаг <see cref="F:Terrasoft.Sync.SyncDirection.Download"/> - изменения не будут
+            применятся в локальное хранилище. Если значение свойства не содержит флаг
+            <see cref="F:Terrasoft.Sync.SyncDirection.Upload"/> - не будут выбираться новые сущности из локального хранилища.</remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.PrimarySchemaName">
+            <summary>
+            Имя схемы главного объекта.
+            </summary>
+            <remarks>Используется для деталей.</remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.ForeingKeyColumnName">
+            <summary>
+            Имя колонки для связи детали с главным объектом.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.IsPrimarySchema">
+            <summary>
+            Флаг, указывающий что данныя схема является основной в данном элементе синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.MapAttribute.FetchColumnNames">
+            <summary>
+            Названия колонок, которые будут загружаться из локального хранилища.
+            </summary>
+            <remarks>Если значение не указано, то будут загружаться все колонки объекта.</remarks>
+        </member>
+        <member name="T:Terrasoft.Sync.DirectionAttribute">
+            <summary>
+            Атрибут указания направления синхронизации для элемента синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.DirectionAttribute.SyncDirection">
+            <summary>
+            Определяет направление синхронизации сущности. Значение по умолчанию -
+            <see cref="F:Terrasoft.Sync.SyncDirection.DownloadAndUpload"/>.</summary>
+            <remarks> В итоге значение переносится в свойство <see cref="T:Terrasoft.Sync.EntityConfig"/>.
+            Если значение свойства не содержит флаг <see cref="F:Terrasoft.Sync.SyncDirection.Download"/> - изменения не будут
+            применятся в локальное хранилище. Если значение свойства не содержит флаг
+            <see cref="F:Terrasoft.Sync.SyncDirection.Upload"/> - не будут выбираться новые сущности из локального хранилища.
+            </remarks>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncItemSchema">
+            <summary>
+            Схема настройки сущности элемента синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncItemSchema.SyncValueName">
+            <summary>
+            Название типа сущности.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncItemSchema.SyncValueType">
+            <summary>
+            Тип сущности.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncItemSchema.PrimaryEntityConfig">
+            <summary>
+            Настройка основной сущности элемента синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncItemSchema.Configs">
+            <summary>
+            Список настроек сущностей элемента синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncItemSchema.DetailConfigs">
+            <summary>
+            Список настроек сущностей деталей элемента синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncItemSchema.Direction">
+            <summary>
+            Направление синхронизации.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncItemSchema.Validate(Terrasoft.Core.UserConnection)">
+            <summary>
+            Метод проверяет валидность сформированого EntityConfig. </summary>
+            <param name="userConnection"></param>
+        </member>
+        <member name="T:Terrasoft.Sync.EntityConfig">
+            <summary>
+            Настройка сущности элемента синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.EntityConfig.SchemaName">
+            <summary>
+            Название схемы объекта сущности.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.EntityConfig.Order">
+            <summary>
+            Порядок обработки сущности для элемента синхронизации.
+            </summary>
+            <remarks>Чем меньше значение - тем раньше сущность будет обработана при обработке элемента
+            синхронизации.</remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.EntityConfig.Direction">
+            <summary>
+            Доступные направления для синхронизации.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.EntityConfig.FetchColumnNames">
+            <summary>
+            Названия колонок, которые будут загружаться из локального хранилища.
+            </summary>
+            <remarks>Если значение не указано, то будут загружаться все колонки объекта.</remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.DetailEntityConfig.PrimarySchemaName">
+            <summary>
+            Имя схемы главного объекта.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.DetailEntityConfig.ForeingKeyColumnName">
+            <summary>
+            Имя колонки для связи детали с главным объектом.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncMsgLoggerBodyType">
+            <summary>
+            Перечисление типов сообщений <see cref="T:Terrasoft.Sync.SyncMsgLogger"/>.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncMsgLoggerBodyType.Info">
+            <summary>
+            Информация.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncMsgLoggerBodyType.Error">
+            <summary>
+            Ошибка.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncMsgLogger">
+            <summary>
+            Предоставляет методы для журналирования сообщений операций синхронизации.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncMsgLogger.IntegrationSystemTableName">
+            <summary>
+            Название таблицы интеграционных систем.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncMsgLogger.MsgSender">
+            <summary>
+            Отправитель канала обмена сообщениями.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncMsgLogger._integrationSystemName">
+            <summary>
+            Название интеграционной системы.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.#ctor(Terrasoft.Core.UserConnection,System.Guid)">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Terrasoft.Sync.SyncMsgLogger"/>.
+            </summary>
+            <param name="userConnection">Пользовательское подключение.</param>
+            <param name="integrationSystemId">Идентификатор интеграционной системы.</param>
+        </member>
+        <member name="P:Terrasoft.Sync.SyncMsgLogger.UserConnection">
+            <summary>
+            Пользовательское подключение.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.PostLogMessage(System.String,Terrasoft.Sync.SyncMsgLoggerBodyType)">
+            <summary>
+            Отправляет сообщение.
+            </summary>
+            <param name="message">Текст сообщения.</param>
+            <param name="bodyType">Тип сообщения.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.LoadIntegrationSystemName(System.Guid)">
+            <summary>
+            Загружает название интеграционной системы.
+            </summary>
+            <param name="integrationSystemId">Индентификатор интеграционной системы.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.FormatLogMessage(System.String,System.Object[])">
+            <summary>
+            Форматирует сообщение для отправки в канал обмена сообщениями.
+            </summary>
+            <param name="format">Строка составного формата.</param>
+            <param name="args">Параметры формата сообщения.</param>
+            <returns>Отформатированное сообщение.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.FormatLogMessage(System.Exception,System.String,System.Object[])">
+            <summary>
+            Форматирует сообщение для отправки в канал обмена сообщениями. Сообщение содержит информацию об исключении,
+            которое вызвало ошибку.
+            </summary>
+            <param name="exception">Исключение по данной ошибке.</param>
+            <param name="format">Строка составного формата.</param>
+            <param name="args">Параметры формата сообщения.</param>
+            <returns>Отформатированное сообщение.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.LogInfo(System.String,System.Object[])">
+            <summary>
+            Записывает в лог информационное сообщение.
+            </summary>
+            <param name="format">Строка составного формата с информационным сообщением.</param>
+            <param name="args">Параметры формата сообщения.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.LogError(System.String,System.Object[])">
+            <summary>
+            Записывает в лог сообщение об ошибке.
+            </summary>
+            <param name="format">Строка составного формата с сообщением об ошибке.</param>
+            <param name="args">Параметры формата сообщения.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncMsgLogger.LogError(System.String,System.Exception,System.Object[])">
+            <summary>
+            Записывает в лог сообщение об ошибке, включающее информацию об исключении, которое вызвало эту ошибку.
+            </summary>
+            <param name="format">Строка составного формата с сообщением об ошибке.</param>
+            <param name="exception">Исключение по данной ошибке.</param>
+            <param name="args">Параметры формата сообщения.</param>
+        </member>
+        <member name="T:Terrasoft.Sync.MetaDataStore">
+            <summary>
+            MetaDataStore class provides methods to work with <see cref="T:Terrasoft.Sync.IReplicaMetadata"/> implementations.
+            </summary>
+            <remarks> MetaDataStore represented in database.</remarks>
+        </member>
+        <member name="M:Terrasoft.Sync.MetaDataStore.GetReplicaMetadata(System.Guid,System.Guid)">
+            <summary>
+            Returns <see cref="T:Terrasoft.Sync.IReplicaMetadata"/> inited implementation for specified storage.
+            </summary>
+            <param name="localStoreId">Local storage id.</param>
+            <param name="remoteStoreId">Remote storage id.</param>
+            <returns>
+            <see cref="T:Terrasoft.Sync.IReplicaMetadata"/> inited implementation.
+            </returns>
+            <remarks>
+            Future optimizations: in case of small ammount of metadata, load metadata items to IReplicaMetadata
+            instance and work with stored in memory items in ReplicaMetadata.FindItemMetaData method.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Sync.MetaDataStore.RemoveReplicaMetadata(System.Guid)">
+            <summary>
+            Removes all metada for storage.
+            </summary>
+            <param name="storageId">Storage id.</param>
+            <remarks>Not implemented.</remarks>
+        </member>
+        <member name="T:Terrasoft.Sync.IReplicaMetadata">
+            <summary>
+            ReplicaMetadata class encapsulates all sync metadata for remote storage instance.
+            </summary>
+            <remarks>
+            Items from IMetadataStore don't represented in database.
+            </remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.IReplicaMetadata.RemoteStoreId">
+            <summary>
+            Remote store Id, associated with the metadata.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Sync.IReplicaMetadata.LocalStoreId">
+            <summary>
+            Local store Id, associated with the metadata.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.FindItemMetaData(System.String)">
+            <summary>
+            Returns <see cref="T:Terrasoft.Sync.ItemMetadata"/> instance using <paramref name="remoteItemId"/>.
+            </summary>
+            <param name="remoteItemId">Remote item unique id.</param>
+            <returns><see cref="T:Terrasoft.Sync.ItemMetadata"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.UpdateItemMetadata(Terrasoft.Sync.ItemMetadata,Terrasoft.Sync.IRemoteItem,Terrasoft.Sync.LocalItem,System.Boolean,Terrasoft.Sync.SyncContext)">
+            <summary>
+            Updates sync metadata after item synchronization.
+            </summary>
+            <param name="oldItemMetaDatas">Metadata instance from previous synchronization.</param>
+            <param name="remoteItem">Remote item instance.</param>
+            <param name="localItem">Local item instance.</param>
+            <param name="changesToBpm">Current synchronization direction.</param>
+            <param name="context"><see cref="T:Terrasoft.Sync.SyncContext"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.EnumerateItemsWithChangesInBpm(Terrasoft.Sync.SyncContext)">
+            <summary>
+            Returns changed after last synchronization
+            and not synced in current synchronization bpm'online entities <see cref="T:Terrasoft.Sync.ItemMetadata"/>.
+            </summary>
+            <param name="context"><see cref="T:Terrasoft.Sync.SyncContext"/> instance.</param>
+            <returns>
+            Changed bpm'online entities <see cref="T:Terrasoft.Sync.ItemMetadata"/>.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.CollectChangesInSyncedEntities(Terrasoft.Core.UserConnection,System.String,System.DateTime)">
+            <summary>
+            Updates sync metadata table for synced bpm'online entities.
+            </summary>
+            <remarks> If entity was changed in bpm'online after last synchronization,
+            SysSyncMetadata Version column will be filled with entity modification date, converted to Utc.
+            </remarks>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <param name="schemaName">Sync entity name.</param>
+            <param name="lastSyncVersion">Last synchronization date.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.CollectNewDetailsForSyncedEntities(Terrasoft.Core.UserConnection,Terrasoft.Sync.DetailEntityConfig,System.String,System.DateTime)">
+            <summary>
+            Creates records in SysSyncMetaData for new detail records.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <param name="detailEntityConfig"><see cref="T:Terrasoft.Sync.DetailEntityConfig"/> instance.</param>
+            <param name="remoteItemName">Remote storage item name.</param>
+            <param name="lastSyncVersion">Last synchronization date.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.TryResolveRemoteId(System.Guid,System.String@)">
+            <summary>
+            Returns <paramref name="remoteId"/>, using bpm'online <paramref name="localId"/>.
+            If item was marked as deleted in bpm'online, <paramref name="remoteId"/> will not be returned.
+            </summary>
+            <param name="localId">Bpm'online entity Id.</param>
+            <param name="remoteId">Remote storage item id.</param>
+            <returns>
+            True, if <paramref name="remoteId"/> was found, false otherwise.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.TryResolveRemoteId(System.Guid,System.String,System.String@)">
+            <summary>
+            Returns <paramref name="remoteId"/>, using <paramref name="localId"/>.
+            If item was marked as deleted in bpm'online, <paramref name="remoteId"/> will not be returned.
+            </summary>
+            <param name="localId">Bpm'online entity Id.</param>
+            <param name="remoteItemName">Remote storage item name.</param>
+            <param name="remoteId">Remote storage item id.</param>
+            <returns>
+            True, if <paramref name="remoteId"/> was found, false otherwise.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Sync.IReplicaMetadata.TryResolveExtraParameters(System.Guid,System.String@)">
+            <summary>
+            Returns <paramref name="extraParameters"/>, using <paramref name="localId"/>.
+            </summary>
+            <param name="localId">Bpm'online entity Id.</param>
+            <param name="extraParameters">Remote item extra parameters.</param>
+            <returns>
+            True, if <paramref name="extraParameters"/> was found, false otherwise.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.GetCurrentUtcDateTime">
+            <summary>
+            Gets current utc date time value.
+            </summary>
+            <returns>Current utc date time value.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.FindItemMetaData(System.String)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.FindItemMetaData(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.UpdateItemMetadata(Terrasoft.Sync.ItemMetadata,Terrasoft.Sync.IRemoteItem,Terrasoft.Sync.LocalItem,System.Boolean,Terrasoft.Sync.SyncContext)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.UpdateItemMetadata(Terrasoft.Sync.ItemMetadata,Terrasoft.Sync.IRemoteItem,Terrasoft.Sync.LocalItem,System.Boolean,Terrasoft.Sync.SyncContext)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.EnumerateItemsWithChangesInBpm(Terrasoft.Sync.SyncContext)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.EnumerateItemsWithChangesInBpm(Terrasoft.Sync.SyncContext)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.CollectChangesInSyncedEntities(Terrasoft.Core.UserConnection,System.String,System.DateTime)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.CollectChangesInSyncedEntities(Terrasoft.Core.UserConnection,System.String,System.DateTime)"/>
+            </summary>
+            <remarks>
+            Metadata actualization starts before CurrentSyncStartVersion parameter initialization, 
+            it allows to use updated metadata for local changes synchronization.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.CollectNewDetailsForSyncedEntities(Terrasoft.Core.UserConnection,Terrasoft.Sync.DetailEntityConfig,System.String,System.DateTime)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.CollectNewDetailsForSyncedEntities(Terrasoft.Core.UserConnection,Terrasoft.Sync.DetailEntityConfig,System.String,System.DateTime)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.TryResolveRemoteId(System.Guid,System.String,System.String@)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.TryResolveRemoteId(System.Guid,System.String,System.String@)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.TryResolveRemoteId(System.Guid,System.String@)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.TryResolveRemoteId(System.Guid,System.String@)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Sync.ReplicaMetadata.TryResolveExtraParameters(System.Guid,System.String@)">
+            <summary>
+            <see cref="M:Terrasoft.Sync.IReplicaMetadata.TryResolveExtraParameters(System.Guid,System.String@)"/>
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Sync.ItemMetadata">
+            <summary>
+            Single sync item metadata. Contains sync metadata for each bpm'online entity in this sync item.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Sync.ISyncProvider`1">
+            <summary>Интерфейс провайдера синхронизации.</summary>
+            <remarks> Обеспечивает взаимодействие с хранилищем данных. Изолирует <see cref="T:Terrasoft.Sync.SyncAgent"/> от деталей
+            реализации хранилища данных.</remarks>
+        </member>
+        <member name="P:Terrasoft.Sync.ISyncProvider`1.StoreId">
+            <summary>
+            Идентификатор хранилища.</summary>
+        </member>
+        <member name="P:Terrasoft.Sync.ISyncProvider`1.Version">
+            <summary>
+            Дата последней синхронизации для провайдера.
+            </summary>
+            <remarks>Синхронизируются только те записи, которые изменились, начиная с этой даты.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Sync.ISyncProvider`1.ApplyChanges(Terrasoft.Sync.SyncContext,`0)">
+            <summary>
+            Применяет изменения в хранилище.</summary>
+        </member>
+        <member name="M:Terrasoft.Sync.ISyncProvider`1.EnumerateChanges(Terrasoft.Sync.SyncContext)">
+            <summary>
+            Возвращает перечислитель объектов синхронизации хранилища.</summary>
+            <param name="context">Контекст синхронизации.</param>
+            <returns>Перечислитель объектов синхронизации хранилища.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.ISyncProvider`1.CommitChanges(Terrasoft.Sync.SyncContext)">
+            <summary>
+            Завершает применение изменений.
+            </summary>
+            <param name="context">Контекст синхронизации.</param>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncRetryPolicy`1">
+            <summary>
+            Class provides retry operation execution API.
+            </summary>
+            <typeparam name="TException">When instance of TExeption cought, operation will be rerun.</typeparam>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncRetryPolicy`1.GetPolicy(System.Int32,System.Func{System.Int32,System.TimeSpan})">
+            <summary>
+            Creates synchronization retry policy.
+            </summary>
+            <param name="retryCount">Retry count.</param>
+            <param name="sleepDurationProvider">Function that provides delay between attempts.</param>
+            <returns><see cref="T:Polly.Policy"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncRetryPolicy`1.GetPolicy``1(System.Int32,System.Func{``0,System.Boolean},System.Func{System.Int32,System.TimeSpan})">
+            <summary>
+            Creates synchronization retry policy.
+            </summary>
+            <param name="retryCount">Retry count.</param>
+            <param name="retryCondition">Retry condition function. Should return true to repeat policy action.</param>
+            <param name="sleepDurationProvider">Function that provides delay between attempts.</param>
+            <returns><see cref="T:Polly.Policy"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncRetryPolicy`1.Execute(System.Int32,System.TimeSpan,System.Action)">
+            <summary>
+            Executes <paramref name="operation"/> in sequence. Retry when operation throws instance of TException.
+            </summary>
+            <param name="retryCount">Max operation retry count.</param>
+            <param name="delay">Delay between attempts.</param>
+            <param name="operation">Syncronization operation.</param>
+        </member>
+        <member name="M:Terrasoft.Sync.SyncRetryPolicy`1.Execute``1(System.Int32,System.TimeSpan,System.Func{``0,System.Boolean},System.Func{``0})">
+            <summary>
+            Executes <paramref name="operation"/> in sequence. Retry when operation throws instance of TException.
+            </summary>
+            <param name="retryCount">Max operation retry count.</param>
+            <param name="delay">Delay between attempts.</param>
+            <param name="retryCondition">Retry condition function. Will recive last <paramref name="operation"/>
+            result. Should return true to repeat <paramref name="operation"/>.</param>
+            <param name="operation">Syncronization operation.</param>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncConflictResolution">
+            <summary>
+            Тип разрешения конфликта версий элемента сихронизации в локальном и внешнем хранилищах.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncConflictResolution.ApplyToLocal">
+            <summary>
+            Приоритет изменений внешнего хранилища.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncConflictResolution.ApplyToRemote">
+            <summary>
+            Приоритет изменений локального хранилища.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncConflictResolution.None">
+            <summary>
+            Не выполнять синхронизацию элемента.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncState">
+            <summary>
+            Состояние элемента синхронизации в текущем хранилище.</summary>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncAction">
+            <summary>
+            Действие, которое необходимо выполнить над обьектом при применении изменений.</summary>
+        </member>
+        <member name="T:Terrasoft.Sync.SyncDirection">
+            <summary>
+            Определяет направление синхронизации.</summary>
+            <remarks>
+            Может задаваться:
+            1. На уровне агента. Применяется для всех синхронизируемых объектов.
+            2. На уровне конкретного объекта. Перекрывает значение агента и устанавливает направление синхронизации для
+            текущего объекта.</remarks>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncDirection.Download">
+            <summary>
+            Изменения применяются только в локальном хранилище.</summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncDirection.Upload">
+            <summary>
+            Изменения применяются только во внешнем хранилище.</summary>
+        </member>
+        <member name="F:Terrasoft.Sync.SyncDirection.DownloadAndUpload">
+            <summary>
+            Двунаправленная синхронизация внешнего и локального хранилищ.</summary>
+        </member>
+        <member name="T:Terrasoft.Sync.InvalidSyncItemSchemaException">
+            <summary>
+            Ошибка при описании мапинга элементов внешнего хранилища в локальном хранилище.
+            Элемент (схема или колонка схемы) не правильно указан в мапинге, поэтому невозможно найти в BPMonline.</summary>
+        </member>
+        <member name="T:Terrasoft.Sync.DublicateSyncItemSchemaName">
+            <summary>
+            Представляет исключение для дублируемых имен схем объектов синхронизации.</summary>
+        </member>
+    </members>
+</doc>

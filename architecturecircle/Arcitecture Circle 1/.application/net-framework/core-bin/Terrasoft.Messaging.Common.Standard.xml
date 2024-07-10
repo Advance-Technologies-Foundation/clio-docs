@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Messaging.Common.Standard</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Messaging.Common.BaseClientMsgHandler">
+            <summary>
+            Setups handlers for special types (<see cref="P:Terrasoft.Messaging.Common.IMsgHeader.Sender"/>) of client messages
+            (BroadcastMsg, ConsoleCommand).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.BaseClientMsgHandler.SetupBaseHandlers(Terrasoft.Messaging.Common.IMsgChannel)">
+            <summary>
+            Setups handlers for special types (<see cref="P:Terrasoft.Messaging.Common.IMsgHeader.Sender"/>) of client messages
+            (BroadcastMsg, ConsoleCommand).
+            </summary>
+            <param name="messageChannel">Listened message channel.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ClientChannelHelper">
+            <summary>
+            Provides information for js client connection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ClientChannelHelper.GetConnectionParamsInitScript(System.String)">
+            <summary>
+            Generates script for Js client server channel connection. 
+            </summary>
+            <param name="appUrl">Base url to construct server channel url.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgChannelManager">
+            <summary>
+            Interface for message channel manager.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgChannelManager.Channels">
+            <summary>
+            Gets the channels.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgChannelManager.FindItemByUId(System.Guid)">
+            <summary>
+            Finds the channel by its identifier (often it is admin unit identifier).
+            </summary>
+            <param name="id">The channel identifier.</param>
+            <returns>Found channel or <c>null</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgChannelManager.Post(System.Collections.Generic.IEnumerable{System.Guid},Terrasoft.Messaging.Common.IMsg)">
+            <summary>
+            Posts the message to specified channels.
+            </summary>
+            <param name="channels">The channels.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgChannelManager.PostToAll(Terrasoft.Messaging.Common.IMsg)">
+            <summary>
+            Posts the message to all channels.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.MsgChannelConnected">
+            <summary>
+            Delegate for event occurred when new messaging channel is connected.
+            </summary>
+            <param name="msgChannel">Messaging channel.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgServiceLayer">
+            <summary>
+            Interface for the specific messaging infrastructure layer.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgServiceLayer.IsInitialized">
+            <summary>
+            Gets a value indicating whether this instance is initialized.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgServiceLayer.ClientConnectionClassName">
+            <summary>
+            Gets a value with name of Js-client class that supports connection to this msg service.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.Common.IMsgServiceLayer.OnMsgChannelConnected">
+            <summary>
+            Occurs when new channel is connected.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgServiceLayer.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgServiceLayer.StopService">
+            <summary>
+            Stops the service.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgServiceLayer.GetServiceUrl(System.String)">
+            <summary>
+            Gets a service url for client connections.
+            </summary>
+            <param name="baseUrl">Base url for service connection.</param>
+            <returns>Service endpoint url that client must use to connect.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgSession">
+            <summary>
+            Interface for wrapping messaging session (like websocket).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgSession.Id">
+            <summary>
+            Session identifier.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgSession.Post(System.String)">
+            <summary>
+            Sends message to client.
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgSession.Close(System.String)">
+            <summary>
+            Closes current session.
+            </summary>
+            <param name="reason">Closing reason.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.MsgChannelManager.Run(Terrasoft.Messaging.Common.IWebSocketServer,Terrasoft.Messaging.Common.IMsgServiceLayer)">
+            <summary>
+            Runs messaging using given <see cref="T:Terrasoft.Messaging.Common.IWebSocketServer"/> and <see cref="T:Terrasoft.Messaging.Common.IMsgServiceLayer"/>.
+            </summary>
+            <param name="server">Messaging server.</param>
+            <param name="serviceLayer">Messaging service layer.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.MsgChannelManager.FindItemByUId(System.Guid)">
+            <summary>
+            Finds the channel by its identifier (often it is admin unit identifier).
+            </summary>
+            <param name="id">The channel identifier.</param>
+            <returns>Found channel or <c>null</c>.</returns>
+        </member>
+    </members>
+</doc>

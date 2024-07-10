@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.SidePanel</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.SidePanel.Addons.SidebarItemInAddon">
+            <summary>
+            Data contract for side bar item in addon config.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.SidePanel.Addons.SidebarsAddon">
+            <summary>
+            Data contract for side bars addon config.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.SidePanel.Addons.SidebarsAddon.Clone">
+            <inheritdoc cref="T:Terrasoft.Core.Addons.Models.AddonItem"/>
+        </member>
+        <member name="M:Terrasoft.SidePanel.Addons.SidebarsAddon.Merge(Terrasoft.Core.Addons.Models.AddonItem)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.SidePanel.Addons.SidebarsAddon.InitializeLocalizableValues(Terrasoft.Common.IResourceStorage,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.SidePanel.Addons.SidebarsAddon.GetLocalizableValues(System.Collections.Generic.ICollection{Terrasoft.Common.LocalizableValue},System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.SidePanel.Addons.SidebarsAddon.LoadLocalizableValues(System.Collections.Generic.IEnumerable{System.Globalization.CultureInfo})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.SidePanel.Addons.SidebarsAddon.ReInitializeLocalizableValues(Terrasoft.Common.IResourceStorage,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.SidePanel.Addons.SidebarsAddon.FindByUId(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.SidePanel.SidePanelDefinition">
+            <summary>
+            Contains all data that are necessary to define specific side panel.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.SidePanel.SidePanelDefinition.Code">
+            <summary>
+            Code of the panel. Used to reference specific panel in different places.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.SidePanel.SidePanelDefinition.Title">
+            <summary>
+            Title of the panel to be displayed in the UI.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.SidePanel.SidePanelDefinition.Icon">
+            <summary>
+            Icon of the panel to be displayed in the UI.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.SidePanel.SidePanelDefinition.SchemaName">
+            <summary>
+            Name of the schema that displays content of the panel.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.SidePanel.SidePanelDefinition.GroupCode">
+            <summary>
+            Code of the group that panel belongs to.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.SidePanel.SidePanelDefinition.Index">
+            <summary>
+            Index used to sort panels.
+            </summary>
+        </member>
+    </members>
+</doc>

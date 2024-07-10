@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.Entities.Services</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.Entities.Services.AspSessionBasedFactory">
+            <summary>
+            Фабрика для создания экземпляров класса EntityDataService
+            </summary>
+            <remarks>Используется в случае работы сервиса в режиме поддержки ASP.NET</remarks>
+        </member>
+        <member name="T:Terrasoft.Core.Entities.Services.EntityDataService">
+            <summary>
+            EntityDataService работает в режиме совместимости с ASP, тоесть одну сессию пользователя
+            могут обрабатывать разные экземпляры сервиса.
+            Сервис не должен ничего кэшировать у себя в экземпляре.
+            Все кэшируемые между запросами данные должны лежать в ServiceContext,
+            который должен хранит все данные в ASP сессии пользователя
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Entities.Services.MetadataProvider.ServiceOperations">
+            <summary>
+            Сервис может содержать набор операций связаных с бизнес логикой, 
+            операции - это публичные методы объявленные в EntityServiceProvider и помеченые атрибутом WebGet/WebInvoke.
+            
+            http://msdn.microsoft.com/en-us/library/cc668788.aspx - Service Operations (WCF Data Services)
+            http://msdn.microsoft.com/en-us/library/dd744841.aspx - How to: Define a Service Operation
+            http://msdn.microsoft.com/en-us/library/hh230677.aspx - Calling Service Operations
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Entities.Services.MetadataProvider.GetResourceAssociationSet(System.Data.Services.Providers.ResourceSet,System.Data.Services.Providers.ResourceType,System.Data.Services.Providers.ResourceProperty)">
+            <summary>
+            Метод возвращает объект представляющий связь между двумя ResourceType
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Entities.Services.PagingProvider.PageSize">
+            <summary>
+            При необходимости OData позволяет задавать размер страницы
+            для каждой EntitySchema-ы отдельно.
+            Смотреть метод EntityDataService.InitializeService()</summary>
+        </member>
+        <member name="F:Terrasoft.Core.Entities.Services.QueryProvider.ReadUncommitedQueryParameterName">
+            <summary>
+            Название параметра запроса, отвечающего за выполнение выборки в режиме "грязного" чтения.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Entities.Services.QueryProvider.GetDefValuesQueryParameterName">
+            <summary>
+            Название параметра запроса, отвечающего за режим получения значений по умолчанию для сущности.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Entities.Services.EntityLazyProxy.SetColumnValue(System.String,System.Object)">
+            <summary>
+            Устанавливает значение колонки для объекта
+            </summary>
+            <remarks> Сгенерированый .NET клиент пытается установить значения для всех колонок,
+            Если пользователь явно установил значение для 3х колонок, то WCF установит значение по умолчанию
+            для всех остальных колонок</remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Entities.Services.UpdateProvider.ResolveResource(System.Object)">
+            <summary>
+            Возвращает экземпляр ресурса, представляемого указанным ресурсным объектом
+            </summary>
+            <remarks> По контракту должен возвращать ((EntityLazyProxy)resource).Entity.Value, 
+            но возможно стоит возвращать прокси, что бы преждевременно не делать запрос в БД.
+            В таком случае все части кода используещие возвращаемый объект должны знать о EntityLazyProxy.
+            Места где используется:
+            	EntityDataServiceQueryProvider.GetResourceType()
+            	Вызывается после вызова SaveChanges для сериализации ресурса для методов POST
+            </remarks>
+        </member>
+    </members>
+</doc>

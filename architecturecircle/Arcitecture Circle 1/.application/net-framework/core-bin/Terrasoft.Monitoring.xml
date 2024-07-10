@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Monitoring</name>
+    </assembly>
+    <members>
+        <member name="P:Terrasoft.Monitoring.IInfluxReportConfig.Url">
+            <summary>
+            InfluxDb service URL.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IInfluxReportConfig.DbName">
+            <summary>
+            Metrics database name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IInfluxReportConfig.UserName">
+            <summary>
+            InfluxDb user name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IInfluxReportConfig.Password">
+            <summary>
+            InfluxDb user password.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IInfluxReportConfig.FlushInterval">
+            <summary>
+            The flush interval (ms). After this time batch with metric points flushes.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IInfluxReportConfig.RetentionPolicy">
+            <summary>
+            Retention policy name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IInfluxReportConfig.DbVersion">
+            <summary>
+            Version of InfluxDb. 0 - latest version <seealso href=
+            "https://github.com/pootzko/InfluxData.Net/blob/develop/InfluxData.Net.Common/Enums/InfluxDbVersion.cs"/>
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Monitoring.IMetric">
+            <summary>
+            Describes monitoring metric.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IMetric.Name">
+            <summary>
+            Metric name according to topic https://prometheus.io/docs/practices/naming/.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetric.GetFieldValues">
+            <summary>
+            Get metric values.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetric.GetTags">
+            <summary>
+            Get additional metric tags.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Monitoring.IMetricReporter">
+            <summary>
+            Interface for reporting metrics.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetricReporter.Gauge(System.String,System.Double)">
+            <summary>
+            Reports a gauge metric.
+            </summary>
+            <param name="name">The name of the metric measurement.</param>
+            <param name="value">The value of the metric.</param>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetricReporter.Gauge(System.String,System.Int32)">
+            <summary>
+            Reports a gauge metric.
+            </summary>
+            <param name="name">The name of the metric measurement.</param>
+            <param name="value">The value of the metric.</param>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetricReporter.Report(Terrasoft.Monitoring.IMetric)">
+            <summary>
+            Reports a complex metric described by implementation
+            of <see cref="T:Terrasoft.Monitoring.IMetric"/>.
+            </summary>
+            <param name="metric">Metric to report.</param>
+        </member>
+        <member name="T:Terrasoft.Monitoring.InfluxConfiguration">
+            <summary>
+            InfluxDb connection configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxConfiguration.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Monitoring.InfluxConfiguration"/> class.
+            </summary>
+            <param name="url">The URL.</param>
+            <param name="dbName">Name of the database.</param>
+            <remarks>If you don't specify <see cref="P:Terrasoft.Monitoring.InfluxConfiguration.FlushInterval"/> each added metric value will make reporter to
+            send value immediately.</remarks>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxConfiguration.#ctor(System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Monitoring.InfluxConfiguration"/> class.
+            </summary>
+            <param name="url">InfluxDb URL.</param>
+            <param name="dbName">Name of the database.</param>
+            <param name="flushInterval">The flush interval (ms). After this time batch with metric points flushes.
+            </param>
+            <param name="defaultTags">The default tags.</param>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.Url">
+            <summary>
+            InfluxDb service URL.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.DbName">
+            <summary>
+            Metrics database name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.UserName">
+            <summary>
+            InfluxDb user name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.Password">
+            <summary>
+            InfluxDb user password.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.FlushInterval">
+            <summary>
+            The flush interval (ms). After this time batch with metric points flushes.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.DefaultTags">
+            <summary>
+            Default tags. Will be added for all measurements.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.RetentionPolicy">
+            <summary>
+            Retention policy names.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxConfiguration.DbVersion">
+            <summary>
+            Version of InfluxDb. 0 - latest version <seealso href=
+            "https://github.com/pootzko/InfluxData.Net/blob/develop/InfluxData.Net.Common/Enums/InfluxDbVersion.cs"/>
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Monitoring.InfluxMetricReporter">
+            <summary>
+            InfluxDb reporter implementation (based on https://github.com/pootzko/InfluxData.Net library).
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+            <seealso cref="T:Terrasoft.Monitoring.IMetricReporter" />
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxMetricReporter.#ctor(Terrasoft.Monitoring.InfluxConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Monitoring.InfluxMetricReporter"/> class.
+            </summary>
+            <param name="influxConfiguration">The InfluxDb configuration.</param>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxMetricReporter.Start">
+            <summary>
+            Starts reporting metrics.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxMetricReporter.Dispose">
+            <summary>
+            Stops batch job that sends metrics.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxMetricReporter.Gauge(System.String,System.Double)">
+            <summary>
+            Reports a gauge metric.
+            </summary>
+            <param name="name">The name of the metric measurement.</param>
+            <param name="value">The value of the metric.</param>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxMetricReporter.Gauge(System.String,System.Int32)">
+            <summary>
+            Reports a gauge metric.
+            </summary>
+            <param name="name">The name of the metric measurement.</param>
+            <param name="value">The value of the metric.</param>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxMetricReporter.Report(Terrasoft.Monitoring.IMetric)">
+            <summary>
+            Reports a complex metric described by implementation of <see cref="T:Terrasoft.Monitoring.IMetric"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Monitoring.InfluxReportConfig">
+            <summary>
+            Configuration for InfluxData metrics reporter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.InfluxReportConfig.#ctor(Terrasoft.Monitoring.IInfluxReportConfigProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Monitoring.InfluxReportConfig"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfig.Url">
+            <summary>
+            InfluxDb service URL.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfig.DbName">
+            <summary>
+            Metrics database name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfig.UserName">
+            <summary>
+            InfluxDb user name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfig.Password">
+            <summary>
+            InfluxDb user password.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfig.FlushInterval">
+            <summary>
+            The flush interval (ms). After this time batch with metric points flushes.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfig.RetentionPolicy">
+            <summary>
+            Retention policy name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfig.DbVersion">
+            <summary>
+            Version of InfluxDb. 0 - latest version <seealso href=
+            "https://github.com/pootzko/InfluxData.Net/blob/develop/InfluxData.Net.Common/Enums/InfluxDbVersion.cs"/>
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.InfluxReportConfigSection.ConnectionStringName">
+            <summary>
+            Gets the name of the connection string.
+            </summary>
+            <value>
+            The name of the connection string.
+            </value>
+        </member>
+        <member name="T:Terrasoft.Monitoring.MetricReporterFactory">
+            <summary>
+            Class for creating and initializing <see cref="T:Terrasoft.Monitoring.IMetricReporter"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.MetricReporterFactory.Initialized">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Terrasoft.Monitoring.MetricReporterFactory"/> is initialized with default metric
+            tags.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.MetricReporterFactory.GetInstance">
+            <summary>
+            Returns metric reporter instance. Invoke <see cref="M:Terrasoft.Monitoring.MetricReporterFactory.Configure(System.String,System.String,System.String)"/> method firstly to set default metric
+            tags: configuration version, customer id, etc. If was not initialized returns dummy instance that sends
+            metrics nowhere.
+            </summary>
+            <returns>Metric reporter instance or dummy instance (if <see cref="M:Terrasoft.Monitoring.MetricReporterFactory.Configure(System.String,System.String,System.String)"/> method wasn't invoked
+            before).</returns>
+        </member>
+        <member name="M:Terrasoft.Monitoring.MetricReporterFactory.Configure(System.String,System.String,System.String)">
+            <summary>
+            Initializes metric reporter instance.
+            </summary>
+            <param name="instanceName">Name of the instance.</param>
+            <param name="configurationVersion">The configuration version.</param>
+            <param name="customerId">The customer identifier.</param>
+        </member>
+    </members>
+</doc>

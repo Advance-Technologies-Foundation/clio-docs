@@ -1,0 +1,12 @@
+# Execute from scenario folder:
+# clio run-scenario --file-name .\install-required-pkg_net472.yaml
+settings:
+  Environment: dev_net472
+
+steps:
+  - action: install-application
+    description: install Customer360 application
+    options:
+      Name: ..\requiredPackages\Customer360_1.5.2.zip
+      Environment: "{{settings.Environment}}"
+  

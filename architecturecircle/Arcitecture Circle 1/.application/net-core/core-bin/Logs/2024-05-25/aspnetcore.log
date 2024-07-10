@@ -1,0 +1,579 @@
+2024-05-25 08:55:49,212 [1] WARN  Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository .ctor - Using an in-memory repository. Keys will not be persisted to storage.
+2024-05-25 08:55:49,227 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager GetFallbackKeyRepositoryEncryptorPair - Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2024-05-25 08:55:49,247 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey - No XML encryptor configured. Key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} may be persisted to storage in unencrypted form.
+2024-05-25 09:00:54,741 [1] WARN  Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository .ctor - Using an in-memory repository. Keys will not be persisted to storage.
+2024-05-25 09:00:54,754 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager GetFallbackKeyRepositoryEncryptorPair - Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2024-05-25 09:00:54,767 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey - No XML encryptor configured. Key {ccfe4c81-c638-4803-b9dd-e32b2015b53f} may be persisted to storage in unencrypted form.
+2024-05-25 09:00:56,790 [1] WARN  Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository .ctor - Using an in-memory repository. Keys will not be persisted to storage.
+2024-05-25 09:00:56,809 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager GetFallbackKeyRepositoryEncryptorPair - Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2024-05-25 09:00:56,835 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey - No XML encryptor configured. Key {241debd4-8ff6-49ac-92d9-25ba239f7ea4} may be persisted to storage in unencrypted form.
+2024-05-25 09:01:07,871 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:07,995 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:10,319 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:13,316 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:15,359 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:17,373 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:18,043 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:20,317 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:23,313 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:26,404 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:29,314 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:32,424 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:35,405 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:38,315 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:41,314 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:44,315 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:47,316 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:48,315 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:50,336 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:53,315 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:56,314 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:01:59,316 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:02,341 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:05,269 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:06,999 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,033 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,033 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,033 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,033 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,033 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,033 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,046 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,046 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,046 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,046 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,046 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,046 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,062 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,062 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,062 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,062 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,062 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,080 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,115 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,115 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,115 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,115 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,125 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,125 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,125 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,161 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,204 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:07,313 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:10,442 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:12,454 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:14,466 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:16,480 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:18,491 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:20,502 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:22,513 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:24,525 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:26,536 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,811 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,860 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,874 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,874 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,904 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,905 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,905 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,905 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,905 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,905 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,905 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,925 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,925 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,925 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,937 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,937 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,937 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:27,972 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:28,043 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:28,134 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:36,076 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware MoveNext - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:02:36,287 [.NET ThreadPool Worker] ERROR Supervisor Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery GetCookieTokenDoesNotThrow - An exception was thrown while deserializing the token.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The antiforgery token could not be decrypted.
+ ---> System.Security.Cryptography.CryptographicException: The key {9dae9bbf-9058-438a-8fe2-1cf45b33e181} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.GetCookieTokenDoesNotThrow(HttpContext httpContext)
+2024-05-25 09:10:00,694 [1] WARN  Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository .ctor - Using an in-memory repository. Keys will not be persisted to storage.
+2024-05-25 09:10:00,707 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager GetFallbackKeyRepositoryEncryptorPair - Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2024-05-25 09:10:00,720 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey - No XML encryptor configured. Key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} may be persisted to storage in unencrypted form.
+2024-05-25 09:10:01,566 [1] WARN  Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository .ctor - Using an in-memory repository. Keys will not be persisted to storage.
+2024-05-25 09:10:01,579 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager GetFallbackKeyRepositoryEncryptorPair - Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2024-05-25 09:10:01,596 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey - No XML encryptor configured. Key {b7e6bb78-2e9b-47f1-b18b-e7fcfe8a611e} may be persisted to storage in unencrypted form.
+2024-05-25 09:11:24,398 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {ccfe4c81-c638-4803-b9dd-e32b2015b53f} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:11:24,569 [.NET ThreadPool Worker] ERROR Supervisor Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery GetCookieTokenDoesNotThrow - An exception was thrown while deserializing the token.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The antiforgery token could not be decrypted.
+ ---> System.Security.Cryptography.CryptographicException: The key {ccfe4c81-c638-4803-b9dd-e32b2015b53f} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgeryTokenSerializer.Deserialize(String serializedToken)
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.GetCookieTokenDoesNotThrow(HttpContext httpContext)
+2024-05-25 09:14:25,697 [1] WARN  Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository .ctor - Using an in-memory repository. Keys will not be persisted to storage.
+2024-05-25 09:14:25,710 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager GetFallbackKeyRepositoryEncryptorPair - Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2024-05-25 09:14:25,723 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey - No XML encryptor configured. Key {3c7fefb5-8541-446e-91f0-f3b1a2a15698} may be persisted to storage in unencrypted form.
+2024-05-25 09:14:27,061 [1] WARN  Microsoft.AspNetCore.DataProtection.Repositories.EphemeralXmlRepository .ctor - Using an in-memory repository. Keys will not be persisted to storage.
+2024-05-25 09:14:27,074 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager GetFallbackKeyRepositoryEncryptorPair - Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2024-05-25 09:14:27,092 [1] WARN  Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey - No XML encryptor configured. Key {16770077-789e-42c3-b29c-22d0ebfe5e73} may be persisted to storage in unencrypted form.
+2024-05-25 09:14:38,272 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,272 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,259 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,259 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,397 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,397 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,397 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,525 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,648 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,800 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:38,951 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:39,117 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:39,283 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:39,500 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:39,679 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:39,854 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:40,011 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:40,182 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:40,353 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:40,465 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:40,985 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:40,985 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:41,068 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-05-25 09:14:41,247 [.NET ThreadPool Worker] WARN  Microsoft.AspNetCore.Session.SessionMiddleware Unprotect - Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The key {e93f11e3-5e0c-461d-9f80-9a6b743a3727} was not found in the key ring. For more information go to http://aka.ms/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)

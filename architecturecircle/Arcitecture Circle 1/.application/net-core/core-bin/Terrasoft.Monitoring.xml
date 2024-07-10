@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Monitoring</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Monitoring.IMetric">
+            <summary>
+            Describes monitoring metric.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Monitoring.IMetric.Name">
+            <summary>
+            Metric name according to topic https://prometheus.io/docs/practices/naming/.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetric.GetFieldValues">
+            <summary>
+            Get metric values.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetric.GetTags">
+            <summary>
+            Get additional metric tags.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Monitoring.IMetricReporter">
+            <summary>
+            Interface for reporting metrics.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetricReporter.Gauge(System.String,System.Double)">
+            <summary>
+            Reports a gauge metric.
+            </summary>
+            <param name="name">The name of the metric measurement.</param>
+            <param name="value">The value of the metric.</param>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetricReporter.Gauge(System.String,System.Int32)">
+            <summary>
+            Reports a gauge metric.
+            </summary>
+            <param name="name">The name of the metric measurement.</param>
+            <param name="value">The value of the metric.</param>
+        </member>
+        <member name="M:Terrasoft.Monitoring.IMetricReporter.Report(Terrasoft.Monitoring.IMetric)">
+            <summary>
+            Reports a complex metric described by implementation
+            of <see cref="T:Terrasoft.Monitoring.IMetric"/>.
+            </summary>
+            <param name="metric">Metric to report.</param>
+        </member>
+    </members>
+</doc>

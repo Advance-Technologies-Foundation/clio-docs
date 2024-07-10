@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Web.FileSecurity</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Web.FileSecurity.IFileSecurityMimeTypeExtensionRepositoryCache">
+            <summary>
+            Provides a mechanism for invalidating cache of MimeType extensions data storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.FileSecurity.IFileSecurityMimeTypeExtensionRepositoryCache.ClearCache">
+            <summary>
+            Clears cache of MimeType extensions that returns in the method 
+            <see cref="M:Terrasoft.Web.FileSecurity.IFileSecurityMimeTypeExtensionRepository.GetAllAsync"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.FileSecurity.IFileSecuritySignatureExtensionRepositoryCache">
+            <summary>
+            Provides a mechanism for invalidating cache of signature extensions data storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.FileSecurity.IFileSecuritySignatureExtensionRepositoryCache.ClearCache">
+            <summary>
+            Clears cache of signature extensions that returns in the method 
+            <see cref="M:Terrasoft.Web.FileSecurity.IFileSecuritySignatureExtensionRepository.GetAllAsync"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.FileSecurity.FileUploadFilterBindings">
+            <summary>
+            Binds dependency injection types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.FileSecurity.FileUploadFilterBindings.Initialize(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Performs DI types binding.
+            </summary>
+        </member>
+    </members>
+</doc>

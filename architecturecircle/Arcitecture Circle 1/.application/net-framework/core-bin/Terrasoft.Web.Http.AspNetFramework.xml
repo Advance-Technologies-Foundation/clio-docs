@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Web.Http.AspNetFramework</name>
+    </assembly>
+    <members>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpContextImpl.SafeSession">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Cookies">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Form">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Files">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.QueryString">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Headers">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.HttpMethod">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.TotalBytes">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Url">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.UrlReferrer">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.UserAgent">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.UserLanguages">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.BaseUrl">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Scheme">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Host">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.ApplicationPath">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpRequestImpl.Path">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.ContentType">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.ClientDisconnectedToken">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Headers">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Location">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.OutputStream">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.StatusCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.StatusDescription">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.AddHeader(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Write(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Write(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Write(System.Char)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Write(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.ClearHeaders">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Redirect(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.AppendCookie(Terrasoft.Web.Http.Abstractions.HttpCookieOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetFramework.HttpResponseImpl.Flush">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

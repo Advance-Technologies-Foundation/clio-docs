@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.AppAnalytics</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.AppAnalytics.AppAnalyticsClient">
+            <summary>
+            Application analytics client.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsClient.#ctor(Terrasoft.AppAnalytics.IAppAnalyticsSettingsProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.AppAnalytics.AppAnalyticsClient"/>.
+            </summary>
+            <param name="settingsProvider">Instance of the <see cref="T:Terrasoft.AppAnalytics.IAppAnalyticsSettingsProvider"/> type.</param>
+        </member>
+        <member name="P:Terrasoft.AppAnalytics.AppAnalyticsClient.Instance">
+            <summary>
+            Provides an instance of the <see cref="T:Terrasoft.AppAnalytics.AppAnalyticsClient"/> type.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.#ctor(Terrasoft.Core.AppConnection,Terrasoft.Common.IDns)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider"/> type.
+            </summary>
+            <param name="appConnection">Instance of the <see cref="T:Terrasoft.Core.AppConnection"/> type.</param>
+            <param name="dns">Instance of the <see cref="T:Terrasoft.Common.IDns"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetWindowsIdentity">
+            <summary>
+            Returns a windows identity.
+            </summary>
+            <returns>Windows identity.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetActorComponents">
+            <summary>
+            Returns an actor components.
+            </summary>
+            <returns>Actor components collection.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetActorIdentifierSeparator">
+            <summary>
+            Returns an actor identifier separator.
+            </summary>
+            <returns>Actor identifier separator.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetActorProperties">
+            <summary>
+            Returns an actor properties.
+            </summary>
+            <returns>Actor properties dictionary.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetApplicationProperties">
+            <summary>
+            Returns an application properties.
+            </summary>
+            <returns>Application properties dictionary.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetDefaultProperties">
+            <summary>
+            Returns default properties.
+            </summary>
+            <returns>Default properties dictionary.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetWriteKeyValue">
+            <summary>
+            Returns write key value.
+            </summary>
+            <returns>Write key value.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetHostName">
+            <summary>
+            Returns a host name.
+            </summary>
+            <returns>Host name string.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetCustomerId">
+            <summary>
+            Returns a customer id.
+            </summary>
+            <returns>Customer id string.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetConfigurationVersion">
+            <summary>
+            Returns a configuration version.
+            </summary>
+            <returns>Configuration version string.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetActor">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetGlobalProperties">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetProfileProperties">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.AppAnalyticsSettingsProvider.GetWriteKey">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.AppAnalytics.DebugAppUserAnalyticsSettingsProvider">
+            <inheritdoc cref="T:Terrasoft.AppAnalytics.DebugAppAnalyticsSettingsProvider"/>
+            <inheritdoc cref="T:Terrasoft.AppAnalytics.IUserAnalyticsSettingsProvider"/>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.DebugAppUserAnalyticsSettingsProvider.#ctor(Terrasoft.Core.UserConnection,Terrasoft.Common.IDns,Terrasoft.AppAnalytics.IHttpContextFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.AppAnalytics.DebugAppUserAnalyticsSettingsProvider"/> type.
+            </summary>
+            <param name="userConnection">Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> type.</param>
+            <param name="dns">Instance of the <see cref="T:Terrasoft.Common.IDns"/> type.</param>
+            <param name="httpContextFactory">Instance of the <see cref="T:Terrasoft.AppAnalytics.IHttpContextFactory"/>.</param>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.DebugAppUserAnalyticsSettingsProvider.GetDefaultProperties">
+            <summary>
+            Returns default properties.
+            </summary>
+            <returns>Default properties dictionary.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.DebugAppUserAnalyticsSettingsProvider.GetActorComponents">
+            <summary>
+            Returns an actor components.
+            </summary>
+            <returns>Actor components collection.</returns>
+        </member>
+        <member name="T:Terrasoft.AppAnalytics.IAnalyticsSettingsProvider">
+            <summary>
+            Provides a settings for analytics.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.IAnalyticsSettingsProvider.GetWriteKey">
+            <summary>
+            Returns a write key.
+            </summary>
+            <returns>Write key.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.IAnalyticsSettingsProvider.GetActor">
+            <summary>
+            Returns an actor.
+            </summary>
+            <returns>An actor.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.IAnalyticsSettingsProvider.GetGlobalProperties">
+            <summary>
+            Returns global properties. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.IAnalyticsSettingsProvider.GetProfileProperties">
+            <summary>
+            Returns profile properties.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.AppAnalytics.IAppAnalyticsSettingsProvider">
+            <summary>
+            Provides a settings for application analytics.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.AppAnalytics.IUserAnalyticsSettingsProvider">
+            <summary>
+            Provides a settings for user analytics.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.AppAnalytics.ReleaseAppUserAnalyticsSettingsProvider">
+            <inheritdoc cref="T:Terrasoft.AppAnalytics.ReleaseAppAnalyticsSettingsProvider"/>
+            <inheritdoc cref="T:Terrasoft.AppAnalytics.IUserAnalyticsSettingsProvider"/>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.ReleaseAppUserAnalyticsSettingsProvider.#ctor(Terrasoft.Core.UserConnection,Terrasoft.Common.IDns)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.AppAnalytics.ReleaseAppUserAnalyticsSettingsProvider"/> type.
+            </summary>
+            <param name="userConnection">Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> type.</param>
+            <param name="dns">Instance of the <see cref="T:Terrasoft.Common.IDns"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.ReleaseAppUserAnalyticsSettingsProvider.GetActorComponents">
+            <summary>
+            Returns an actor components.
+            </summary>
+            <returns>Actor components collection.</returns>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.ReleaseAppUserAnalyticsSettingsProvider.GetDefaultProperties">
+            <summary>
+            Returns default properties.
+            </summary>
+            <returns>Default properties dictionary.</returns>
+        </member>
+        <member name="T:Terrasoft.AppAnalytics.UserAnalyticsClient">
+            <summary>
+            User analytics client.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.AppAnalytics.UserAnalyticsClient.#ctor(Terrasoft.AppAnalytics.IUserAnalyticsSettingsProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.AppAnalytics.UserAnalyticsClient"/>.
+            </summary>
+            <param name="settingsProvider">Instance of the <see cref="T:Terrasoft.AppAnalytics.IUserAnalyticsSettingsProvider"/> type.</param>
+        </member>
+        <member name="P:Terrasoft.AppAnalytics.UserAnalyticsClient.Instance">
+            <summary>
+            Provides an instance of the <see cref="T:Terrasoft.AppAnalytics.UserAnalyticsClient"/> type.
+            </summary>
+        </member>
+    </members>
+</doc>

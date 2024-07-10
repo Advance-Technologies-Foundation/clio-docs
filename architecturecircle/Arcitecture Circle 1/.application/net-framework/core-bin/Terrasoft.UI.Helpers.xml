@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.UI.Helpers</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.WebApp.SvnPageUtilities.ExecuteSvnOperation(System.Action,System.Action{System.Exception,System.String})">
+            <summary>
+            Executes svn operation, if exception occurred handles errorCallback.
+            </summary>
+            <param name="operation">Operation.</param>
+            <param name="errorCallback">Error callback.</param>
+        </member>
+        <member name="M:Terrasoft.WebApp.SvnPageUtilities.GetHasSchemaForeignLock(Terrasoft.Core.Schema,System.String@)">
+            <summary>
+            Indicates if the specified schema locked by another user.
+            </summary>
+            <param name="schema">Schema.</param>
+            <param name="confirmMessage">Message if schema is locked.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

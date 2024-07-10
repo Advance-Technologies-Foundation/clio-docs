@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.ContentGeneration</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoFileReader">
+            <summary>
+            Provides methods to read runtime configuration client content meta info from file.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoFileReader.Read(System.String)">
+            <summary>
+            Reads runtime configuration client content meta info from file.
+            </summary>
+            <param name="configurationMetaInfoFilePath">Path to file.</param>
+            <returns>Configuration meta info, if file exists. Otherwise returns <c>null</c>.</returns>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException"><paramref name="configurationMetaInfoFilePath"/> 
+            is <c>null</c>.</exception>
+        </member>
+        <member name="T:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoFileWriter">
+            <summary>
+            Provides methods to write runtime configuration client content meta info to file.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoFileWriter.Write(Terrasoft.Core.ContentGeneration.ConfigurationMetaInfo,System.String)">
+            <summary>
+            Writes runtime configuration client content meta info to file.
+            </summary>
+            <param name="configurationMetaInfo">Configuration meta info which should be written to file.</param>
+            <param name="configurationMetaInfoFilePath">Path to file.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoReader">
+            <summary>
+            Provides methods to read runtime configuration client meta content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoReader.Read(System.IO.Stream)">
+            <summary>
+            Reads runtime configuration client meta content.
+            </summary>
+            <param name="stream">Stream to read from.</param>
+            <returns>Configuration meta info.</returns>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException"><paramref name="stream"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoWriter">
+            <summary>
+            Provides methods to write runtime configuration client content meta info to stream.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ContentGeneration.IConfigurationMetaInfoWriter.Write(Terrasoft.Core.ContentGeneration.ConfigurationMetaInfo,System.IO.Stream)">
+            <summary>
+            Writes runtime configuration client content meta info to stream.
+            </summary>
+            <param name="configurationMetaInfo">Configuration meta info which should be saved to stream.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+        </member>
+    </members>
+</doc>

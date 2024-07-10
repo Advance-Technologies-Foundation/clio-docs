@@ -1,0 +1,533 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.WebHost</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.WebHost.Application.OnAfterConfigure">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.WebHost.Application.OnShutdown">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.WebHost.ApplicationBindings">
+            <summary>
+            Binds dependency injection types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.ApplicationBindings.ClassFactoryDependenciesInitializer">
+            <summary>
+            Initializes dependencies after loading configuration assembly.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.ApplicationModule.#ctor(Terrasoft.Core.DI.IClassFactoryInitializer)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.WebHost.ApplicationModule"/> type.
+            </summary>
+            <param name="classFactoryInitializer">ClassFactory initializer.</param>
+        </member>
+        <member name="M:Terrasoft.WebHost.ApplicationModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            When implemented in a derived class, performs registration of the dependencies.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Terrasoft.WebHost.CommandLine.ConfigureWebFarmOptions">
+            <summary>
+            Configures an application for a web farm mode. 
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.CommandLine.StartOptions">
+            <summary>
+            Starts an application.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.ConfigurationBuild.IConfigurationBuildNotifier">
+            <summary>
+            Provides methods for notifying of the build process.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.ConfigurationBuild.IConfigurationBuildNotifier.NotifyOnBuildCompleted">
+            <summary>
+            Notifies current user when build has been completed.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.ConfigurationBuild.WebConfigurationBuilder.BuildChangedParallel(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Builds configuration with asynchronous generation of static content for changed schemas.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.ClientScriptController.GenerateLoginScripts">
+            <summary>
+            Returns scripts for login page.
+            </summary>
+            <returns>Scripts for login page.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.ClientScriptController.GenerateViewModuleScripts(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns scripts for view module page.
+            </summary>
+            <returns>Scripts for view module page.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.FaviconScriptController.GenerateFaviconScript(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns scripts for adding favicon.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Controllers.BasePageModel">
+            <summary>
+            Base model class for all CSHTML pages.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebHost.Controllers.BasePageModel.BaseUrl">
+            <summary>
+            Base URL of the web-application (including the application path) in context of current HTTP request.
+            </summary>
+            <remarks>Should be used in URL of script and style tags on pages instead of relative paths because of
+            security risks.</remarks> 
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.GetLoginPageUrl">
+            <summary>
+            Returns login page url.
+            </summary>
+            <returns>Login page url.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.GetNavigationServiceUrl">
+            <summary>
+            Create url to navigation service.
+            </summary>
+            <returns>Navigation service url.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.GetWorkspaceExplorerUrl">
+            <summary>
+            Builds URL of Workspace Explorer ('/ClientApp/#/WorkspaceExplorer') page.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.ViewModule">
+            <summary>
+            Returns ViewModule.html page using old request path (Nui/ViewModule.aspx or 0/Nui/ViewModule.aspx).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.ExternalAccessLogin">
+            <summary>
+            Redirects to ExternalAccessLogin.html page using old request path (Login/ExternalAccessLogin.aspx).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.SSPLogin(System.Guid,System.Guid)">
+            <summary>
+            Redirects to SSPLogin.html page using old request path (Login/SSPLogin.aspx).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.Navigation">
+            <summary>
+            Redirects to NavigationService Redirect method.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.SelfRegisterSspUser(System.String)">
+            <summary>
+            Support functionality for ssp user self registration and remind password
+            which were handling by old path (0/Nui/UserManagement.aspx).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.Feedback(System.String,System.Guid,System.String)">
+            <summary>
+            Redirects to /SspLogin/Feedback/ using old request path (Nui/Feedback.aspx).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.ViewAppInstaller">
+            <summary>
+            Returns application installation page using old request path (Nui/ApplicationInstallation.aspx).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.SubViewAppInstaller">
+            <summary>
+            Returns application installation page using old request path (0/Nui/ApplicationInstallation.aspx).
+            </summary>
+            <returns>Instance of <see cref="T:Microsoft.AspNetCore.Mvc.RedirectResult"/> which redirects to application installation
+            page.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.Login">
+            <summary>
+            Redirect to login page in case when request url is empty.
+            </summary>
+            <returns>The created Microsoft.AspNetCore.Mvc.RedirectResult for the response.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.PageController.WorkspaceExplorer">
+            <summary>
+            Redirects to Workspace Explorer if request URL matches the alias.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.ShellSessionController.GetLoginPageUrl">
+            <summary>
+            Returns login page url.
+            </summary>
+            <returns>Login page url.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Controllers.ShellSessionController.StartSession">
+            <summary>
+            The endpoint to which the shell sends its first request.
+            Used to get Session id in cookies.
+            Until this request is completed, the shell does not send any other requests.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Controllers.Ssp.SspClientScriptController">
+            <summary>
+            Controller to provide ClientScriptController operations for ssp users.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Controllers.Ssp.SspFaviconScriptController">
+            <summary>
+            Controller to provide FaviconScriptController operations for ssp users.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Controllers.Ssp.SspShellSessionController">
+            <summary>
+            Controller to provide ShellSessionController operations for ssp users.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Extensions.HttpContextExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Extensions.HttpContextExtensions.FindUserConnection(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Finds user connection in http context.
+            </summary>
+            <param name="source">Http context.</param>
+            <returns>User connection.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Filters.ODataAuthorizeFilter.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Called early in the filter pipeline to confirm request is authorized.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext" />.
+            </param>
+        </member>
+        <member name="T:Terrasoft.WebHost.Filters.SSPAuthorizeFilter">
+            <summary>
+            SSP authorization filter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Filters.SSPAuthorizeFilter.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Called early in the filter pipeline to confirm request is authorized.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext" />.
+            </param>
+        </member>
+        <member name="M:Terrasoft.WebHost.Formatters.NetODataSerializerProvider.GetODataPayloadSerializer(System.Type,Microsoft.AspNetCore.Http.HttpRequest)">
+            <inheritdoc />
+            <remarks>This signature uses types that are AspNet-specific.</remarks>
+        </member>
+        <member name="M:Terrasoft.WebHost.IApplication.OnAfterConfigure">
+            <summary>
+            Called when the application is being configured.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.IApplication.OnStart">
+            <summary>
+            Called when the application starts. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.IApplication.OnShutdown">
+            <summary>
+            Called when the application is shutting down.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Middleware.HostHeaderFilterMiddleware">
+            <summary>
+            Middleware for filtering Host header and predict potential vulnerability.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Middleware.HostHeaderFilterMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Terrasoft.Web.Security.IHttpRequestHostHeaderValidator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.WebHost.Middleware.HostHeaderFilterMiddleware" /> type.
+            </summary>
+            <param name="next">Request delegate.</param>
+            <param name="requestHostHeaderValidator">Instance of validator.</param>
+        </member>
+        <member name="M:Terrasoft.WebHost.Middleware.HostHeaderFilterMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Request handler.
+            </summary>
+            <param name="context">Http context.</param>
+        </member>
+        <member name="T:Terrasoft.WebHost.UserConnectionLifetimeMiddleware">
+            <summary>
+            Middleware used to setup user connection related lifetime events, such as clearing
+            <see cref="P:Terrasoft.Core.UserConnection.Current"/> property or disposing instances created by
+            <see cref="T:Terrasoft.Web.Common.HttpOperationUserConnectionFactory"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.UserConnectionLifetimeMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.WebHost.UserConnectionLifetimeMiddleware" /> type.
+            </summary>
+            <param name="next">Request delegate.</param>
+        </member>
+        <member name="M:Terrasoft.WebHost.UserConnectionLifetimeMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Request handler.
+            </summary>
+            <param name="context">Http context.</param>
+        </member>
+        <member name="T:Terrasoft.WebHost.Providers.CoreServiceAssemblyProvider">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.WebHost.Providers.CoreServiceAssemblyProvider.GetAssemblies">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.WebHost.Providers.IAssemblyProvider">
+            <summary>
+            Specifies the method for discovering assemblies.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Providers.IAssemblyProvider.GetAssemblies">
+            <summary>
+            Gets the sequence of candidate System.Reflection.Assembly instances that the application uses
+            for further discovery needs.
+            </summary>
+            <returns>A sequence of the <see cref="T:System.Collections.Generic.IEnumerable`1"/> type.</returns>
+        </member>
+        <member name="T:Terrasoft.WebHost.Providers.UserContextProvider">
+            <summary>
+            Provides the user context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Providers.UserContextProvider.GetCurrentUserInfo">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.WebHost.Routing.ConfigurationServiceRouteConverter">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.ConfigurationServiceRouteConverter.#ctor(Terrasoft.Web.Common.ServiceRouting.IServiceRouteProvider,Microsoft.Extensions.Options.IOptions{Terrasoft.WebHost.WebServiceOptions})">
+            <summary>Initializes a new instance of the <see cref="T:Terrasoft.WebHost.Routing.ConfigurationServiceRouteConverter" />
+            class.</summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.ConfigurationServiceRouteConverter.Convert(Terrasoft.ServiceModel.Metadata.ServiceMetadata)">
+            <summary>
+            Returns converted service metadata.
+            </summary>
+            <param name="metadata">Service metadata.</param>
+            <returns><c>true</c> to continue converters invocation, otherwise - <c>false</c>.</returns>
+        </member>
+        <member name="T:Terrasoft.WebHost.Routing.CoreServiceRouteConverter">
+            <summary>
+            Converts routes marked with <see cref="T:Terrasoft.Core.ServiceModelContract.Attributes.CoreServiceRouteAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.CoreServiceRouteConverter.Convert(Terrasoft.ServiceModel.Metadata.ServiceMetadata)">
+            <summary>
+            Returns converted service metadata.
+            </summary>
+            <param name="metadata">Service metadata.</param>
+            <returns><c>true</c> to continue converters invocation, otherwise - <c>false</c>.</returns>
+        </member>
+        <member name="T:Terrasoft.WebHost.Routing.IRouteConverter">
+            <summary>
+            Represents method to convert service metadata.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.IRouteConverter.Convert(Terrasoft.ServiceModel.Metadata.ServiceMetadata)">
+            <summary>
+            Returns converted service metadata.
+            </summary>
+            <param name="metadata">Service metadata.</param>
+            <returns><c>true</c> to continue converters invocation, otherwise - <c>false</c>.</returns>
+        </member>
+        <member name="T:Terrasoft.WebHost.Routing.LicenseIgnoreChecker">
+            <summary>
+            Checks that licenses for request to Terrasoft.WebHost application should be ignored.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.LicenseIgnoreChecker.CheckAreLicensesIgnored">
+            <summary>
+            Implements <see cref="M:Terrasoft.Core.ILicenseIgnoreChecker.CheckAreLicensesIgnored"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Routing.ServiceRoutingExtensions">
+            <summary>
+            Represents the set of extension methods for applying custom routing strategy to <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.ServiceRoutingExtensions.AddServiceRoutingSupport(Microsoft.Extensions.DependencyInjection.IMvcBuilder)">
+            <summary>
+            Adds support of custom routing strategy.
+            </summary>
+            <param name="source">An <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/> that can be used to further configure the MVC services.
+            </param>
+            <returns>Instance that implements the <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/> interface.</returns>
+        </member>
+        <member name="T:Terrasoft.WebHost.Routing.StaticFilesExtensions">
+            <summary>
+            Class that provides extension methods for static files serving.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.StaticFilesExtensions.UseNonAuthorizedAccessStaticFiles(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Enables routing to static files without authorization.
+            </summary>
+            <param name="source"><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> instance.</param>
+            <returns><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Routing.StaticFilesExtensions.UseAuthorizedAccessStaticFiles(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Enables routing to static files that require authorized user.
+            </summary>
+            <param name="source"><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> instance.</param>
+            <returns><see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.Security.Csrf.AspNetCoreCsrfCookieManager.SetCsrfCookie">
+            <summary>
+            Sets CSRF protection cookie.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Security.Csrf.CsrfConsts">
+            <summary>
+            CSRF сonstants.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebHost.Security.Csrf.CsrfConsts.CsrfHeaderName">
+            <summary>
+            Name of cookie, that being copied to header of query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebHost.Security.Csrf.CsrfConsts.CsrfCookieName">
+            <summary>
+            Name of cookie, that being matched with header value.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Security.Csrf.Filters.CsrfTokenValidationOptions">
+            <summary>
+            Options for validating CSRF token.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebHost.Security.Csrf.Filters.CsrfTokenValidationOptions.DisableValidationForPaths">
+            <summary>
+            Contains collection of paths, which are not checked for
+            CSRF cookie presence and validity.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Security.Csrf.ICsrfCookieManager">
+            <summary>
+            Interface for manager of cookies for CSRF protection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Security.Csrf.ICsrfCookieManager.SetCsrfCookie">
+            <summary>
+            Sets CSRF protection cookie.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Session.ISessionEventListener">
+            <summary>
+            Interface, that describes application's session event listener.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.Session.ISessionEventListener.OnSessionStart(Microsoft.AspNetCore.Http.ISession)">
+            <summary>
+            Occurs on session start.
+            </summary>
+            <param name="session">Instance of the <see cref="T:Microsoft.AspNetCore.Http.ISession"/> type, that describes started session.</param>
+        </member>
+        <member name="M:Terrasoft.WebHost.Session.ISessionEventListener.OnSessionEnd(Microsoft.AspNetCore.Http.ISession)">
+            <summary>
+            Occurs on session end.
+            </summary>
+            <param name="session">Instance of the <see cref="T:Microsoft.AspNetCore.Http.ISession"/> type, that describes ended session.</param>
+        </member>
+        <member name="M:Terrasoft.WebHost.Session.ISessionEventListener.OnSessionExpired">
+            <summary>
+            Occurs on session expiration.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.WebHost.Session.RedisSessionManager.RegisterSessionScript">
+            <summary>
+            NX -- Only set the key if it does not already exist.
+            EX seconds -- Set the specified expire time, in seconds.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebHost.Session.SessionEventListener">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.WebHost.Session.SessionEventListener.OnSessionStart(Microsoft.AspNetCore.Http.ISession)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.WebHost.Session.SessionEventListener.OnSessionEnd(Microsoft.AspNetCore.Http.ISession)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.WebHost.Session.SessionEventListener.OnSessionExpired">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.WebHost.StartupExtensions">
+            <summary>
+            Provides a set of extension methods for .Net Core application startup.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.StartupExtensions.AddWcfSupport(Microsoft.Extensions.DependencyInjection.IMvcBuilder,System.Boolean)">
+            <summary>
+            Adds a WCF support to application.
+            </summary>
+            <param name="source">Instance of the <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</param>
+            <param name="isDevelopmentEnvironment">True if the environment is Development, otherwise false.</param>
+            <returns>Modified instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.StartupExtensions.CustomizeDataProtection(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds Data Protection support to application and customizes it.
+            </summary>
+            <param name="source">Instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <param name="configuration">Application configuration properties for customization.</param>
+            <returns>Modified instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.StartupExtensions.SetupForwardedHeaders(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Setup forwarded headers.
+            </summary>
+            <param name="source">Instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <param name="configuration">Application configuration properties for customization.</param>
+            <returns>Modified instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="T:Terrasoft.WebHost.WebFarmConfigurator">
+            <summary>
+            Provides a set of methods for configuring application in web farm mode.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebHost.WebFarmConfigurator.#ctor(Microsoft.AspNetCore.DataProtection.KeyManagement.IKeyManager,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Logging.ILogger{Terrasoft.WebHost.WebFarmConfigurator})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.WebHost.WebFarmConfigurator"/>.
+            </summary>
+            <param name="keyManager">Instance of the <see cref="T:Microsoft.AspNetCore.DataProtection.KeyManagement.IKeyManager"/> to use.</param>
+            <param name="lifetime">Instance of the <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationLifetime"/> to use.</param>
+            <param name="log">Logger to write to.</param>
+        </member>
+        <member name="M:Terrasoft.WebHost.WebFarmConfigurator.SetUpJsonConfig">
+            <summary>
+            Performs set up of the appsettings.json configuration file.
+            </summary>
+            <returns>Config file name.</returns>
+        </member>
+        <member name="M:Terrasoft.WebHost.WebFarmConfigurator.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Triggered when the application host is ready to start the service.
+            </summary>
+            <param name="cancellationToken">Indicates that the start process has been aborted.</param>
+        </member>
+        <member name="M:Terrasoft.WebHost.WebFarmConfigurator.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Triggered when the application host is performing a graceful shutdown.
+            </summary>
+            <param name="cancellationToken">Indicates that the shutdown process should no longer be graceful.</param>
+        </member>
+        <member name="T:Terrasoft.WebHost.WebServiceOptions">
+            <summary>
+            Used to store configuration services options.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebHost.WebServiceOptions.AnonymousRoutes">
+            <summary>
+            Dictionary of anonymous routes for services with service type name as key.
+            </summary>
+        </member>
+    </members>
+</doc>

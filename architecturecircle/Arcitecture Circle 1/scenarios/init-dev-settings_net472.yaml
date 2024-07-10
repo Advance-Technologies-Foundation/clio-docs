@@ -1,0 +1,48 @@
+
+settings:
+  Environment: dev_net472
+
+steps:
+  - action: set-syssetting
+    description: Disable widget on login page
+    options:
+      Code: ShowWidgetOnLoginPage
+      Value: False
+      Type: Boolean
+      Environment: "{{settings.Environment}}"
+  - action: set-syssetting
+    description: Disable widget on intro page
+    options:
+      Code: ShowWidgetOnIntroPage
+      Value: False
+      Type: Boolean
+      Environment: "{{settings.Environment}}"
+  - action: set-syssetting
+    description: Set developer prefix
+    options:
+      Code: SchemaNamePrefix
+      Value: Atf
+      Type: Text
+      Environment: "{{settings.Environment}}"
+  - action: set-syssetting
+    description: Set default publisher
+    options:
+      Code: Maintainer
+      Value: Advanced Technologies Foundation
+      Type: Text
+      Environment: "{{settings.Environment}}"
+  - action: set-syssetting
+    description: Switch debug mode on
+    options:
+      Code: IsDebug
+      Value: True
+      Type: Boolean
+      Environment: "{{settings.Environment}}"
+  - action: flushdb
+    description: flush Redis database
+    options:
+      Environment: "{{settings.Environment}}"
+  - action: restart
+    description: restart application
+    options:
+      Environment: "{{settings.Environment}}"

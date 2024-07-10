@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.DB.MSSql</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlConnectionModifier.GetModifier">
+            <summary>
+            Returns singleton instance of this modifier.
+            </summary>
+            <returns>Singleton instance of <see cref="T:Terrasoft.DB.MSSql.MSSqlConnectionModifier"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlConnectionModifier.GetModifiedConnectionString(System.String,Terrasoft.Common.QueryKind)">
+            <summary>
+            Returns modified SQLServer connection string for the given <see cref="T:Terrasoft.Common.QueryKind"/>.
+            </summary>
+            <param name="sourceConnectionString">Source SQLServer connection string.</param>
+            <param name="kind"><see cref="T:Terrasoft.Common.QueryKind"/> for which connection string is returned.</param>
+            <returns>Modified connection string.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.MSSql.MsSqlDataValueTypeResolver">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbDataValueTypeResolver"/>
+        </member>
+        <member name="P:Terrasoft.DB.MSSql.MSSqlEngine.IsClusteredIndexAlias">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.DB.MSSql.MSSqlEngine.IsConstraintClusteredAlias">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.DB.MSSql.MSSqlEngine.AllowsMars">
+            <summary>
+            Represents whether the database allows multiple active result sets.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.EqualsDataValueType(Terrasoft.Core.DataValueType,Terrasoft.Core.DataValueType)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.IDbDataValueTypeComparer"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.NeedCastOrderedTextColumn(Terrasoft.Core.DataValueType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.BuildNextValueSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for getting next value for sequence. <paramref name="sb"/>.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.BuildCurrentValueSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for getting current value for sequence. <paramref name="sb"/>.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.BuildReCreateSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for recreating sequence in DB.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.BuildDropSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for droping sequence from DB. <paramref name="sb"/>.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.BuildExistSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for checking existence sequence in DB. <paramref name="sb"/>.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetColumnsQuerySqlText(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetIndexesQuerySqlText">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetColumnDefValue(Terrasoft.Core.Entities.EntitySchemaColumn,System.Boolean)">
+            <summary>
+            Returns SQL text for default value of a column.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <param name="isWrapped">Flag that indicates whether value in text is wrapped in parentheses.</param>
+            <returns>SQL text for default value of a column.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetColumnDefValue(Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Returns SQL text for default value of a column.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <returns>SQL text for default value of a column.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetColumnDefValue(Terrasoft.Core.Entities.EntitySchemaColumn,System.String)">
+            <summary>
+            Returns SQL text for default value of a column.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <param name="dbDefValue">Default value format on database level.</param>
+            <returns>SQL text for default value of a column.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetSysSchemaParentsInPackageHierarchySelectSqlText(System.Boolean)">
+            <summary>
+            Returns SQL text to get schema parents in package hierarchy.
+            </summary>
+            <param name="usePackageHierarchy">Indicates whether to use package hierarchy or not.</param>
+            <returns>SQL text to get schema parents in package hierarchy.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsTextDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsDbObjectNameDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsIntegerDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsFloatDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsBooleanDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsDateTimeDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsGuidDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsMaxSizeText(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.IsUnicodeText(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetDateTimeValueKind(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlEngine.GetDBRowsCountSqlText">
+            <summary>
+            Gets the database rows count SQL text.
+            </summary>
+            <returns>SQL rows count text.</returns>
+        </member>
+        <member name="P:Terrasoft.DB.MSSql.MSSqlExecutor.ConnectionModifier">
+            <summary>
+            An instance implementing <see cref="T:Terrasoft.Core.DB.IConnectionModifier"/> that is used to modify connection strings for 
+            different <see cref="T:Terrasoft.Common.QueryKind"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlExecutor.RefreshMaterializedView(System.String,System.Boolean)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DBExecutor"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlExecutor.RefreshMaterializedView(System.String)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DBExecutor"/>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlMetaScript.GetForeignKeysDataReader(Terrasoft.Core.DB.DBExecutor,System.String)">
+            <summary>
+            Returns foreign keys data reader.
+            </summary>
+            <param name="dbExecutor">Instance of <see cref="T:Terrasoft.Core.DB.DBExecutor"/>. Provides DB query execution.</param>
+            <param name="entitySchemaName">Schema name to get foreign keys for.</param>
+            <returns><see cref="T:System.Data.IDataReader"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsDBLevelRequirementTypeColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Determines if column value is required on database level.
+            </summary>
+            <param name="entitySchema">Schema.</param>
+            <param name="entitySchemaColumn">Column in schema.</param>
+            <returns>Value that indicates whether column value is required on database level.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsDefValueTypeColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Determines if column is of type that requires default value.
+            </summary>
+            <param name="entitySchema">Schema.</param>
+            <param name="entitySchemaColumn">Column in schema.</param>
+            <returns>Value that indicates whether column is of type that requires default value.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsForeignKeyCascade(System.Data.IDataReader)">
+            <summary>
+            Determines whether foreign key is cascade.
+            </summary>
+            <param name="dataReader">>Instance of <see cref="T:Terrasoft.Core.DataReader"/> to read property.</param>
+            <returns><c>true</c> if foreign key is cascade. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsIndexUnique(System.Data.IDataReader)">
+            <summary>
+            Determines whether index is unique.
+            </summary>
+            <param name="dataReader">>Instance of <see cref="T:Terrasoft.Core.DataReader"/> to read property.</param>
+            <returns><c>true</c> if index is unique. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.SqlErrorPattern.#ctor(System.String,System.Int32,System.Nullable{System.Byte},System.Nullable{System.Byte},System.String)">
+            <summary>
+            Represents a set of properties, that is used to identify particular <see cref="T:System.Data.SqlClient.SqlError"/>.
+            </summary>
+            <param name="name">Descriptive short string to identify the pattern.</param>
+            <param name="number">Number of the error, which corresponds to column [message_id] in
+            Sql Server sys.messages table. See <see cref="T:System.Data.SqlClient.SqlError"/>.Number property.</param>
+            <param name="errorClass">Class of the error, which corresponds to column [severity] in
+            Sql Server sys.messages table. See <see cref="T:System.Data.SqlClient.SqlError"/>.Class property.</param>
+            <param name="state">State of the error, which corresponds to column [severity] in
+            Sql Server sys.messages table. See <see cref="T:System.Data.SqlClient.SqlError"/>.Message property.</param>
+            <param name="searchMessagePattern">String to be found in <see cref="T:System.Data.SqlClient.SqlError"/>.Message
+            property.</param>
+        </member>
+        <member name="M:Terrasoft.DB.MSSql.MSSqlRetryOperation.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructs a new IRetryOperation with the given number of retries and interval between retries.
+            </summary>
+            <param name="retryTimes"></param>
+            <param name="retryInterval">Interval between retries in milliseconds.</param>
+        </member>
+    </members>
+</doc>

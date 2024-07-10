@@ -1,0 +1,2321 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.ServiceModel</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Core.ServiceModel.AppearanceSettings.AppearanceSettingsService.GetAppearanceSettings(Terrasoft.Core.ServiceModelContract.AppearanceSettings.Modals.GetAppearanceSettingsRequest)">
+            <summary>
+            Get schema appearance settings.
+            </summary>
+            <returns>Return response with collection relatedPages group by entity schema.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.LoadPackagesToFileSystem(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Load packages to file system.
+            </summary>
+            <param name="packageNames"></param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.LoadPackagesToDB(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Load packages to DB.
+            </summary>
+            <param name="packageNames"></param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.UninstallApp(System.Guid)">
+            <summary>
+            Uninstalls application.
+            </summary>
+            <param name="appId">Application identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.DeletePackage(System.String)">
+            <summary>
+            Deletes package.
+            </summary>
+            <param name="packageName">Package name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.GetIsDemoMode">
+            <summary>
+            Returns <c>true</c> if demo mode is on. Otherwise returns false.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.ClearRedisDb">
+            <summary>
+            Clear redis database.
+            </summary>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.CreateApp(Terrasoft.Core.ServiceModelContract.NewAppInfo)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.RunApp(Terrasoft.Core.ServiceModelContract.BaseAppRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.GetAppCurrentPackage(Terrasoft.Core.ServiceModelContract.BaseAppRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.GetDesignPackageUId(Terrasoft.Core.ServiceModelContract.DesignPackageRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.ExportApp(Terrasoft.Core.ServiceModelContract.BaseAppRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.AppInstallerService.GetAppNamesByPackageUId(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.ApplicationInfoService">
+            <summary>
+            Web service with application info API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationInfoService.GetApplicationInfo">
+            <summary>
+            Returns Application info.
+            </summary>
+            <returns>Application info response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationInfoService.GetPackageHierarchyInfo">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IApplicationService.GetPackageHierarchyInfo"/>>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationInfoService.CanUseFreedomUI(System.String)">
+            <summary>
+            Returns true if the passed page should be opened in Freedom UI host.
+            </summary>
+            <param name="pageUrl">Page url.</param>
+            <returns>Returns true if the passed page should be opened in Freedom UI host.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationPackagesService.ExcludePackageFromApp(Terrasoft.Core.ServiceModelContract.ExcludePackageFromAppRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationPackagesService.CreatePackageInApp(Terrasoft.Core.ServiceModelContract.CreatePackageInAppRequest)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IApplicationPackagesService.CreatePackageInApp(Terrasoft.Core.ServiceModelContract.CreatePackageInAppRequest)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationPackagesService.GetExistingPackagesForAddingInApp(Terrasoft.Core.ServiceModelContract.AddExistingPackagesInAppRequest)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IApplicationPackagesService.GetExistingPackagesForAddingInApp(Terrasoft.Core.ServiceModelContract.AddExistingPackagesInAppRequest)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationPackagesService.AddExistingPackagesToApp(Terrasoft.Core.ServiceModelContract.AddExistingPackagesInAppRequest)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IApplicationPackagesService.AddExistingPackagesToApp(Terrasoft.Core.ServiceModelContract.AddExistingPackagesInAppRequest)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ApplicationPackagesService.SetAppCurrentPackage(Terrasoft.Core.ServiceModelContract.SetCurrentPackageInAppRequest)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IApplicationPackagesService.SetAppCurrentPackage(Terrasoft.Core.ServiceModelContract.SetCurrentPackageInAppRequest)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseRepository.GetUserPackageIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Returns users package identifiers.
+            </summary>
+            <param name="userIds">Users identifiers.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseRepository.BulkGetUsersPackages(System.Guid[])">
+            <summary>
+            Returns users package identifiers. Receives packages by parts.
+            </summary>
+            <param name="userIds">Users identifiers.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseRepository.GetLicenses(System.Nullable{System.Guid})">
+            <summary>
+            Returns all licenses and package data. If <paramref name="packageId"/> is specified,
+            filters licenses by the package.
+            </summary>
+            <param name="packageId">Identifier of package to filter licenses.</param>
+            <returns><see cref="T:Terrasoft.Core.Configuration.SysLic"/> instances with license and package data.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.BaseLicenseService">
+            <summary>
+            Abstract class with functionality used by license manager.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.CreateLicenseRepository">
+            <summary>
+            Creates license repository instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetLicensedUsers(System.Guid)">
+            <summary>
+            Returns all licensed users data by <paramref name="packageId"/>.
+            </summary>
+            <param name="packageId">Identifier of package.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetSysAdminUnitQuery">
+            <summary>
+            Returns entity schema query.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetSysAdminUnitsByChunks">
+            <summary>
+            Receives list containing all SysAdminUnit records with chunks sized by MaxEntityRowCount setting.
+            </summary>
+            <returns><see cref="T:Terrasoft.Core.Entities.EntityCollection"/> instance containing SysAdminUnit records.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetUsers">
+            <summary>
+            Returns all users data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.UploadLicenses(Terrasoft.Core.ServiceModelContract.UploadLicenses)">
+            <summary>
+            Uploads licenses.
+            </summary>
+            <param name="licenses">Object with data of loading licenses.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.CreateLicenseRequest(System.String)">
+            <summary>
+            Creates license request.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.CreateVersionedLicenseRequest(System.String,System.String)">
+            <summary>
+            Creates license request.
+            </summary>
+            <param name="customerId">Customer id.</param>
+            <param name="licVersion">License version.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetLicenses">
+            <summary>
+            Returns all licenses and package data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetLicenseData(System.Guid)">
+            <summary>
+            Returns licenses data by package identifier.
+            </summary>
+            <param name="packageId">License package identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.SaveLicenseData(Terrasoft.Core.ServiceModelContract.LicenseSaveData)">
+            <summary>
+            Saves licenses data by package identifier.
+            </summary>
+            <param name="saveData">Lisense data for save.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetUsersList">
+            <summary>
+            Returns system users.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetCustomerId">
+            <summary>
+            Gets licensing company identifier.
+            </summary>
+            <returns>Service response with customer identifier.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetAssemblyVersion">
+            <summary>
+            Gets assembly version.
+            </summary>
+            <returns>Service response with assembly version.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.DeleteLicenses">
+            <summary>
+            Deletes all licenses.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetLicOperationStatus(System.String)">
+            <summary>
+            Returns status of licensed operation by code.
+            </summary>
+            <param name="licOperationCode">Licensed operation code.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LicOperationStatusResponse"/>Licensed operation status.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetLicOperationStatuses(System.String[])">
+            <summary>
+            Returns status of licensed operations by code.
+            </summary>
+            <param name="licOperationCodes">Array of licensed operation codes.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LicOperationStatusesResponse"/>Licensed operation statuses.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetExplicitLicOperationStatuses(System.String[])">
+            <summary>
+            Returns status of explicitly licensed operations by code.
+            </summary>
+            <param name="licOperationCodes">Array of licensed operation codes.</param>
+            <returns><see cref="T:Terrasoft.Core.ServiceModelContract.LicOperationStatusesResponse"/>Licensed operation statuses.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseLicenseService.GetUnavailableLicOperations">
+            <summary>
+            Returns unavailable licensed operations.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.BaseProcessSchemaManagerService`2">
+            <summary>
+            The base class that provides common operations to manipulate with Process and Dcm schemas.
+            </summary>
+            <seealso cref="T:Terrasoft.Web.Common.BaseService" />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseProcessSchemaManagerService`2.GetSchemaVersionInfo(System.String,System.String)">
+            <summary>
+            Returns schema version info.
+            </summary>
+            <param name="parentSchemaUId">The unique identifier of the parent schema.</param>
+            <param name="packageUId">The unique identifier of the package.</param>
+            <returns>String that contains the json object.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseProcessSchemaManagerService`2.SetIsActualVersion(System.String)">
+            <summary>
+            Sets schema as actual by UId.
+            </summary>
+            <param name="schemaUId">The schema UId.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseProcessSchemaManagerService`2.GetActualVersionUId(System.String)">
+            <summary>
+            Gets unique identifier of process schema's actual version.
+            </summary>
+            <param name="schemaUId">The schema UId.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseSchemaService.WriteErrorLog(System.Exception)">
+            <summary>
+            Writes formatter log to application log.
+            </summary>
+            <param name="exception">Exception to write.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseSchemaService.GetExceptionResponse(System.String)">
+            <summary>
+            Gets success response
+            </summary>
+            <param name="message">The message.</param>
+            <returns>Response string.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseSchemaService.GetSuccessResponse(System.String)">
+            <summary>
+            Gets success response
+            </summary>
+            <param name="message">The message.</param>
+            <returns>Response string.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseSchemaService.ExportInternal(System.Guid)">
+            <summary>
+            Performs export operation.
+            </summary>
+            <param name="schemaId">Schema to export.</param>
+            <returns>The String with metadata.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseSchemaService.Export(System.String,System.String)">
+            <summary>
+            Exports schema MetaData by specified identifier and schema manager name.
+            </summary>
+            <param name="schemaUId">Schema identifier.</param>
+            <param name="managerName">Schema identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseSchemaService.GetUniqueNameAndCaption(System.String,System.String,System.String)">
+            <summary>
+            Returns unique manager item name and caption by specified manager name.
+            </summary>
+            <param name="managerName">Manager name.</param>
+            <param name="namePrefix">Name prefix</param>
+            <param name="captionPrefix">Caption prefix</param>
+            <returns>Json object with name and caption values.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.BaseSchemaService.CheckHasNoForeignLock(System.String,System.String)">
+            <summary>
+            Indicates whether the specified schema has any foreign lock.
+            </summary>
+            <param name="managerName">Schema manager name.</param>
+            <param name="schemaUId">Schema identifier.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.ChangeLogRepository">
+            <summary>
+            Class containing a logic for receiving a change log.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.AddLookupQueryColumn(Terrasoft.Core.Entities.EntitySchemaQuery,System.String)">
+            <summary>
+            Adds lookup query column to entity schema query.
+            </summary>
+            <param name="entitySchemaQuery">Entity schema query.</param>
+            <param name="columnName">Column name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetChangeLogEsq(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn[],Terrasoft.Core.ServiceModelContract.ChangeLogPagingOptions)">
+            <summary>
+            Returns change log entity schema query.
+            </summary>
+            <param name="changeLogEntitySchema">Entity schema of change log object.</param>
+            <param name="trackedColumns">Tracked columns to be added to the entity schema query.</param>
+            <param name="pagingOptions">Paging options to the entity schema query.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.AddChangeLogEsqFilters(Terrasoft.Core.Entities.EntitySchemaQuery,Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.ServiceModelContract.ChangeLogFilters)">
+            <summary>
+            Adds filters to entity schema query.
+            </summary>
+            <param name="changeLogEsq">Entity schema query.</param>
+            <param name="sourceEntitySchema">Entity schema of logged object.</param>
+            <param name="filters">Query filters.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.AddChangeLogEsqSearchFilter(Terrasoft.Core.Entities.EntitySchemaQuery,Terrasoft.Core.Entities.EntitySchema,System.String)">
+            <summary>
+            Adds search filter to entity schema query.
+            </summary>
+            <param name="changeLogEsq">Entity schema query.</param>
+            <param name="sourceEntitySchema">Entity schema of logged object.</param>
+            <param name="searchValue">Search value.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetLookupValueColumnAlias(System.String)">
+            <summary>
+            Builds alias of ESQ column containing lookup column value.
+            </summary>
+            <param name="columnName">Lookup column name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetLookupValue(Terrasoft.Core.Entities.Entity,System.String)">
+            <summary>
+            Returns lookup value by column name.
+            </summary>
+            <param name="entity">Entity.</param>
+            <param name="columnName">Column name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetLookupDisplayValueColumnAlias(System.String)">
+            <summary>
+            Builds alias of ESQ column containing lookup column display value.
+            </summary>
+            <param name="columnName">Lookup column name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetLookupDisplayValue(Terrasoft.Core.Entities.Entity,System.String)">
+            <summary>
+            Returns lookup display value by column name.
+            </summary>
+            <param name="entity">Entity.</param>
+            <param name="columnName">Column name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetColumnDataValueType(Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Returns column data value type.
+            </summary>
+            <param name="column">Entity schema column.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.FormatColumnValue(Terrasoft.Core.Entities.EntitySchemaColumn,System.Object)">
+            <summary>
+            Formats column value for sending it to the client side.
+            </summary>
+            <param name="column">Entity schema column which value needs to be formatted.</param>
+            <param name="columnValue">Column value.</param>
+            <returns>Formatted column value.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.CreateChangedColumn(Terrasoft.Core.Entities.EntitySchemaColumn,System.Object,System.Object)">
+            <summary>
+            Creates changed column instance.
+            </summary>
+            <param name="column">Entity schema column.</param>
+            <param name="oldValue">Old column value.</param>
+            <param name="newValue">New column value.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.CreateChangeLogRecord(Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Creates change log record.
+            </summary>
+            <param name="entity">Change log record entity.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.AreColumnValuesEqual(System.Object,System.Object)">
+            <summary>
+            Compares specified column values.
+            </summary>
+            <param name="value1">First column value.</param>
+            <param name="value2">Second column value.</param>
+            <returns>True if values are equal, and false in another case.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetChangedColumns(Terrasoft.Core.Entities.Entity,Terrasoft.Core.Entities.Entity,Terrasoft.Core.Entities.EntitySchemaColumn[])">
+            <summary>
+            Compares values of tracked columns of two change log record entities and creates <see cref="T:Terrasoft.Core.ServiceModelContract.ChangedColumn"/>
+            instances for changed ones.
+            </summary>
+            <param name="oldChangeLogEntity">Change log record entity that specifies a change was tracked first.</param>
+            <param name="newChangeLogEntity">Change log record entity that specifies a change was tracked
+            next after change specified by <paramref name="oldChangeLogEntity"/>.</param>
+            <param name="changeLogTrackedColumns">Tracked change log columns to be compared.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.CreateRecordChangeLogList(Terrasoft.Core.Entities.EntityCollection,Terrasoft.Core.Entities.EntitySchemaColumn[])">
+            <summary>
+            Creates change log list.
+            </summary>
+            <param name="changeLogEntityCollection">Collection of change log entities.</param>
+            <param name="changeLogTrackedColumns">Tracked change log columns to be returned in the result list.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetEntityPagingOptions(Terrasoft.Core.ServiceModelContract.ChangeLogPagingOptions)">
+            <summary>
+            Returns entity paging options for entity schema query.
+            </summary>
+            <param name="pagingOptions"></param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogRepository.GetObjectChangeLog(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn[],Terrasoft.Core.ServiceModelContract.ChangeLogPagingOptions,Terrasoft.Core.ServiceModelContract.ChangeLogFilters)">
+            <summary>
+            Returns object change log list.
+            </summary>
+            <param name="entitySchema"></param>
+            <param name="trackedColumns"></param>
+            <param name="pagingOptions"></param>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.ChangeLogService">
+            <summary>
+            Web service with change log API.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.ServiceModel.ChangeLogService._operationAccessDeniedMessage">
+            <summary>
+            Operation access denied message.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ChangeLogService.DBViewOperationErrorMessage">
+            <summary>
+            Logging is unavailable for views error message.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ChangeLogService.DbSecurityEngine">
+            <summary>
+            DB security engine.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CreateChangeLogRepository">
+            <summary>
+            Creates change log repository instance for receiving a change log.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CheckCanReadColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Checks if current user can read column.
+            </summary>
+            <param name="entitySchema">Entity schema.</param>
+            <param name="column">Entity schema column.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CheckNeedLoadTrackedColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Checks whether specified tracked column of the entity schema should be loaded.
+            </summary>
+            <param name="entitySchema">Entity schema instance.</param>
+            <param name="entitySchemaColumn">Entity schema column to check</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetEntitySchemaTrackedColumns(Terrasoft.Core.Entities.EntitySchema)">
+            <summary>
+            Returns entity schema tracked columns.
+            </summary>
+            <param name="entitySchema">Entity schema.</param>
+            <returns>Entity schema tracked columns.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetRecordTitle(Terrasoft.Core.Entities.EntitySchema,System.Guid)">
+            <summary>
+            Returns record primary display value;
+            </summary>
+            <param name="entitySchema">Entity schema.</param>
+            <param name="recordId">Record Id.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CheckCanReadObject(Terrasoft.Core.Entities.EntitySchema)">
+            <summary>
+            Checks if current user can read object.
+            </summary>
+            <param name="entitySchema">Entity schema.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CheckCanReadRecord(Terrasoft.Core.Entities.EntitySchema,System.Guid)">
+            <summary>
+            Checks if current user can read record.
+            </summary>
+            <param name="entitySchema">Entity schema.</param>
+            <param name="recordId">Record Id.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CreateChangeLogSettings(Terrasoft.Core.Entities.EntitySchema)">
+            <summary>
+            Creates change log settings by schema UId.
+            </summary>
+            <param name="entitySchema">Entity schema.</param>
+            <returns>Change log settings.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.SaveChangeLogSettings(Terrasoft.Core.ServiceModelContract.ObjectChangeLogSettings)">
+            <summary>
+            Saves Change log settings for entity schema.
+            </summary>
+            <param name="settings">Change log settings.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CreateChangeLogObjectsEsq">
+            <summary>
+            Creates entity schema query for receiving the change log objects.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.CreateChangeLogObjects(Terrasoft.Core.Entities.EntitySchemaQuery)">
+            <summary>
+            Creates change log objects from entity collection.
+            </summary>
+            <param name="esq">Entity schema query for change log objects.</param>
+            <returns>Array with change log objects.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.UpdateDbStructure(Terrasoft.Core.Entities.EntitySchema)">
+            <summary>
+            Executes required database actions.
+            </summary>
+            <param name="schema">Entity schema.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.BuildChangedConfiguration">
+            <summary>
+            Builds changed configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetAllObjects">
+            <summary>
+            Returns list of all objects change log settings.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetSectionObjects">
+            <summary>
+            Returns list of section objects change log settings.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetLookupObjects">
+            <summary>
+            Returns list of lookup objects change log settings.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetRecordChangeLog(System.Guid,System.Guid)">
+            <summary>
+            Returns change log by record.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <param name="recordId">Record Id.</param>
+            <returns>Change log by record.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetObjectChangeLog(System.Guid,Terrasoft.Core.ServiceModelContract.ChangeLogPagingOptions,Terrasoft.Core.ServiceModelContract.ChangeLogFilters)">
+            <summary>
+            Returns change log by object.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <param name="pagingOptions">Paging options.</param>
+            <param name="filters">Change log filters.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.SaveObjectChangeLogSettings(Terrasoft.Core.ServiceModelContract.ObjectChangeLogSettings)">
+            <summary>
+            Saves entity schema change log settings.
+            </summary>
+            <param name="changeLogSettings">Change log settings.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetObjectChangeLogSettings(System.Guid)">
+            <summary>
+            Returns change log settings for entity schema.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <returns>Change log settings for entity schema.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ChangeLogService.GetLoggedObjects">
+            <summary>
+            Returns change log settings for entity schema.
+            </summary>
+            <returns>Change log settings for entity schema.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.ClientUnitSchemaPathService">
+            <summary>
+            Web service for retrieve client unit schema paths.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ClientUnitSchemaPathService.GetPathsBySchemaName(System.String)">
+            <summary>
+            Gets paths schema name.
+            </summary>
+            <param name="schemaName">Schema name.</param>
+            <returns>Get paths schema name response.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.DataContractQueryExecutor">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.DataContractQueryExecutor.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.Core.ServiceModel.DataContractQueryExecutor"/>.
+            </summary>
+            <param name="userConnection">User connection.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.DataContractQueryExecutor.ReadPrimaryColumnValues``1(System.String,System.String,System.Collections.Generic.IList{Terrasoft.Core.ServiceModelContract.SortingColumn})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.DataContractQueryExecutor.ReadPrimaryColumnValues``1(Terrasoft.Core.ServiceModelContract.DataContractQuery)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.DataContractQueryExecutor.WritePrimaryColumnValues(Terrasoft.Core.ServiceModelContract.WritePrimaryColumnValuesArguments)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.DcmSchemaManagerService">
+            <summary>
+            The web service that provides access to the <see cref="T:Terrasoft.Core.DcmProcess.DcmSchemaManager" /> methods.
+            </summary>
+            <seealso cref="T:Terrasoft.Web.Common.BaseService" />
+            <seealso cref="T:Terrasoft.Core.ServiceModelContract.IDcmSchemaManagerService" />
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.DcmSchemaManagerService.Manager">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.ILocalizableResourceMapper">
+            <summary>
+            Represents mapping between localizable values dto and design item objects.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ILocalizableResourceMapper.MapLocalizableDesignDtoToDesignItem``1(Terrasoft.Core.ServiceModelContract.Designers.ILocalizableDesignItemDto,Terrasoft.Core.ISchemaManagerItem{``0})">
+            <summary>
+            Execute a mapping from the Dto object to a design item object.
+            </summary>
+            <param name="dto">Dto object <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.ILocalizableDesignItemDto"/>.</param>
+            <param name="designItem">Design item object.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ILocalizableResourceMapper.MapSchemaToLocalizableDesignDto(Terrasoft.Core.Schema,Terrasoft.Core.ServiceModelContract.Designers.ILocalizableDesignItemDto,System.Collections.Generic.IEnumerable{System.Globalization.CultureInfo})">
+            <summary>
+            Execute a mapping from the design item to a Dto object.
+            </summary>
+            <param name="schema">Schema item object.</param>
+            <param name="dto">Dto object <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.ILocalizableDesignItemDto"/>.</param>
+            <param name="cultures">Culture collection.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ILocalizableResourceMapper.MapLocalizableStringToDto(Terrasoft.Common.LocalizableString,System.Collections.Generic.IEnumerable{System.Globalization.CultureInfo})">
+            <summary>
+            Execute a mapping from the localizable string to a localizable Dto object.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ILocalizableResourceMapper.UpdateCultureValues(System.Collections.Generic.IEnumerable{Terrasoft.Core.ServiceModelContract.Designers.LocalizableStringDto},Terrasoft.Common.LocalizableString)">
+            <summary>
+            Execute a mapping from the localizable string Dto collection to a localizable design item property.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ILocalizableResourceMapper.MapImagesValues(System.Collections.Generic.IEnumerable{Terrasoft.Core.ServiceModelContract.Designers.ImageListSchemaItemDto},Terrasoft.Core.ImageListSchemaItemCollection)">
+            <summary>
+            Execute a mapping from the Dto image to a design item image.
+            </summary>
+            <param name="imagesDto">Dto image.</param>
+            <param name="images">Design item image.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.IDesignItemToDtoMapper`2">
+            <summary>
+            Represents mapping between design item and dto objects.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.IDesignItemToDtoMapper`2.MapDesignItemToDto(`1,System.Collections.Generic.List{System.String})">
+            <summary>
+            Execute a mapping from the design item object to a Dto object.
+            </summary>
+            <param name="designItem">Design item object.</param>
+            <param name="cultures">List of cultures to load in design item. If it`s null or empty,
+            all cultures will be loaded</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.IDtoToDesignItemMapper`2">
+            <summary>
+            Represents mapping between dto and design item objects.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.IDtoToDesignItemMapper`2.MapDtoToDesignItem(`0,`1)">
+            <summary>
+            Execute a mapping from the Dto object to a design item object.
+            </summary>
+            <param name="dto">Dto object.</param>
+            <param name="designItem">Design item object.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.ISchemaDesigner`1">
+            <summary>
+            Represents behavior of the design item.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ISchemaDesigner`1.FindDesignItem(System.Guid,System.Boolean)">
+            <summary>
+            Returns design item. 
+            </summary>
+            <param name="uId">Unique identifier of user task to find.</param>
+            <param name="useFullHierarchy">Use full hierarchy of packages. Is false by default</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ISchemaDesigner`1.CreateDesignItem(System.Guid,System.Guid)">
+            <summary>
+            Creates a design item.
+            </summary>
+            <param name="packageUId">Unique identifier of the package.</param>
+            <param name="schemaUId">Unique identifier of the new schema.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ISchemaDesigner`1.SaveDesignItem(`0)">
+            <summary>
+            Saves design item.
+            </summary>
+            <param name="designItem">Design item.</param>
+            returns
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.ISchemaValidator`1">
+            <summary>
+            Represents behavior of the validation design item dto.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ISchemaValidator`1.Validate(`0)">
+            <summary>
+            Validate design item.
+            </summary>
+            <param name="designItemDto">Design item dto.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Mappers.BaseDtoToSchemaDesignItemMapper`2.GetCodeDefaultValue(System.String)">
+            <summary>
+            Return value with space when dataValue is empty.
+            It is temp decision.
+            </summary>
+            <param name="dataValue">Schemas code value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Mappers.SchemaDataDtoToDesignItemMapper.MapDtoToDesignItem(Terrasoft.Core.ServiceModelContract.Designers.SchemaDataDto,Terrasoft.Core.Packages.PackageSchemaDataDescriptor)">
+            <summary>
+            Execute a mapping from the Dto object to a design item object.
+            </summary>
+            <param name="dto">Dto object.</param>
+            <param name="designItem">Design item object.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Mappers.SchemaToDto.SchemaParametersToDtoMapper`1.MapParameters(Terrasoft.Core.Process.ProcessSchemaFactoryMetaItemCollection{`0})">
+            <summary>
+            Execute a mapping from TParam object to Dto
+            </summary>
+            <param name="schemaParameters">Schema parameters</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Mappers.EntitySchemaManagerItemToMetaItemDtoMapper.MapDesignItemToDto(Terrasoft.Core.ISchemaManagerItem{Terrasoft.Core.Entities.EntitySchema},System.Collections.Generic.List{System.String})">
+            <summary>
+            Execute a mapping from the entity schema manager item to a <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.MetaItemDto"/> object.
+            </summary>
+            <param name="managerItem">Entity schema manager item.</param>
+            <param name="cultures">List of cultures to load in design item. If it`s null or empty,
+            all cultures will be loaded</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Mappers.SchemaDataDesignItemToDtoMapper.MapDesignItemToDto(Terrasoft.Core.Packages.PackageSchemaDataDescriptor,System.Collections.Generic.List{System.String})">
+            <summary>
+            Execute a mapping from the schema data descriptor to a Dto object.
+            </summary>
+            <param name="schemaDataDescriptor">Package schema data descriptor.</param>
+            <param name="cultures">List of cultures to load in design item. If it`s null or empty,
+            all cultures will be loaded</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.ProcessUserTaskSchemaDesigner">
+            <summary>
+            Represents behavior of the process user task schema designer.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ProcessUserTaskSchemaDesigner.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ServiceModel.Designers.ProcessUserTaskSchemaDesigner"/> type.
+            </summary>
+            <param name="userConnection">Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> to initialize with.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ProcessUserTaskSchemaDesigner.FindDesignItem(System.Guid,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ProcessUserTaskSchemaDesigner.CreateDesignItem(System.Guid,System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.ProcessUserTaskSchemaDesigner.SaveDesignItem(Terrasoft.Core.ISchemaManagerItem{Terrasoft.Core.Process.ProcessUserTaskSchema})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.DeserializeEntitiesFromSchemaData(System.Guid,Terrasoft.Core.Entities.EntitySchema,System.Guid)">
+            <summary>
+            Deserializes entities from package schema data by selected culture Id.
+            </summary>
+            <param name="schemaDataUId">Schema data UId.</param>
+            <param name="schema">Entity schema.</param>
+            <param name="cultureId">Culture Id.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.GetCurrentCultureId">
+            <summary>
+            Returns current culture identifier.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.MergeDefCultureEntitiesWithCurrentCultureEntities(System.Collections.Generic.IEnumerable{Terrasoft.Core.Entities.Entity},System.Collections.Generic.IEnumerable{Terrasoft.Core.Entities.Entity})">
+            <summary>
+            Merge localized entities with current end default cultures.
+            </summary>
+            <param name="defCultureEntities">Default culture entities.</param>
+            <param name="currentCultureEntities">Current culture entities.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.MergeWithLocalizedEntities(System.Collections.Generic.IEnumerable{Terrasoft.Core.Entities.Entity},System.Collections.Generic.IEnumerable{Terrasoft.Core.Entities.Entity})">
+            <summary>
+            Marge current data entities with localized entities.
+            </summary>
+            <param name="dataEntities">Current data entities.</param>
+            <param name="localizedDataEntities">Localized data entities.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.ApplyLocalizationData(System.Guid,Terrasoft.Core.Entities.EntitySchema,System.Collections.Generic.IEnumerable{Terrasoft.Core.Entities.Entity})">
+            <summary>
+            Applies localization for current schema data.
+            </summary>
+            <param name="schemaDataUId">Schema data UId.</param>
+            <param name="schema">Entity schema for schema data.</param>
+            <param name="dataEntities">Current data entities.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.GetColumnNameMap(Terrasoft.Core.Packages.PackageSchemaDataDescriptor,Terrasoft.Core.Entities.EntitySchema)">
+            <summary>
+            Returns client to server column name map.
+            </summary>
+            <param name="schemaDataDescriptor">Schema data descriptor.</param>
+            <param name="entitySchema">Entity schema.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.GetBoundSerializedData(System.Guid)">
+            <summary>
+            Returns schema data by UId.
+            </summary>
+            <param name="schemaDataUId">Schema data UId.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Queries.BoundSchemaDataQuery.GetQueryResult(System.Guid)">
+            <summary>
+            Returns list of schema data entities.
+            </summary>
+            <param name="schemaDataUId">Schema data UId.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.SchemaImageUploaderService.CanManageSolution">
+            <summary>
+            Checks that the user can manage configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.AddonSchemaDesignerService.GetSchema(Terrasoft.Core.Addons.Types.AddonSchemaInfo)">
+            <summary>
+            Get addon schema by info <see cref="T:Terrasoft.Core.Addons.Types.AddonSchemaInfo"/>
+            <param name="schemaRequest">Addon schema info.</param>
+            <returns>Return addon schema response
+            <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.Addons.Models.AddonSchemaDto"/>.
+            </returns>
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.Services.BaseDesignerService`1">
+            <summary>
+            The base designer web-service class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.BaseDesignerService`1.CanManageSolution">
+            <summary>
+            Checks that the user can manage configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.BaseDesignerService`1.CanViewConfiguration">
+            <summary>
+            Checks that the user can view configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.BaseDesignerService`1.GetDesignItem(Terrasoft.Core.ServiceModelContract.Designers.GetSchemaRequestDto)">
+            <summary>
+            Gets an instance of a design-time item data transfer object.
+            </summary>
+            <returns>Design-time item data transfer object.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetAllAvailableSchemas">
+            <summary>
+            Returns all available entities.
+            </summary>
+            <returns>Array of <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.MetaItemDto"/> instances of available entity schemas.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetAvailableReferenceSchemas(Terrasoft.Core.ServiceModelContract.Designers.GetAvailableSchemasRequestDto)">
+            <summary>
+            Returns entities are available for reference in lookup columns in the specified package.
+            </summary>
+            <returns>Array of <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.MetaItemDto"/> instances of available entity schemas.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetAvailableParentSchemas(Terrasoft.Core.ServiceModelContract.Designers.GetAvailableSchemasRequestDto)">
+            <summary>
+            Returns entities are available for reference parent in the specified package.
+            </summary>
+            <returns>Array of <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.MetaItemDto"/> instances of available entity schemas.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetAvailableParentSchemaByName(System.Guid,System.String)">
+            <summary>
+            Returns schema are available for reference parent in the specified package by name.
+            </summary>
+            <param name="packageUId">UId of the package to check.</param>
+            <param name="schemaName">Schema name.</param>
+            <returns>Array of <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.MetaItemDto"/> instances of available entity schemas.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetSystemValues(System.Guid)">
+            <summary>
+            Returns system variables by data value type UId.
+            </summary>
+            <param name="dataValueTypeUId">Data value type UId</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetSchemaDesignItem(Terrasoft.Core.ServiceModelContract.Designers.GetSchemaDesignItemDto)">
+            <summary>
+            Returns design time entity from requested package with all columns (including Custom entity columns)
+            </summary>
+            <param name="designItemDto">request with schema name and package UId.</param>
+            <returns>Design time entity of requested package with all columns.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetSchemaDesignItems(Terrasoft.Core.ServiceModelContract.Designers.GetSchemesDesignItemDto)">
+            <summary>
+            Returns design time entities from requested package with all columns (including Custom entity columns)
+            </summary>
+            <param name="schemesDesignItemDto">request with schemes info and package UId.</param>
+            <returns>Design time entities of requested package with all columns.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.EntitySchemaDesignerService.GetSchemaInPackage(Terrasoft.Core.ServiceModelContract.Designers.GetSchemaInPackageDto)">
+            <summary>
+            Returns schema in given package, if schema not exists in given package returns null.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.Designers.Services.ProcessUserTaskSchemaDesignerService.SchemaDesigner">
+            <summary>
+            Gets or sets instance that implements the ISchemaDesigner interface.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.ProcessUserTaskSchemaDesignerService.ValidateSchema(Terrasoft.Core.ServiceModelContract.Designers.ProcessUserTaskDesignSchemaDto)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.SchemaDataDesignerService.GetAvailableEntitySchemas(System.Guid)">
+            <summary>
+            Returns entities are available in the specified package.
+            </summary>
+            <param name="packageUId">UId of the package to check.</param>
+            <returns>Array of <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.MetaItemDto"/> instances of available entity schemas.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Services.SchemaDataDesignerService.GetBoundSchemaData(System.Guid)">
+            <summary>
+            Returns bound data by schema UId.
+            </summary>
+            <param name="uId">UId of schema data.</param>
+            <returns>Bound schema data.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.Designers.Validators.EntitySchemaValidator">
+            <summary>
+            Validator for entity schemas.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Designers.Validators.EntitySchemaValidator.Validate(Terrasoft.Core.ServiceModelContract.Designers.EntityDesignSchemaDto)">
+            <summary>Validate design item.</summary>
+            <param name="schemaDto">Design item dto.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.DisableEntitySchemaDesignerHierarchyOptimisation">
+            <summary>
+            Represents features for disabling EntitySchemaDesignerService optimisation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.DisableEntitySchemaDesignerHierarchyOptimisation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ServiceModel.DisableEntitySchemaDesignerHierarchyOptimisation"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.IsAdvancedObjectDisplayModeDisabled">
+            <summary>
+            Represents features for advanced object display mode.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IsAdvancedObjectDisplayModeDisabled.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.ServiceModel.IsAdvancedObjectDisplayModeDisabled"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.EntityDesigner.FindDesignItem(System.Guid,System.Boolean)">
+            <summary>Returns design item.</summary>
+            <param name="uId">Unique identifier of user task to find.</param>
+            <param name="useFullHierarchy">Use full hierarchy of packages.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.EntityDesigner.FindDesignItemInPackage(System.Guid,System.Guid)">
+            <summary>Returns design item found in package, else return null.</summary>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.EntitySchemaService">
+            <summary>
+            Web service with entity schema API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.EntitySchemaService.GetEntitySchemaByUId(System.Guid)">
+            <summary>
+            Returns entity schema by UId.
+            </summary>
+            <param name="entitySchemaUId">Entity schema UId.</param>
+            <returns>Entity schema response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Extensions.DataContractExtensions.ToPackageStorageObjectType(Terrasoft.Core.ServiceModelContract.WorkspaceItemType)">
+            <summary>
+            Convert <see cref="T:Terrasoft.Core.ServiceModelContract.WorkspaceItemType"/> to appropriate <see cref="T:Terrasoft.Core.Packages.PackageStorageObjectType"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.GenerateAllSchemasSourcesCompletedNotificationHandler.HandleAsync(Terrasoft.Core.CodeGeneration.GenerateAllSchemasSourcesCompletedNotification,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean)">
+            <summary>
+            Returns entity schemas accessible from the given package.
+            </summary>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns entity schemas accessible from the given package.
+            </summary>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+            <param name="useFullHierarchy">Indicates schemas from all packages could be included in result list.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns entity schemas accessible from the given package.
+            </summary>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+            <param name="useFullHierarchy">Indicates schemas from all packages could be included in result list.</param>
+            <param name="useExtensions">Indicates schemas info will considering extensions.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns entity schemas accessible from the given package.
+            </summary>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+            <param name="useFullHierarchy">Indicates schemas from all packages could be included in result list.</param>
+            <param name="useExtensions">Indicates schemas info will considering extensions.</param>
+            <param name="useAdvancedMode">Indicates displayed in advanced mode schemas could be included
+            in result list.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetAvailableParentEntitySchema(System.String,System.Guid,System.Boolean,System.Boolean)">
+            <summary>
+            Returns accessible parent entity schema from the given package.
+            </summary>
+            <param name="name">Schema name.</param>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetAvailableParentEntitySchema(System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns entity schemas accessible from the given package.
+            </summary>
+            <param name="name">Schema name.</param>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+            <param name="useFullHierarchy">Indicates schemas from all packages could be included in result list.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetAvailableParentEntitySchema(System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns accessible parent entity schema from the given package.
+            </summary>
+            <param name="name">Schema name.</param>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+            <param name="useFullHierarchy">Indicates schemas from all packages could be included in result list.</param>
+            <param name="useExtensions">Indicates schemas info will considering extensions.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IPackageEntitiesQueryUtilities.GetAvailableParentEntitySchema(System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns accessible parent entity schema from the given package.
+            </summary>
+            <param name="name">Schema name.</param>
+            <param name="packageUId">Package uid.</param>
+            <param name="allowDBView">Indicates db views schemas could be included in result list.</param>
+            <param name="allowVirtual">Indicates virtual schemas could be included in result list.</param>
+            <param name="useFullHierarchy">Indicates schemas from all packages could be included in result list.</param>
+            <param name="useExtensions">Indicates schemas info will considering extensions.</param>
+            <param name="useAdvancedMode">Indicates displayed in advanced mode schemas could be included
+            in result list.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.LicenseManagerProxyService">
+            <summary>
+            Service used by License manager in case when user have no license to login.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseManagerProxyService.GetCurrentUserInfo">
+            <summary>
+            Returns current user info.
+            </summary>
+            <returns>User info response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseManagerProxyService.QuerySysSettings">
+            <summary>
+            Returns system settings values.
+            </summary>
+            <returns>System settings values.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.LicenseService">
+            <summary>
+            Service used by License manager in default mode (when user have license to login).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseService.AddUsersPackages(Terrasoft.Core.ServiceModelContract.UsersLicensePackages)">
+            <summary>
+            Adds specified license packages (if available) to specified users.
+            </summary>
+            <param name="usersLicPackages">Object with identifiers of users and licenses.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseService.DeleteUsersPackages(Terrasoft.Core.ServiceModelContract.UsersLicensePackages)">
+            <summary>
+            Deletes specified license packages (if added) for specified users.
+            </summary>
+            <param name="usersLicPackages">Object with identifiers of users and licenses.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicenseService.GetUsersPackages(System.Guid[])">
+            <summary>
+            Returns users packages.
+            </summary>
+            <param name="userIds">Users identifiters</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.LicMonitor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicMonitor.Start">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.LicMonitor.Stop">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.Mappers.WorkspacePackageDtoMapper.ToPackageData(Terrasoft.Core.ServiceModelContract.WorkspacePackageDto)">
+            <summary>
+            Convert <see cref="T:Terrasoft.Core.ServiceModelContract.WorkspacePackageDto"/> to <see cref="T:Terrasoft.Core.PackageData"/>
+            </summary>
+            <param name="source"></param>
+            <returns>Instance of <see cref="T:Terrasoft.Core.PackageData"/></returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.MessageBusManagementService">
+            <summary>
+            The web service that provides access to the <see cref="T:Terrasoft.Core.ServiceModelContract.IMessageBusManagementService" /> methods.
+            </summary>
+            <seealso cref="T:Terrasoft.Web.Common.BaseService" />
+            <seealso cref="T:Terrasoft.Core.ServiceModelContract.IMessageBusManagementService" />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.MessageBusManagementService.GetStatistics">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IMessageBusManagementService.GetStatistics"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.MessageBusManagementService.ForceInMemoryMode(System.Boolean)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IMessageBusManagementService.ForceInMemoryMode(System.Boolean)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageEntitiesQueryUtilities.GetPackageAvailableEntitySchemas(System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageEntitiesQueryUtilities.GetAvailableParentEntitySchema(System.String,System.Guid,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageEntitiesQueryUtilities.GetAvailableParentEntitySchema(System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageEntitiesQueryUtilities.GetAvailableParentEntitySchema(System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.UploadPackage(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.InstallPackage(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.Validate(Terrasoft.Core.ServiceModelContract.InstalledAppInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.CreateBackup(Terrasoft.Core.ServiceModelContract.InstalledAppInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.CreatePackageBackup(Terrasoft.Core.ServiceModelContract.CreatePackageBackupRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.GetLogFile">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.GetZipPackages(System.Collections.Generic.IList{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.RestoreFromBackup(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageInstallerService.RestorePackageFromBackup(Terrasoft.Core.ServiceModelContract.RestorePackageFromBackupRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.CheckCanView">
+            <summary>
+            Checks that the user can view configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.CheckCanManage">
+            <summary>
+            Checks that the user can manage configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.DoSafeViewAction``1(System.Func{``0})">
+            <summary>
+            Executes a specified action after "CanViewConfiguration"/"CanManageSolution" operations check and
+            handles all exceptions. If exception was handled, response with error information will be returned.
+            </summary>
+            <typeparam name="T">Type of the response.</typeparam>
+            <param name="action">Action to execute.</param>
+            <returns>Response returned by executed action or response with error information.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.DoSafeManageAction``1(System.Func{``0},System.Action{``0,System.Exception})">
+            <summary>
+            Executes a specified action after "CanManageSolution" operation check and handles all exceptions.
+            If exception was handled, response with error information will be returned.
+            </summary>
+            <typeparam name="T">Type of the response.</typeparam>
+            <param name="action">Action to execute.</param>
+            <param name="setupUnsuccessfulResponse">Action to setup unsuccessful response.</param>
+            <returns>Response returned by executed action or response with error information.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.GetPackages">
+            <summary>
+            Returns configuration packages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.StartPackageHotfix(Terrasoft.Core.ServiceModelContract.PackageHotfixDto)">
+            <summary>
+            Starts hotfix state for package.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.FinishPackageHotfix(Terrasoft.Core.ServiceModelContract.PackageHotfixDto)">
+            <summary>
+            Finishes hotfix state for package.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.GetApplicationPackages(System.Guid)">
+            <summary>
+            Returns application packages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.CreatePackage(Terrasoft.Core.ServiceModelContract.WorkspacePackageDto)">
+            <summary>
+            Creates new package.
+            </summary>
+            <param name="package">Package data.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.GetPackageProperties(System.Guid)">
+            <summary>
+            Get package properties.
+            </summary>
+            <param name="packageUId">Package UId.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.SavePackageProperties(Terrasoft.Core.ServiceModelContract.WorkspacePackageDto)">
+            <summary>
+            Saves package properties.
+            </summary>
+            <param name="package">Package properties.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.GetAllowStandaloneAssembly">
+            <summary>
+            Returns flag indicating that the feature 'AllowStandaloneAssembly' is enabled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.DeactivatePackage(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IPackageService.DeactivatePackage(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.ActivatePackage(System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IPackageService.ActivatePackage(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.PackageService.GetPackagesForAddingDependencies">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IPackageService.GetPackagesForAddingDependencies"/>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.ProcessEngineService">
+            <summary>
+            The web service that provides access to the <see cref="T:Terrasoft.Core.IProcessEngine" /> methods.
+            </summary>
+            <seealso cref="T:Terrasoft.Web.Common.BaseService" />
+            <seealso cref="T:Terrasoft.Core.ServiceModelContract.IProcessEngineService" />
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessEngineService.CurrentHttpContext">
+            <summary>
+            Gets the current HTTP context.
+            </summary>
+            <value>
+            The current HTTP context.
+            </value>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessEngineService.Log">
+            <summary>
+            Gets or sets the global logger instance for this type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessEngineService.ProcessNotificationManager">
+            <summary>
+            Gets a notification manager of a process.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessEngineService.StartTimerScheduleSynchronizer">
+            <summary>
+            Returns instance of <see cref="P:Terrasoft.Core.ServiceModel.ProcessEngineService.StartTimerScheduleSynchronizer"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessEngineService.DataStorage">
+            <summary>
+            Gets or sets the data storage.
+            </summary>
+            <value>The data storage.</value>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.RunProcess(System.String)">
+            <summary>
+            Runs process by the specified name.
+            </summary>
+            <param name="processName">Process schema name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.CompleteExecuting(System.String,System.String,System.String)">
+            <summary>
+            Completes process element executing.
+            </summary>
+            <param name="procElUId">Process element identifier.</param>
+            <param name="entitySchemaName"></param>
+            <param name="entityId">Entity identifier.</param>
+            <exception cref="T:System.ServiceModel.Web.WebFaultException">If entity schema not found.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetExecutionData(System.String,System.String)">
+            <summary>
+            Returns additional data for the opening page.
+            </summary>
+            <param name="elementUId">Identifier of the process element.</param>
+            <param name="recordId">Identifier of the entity.</param>
+            <returns>String that contains additional data for the opening page.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetExecutionData(Terrasoft.Core.ServiceModelContract.ProcessExecutionDataRequest)">
+            <summary>
+            Returns data for the opening page by the specified elements.
+            </summary>
+            <param name="request">Request.</param>
+            <returns>Additional batch data for the opening page.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetDcmExecutionData(Terrasoft.Core.ServiceModelContract.DcmExecutionDataRequest)">
+            <summary>
+            Returns data for the opening page by the specified dcm elements.
+            </summary>
+            <param name="request">Request.</param>
+            <returns>Additional batch data for the opening page.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.CompleteExecution(System.String)">
+            <summary>
+            Completes process element execution by the specified identifier.
+            </summary>
+            <param name="procElUId">Process element identifier.</param>
+            <returns></returns>
+            <exception cref="T:System.ServiceModel.Web.WebFaultException">if process element not found.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.CompleteExecuting(Terrasoft.Core.ServiceModelContract.CompleteExecutingRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.ExecuteProcessElementByUId(System.String)">
+            <summary>
+            Executes process element by the specified identifier.
+            </summary>
+            <param name="procElUId">Process element identifier.</param>
+            <exception cref="T:System.ServiceModel.Web.WebFaultException"></exception>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.CancelExecution(System.IO.Stream)">
+            <summary>
+            Cancels process execution.
+            </summary>
+            <param name="data">Process identifier list.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.CancelExecutionBySchemaId(System.String)">
+            <summary>
+            Cancels execution of all processes for all schema versions.
+            </summary>
+            <param name="schemaId">The schema unique identifier.</param>
+            <returns>The response text.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.ThrowSignal(System.String)">
+            <summary>
+            Throws signals.
+            </summary>
+            <param name="signal">Signal name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.ContinueExecuting(System.String)">
+            <summary>
+            Continues process executing by the specified identifier.
+            </summary>
+            <param name="processUId">The process identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.RunProcess(Terrasoft.Core.ServiceModelContract.RunProcessRequest)">
+            <summary>
+            Runs process.
+            </summary>
+            <param name="request">Run process request.</param>
+            <returns>The result of running process.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.RunSpecifiedProcessVersion(Terrasoft.Core.ServiceModelContract.RunSpecifiedProcessVersionRequest)">
+            <summary>
+            Runs the specified process version.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>The result of running process.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetRunningProcessCount(Terrasoft.Core.ServiceModelContract.GetRunningProcessCountRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetRunningProcessesCount(Terrasoft.Core.ServiceModelContract.GetRunningProcessCountRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetProcessElementStatus(Terrasoft.Core.ServiceModelContract.ProcessElementStatusRequest)">
+            <summary>
+            Gets the specified process element running status.
+            </summary>
+            <param name="request">Request.</param>
+            <returns>Status of the specified process element.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetTimerEventsInfo(System.Guid)">
+            <summary>
+            Gets timer events information.
+            </summary>
+            <param name="processSchemaUId">UId of process schema.</param>
+            <returns>Information about timer events.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetProcessSchemaDebugInfo(System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.RunProcessForEachValue(Terrasoft.Core.ServiceModelContract.RunProcessForEachValueRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.RunProcessForMatchingRecords(Terrasoft.Core.ServiceModelContract.RunProcessForMatchingRecordsRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.ChangeToAppropriateDcmInstance(Terrasoft.Core.ServiceModelContract.ChangeToAppropriateDcmInstanceRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.ChangeProcessElementState(Terrasoft.Core.ServiceModelContract.ChangeProcessElementStateRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.OpenProcessPage(Terrasoft.Core.ServiceModelContract.OpenProcessPageRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.GetStateSnapshot(System.Guid,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessEngineService.ExecuteProcessElementByUIdPost(Terrasoft.Core.ServiceModelContract.ExecuteProcessElementRequest)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModelContract.IProcessEngineService.ExecuteProcessElementByUIdPost(Terrasoft.Core.ServiceModelContract.ExecuteProcessElementRequest)"/>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.ProcessLogService">
+            <summary>
+            The web service that provides access to the <see cref="T:Terrasoft.Core.ServiceModelContract.IProcessLogService" /> methods.
+            </summary>
+            <seealso cref="T:Terrasoft.Web.Common.BaseService" />
+            <seealso cref="T:Terrasoft.Core.ServiceModelContract.IProcessLogService" />
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessLogService.IsEnabledMultiInstanceProcessParameterTracing">
+            <summary>
+            Gets or sets value that indicates whether the feature
+            FeatureUseMultiInstanceProcessParameterTracing is enabled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessLogService.GetProcessMultiInstanceTraceData(Terrasoft.Core.ServiceModelContract.ProcessMultiInstanceTraceDataRequest)">
+            <inheritdoc cref="T:Terrasoft.Core.ServiceModelContract.IProcessLogService"/>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService">
+            <summary>
+            The web service that provides access to the <see cref="T:Terrasoft.Core.Process.ProcessSchemaManager" /> methods.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.ServiceModelContract.IProcessSchemaManagerService" />
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.UseAutoAddPackageDependenciesInProcesses">
+            <summary>
+            Gets or sets value that indicates whether to use auto add package dependencies.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.UseManagerToFindActualVersionsInManagerService">
+            <summary>
+            Gets or sets value that indicates whether to use manager to find actual versions.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.GetWorkspaceBuilder">
+            <summary>
+            Gets the workspace builder.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.GetSchemasByFilter(System.String)">
+            <summary>
+            Returns schemas list by specified filters.
+            </summary>
+            <param name="filter">Schemas filter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.GetActualProcessSchemasByFilter(Terrasoft.Core.ServiceModelContract.ActualProcessSchemasByFilterRequest)">
+            <summary>
+            Returns actual schemas list by specified filters.
+            </summary>
+            <param name="filter">Filter data for schema list select.</param>
+            <returns>The actual schemas info list.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.Copy(System.String)">
+            <summary>
+            Copies process schema.
+            </summary>
+            <param name="data">Schema data.</param>
+            <returns>Copied schema identifier.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.Delete(System.String)">
+            <summary>
+            Deletes process schema by specified identifier.
+            </summary>
+            <param name="schemaUId">Schema identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.GetInvalidElements(System.String,System.String)">
+            <summary>
+            Returns invalid elements list for the specified process schema.
+            </summary>
+            <param name="schemaUId">Process schema identifier.</param>
+            <param name="hostProcessSchemaName">Optional. Host process schema name,
+            if checked schema is sub-process.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ProcessSchemaManagerService.PingApplication">
+            <summary>
+            Ping application after configuration compiled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RelatedPages.RelatedPagesService.GetEntityRelatedPages">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModel.RelatedPages.RelatedPagesService.GetEntityRelatedPages"/>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.RightManagementService">
+            <summary>
+            Web service with rights management API.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.ServiceModel.RightManagementService._operationAccessDeniedMessage">
+            <summary>
+            Operation access denied message.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.ServiceModel.RightManagementService._entityOperationAccessDeniedMessage">
+            <summary>
+            Entity operation access denied message.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.CanUserManage">
+            <summary>
+            Returns "true" when user can manage administration operation.
+            </summary>
+            <returns>Administration operation opportunity.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.CanUserView">
+            <summary>
+            Returns "true" when user can view administration operation.
+            </summary>
+            <returns>Administration view opportunity.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetAccessDeniedInfoMessage(System.String)">
+            <summary>
+            Returns information message that user have not permission to perform operation by code.
+            </summary>
+            <returns>Information message.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.CreateAdministratedObjectsEntitySchemaQuery">
+            <summary>
+            Creates entity schema query for administrated objects.
+            </summary>
+            <returns>Entity schema query for administrated objects.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetDefaultEntitySchemaOperationsRights(System.Guid)">
+            <summary>
+            Returns default entity schema operations rights.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <returns>Default entity schema operations rights.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetEntitySchemaOperationsRights(System.Guid)">
+            <summary>
+            Returns entity schema operation rights.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetEntityOperationGrantees(System.Guid)">
+            <summary>
+            Returns entity operation grantees by schema uid using <see cref="P:Terrasoft.Core.ServiceModel.RightManagementService.DBSecurityEngine"/>.
+            <param name="schemaUId">Schema UId.</param>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.CreateRightLevelSubSelect(Terrasoft.Core.Configuration.EntitySchemaRecordRightOperation,System.Guid)">
+            <summary>
+            Creates right level subselect by operation type.
+            </summary>
+            <param name="operationType">Operation type.</param>
+            <param name="schemaUId">Schema UId</param>
+            <returns>Right level select query.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetSysEntitySchemaRecordDefRights(System.Guid)">
+            <summary>
+            Returns entity schema record default rights by schema UId.
+            </summary>
+            <param name="schemaUId">Schema UId</param>
+            <returns>Entity schema record default rights.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.CreateAdministratedObjects(Terrasoft.Core.Entities.EntitySchemaQuery)">
+            <summary>
+            Creates administrated objects from entity collection.
+            </summary>
+            <param name="esq">Entity schema query for administrated objects.</param>
+            <returns>Array with administrated objects.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.SaveEntitySchemaRecordDefRights(System.Guid,Terrasoft.Core.ServiceModelContract.EntitySchemaRecordDefRight[])">
+            <summary>
+            Saves entity schema record default rights.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <param name="entitySchemaRecordDefRights">Array of entity schema record default rights data.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetRightLevelByOperation(Terrasoft.Core.ServiceModelContract.EntitySchemaRecordDefRight,Terrasoft.Core.Configuration.EntitySchemaRecordRightOperation)">
+            <summary>
+            Returns right level by operation.
+            </summary>
+            <param name="recordDefRight">Object with default record rights.</param>
+            <param name="operation">Entity schema record right operation.</param>
+            <returns>Right level by operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.SetEntitySchemaRecordDefRightLevel(System.Guid,Terrasoft.Core.ServiceModelContract.EntitySchemaRecordDefRight,Terrasoft.Core.Configuration.EntitySchemaRecordRightOperation)">
+            <summary>
+            Sets entity schema record default right level.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <param name="recordDefRight">Entity schema record default right.</param>
+            <param name="operation">Entity schema record right operation.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.SetEntitySchemaRecordDefRightLevels(System.Guid,Terrasoft.Core.ServiceModelContract.EntitySchemaRecordDefRight,Terrasoft.Core.ServiceModelContract.EntitySchemaRecordDefRight)">
+            <summary>
+            Sets entity schema record default right levels.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <param name="actualRecordDefRight">Entity schema record default right to set.</param>
+            <param name="previousRecordDefRight">Previous entity schema record default right, if exists.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetEmptyEntitySchemaColumnsRights(System.Guid)">
+            <summary>
+            Returns all columns empty rights from entity schema.
+            </summary>
+            <param name="schemaUId">Entity schema UId.</param>
+            <returns>All columns empty rights from entity schema</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetNotDefaultColumnsRights(System.Collections.Generic.IEnumerable{Terrasoft.Core.ServiceModelContract.EntitySchemaColumnRights})">
+            <summary>
+            Returns not default columns rights.
+            </summary>
+            <param name="entitySchemaColumnsRights">Entity schema columns rights.</param>
+            <returns>Custom columns rights.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetEntitySchemaColumnsRights(System.Guid)">
+            <summary>
+            Fetches entity schema columns rights.
+            </summary>
+            <param name="schemaUId">Entity schema UId</param>
+            <returns>Entity schema columns rights.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.AddDefaultEntitySchemaColumnsRights(System.Guid,Terrasoft.Core.ServiceModelContract.EntitySchemaColumnRights[])">
+            <summary>
+            Creates default columns rights and merges is with original ones.
+            </summary>
+            <param name="schemaUId">Entity schema UId.</param>
+            <param name="columnRights">Entity schema columns rights.</param>
+            <returns>Default columns rights.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.SaveEntitySchemaColumnsRights(System.Guid,Terrasoft.Core.ServiceModelContract.EntitySchemaColumnRights[])">
+            <summary>
+            Saves entity schema column rights.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <param name="columnsRights">Entity schema columns rights.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.SaveEntitySchemaOperationsRights(System.Guid,Terrasoft.Core.ServiceModelContract.EntitySchemaOperationsRights[])">
+            <summary>
+            Saves entity schema operations rights.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <param name="operationsRights">Entity schema operations rights.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.SaveEntityOperationGrantees(System.Guid,Terrasoft.Core.ServiceModelContract.EntityOperationGrantee[])">
+            <summary>
+            Saves entity operation grantees. 
+            </summary>
+            <param name="schemaUId">Schema unique identifier.</param>
+            <param name="entityOperationGrantees">Current Entity operation grantees array</param>
+            <exception cref="T:System.Exception">If access is denied,
+            exception with <see cref="M:Terrasoft.Core.ServiceModel.RightManagementService.GetAccessDeniedInfoMessage(System.String)"/> is thrown.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetSysAdminUnitQuery">
+            <summary>
+            Returns entity schema query.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetEntityOperationQuery">
+            <summary>
+            Returns EntityOperation entity schema query.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.HasAdministratedObjectPropertyChanges(Terrasoft.Core.Entities.Entity,Terrasoft.Core.ServiceModelContract.AdministratedObject)">
+            <summary>
+            Returns flag that some administrated column is changed.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetSysAdminUnitsByChunks">
+            <summary>
+            Receives list containing all SysAdminUnit records with chunks sized by MaxEntityRowCount setting.
+            </summary>
+            <returns><see cref="T:Terrasoft.Core.Entities.EntityCollection"/> instance containing SysAdminUnit records.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.IsEntityOperationsFeatureEnabled">
+            <summary>
+            Returns whether entity operations administration feature is enabled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetAllObjects">
+            <summary>
+            Returns list of all objects administration properties.
+            </summary>
+            <returns>List of all objects administration description.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetSectionObjects">
+            <summary>
+            Returns list of section objects administration properties.
+            </summary>
+            <returns>List of section objects administration description.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetLookupObjects">
+            <summary>
+            Returns list of lookup objects administration properties.
+            </summary>
+            <returns>List of lookup objects administration description.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetAdministratedObject(System.Guid)">
+            <summary>
+            Returns administrated object by schema UId.
+            </summary>
+            <param name="schemaUId">Schema UId.</param>
+            <returns>Administrated objects response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.SaveAdministratedObject(Terrasoft.Core.ServiceModelContract.AdministratedObject)">
+            <summary>
+            Saves modifications for administrated object.
+            </summary>
+            <param name="administratedObject"></param>
+            <returns>Base response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetEntityOperationList">
+            <summary>
+            Returns list of entity operations.
+            </summary>
+            <returns>List of entity operations.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetSysAdminUnitList">
+            <summary>
+            Returns list of system admin unit.
+            </summary>
+            <returns>List of system admin unit.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetSysAdminUnitById(System.Guid)">
+            <summary>
+            Returns system admin unit by primary column value.
+            </summary>
+            <returns>System admin unit.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.RightManagementService.GetEntityOperationById(System.Guid)">
+            <summary>
+            Returns entity operation by primary column value.
+            </summary>
+            <param name="operationId">entity operation id</param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.SchemaItem">
+            <summary>
+            Represents data of the schema.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.SchemaItem.UId">
+            <summary>
+            Gets or sets unique identifier of the schema.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.SchemaItem.PackageUId">
+            <summary>
+            Gets or sets unique identifier of the package.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.SchemaItem.ParentUId">
+            <summary>
+            Gets or sets unique identifier of the parent schema.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.SchemaItem.Caption">
+            <summary>
+            Gets or sets schema caption.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.SchemaItem.Name">
+            <summary>
+            Gets or sets schema name.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.SchemaMetaDataService.GetSchemaMetaData(Terrasoft.Core.ServiceModelContract.Designers.RequestSchemaMetaData)">
+            <summary>
+            Get schema metadata.
+            </summary>
+            <param name="request">Request schema metadata.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.SchemaMetaDataService.SavePackageDifference(Terrasoft.Core.ServiceModelContract.Designers.SchemaMetaDataDto)">
+            <summary>
+            Save package difference for package element.
+            </summary>
+            <param name="schemaMetaDataDto">Instance of <see cref="T:Terrasoft.Core.ServiceModelContract.Designers.SchemaMetaDataDto"/></param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IServiceOAuthAuthenticatorEndpoint.GetAuthorizationGrantUrl(System.String)">
+            <summary>
+            Returns authorization grant url.
+            </summary>
+            <param name="appId">Application id.</param>
+            <returns>Authorization grant url.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IServiceOAuthAuthenticatorEndpoint.GetOAuthClientSecret(System.String)">
+            <summary>
+            Returns OAuth client secret key.
+            </summary>
+            <param name="appId">Application id.</param>
+            <returns>Client secret key.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IServiceOAuthAuthenticatorEndpoint.RemoveOAuthUser(Terrasoft.Core.ServiceModel.RemoveOAuthAppUserService)">
+            <summary>
+            Removes token by OAuthAppUser.
+            <param name="contract">Data contract.</param>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IServiceOAuthAuthenticatorEndpoint.AuthorizationCodeRedirectHandler(System.String,System.String)">
+            <summary>
+            Handle and process authorization code.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.IServiceOAuthAuthenticatorEndpoint.RemoveOAuthApplication(System.String)">
+            <summary>
+            Removes OAuth application.
+            </summary>
+            <param name="applicationId">Application id.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator"/>.
+            </summary>
+            <param name="userConnection">User connection.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.#ctor">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Social.OAuth.ServiceOAuthAuthenticator"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.Request">
+            <summary>
+            Gets instance of <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.Response">
+            <summary>
+            Gets instance of <see cref="T:Terrasoft.Web.Http.Abstractions.HttpResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.GetAuthorizationGrantUrl(System.String)">
+            <summary>
+            Returns authorization grant url.
+            </summary>
+            <param name="appId">Application id.</param>
+            <returns>Authorization grant url.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.GetOAuthClientSecret(System.String)">
+            <summary>
+            Returns OAuth client secret key.
+            </summary>
+            <param name="appId">Application id.</param>
+            <returns>Client secret key.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.RemoveOAuthUser(Terrasoft.Core.ServiceModel.RemoveOAuthAppUserService)">
+            <summary>
+            Removes token by OAuthAppUser.
+            <param name="contract">Data contract.</param>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.AuthorizationCodeRedirectHandler(System.String,System.String)">
+            <summary>
+            Handle and process authorization code.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.ServiceOAuthAuthenticatorEndpoint.RemoveOAuthApplication(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.TimelineEntity.TimelineEntityService.GetTimelineEntities(Terrasoft.Core.ServiceModelContract.TimelineEntity.Models.GetTimelineEntitiesRequest)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModel.TimelineEntity.TimelineEntityService.GetTimelineEntities(Terrasoft.Core.ServiceModelContract.TimelineEntity.Models.GetTimelineEntitiesRequest)"/>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.UCTest.UCTestAddonService.GetTestAddonProperties(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModel.UCTest.UCTestAddonService.GetTestAddonProperties(System.Guid)"/>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.UserInfoService">
+            <summary>
+            Web service with user info API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.UserInfoService.GetCurrentUserInfo">
+            <summary>
+            Returns current user info.
+            </summary>
+            <returns>User info response.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerBaseService.CheckCanManageSolution">
+            <summary>
+            Checks that the user can manage configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerBaseService.SafeExecute``1(System.Func{``0},System.Func{System.Exception,System.Boolean})">
+            <summary>
+            Executes a specified action after "CanManageSolution" operation check and handles all exceptions.
+            If exception was handled, response with error information will be returned.
+            </summary>
+            <typeparam name="T">Type of the response.</typeparam>
+            <param name="action">Action to execute.</param>
+            <param name="needOverrideUseRootException">Delegate to request @useRootException parameter.</param>
+            <returns>Response returned by executed action or response with error information.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerBaseService.SafeExecute``1(System.Func{``0},System.Boolean)">
+            <summary>
+            Executes a specified action after "CanManageSolution" operation check and handles all exceptions.
+            If exception was handled, response with error information will be returned.
+            </summary>
+            <typeparam name="T">Type of the response.</typeparam>
+            <param name="action">Action to execute.</param>
+            <param name="useRootException">Recursively find root inner exception to use in error information.</param>
+            <returns>Response returned by executed action or response with error information.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerBaseService.SafeExecute(System.Action,System.Boolean)">
+            <summary>
+            Executes a specified action after "CanManageSolution" operation check and handles all exceptions.
+            If exception was handled, response with error information will be returned.
+            </summary>
+            <param name="action">Action to execute.</param>
+            <param name="useRootException">Recursively find root inner exception to use in error information.</param>
+            <returns>Response returned by executed action or response with error information.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceExplorerService">
+            <summary>
+            Web-service with Workspace Explorer functionality.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.WorkspaceItemSchemas">
+            <summary>
+            Type of workspace items that should be displayed in workspace explorer, except schemas.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.ItemsSchemaManagers">
+            <summary>
+            Names of managers of all schemas that should be displayed in workspace explorer with appropriate
+            item type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.CheckCanView">
+            <summary>
+            Checks that the user can view configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.DoSafeViewAction``1(System.Func{``0})">
+            <summary>
+            Executes a specified action after "CanViewConfiguration"/"CanManageSolution" operations check and
+            handles all exceptions. If exception was handled, response with error information will be returned.
+            </summary>
+            <typeparam name="T">Type of the response.</typeparam>
+            <param name="action">Action to execute.</param>
+            <returns>Response returned by executed action or response with error information.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.SerializeUtcDateTime(System.DateTime)">
+            <summary>
+            Serializes UTC <see cref="T:System.DateTime"/> instance using the current user time zone.
+            </summary>
+            <param name="value"><see cref="T:System.DateTime"/> instance to serialize.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.InternalGetPackages">
+            <summary>
+            Returns all configuration packages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetWorkspaceItemsSelect(System.String)">
+            <summary>
+            Builds a select query to receive common workspace items.
+            </summary>
+            <param name="itemsSchemaName">Name of the shcema of the object contining items data.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.MapWorkspaceItem(System.Data.IDataReader)">
+            <summary>
+            Reads data of workspace item to DTO.
+            </summary>
+            <param name="dr">Data reader instance with item data.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetWorkspaceItems(Terrasoft.Core.ServiceModelContract.WorkspaceItemType)">
+            <summary>
+            Receives workspace items of specified type.
+            </summary>
+            <param name="workspaceItemType">Type of items to receive.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.SetWorkspaceItemStatus(Terrasoft.Core.ServiceModelContract.WorkspaceItem,Terrasoft.Core.ServiceModelContract.WorkspaceItemStatus)">
+            <summary>
+            Sets workspace item status.
+            </summary>
+            <param name="item">Workspace item.</param>
+            <param name="status">Workspace item status.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetWorkspaceSchemas">
+            <summary>
+            Receives all workspace schemas.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.DoPackageInstallUtilitiesAction(System.Action{Terrasoft.Core.Packages.IPackageInstallUtilities},System.String)">
+            <summary>
+            Creates <see cref="T:Terrasoft.Core.Packages.IPackageInstallUtilities"/> instance and passes it to the specified action and
+            subscribes on installation errors. Throw an exception with specified message template and names of
+            items that was failed to install if installation error was fired.
+            </summary>
+            <param name="action">Action with <see cref="T:Terrasoft.Core.Packages.IPackageInstallUtilities"/> instance to execute.</param>
+            <param name="errorTemplateKey">Localization key of string template in resources of
+            "Terrasoft.Core.ServiceModel" library for error message.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetPackages">
+            <summary>
+            Returns configuration packages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetWorkspaceItems">
+            <summary>
+            Receives all workspace items.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetPackageSourceCodeSchemas(System.Guid)">
+            <summary>
+            Returns source code schemas for specified package.
+            </summary>
+            <param name="packageUId">Package UId.</param>
+            <returns>Package source code schemas</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.ImportWorkspaceItem(Terrasoft.Core.ServiceModelContract.WorkspaceItemImportData)">
+            <summary>
+            Imports workspace item from file.
+            </summary>
+            <param name="importData">Object with data of workspace item to import.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.UpdateDBStructure(System.Guid[])">
+            <summary>
+            Updates database sctruture of entity schemas by Uids.
+            </summary>
+            <param name="schemaUIds">Collection of entity schema identifiers.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GenerateSchemasSources(System.Guid[])">
+            <summary>
+            Regenerates source code schemas by UIds.
+            </summary>
+            <param name="schemaUIds">Collection of schema identifiers.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.ExecuteInstallScript(System.Guid)">
+            <summary>
+            Executes install script by UId.
+            </summary>
+            <param name="schemaUId">Schema identifier.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.InstallSqlScripts(System.Guid[])">
+            <summary>
+            Install sql scripts by UIds.
+            </summary>
+            <param name="schemaUIds">Schema identifiers array.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.InstallRequiredSqlScripts">
+            <summary>
+            Installs SQL scripts that need installation.
+            </summary>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.InstallData(System.Guid[])">
+            <summary>
+            Install sql scripts by UIds.
+            </summary>
+            <param name="dataBindingsUIds">Schema identifiers array.</param>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.InstallRequiredData">
+            <summary>
+            Installs SQL scripts that need installation.
+            </summary>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.InstallRequiredSchemasDBStructure">
+            <summary>
+            Installs structure of modified schemas into DB.
+            </summary>
+            <returns>Response indicating whether the operation was successful or not.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetIsFileDesignMode">
+            <summary>
+            Returns flag of fileDesignMode enabled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetAllowPackageElementsMoveEnabled">
+            <summary>
+            Returns flag indicating that the feature 'AllowPackageElementsMove' is enabled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.GetWorkspaceItemDetails(System.Guid,Terrasoft.Core.ServiceModelContract.WorkspaceItemType)">
+            <summary>
+            Get details for specified workspace item.
+            </summary>
+            <param name="workspaceItemUId">Identifier of item.</param>
+            <param name="itemType">Type of item.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.MovePackageElements(Terrasoft.Core.ServiceModelContract.PackageElementsMoveData)">
+            <summary>
+            Migrates items from one package to another.
+            </summary>
+            <param name="packageElementsMoveData">Parameters of migrate.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.MoveAllPackageElements(Terrasoft.Core.ServiceModelContract.AllPackageElementsMoveData)">
+            <summary>
+            Migrates all items from one package to another.
+            </summary>
+            <param name="allPackageElementsMoveData">Parameters of migrate.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceExplorerService.ValidateWorkspace">
+            <summary>
+            Validates all workspace packages.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.AssemblyWorkspaceItemDetailsRepository">
+            <summary>
+            Repository for external assembly items details.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.AssemblyWorkspaceItemDetailsRepository.ExtendWorkspaceItemDetails(Terrasoft.Core.ServiceModelContract.WorkspaceItemDetails,System.Data.IDataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository">
+            <summary>
+            Base class for all workspace item repositories.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository.DbSchemaName">
+            <summary>
+            Name of item schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository.SerializeUtcDateTime(System.DateTime)">
+            <summary>
+            Serialize date and time to UTC formatted string.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository.CreateWorkspaceItem(System.Data.IDataReader)">
+            <summary>
+            Create workspace item DTO.
+            </summary>
+            <param name="reader">DB data reader.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository.CreateSelect">
+            <summary>
+            Creates SQL query to obtain workspace item's full description. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository.ExtendSelect(Terrasoft.Core.DB.Select)">
+            <summary>
+            Extends base query with things needed for particular workspace item type.
+            </summary>
+            <param name="select">Query to extend.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository.ExtendWorkspaceItemDetails(Terrasoft.Core.ServiceModelContract.WorkspaceItemDetails,System.Data.IDataReader)">
+            <summary>
+            Extends base DTO with things needed for particular workspace item type.
+            </summary>
+            <param name="workspaceItemDetails"></param>
+            <param name="reader"></param>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.BaseWorkspaceItemDetailsRepository.Get(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepository.Get(System.Guid)"/>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.EntitySchemaWorkspaceItemDetailsRepository">
+            <summary>
+            Repository for entity schema items details.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.EntitySchemaWorkspaceItemDetailsRepository.ExtendWorkspaceItemDetails(Terrasoft.Core.ServiceModelContract.WorkspaceItemDetails,System.Data.IDataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepository">
+            <summary>
+            Interface that represents repository for workspace items details (schemas, sql scripts, data bindings,
+            assemblies)
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepository.Get(System.Guid)">
+            <summary>
+            Get description with details for particular workspace item. 
+            </summary>
+            <param name="itemUId">Item identifier.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepositoryFactory">
+            <summary>
+            Interface of factory for creation <see cref="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepository"/> instances.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepositoryFactory.GetRepositoryInstance(Terrasoft.Core.ServiceModelContract.WorkspaceItemType)">
+            <summary>
+            Returns instance of <see cref="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepository"/> depending on item type.
+            </summary>
+            <param name="type">Item type.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.PackageSchemaDataWorkspaceItemDetailsRepository">
+            <summary>
+            Repository for data bindings details.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.PackageSchemaDataWorkspaceItemDetailsRepository.DbSchemaName">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.PackageSchemaDataWorkspaceItemDetailsRepository.ExtendSelect(Terrasoft.Core.DB.Select)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.PackageSchemaDataWorkspaceItemDetailsRepository.ExtendWorkspaceItemDetails(Terrasoft.Core.ServiceModelContract.WorkspaceItemDetails,System.Data.IDataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.ParentEnabledSchemaWorkspaceItemDetailsRepository">
+            <summary>
+            Base class for repositories of schemas with parent.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.ParentEnabledSchemaWorkspaceItemDetailsRepository.ExtendSelect(Terrasoft.Core.DB.Select)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.ParentEnabledSchemaWorkspaceItemDetailsRepository.ExtendWorkspaceItemDetails(Terrasoft.Core.ServiceModelContract.WorkspaceItemDetails,System.Data.IDataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SchemaWorkspaceItemDetailsRepository">
+            <summary>
+            Repository to get details for workspace schema items.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SchemaWorkspaceItemDetailsRepository.DbSchemaName">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SchemaWorkspaceItemDetailsRepository.ExtendSelect(Terrasoft.Core.DB.Select)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SchemaWorkspaceItemDetailsRepository.CreateWorkspaceItem(System.Data.IDataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SqlScriptWorkspaceItemDetailsRepository">
+            <summary>
+            Repository for sql script items details.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SqlScriptWorkspaceItemDetailsRepository.DbSchemaName">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SqlScriptWorkspaceItemDetailsRepository.ExtendSelect(Terrasoft.Core.DB.Select)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.SqlScriptWorkspaceItemDetailsRepository.ExtendWorkspaceItemDetails(Terrasoft.Core.ServiceModelContract.WorkspaceItemDetails,System.Data.IDataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.WorkspaceItemDetailsRepositoryFactory">
+            <summary>
+            Default implementation for <see cref="T:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.IWorkspaceItemDetailsRepositoryFactory"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServiceModel.WorkspaceItems.Repositories.WorkspaceItemDetailsRepositoryFactory.GetRepositoryInstance(Terrasoft.Core.ServiceModelContract.WorkspaceItemType)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

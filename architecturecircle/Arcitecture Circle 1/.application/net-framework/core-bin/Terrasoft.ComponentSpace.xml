@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.ComponentSpace</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.ComponentSpace.BaseSamlMetadata">
+            <summary>
+            Common logic for both net framework and net standart implementations of <see cref="T:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlMetadata.WriteToStream(System.Xml.XmlDocument)">
+            <summary>
+            Writes <paramref name="metadata"/> to stream.
+            </summary>
+            <param name="metadata"><see cref="T:System.Xml.XmlDocument"/> instance.</param>
+            <returns><see cref="T:System.IO.Stream"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlMetadata.GetAssertionUrl(System.String)">
+            <summary>
+            Returns assertion endpoint url for <paramref name="creatioUrl"/>
+            </summary>
+            <param name="creatioUrl">Creatio instanse url.</param>
+            <returns>Assertion endpoint url.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlMetadata.GetSloUrl(System.String)">
+            <summary>
+            Returns single logout endpoint url for <paramref name="creatioUrl"/>
+            </summary>
+            <param name="creatioUrl">Creatio instanse url.</param>
+            <returns>Single logout endpoint url.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlMetadata.GetSpMetadata(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata.GetSpMetadata(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlMetadata.ParseIdpMetadata(System.Xml.XmlDocument)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata.ParseIdpMetadata(System.Xml.XmlDocument)"/>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi">
+            <summary>
+            Class provides basic methods for Saml providers API.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.SamlSessionStore">
+            <summary>
+            <see cref="T:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore"/> implementation instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetLastParameter(System.String,System.String)">
+            <summary>
+            Gets last parameter in <paramref name="value"/> by <paramref name="separator"/>
+            </summary>
+            <param name="value">String with parameters.</param>
+            <param name="separator">String separator.</param>
+            <returns>Last parameter in <paramref name="value"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetRoleAttributes(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets list roles attributes from <paramref name="samlAttributeValues"/>.
+            </summary>
+            <param name="samlAttributeValues">Saml attribute values.</param>
+            <returns>List roles attributes.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.AddRolesAttributes(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.List{System.String})">
+            <summary>
+            Add roles attributes to <paramref name="claimList"/>.
+            </summary>
+            <param name="claimList">Claim attributes list.</param>
+            <param name="roles"></param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.AddToClaimList(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Object)">
+            <summary>
+            Add <paramref name="value"/> by <paramref name="key"/> to <paramref name="claimList"/>
+            </summary>
+            <param name="claimList">Claim attributes list.</param>
+            <param name="key">Key attribute.</param>
+            <param name="value">Value attribute.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetUrlHash">
+            <summary>
+            Gets <see cref="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.ReturnUrlHash"/> query value from request.
+            </summary>
+            <returns><see cref="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.ReturnUrlHash"/> query value.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetClaimAttributesInternal(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}},System.String)">
+            <summary>
+            Gets claim attributes list.
+            </summary>
+            <param name="samlAttributes">Security assertion markup attributes.</param>
+            <param name="nameId">Saml name id property value.</param>
+            <returns>Claim attributes list.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetPartnerIdpName(System.String)">
+            <summary>
+            Returns partner name. If <paramref name="partnerIdP"/> not passed returns default partner name.
+            </summary>
+            <param name="partnerIdP">Identity partner name.</param>
+            <returns>Identity partner name.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.InitiateSso">
+            <summary>
+            Saved hash from Url.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetPartnerIdpName(System.Guid)">
+            <summary>
+            Returns partner name. If <paramref name="partnerIdPId"/> empty returns default partner name.
+            </summary>
+            <param name="partnerIdPId">Identity partner Identifier.</param>
+            <returns>Identity partner name.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetSloNotLoggedOutMessage">
+            <summary>
+            Returns localized warning message for Single logout from Creatio only flow.
+            </summary>
+            <returns>Localized warning message</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.ValidateSsoSecurity(System.String,System.Boolean)">
+            <summary>
+            Checks is <paramref name="partnerIdP"/> IdP settings has secure options set.
+            Either request signing or request encryption should be set to consider settings as secure.
+            Sso settings from file will not be checked and considered as insecure by default.
+            </summary>
+            <param name="partnerIdP">Identity partner name.</param>
+            <param name="isIdpInitiated">For IdP-initiated SSO, it is false. For SP-initiated SSO, it is true</param>
+            <returns><c>True</c> if IdP settings secure, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.Security.SecurityException"></exception>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.SetUserTypeToSamlSessionStore(System.String)">
+            <summary>
+            Set user type to SSO session store.
+            </summary>
+            <param name="userType">User type.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetUserTypeFromSamlSessionStore">
+            <summary>
+            Gets user type from SSO session store.
+            </summary>
+            <returns>User type.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Mappers.ComponentSpaceMapperNetFramework.Map(Terrasoft.Core.Sso.SsoSettings)">
+            <summary>
+            Maps SSO setting to ComponentSpace specific.
+            </summary>
+            <param name="ssoSettings"><see cref="T:Terrasoft.Core.Sso.SsoSettings"/> settings</param>
+            <returns><see cref="T:ComponentSpace.SAML2.Configuration.SAMLConfiguration"/> configuration</returns>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi">
+            <summary>
+            Class provides net framework <see cref="T:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.SafeDoAction(System.Action,System.String)">
+            <summary>
+            Runs <paramref name="action"/>. Throws <see cref="T:Terrasoft.ComponentSpace.Interfaces.ServiceProviderApiException"/>
+            on error.
+            </summary>
+            <param name="action"><see cref="T:System.Action"/> instance.</param>
+            <exception cref="T:Terrasoft.ComponentSpace.Interfaces.ServiceProviderApiException"></exception>
+            <param name="methodName">Method name of executing context</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.SafeGetResult``1(System.Func{``0},System.String)">
+            <summary>
+            Runs <paramref name="func"/> to get result. Throws <see cref="T:Terrasoft.ComponentSpace.Interfaces.ServiceProviderApiException"/>
+            on error.
+            </summary>
+            <param name="func"><see cref="T:System.Func`2"/> instance.</param>
+            <exception cref="T:Terrasoft.ComponentSpace.Interfaces.ServiceProviderApiException"></exception>
+            <param name="methodName">Method name of executing context</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.InitiateSso(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSso(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.InitiateSso(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSso(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.ReceiveSso">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.ReceiveSso"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.InitiateSlo(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSlo(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.ReceiveSlo">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.ReceiveSlo"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.SendSlo">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.SendSlo"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.GetCanDoSlo">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.GetCanDoSlo"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.SetUserType(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.SendSlo"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SafeSamlServiceProviderApi.GetUserType">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.GetUserType"/>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.SamlControllerApi">
+            <summary>
+            Class provides SAML controller API methods.
+            </summary>
+            <remarks>External dependency allocation.</remarks>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlControllerApi.SetSessionStore">
+            <summary>
+            Sets new <see cref="T:Terrasoft.ComponentSpace.Session.SamlSessionStore"/> instance as SAML controllers session store.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlControllerApi.SetSessionStore(Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore)">
+            <summary>
+            Sets <paramref name="ssoDataStore"/> as SAML controllers session store.
+            </summary>
+            <param name="ssoDataStore"><see cref="T:Terrasoft.ComponentSpace.Session.SamlSessionStore"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlControllerApi.SetConfiguration(ComponentSpace.SAML2.Configuration.SAMLConfiguration,System.Collections.Generic.List{System.Security.Cryptography.X509Certificates.X509Certificate2})">
+            <summary>
+            Sets saml configuration programmatically.
+            In this case SAML configuration via config file (saml.config) will be ignored.
+            </summary>
+            <param name="samlConfiguration"><see cref="T:ComponentSpace.SAML2.Configuration.SAMLConfiguration"/> instance.</param>
+            <param name="idpCertificates">Identity providers certificates list.</param>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.SamlMetadataNetFramework">
+            <summary>
+            <see cref="T:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata"/> implementation for net framework.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlMetadataNetFramework.SetEndpoints(ComponentSpace.SAML2.Metadata.EntityDescriptor,System.String,System.String)">
+            <summary>
+            Sets SAML endpoints to <paramref name="entityDescriptor"/>. ComponentSpace version 2.6 puts placeholders
+            instead of real endpoints.
+            </summary>
+            <param name="entityDescriptor"><see cref="T:ComponentSpace.SAML2.Metadata.EntityDescriptor"/> instance.</param>
+            <param name="assertionConsumerUrl">Saml assertion endpoint.</param>
+            <param name="singleLogoutUrl">Single logout url.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlMetadataNetFramework.GetSpMetadata(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata.GetSpMetadata(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlMetadataNetFramework.ParseIdpMetadata(System.Xml.XmlDocument)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata.ParseIdpMetadata(System.Xml.XmlDocument)"/>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework">
+            <summary>
+            Class provides net framework <see cref="T:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.GetStringAttributeValue(ComponentSpace.SAML2.Assertions.AttributeValue)">
+            <summary>
+            Gets string value from <see cref="P:ComponentSpace.SAML2.Assertions.AttributeValue.Data"/>.
+            </summary>
+            <param name="value"><see cref="P:ComponentSpace.SAML2.Assertions.AttributeValue.Data"/> instance.</param>
+            <returns><see cref="P:ComponentSpace.SAML2.Assertions.AttributeValue.Data"/> string value or <see cref="F:System.String.Empty"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.GetClaimAttributes(ComponentSpace.SAML2.Assertions.SAMLAttribute[],System.String)">
+            <summary>
+            Creates claim attributes dictionary using <paramref name="samlAttributes"/>.
+            </summary>
+            <param name="samlAttributes">Saml atributes collection.</param>
+            <param name="nameId">User name-id property value.</param>
+            <returns>Claim attributes dictionary.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.SetSamlConfigFromDb">
+            <summary>
+            Sets saml config from db
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.GetUrlHash">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.BaseSamlServiceProviderApi.GetUrlHash"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.SetSsoSessionStore">
+            <summary>
+            Sets single sign on session store
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.SetSamlConfiguration(ComponentSpace.SAML2.Configuration.SAMLConfiguration,System.Collections.Generic.List{System.Security.Cryptography.X509Certificates.X509Certificate2})">
+            <summary>
+            Sets SAML configuration programmatically
+            That's alternative way to set SSO params that is different from saml.config)
+            </summary>
+            <param name="samlConfig"><see cref="T:ComponentSpace.SAML2.Configuration.SAMLConfiguration" /> instance.</param>
+            <param name="idpCertificates">Identity providers certificates list.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.InitiateSso(System.Web.HttpResponseBase,System.String,System.String)">
+            <summary>
+            Initiates Sso via ComponentSpace static context
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.InitiateSso(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSso(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.InitiateSso(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSso(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.ReceiveSso">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.ReceiveSso"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.InitiateSlo(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSlo(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.ReceiveSlo">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.ReceiveSlo"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.SendSlo">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.SendSlo"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.GetCanDoSlo">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.GetCanDoSlo"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.SetUserType(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.SetUserType(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.SamlServiceProviderApiNetFramework.GetUserType">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.GetUserType"/>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.SessionCookieName">
+            <summary>
+            Saml session cookie name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.SessionSsoDataStore">
+            <summary>
+            Data store for sso session.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.SessionID">
+            <summary>
+            Session identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.SsoSessionRequestCookieValue">
+            <summary>
+            Request sso cookie value.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.GetSsoResponseCookieValue(System.String)">
+            <summary>
+            Gets sso cookie value from response.
+            </summary>
+            <param name="cookieName">Cookie name.</param>
+            <returns>Sso cookie value.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.SetSsoResponseCookie(System.String,System.String)">
+            <summary>
+            Sets sso cookie value to response.
+            </summary>
+            <param name="cookieName">Cookie name.</param>
+            <param name="cookieValue">Cookie value.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.GetSsoRequestCookieValue(System.String)">
+            <summary>
+            Gets sso cookie value from request.
+            </summary>
+            <param name="cookieName">Cookie name.</param>
+            <returns>Sso cookie value.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.GetOrSetCookieValue(System.String,System.String,System.String)">
+            <summary>
+            Gets cookie value from response by name, if not empty, otherwise set 
+            <paramref name="newCookieValue"/> value to response cookie and return 
+            <paramref name="newCookieValue"/> value.
+            </summary>
+            <param name="cookieName">Cookie name.</param>
+            <param name="cookieValue">Cookie value.</param>
+            <param name="newCookieValue">New cookie value.</param>
+            <returns>Actual cookie value.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.GetDatabaseSessionId(System.Type)">
+            <summary>
+            Gets full database session unique identifier.
+            </summary>
+            <param name="type">Type of single sign on object.</param>
+            <returns>Full database session uniqueidentifier</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.GetInternalKey(System.String)">
+            <summary>
+            Creates internal storage item key.
+            </summary>
+            <param name="key">Storage item key</param>
+            <returns>Internal storage item key.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.RemoveAllInternal(System.String)">
+            <summary>
+            Removes all items from <paramref name="sessionId"/> from storage.
+            </summary>
+            <param name="sessionId">Saml session identifier.</param>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.Session.SamlSessionStore">
+            <summary>
+            SAML session store implementation class.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.ComponentSpace.Session.SamlSessionStore._instance">
+            <summary>
+            <see cref="T:Terrasoft.ComponentSpace.Session.SamlSessionStore"/> instance.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.ComponentSpace.Session.SamlSessionStore._ssoSessionType">
+            <summary>
+            Single sign on session type.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.ComponentSpace.Session.SamlSessionStore._emptySsoSession">
+            <summary>
+            Empty single sign on session object.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Session.SamlSessionStore.SessionCookieName">
+            <inheritdoc cref="P:Terrasoft.ComponentSpace.Session.BaseSamlSessionStore.SessionCookieName"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.SetEmptySsoSession">
+            <summary>
+            Sets empty single sign on session in data store object.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.SetSsoResponseCookie(System.String,System.String)">
+            <summary>
+            Sets single sign on session cookie in <see cref="T:System.Web.HttpResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.GetSsoResponseCookieValue(System.String)">
+            <summary>
+            Gets single sign on cookie from <see cref="T:System.Web.HttpResponse"/>.
+            </summary>
+            <param name="cookieName"><see cref="T:System.Web.HttpCookie"/> name.</param>
+            <returns><see cref="T:System.Web.HttpCookie"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.GetSsoRequestCookieValue(System.String)">
+            <summary>
+            Gets single sign on cookie from <see cref="T:System.Web.HttpRequest"/>.
+            </summary>
+            <param name="cookieName"><see cref="T:System.Web.HttpCookie"/> name.</param>
+            <returns><see cref="T:System.Web.HttpCookie"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.GetInstance">
+            <summary>
+            Returns <see cref="T:Terrasoft.ComponentSpace.Session.SamlSessionStore"/> instance.
+            New session instance will be created if neeeded.
+            </summary>
+            <returns><see cref="T:Terrasoft.ComponentSpace.Session.SamlSessionStore"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.Load(System.Type)">
+            <inheritdoc cref="M:ComponentSpace.SAML2.Data.ISSOSessionStore.Load(System.Type)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.Save(System.Object)">
+            <inheritdoc cref="M:ComponentSpace.SAML2.Data.ISSOSessionStore.Save(System.Object)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.InitInstance">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.InitInstance"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.LoadEmptySsoSession">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.LoadEmptySsoSession"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.GetEmptySsoSession">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.GetEmptySsoSession"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.GetProperty(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore.GetProperty(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.SetProperty(System.String,System.Object)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore.SetProperty(System.String,System.Object)"/>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Session.SamlSessionStore.ClearSession(System.String)">
+            <inheritdoc cref="M:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore.ClearSession(System.String)"/>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.SsoAppDefaultSettingNetFramework.SamlNameFieldName">
+            <inheritdoc cref="P:Terrasoft.Core.Sso.ISsoAppDefaultSettings.SamlNameFieldName"/>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.SsoAppDefaultSettingNetFramework.SamlRoleFieldName">
+            <inheritdoc cref="P:Terrasoft.Core.Sso.ISsoAppDefaultSettings.SamlRoleFieldName"/>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.SsoAppDefaultSettingNetFramework.DefaultPartnerName">
+            <inheritdoc cref="P:Terrasoft.Core.Sso.ISsoAppDefaultSettings.DefaultPartnerName"/>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.SsoAppDefaultSettingNetFramework.UseSsoByDefault">
+            <inheritdoc cref="P:Terrasoft.Core.Sso.ISsoAppDefaultSettings.UseSsoByDefault"/>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.SsoIdentityProviderParamsDto.WantAssertionOrResponseSigned">
+            <summary>
+            That's flag is specific only for .net core. It's always false for .net framework
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Authentication.Core.SSO.Extentions.HttpResponseExtensions">
+            <summary>
+            Provides SSO auth extentions for HttpRequest instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Authentication.Core.SSO.Extentions.HttpResponseExtensions.AddSsoUnauthorizedCookie(System.Web.HttpResponseBase,System.String,System.String,System.String)">
+            <summary>
+            Creates and adds sso logout cookie to <paramref name="source"/> instance.
+            </summary>
+            <param name="source"><see cref="T:System.Web.HttpResponseBase"/> instance.</param>
+            <param name="reason">Sso logout reason.</param>
+            <param name="message">Sso logout message.</param>
+            <param name="cookieName">Cookie name.</param>
+        </member>
+    </members>
+</doc>

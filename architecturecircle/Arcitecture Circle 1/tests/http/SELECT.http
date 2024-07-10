@@ -1,0 +1,10 @@
+﻿### SELECT * from Contact
+< set-request-base_url.js
+POST  {{base_url}}/DataService/json/SyncReply/SelectQuery HTTP/1.1
+Content-Type: application/json
+BPMCSRF: {{BPMCSRF}}
+
+{
+  "rootSchemaName": "Contact",
+  "allColumns": true
+}

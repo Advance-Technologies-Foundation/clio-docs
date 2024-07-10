@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.UI.Common.AspNetFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.UI.WebControls.HttpApplicationWrap">
+            <summary>
+            <see cref="T:System.Web.HttpApplication"/> wrapper class.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.UI.WebControls.HttpApplicationWrap._application">
+            <summary>
+            <see cref="T:System.Web.HttpApplication"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.HttpApplicationWrap.#ctor">
+            <summary>
+            Unit test constructor. Creates not initialized class instance.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.UI.WebControls.HttpApplicationWrap.PostAcquireRequestState">
+            <summary>
+            <see cref="E:System.Web.HttpApplication.PostAcquireRequestState"/> wrapper.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.UI.WebControls.HttpApplicationWrap.PreSendRequestHeaders">
+            <summary>
+            <see cref="E:System.Web.HttpApplication.PreSendRequestHeaders"/> wrapper.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.UI.WebControls.HttpApplicationWrap.ReleaseRequestState">
+            <summary>
+            <see cref="E:System.Web.HttpApplication.ReleaseRequestState"/> wrapper.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.UI.WebControls.ResourceHandlers.AppLevelResourceHandler">
+            <summary>Используется для получения ресурсов не требующих UserConnection</summary>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.CoreResource.GetResourceRelativeUrl(System.String)">
+            <summary>
+            Returns relative core resource url based on <paramref name="baseUrl"/>.
+            </summary>
+            <param name="baseUrl">Base resource url.</param>
+            <returns>Relative core resource url.</returns>
+        </member>
+        <member name="T:Terrasoft.UI.WebControls.Utilities.CookieUtilities">
+            <summary>
+            Represents auxiliary methods to work with cookie data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.Utilities.CookieUtilities.GetUserCulture(System.Web.HttpContext)">
+            <summary>
+            Returns culture from authentication cookie if cookie data exists.
+            </summary>
+            <param name="context">Http context.</param>
+            <returns>Culture from authentication cookie; otherwise - <c>null</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.Utilities.CsrfUtilities.ValidateToken(System.Web.HttpCookieCollection,System.String)">
+            <summary>
+            Validates current session token.
+            </summary>
+            <param name="cookies">Http context cookies.</param>
+            <param name="token">Csrf token.</param>
+            <returns><c>true</c> if token is valid. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.Utilities.CsrfUtilities.IsDisableCsrfTokenValidationForPaths(System.String,System.String[])">
+            <summary>
+            Validate if request path contains allowed method.
+            </summary>
+            <param name="requestPath">Request path.</param>
+            <param name="disableCsrfTokenValidationForPaths">Allowed service methods.</param>
+            <returns><c>true</c> if request path contains allowed method. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.Utilities.CsrfUtilities.Validate(System.Web.HttpRequest)">
+            <summary>
+            Validate csrf token.
+            </summary>
+            <param name="request"></param>
+            <returns><c>true</c> if request contains correct token. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.Common.AspNetFramework.AjaxRequestModule.CheckRequestHasRedirectHeader(System.Web.HttpRequestBase)">
+            <summary>
+            Checks that <paramref name="request"/> has bpm'online redirect headers.
+            </summary>
+            <param name="request"><see cref="T:System.Web.HttpRequestBase"/> instance.</param>
+            <returns><c>True</c> when request has Sso-Terrasoft or OAuth-Terrasoft headers,
+            <c>false</c> otherwise.</returns>
+            <remarks>
+            Single sign on flow and OAuth flow need valid response redirect at some point,
+            so when headers set, Response.StatusCode need to be 302.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.UI.Common.AspNetFramework.AjaxRequestModule.RedirectPreSendRequestHeaders(System.Object,System.EventArgs)">
+            <summary>
+            <see cref="E:System.Web.HttpApplication.PreSendRequestHeaders"/> event handler.
+            </summary>
+            <param name="sender"><see cref="T:System.Web.HttpApplication"/> instance.</param>
+            <param name="e"><see cref="T:System.EventArgs"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.UI.Common.AspNetFramework.AjaxRequestModule.GetHttpContextWrapper(System.Object)">
+            <summary>
+            Creates <see cref="T:System.Web.HttpContextBase"/> instance.
+            </summary>
+            <param name="sender"><see cref="T:System.Web.HttpApplication"/> instance.</param>
+            <returns><see cref="T:System.Web.HttpContextBase"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.Common.AspNetFramework.AjaxRequestModule.GetHttpApplicationWrap(System.Web.HttpApplication)">
+            <summary>
+            Creates <see cref="T:Terrasoft.UI.WebControls.HttpApplicationWrap"/> instance.
+            </summary>
+            <param name="app"><see cref="T:System.Web.HttpApplication"/> instance.</param>
+            <returns><see cref="T:Terrasoft.UI.WebControls.HttpApplicationWrap"/> instance.</returns>
+        </member>
+        <member name="T:Terrasoft.UI.Common.AspNetFramework.Compatibility.ProcessDataSourceFiltersConverter">
+            <summary>
+            Конвертер источников данных в элементах процессов.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.UI.Common.AspNetFramework.Compatibility.ProcessDataSourceFiltersConverter.ConvertToProcessDataSourceFilters(Terrasoft.Core.Process.ProcessActivity,System.Guid,System.String)">
+            <summary>
+            Конвертирует набор фильтров в формат процесса.
+            </summary>
+            <param name="processElement">Элемент процесса.</param>
+            <param name="entitySchemaUId">Идентификатор схемы объекта.</param>
+            <param name="dataSourceFilters">Набор фильтров.</param>
+            <returns>Набор фильтров в формате процесса.</returns>
+        </member>
+    </members>
+</doc>

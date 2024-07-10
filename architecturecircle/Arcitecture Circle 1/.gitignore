@@ -1,0 +1,10 @@
+**/.idea
+**/.vs
+**/.vscode
+
+# Exclude Bin and obj but now in .application folder
+**/[B-b]in
+!.application/**/bin
+**/[O-o]bj
+TestResults
+tests/Results

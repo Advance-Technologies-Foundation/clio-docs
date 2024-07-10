@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Reports</name>
+    </assembly>
+    <members>
+        <member name="P:Terrasoft.Reports.ReportSchemaManager.ItemCaption">
+            <summary>
+            Заголовок элемента менеджера схем.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Reports.ReportSchemaManager.ResourceManagerName">
+            <summary>
+            Имя менеджера ресурсов.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Reports.ReportSchemaManager.GetGenerator(Terrasoft.Core.UserConnection)">
+            <summary>
+            Возвращает генератор исходных кодов схем менеджера.
+            </summary>
+            <param name="userConnection">Пользовательское подключение.</param>
+            <returns>Генератор исходных кодов схем менеджера.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,614 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.ClientContentGeneration</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.AppStartupClientContentGenerator.GenerateStaticContent">
+            <summary>
+            Generates static content at app startup.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ClientSchemasPathProvider">
+            <inheritdoc cref="T:Terrasoft.Core.ClientContentGeneration.IClientContentPathProvider" />
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ClientSchemasPathProvider.GetConfigurationSchemasPaths(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            <inheritdoc cref="T:Terrasoft.Core.ClientContentGeneration.IClientContentPathProvider"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ClientUnitSchemaContentPreLoader.PreLoad">
+            <summary>
+            Pre-load client unit schema content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ClientUnitSchemaContentPreLoader.PreLoad(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            Pre-load client unit schema content for <paramref name="changedSchemas"/>.
+            </summary>
+            <param name="changedSchemas">Changed schemas.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ClientUnitSchemaJsModulePathesGenerator.GenerateContent(System.Collections.Generic.List{Terrasoft.Core.ISchemaManagerItem})">
+            <summary>
+            Generates content.
+            </summary>
+            <param name="schemaItems">Schemas.</param>
+            <returns>Generated content.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ClientUnitSchemaJsModulePathesGenerator.GenerateItemsWithContentConfig(System.Collections.Generic.IEnumerable{Terrasoft.Core.ISchemaManagerItem})">
+            <summary>
+            Generates config for items wich has generated static content.
+            </summary>
+            <param name="itemsWithContent">Items wich has static content.</param>
+            <returns>Generated config.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ClientUnitSchemaJsModulePathesGenerator.GenerateItemsWithoutContentConfig(System.Collections.Generic.IEnumerable{Terrasoft.Core.ISchemaManagerItem})">
+            <summary>
+            Generates config for items wich has not generated static content.
+            </summary>
+            <param name="itemsWithoutContent">Items wich has not static content.</param>
+            <returns>Generated config.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ClientUnitSchemaJsModulePathesGenerator.GenerateAsync(System.Collections.Generic.IEnumerable{Terrasoft.Core.ISchemaManagerItem},System.IO.Stream)">
+            <summary>
+            Generates module pathes content to stream.
+            </summary>
+            <param name="schemaItems">Schema items.</param>
+            <param name="stream">Stream.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ConfigurationState">
+            <inheritdoc cref="T:Terrasoft.Core.ClientContentGeneration.IConfigurationState"/>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ConfigurationStateProvider">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.Diagnostics.IConfigurationClientContentLogger">
+            <summary>
+            Provides methods to process content generation events and log them afterward.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.Diagnostics.IConfigurationClientContentLogWriter">
+            <summary>
+            Provides methods to write content generation log data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.Diagnostics.IConfigurationClientContentLogWriter.Write(Terrasoft.Core.ClientContentGeneration.Diagnostics.ConfigurationClientContentLogData)">
+            <summary>
+            Writes specified <paramref name="logData"/>.
+            </summary>
+            <param name="logData">Content generation log data.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.Diagnostics.SchemaGenerationInfoFactory">
+            <summary>
+            Delegate that is used to create an instance of the <see cref="T:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo"/>. 
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo">
+            <summary>
+            Provides methods to measure duration of content generation steps.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo.Steps">
+            <summary>
+            Gets content generation steps that are being measured.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo.GetDuration(Terrasoft.Core.ClientContentGeneration.Diagnostics.GenerationStep)">
+            <summary>
+            Gets duration of specified <paramref name="generationStep"/>, in milliseconds.
+            </summary>
+            <param name="generationStep">Content generation step.</param>
+            <returns>Duration of specified content generation step, in milliseconds.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo.GetTotalDuration">
+            <summary>
+            Gets duration of all content generation steps that are being measured, in milliseconds.
+            </summary>
+            <returns>Duration of all content generation steps that are being measured, in milliseconds.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo.StartMeasurement(Terrasoft.Core.ClientContentGeneration.Diagnostics.GenerationStep)">
+            <summary>
+            Starts measurement of specified <paramref name="generationStep"/>.
+            </summary>
+            <param name="generationStep">Content generation step.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo.StopMeasurement(Terrasoft.Core.ClientContentGeneration.Diagnostics.GenerationStep)">
+            <summary>
+            Stops measurement of specified <paramref name="generationStep"/>
+            </summary>
+            <param name="generationStep">Content generation step.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.Diagnostics.ISchemaGenerationInfo.StopMeasurements">
+            <summary>
+            Stops measurements of all content generation steps.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.Diagnostics.SchemaGenerationException">
+            <summary>
+            Exception for schema content generation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ClientContentGeneration.Diagnostics.SchemaGenerationException.SchemaName">
+            <summary>
+            Schema name.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.FileContent.FileContentDescriptorsProvider">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.FileContent.IFileContentBootstrapsGenerator">
+            <summary>
+            Provides methods to generate information about bootstraps of file content. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.FileContent.IFileContentBootstrapsGenerator.GenerateAsync(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}},System.IO.Stream)">
+            <summary>
+            Generates information about bootstraps of file content to stream.
+            </summary>
+            <param name="fileContentBootstraps">Collection of file content bootstraps 
+            that should be saved to stream.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.FileContent.IFileContentDescriptorsGenerator">
+            <summary>
+            Provides methods to generate information about descriptors of file content 
+            <see cref="T:Terrasoft.Core.ClientContentGeneration.FileContent.FileContentDescriptor" />. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.FileContent.IFileContentDescriptorsGenerator.GenerateAsync(System.Collections.Generic.IEnumerable{Terrasoft.Core.ClientContentGeneration.FileContent.FileContentDescriptor},System.IO.Stream)">
+            <summary>
+            Generates information about descriptors of file content to stream.
+            </summary>
+            <param name="fileContentDescriptors">Collection of file content descriptors
+            that should be saved to stream.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.FileContent.IFileContentDescriptorsProvider">
+            <summary>
+            Provides methods to get information about descriptors of file content <see cref="T:Terrasoft.Core.ClientContentGeneration.FileContent.FileContentDescriptor" />.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.FileContent.IFileContentDescriptorsProvider.GetFileContentDescriptors(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns information about descriptors of file content.
+            </summary>
+            <param name="packageDirectories">Paths to directories of packages.</param>
+            <returns>Information about descriptors of file content.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.FileContent.IMobileFileContentDescriptorsGenerator">
+            <summary>
+            Provides methods to generate information about descriptors of file content for mobile application
+            <see cref="T:Terrasoft.Core.ClientContentGeneration.FileContent.FileContentDescriptor" />. 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IAppStartupClientContentGenerator.GenerateStaticContent">
+            <summary>
+            Generates static content at app startup.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientContentPathProvider">
+            <summary>
+            Provides runtime root schema paths for client unit schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientContentPathProvider.GetConfigurationSchemasPaths(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            Creates schema paths based on configuration content constants.
+            </summary>
+            <param name="schemas">Collections of changed schemas, grouped by managers.</param>
+            <returns>Creates a new instance of the <see cref="T:Terrasoft.Core.ClientContentGeneration.ConfigurationSchemasPathsData"/> class.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaClientContentFileGenerator">
+            <summary>
+            Provides methods to generate javascript and css files of ClientUnit schema.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaClientContentFileGenerator.GenerationStepStarted">
+            <summary>
+            Occurs when content generation step starts.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaClientContentFileGenerator.GenerationStepFinished">
+            <summary>
+            Occurs when content generation step finishes.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaClientContentFileGenerator.EmptyResourcesFound">
+            <summary>
+            Occurs when schema with empty resources is being generated.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaClientContentFileGenerator.GenerateAsync(Terrasoft.Core.ClientUnitSchema,System.String)">
+            <summary>
+            Asynchronously generates javascript and css files for provided <paramref name="schema"/> in directory 
+            <paramref name="outputDirectory"/>.
+            </summary>
+            <param name="schema">ClientUnit schema.</param>
+            <param name="outputDirectory">Directory path.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaContentBootstrapGenerator.GenerateAsync(System.IO.Stream)">
+            <summary>
+            Asynchronously generates content bootstrap and writes it to <paramref name="stream"/>.
+            </summary>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaContentPreLoader.PreLoad">
+            <summary>
+            Pre-load client unit schema content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaContentPreLoader.PreLoad(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            Pre-load client unit schema content for <paramref name="changedSchemas"/>.
+            </summary>
+            <param name="changedSchemas">Changed schemas.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaCssGenerator">
+            <summary>
+            Provides methods to generate CSS files of ClientUnit schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaCssGenerator.GenerateAsync(Terrasoft.Core.ClientUnitSchema,dotless.Core.configuration.DotlessConfiguration,System.IO.Stream)">
+            <summary>
+            Asynchronously generates CSS file content of ClientUnit <paramref name="schema"/> Less and writes result to 
+            <paramref name="stream"/>.
+            </summary>
+            <param name="schema">ClientUnit schema.</param>
+            <param name="lessConfiguration">Configuration for parsing Less to CSS.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaImageFilesGenerator">
+            <summary>
+            Provides methods to generate images files of ClientUnit schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaImageFilesGenerator.GenerateAsync(System.String,System.Collections.Generic.IEnumerable{Terrasoft.Core.ImageListSchemaItem},System.String)">
+            <summary>
+            Asynchronously generates images of ClientUnit schema.
+            </summary>
+            <param name="schemaName">ClientUnit schema name.</param>
+            <param name="schemaImages">Image list <see cref="T:System.Collections.Generic.IEnumerable`1"/></param>
+            <param name="outputDirectory">Directory for output.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaJsGenerator">
+            <summary>
+            Provides methods to generate JS files of ClientUnit schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaJsGenerator.GenerateAsync(Terrasoft.Core.ClientUnitSchema,System.IO.Stream)">
+            <summary>
+            Asynchronously generates JS file content of ClientUnit <paramref name="schema"/> and writes result to 
+            <paramref name="stream"/>.
+            </summary>
+            <param name="schema">ClientUnit schema.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaJsModuleDescriptorsGenerator">
+            <summary>
+            Provides methods for ClientUnit schema module descriptors generation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaJsModuleDescriptorsGenerator.GenerateAsync(System.Collections.Generic.IEnumerable{Terrasoft.Core.ISchemaManagerItem},System.IO.Stream)">
+            <summary>
+            Asynchronously generates module descriptors content for provided <paramref name="schemaItems"/> and writes 
+            it to <paramref name="stream"/>.
+            </summary>
+            <param name="schemaItems">Schema items collection.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaJsModulePathesGenerator">
+            <summary>
+            Provides methods for ClientUnit schema module pathes generation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaJsModulePathesGenerator.GenerateAsync(System.Collections.Generic.IEnumerable{Terrasoft.Core.ISchemaManagerItem},System.IO.Stream)">
+            <summary>
+            Asynchronously generates module pathes content for provided <paramref
+            name="schemaItems"/> and writes it to <paramref name="stream"/>.
+            </summary>
+            <param name="schemaItems">Schema items collection.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaToResourcePackageConverter">
+            <summary>
+            Provides methods to convert client unit schema localizable resources to collection of resource packages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IClientUnitSchemaToResourcePackageConverter.Convert(Terrasoft.Core.ClientUnitSchema)">
+            <summary>
+            Converts client unit schema localizable resources to collection of resource packages.
+            </summary>
+            <param name="schema">Schema.</param>
+            <returns>Collection of resource packages.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IConfigurationClientContentFileGenerator">
+            <summary>
+            Provides methods to generate configuration client content.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IConfigurationClientContentFileGenerator.GenerationStepStarted">
+            <summary>
+            Occurs when content generation step starts.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IConfigurationClientContentFileGenerator.GenerationStepFinished">
+            <summary>
+            Occurs when content generation step finishes.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IConfigurationClientContentFileGenerator.GenerationError">
+            <summary>
+            Occurs when content generation error happens.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IConfigurationClientContentFileGenerator.GenerateAsync(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}},System.String,System.Boolean)">
+            <summary>
+            Generates configuration client content for provided <paramref name="schemas"/> to 
+            <paramref name="outputDirectory"/>.
+            </summary>
+            <param name="schemas">Dictionary of changed schemas, where key is manager name and value is collection of 
+            changed schema names.</param>
+            <param name="outputDirectory">Directory to generate configuration client content to.</param>
+            <param name="generateDescriptors">Generate module descriptors and pathes.</param>
+            <returns>Task that represents asynchronous generate operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IConfigurationClientContentFileGenerator.GenerateAsync(System.String)">
+            <summary>
+            Generates configuration client content for all schemas to <paramref name="outputDirectory"/>.
+            </summary>
+            <param name="outputDirectory">Directory to generate configuration client content to.</param>
+            <returns>Task that represents asynchronous generate operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IConfigurationClientContentFileGenerator.PrepareGenerateAsync(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}},System.String)">
+            <summary>
+            Prepares configuration client content for provided <paramref name="schemas"/> to 
+            <paramref name="outputDirectory"/>.
+            </summary>
+            <param name="schemas">Dictionary of changed schemas, where key is manager name and value is collection of 
+            changed schema names.</param>
+            <param name="outputDirectory">Directory to generate configuration client content to.</param>
+            <returns>Task that represents asynchronous prepare operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IConfigurationState">
+            <summary>
+            Configuration state consists of <see cref="T:Terrasoft.Core.ContentGeneration.SchemaInfo"/> for each schema in configuration 
+            grouped by <see cref="T:Terrasoft.Core.ClientContentGeneration.SchemaChangeType"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IConfigurationStateProvider">
+            <summary>
+            Provides methods to get configuration state.
+            Configuration state (_MetaInfo.json) consists of configuration hash (random string)
+            and hashes for each schema in configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IConfigurationStateProvider.GetConfigurationSchemasState(System.Collections.Generic.IEnumerable{Terrasoft.Core.ContentGeneration.SchemaInfo},System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Returns collection of schemas info grouped by schema change type.
+            </summary>
+            <param name="currentSchemasInfo">Configuration schemas state.</param>
+            <param name="packages">Configuration composed packages.</param>
+            <returns>Collection of schemas publish info grouped by schema change type.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ICssGenerator">
+            <summary>
+            Provides methods to generate CSS.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ICssGenerator.GenerateAsync(System.String,dotless.Core.configuration.DotlessConfiguration,System.IO.Stream)">
+            <summary>
+            Asynchronously generates CSS from <paramref name="less"/> using <paramref name="lessConfiguration"/> and 
+            writes result to <paramref name="stream"/>.
+            </summary>
+            <param name="less">Less data.</param>
+            <param name="lessConfiguration">Configuration for parsing Less to CSS.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IEntitySchemaClientContentFileGenerator">
+            <summary>
+            Provides methods to generate javascript files of Entity schema.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IEntitySchemaClientContentFileGenerator.GenerationStepStarted">
+            <summary>
+            Occurs when content generation step starts.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Core.ClientContentGeneration.IEntitySchemaClientContentFileGenerator.GenerationStepFinished">
+            <summary>
+            Occurs when content generation step finishes.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IEntitySchemaClientContentFileGenerator.GenerateAsync(Terrasoft.Core.Entities.EntitySchema,System.String)">
+            <summary>
+            Asynchronously generates javascript files for provided <paramref name="schema"/> in 
+            <paramref name="outputDirectory"/>.
+            </summary>
+            <param name="schema">Entity schema.</param>
+            <param name="outputDirectory">Directory path.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IEntitySchemaJsGenerator">
+            <summary>
+            Provides methods to generate JavaScript representation of entity schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IEntitySchemaJsGenerator.GenerateAsync(Terrasoft.Core.Entities.EntitySchema,System.IO.Stream)">
+            <summary>
+            Writes JavaScript representation of entity schema to stream asynchronously.
+            </summary>
+            <param name="entitySchema">Entity schema.</param>
+            <param name="stream">Stream.</param>
+            <returns>Task that represents the asynchronous write operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IEntitySchemaToResourcePackageConverter">
+            <summary>
+            Provides methods to convert entity schema localizable resources to collection of resource packages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IEntitySchemaToResourcePackageConverter.Convert(Terrasoft.Core.Entities.EntitySchema)">
+            <summary>
+            Converts entity schema localizable resources to collection of resource packages.
+            </summary>
+            <param name="schema">Schema.</param>
+            <returns>Collection of resource packages.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IFileSystemHashCalculator">
+            <summary>
+            Provides methods to read file paths and calculate hashes from files content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IFileSystemHashCalculator.Calculate(System.String,System.Predicate{System.String})">
+            <summary>
+            Reads file paths and calculates hashes from files content.
+            </summary>
+            <returns>Dictionary of file paths and hashes, where key is file path matches
+            the expression <paramref name="pathFilter"/> and value is file hash.</returns>
+            <param name="rootDirectory">Root directory path.</param>
+            <param name="pathFilter">Expression used to filter file paths.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ILocalizableImageGenerator">
+            <summary>
+            Provides methods to generate images.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ILocalizableImageGenerator.GenerateAsync(Terrasoft.Common.TerrasoftImage,System.IO.Stream)">
+            <summary>
+            Asynchronously generates image from <paramref name="terrasoftImage"/> and 
+            writes result to <paramref name="stream"/>.
+            </summary>
+            <param name="terrasoftImage">The <see cref="T:Terrasoft.Common.TerrasoftImage"/> image.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IRequireJsConfigGenerator">
+            <summary>
+            Provides methods to generate RequireJS configuration script.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ClientContentGeneration.IRequireJsConfigGenerator.ConfigurationHash">
+            <summary>
+            Configuration content hash.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IRequireJsConfigGenerator.Generate(System.String)">
+            <summary>
+            Generates RequireJS configuration script.
+            </summary>
+            <param name="cultureName">Current user culture name.</param>
+            <returns>RequireJS configuration script.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.IResourceJsRoutesGenerator">
+            <summary>
+            Provides methods for RequireJS config generation for ClientUnit and Entity schema resources.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IResourceJsRoutesGenerator.GenerateAsync(System.Collections.Generic.IEnumerable{System.String},System.IO.Stream)">
+            <summary>
+            Asynchronously generates RequireJS config for provided <paramref name="emptyResourceManagerNames"/>
+            and writes result to <paramref name="stream"/>.
+            </summary>
+            <param name="emptyResourceManagerNames">Empty resource managers collection.</param>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> to write content to.</param>
+            <returns>Task that represents asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ISchemaInfoComparer">
+            <summary>
+            Provides methods to compare schema info.
+            For example, from previous and current publishings.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ISchemaInfoComparer.Compare(System.Collections.Generic.IEnumerable{Terrasoft.Core.ContentGeneration.SchemaInfo},System.Collections.Generic.IEnumerable{Terrasoft.Core.ContentGeneration.SchemaInfo},System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Compares schemas info from previous <paramref name="oldSchemasInfo"/>
+            and current publishings<paramref name="newSchemasInfo"/>.
+            </summary>
+            <returns>Collection of schemas info grouped by schema change type</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ISchemaInfoProvider">
+            <summary>
+            Provides methods to get schema info.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ISchemaInfoProvider.GetSchemasInfo(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Returns collection of schemas info.
+            </summary>
+            <returns>Collection of schemas publish info.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ISchemaResourceJsFileGenerator">
+            <summary>
+            Provides methods to generate client resources for schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ISchemaResourceJsFileGenerator.GenerateAsync(System.String,System.Collections.Generic.IEnumerable{Terrasoft.Common.ResourcePackage},System.String)">
+            <summary>
+            Generates client resources for schema to the specified directory asynchronously.
+            </summary>
+            <param name="schemaName">Schema name.</param>
+            <param name="resourcePackages">Collection of resource packages for different cultures.</param>
+            <param name="rootOutputDirectory">Path to the root client content directory.</param>
+            <returns>Task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.ISchemaResourceJsGenerator">
+            <summary>
+            Provides methods to generate JavaScript schema resources.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.ISchemaResourceJsGenerator.GenerateAsync(Terrasoft.Common.ResourcePackage,System.String,System.IO.Stream)">
+            <summary>
+            Writes resources asynchronously from <paramref name="resourcePackage"/> to <paramref name="stream"/> in
+            JavaScript format.
+            </summary>
+            <param name="resourcePackage">Resource package.</param>
+            <param name="schemaName">Schema name.</param>
+            <param name="stream">Stream to write into.</param>
+            <returns>Task that represents the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IStaticContentGenerateWatcher.Start">
+            <summary>
+            Runs watcher for generating.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.IStaticContentGenerateWatcher.Stop">
+            <summary>
+            Stops watcher for generating.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ClientContentGeneration.SchemaResourceJsGenerator">
+            <summary>
+            Generates js resources. Uses only RootGroup from resource package.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.StaticContentGenerateWatcher.Watch">
+            <summary>
+            Starts watch.
+            </summary>
+            <returns>Success watching value.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.StaticContentGenerateWatcher.StopWatch">
+            <summary>
+            Stops watch.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.StaticContentGenerateWatcher.Start">
+            <summary>
+            Runs watcher for generating.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ClientContentGeneration.StaticContentGenerateWatcher.Stop">
+            <summary>
+            Stops watcher for generating.
+            </summary>
+        </member>
+    </members>
+</doc>

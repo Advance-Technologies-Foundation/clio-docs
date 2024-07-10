@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Messaging.SignalR</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Messaging.SignalR.IClientHub">
+            <summary>
+            Interface for the client-side SignalR proxy.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.IClientHub.ServerMessage(Terrasoft.Messaging.Common.IMsg)">
+            <summary>
+            Handles message from this server.
+            </summary>
+            <param name="msg">Message from server.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.IClientHub.ServerMessage(System.String)">
+            <summary>
+            Handles message from this server.
+            </summary>
+            <param name="msg">Message from server.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.SignalR.ISignalRServiceLayer">
+            <summary>
+            Interface for SignalR messaging infrastructure layer.
+            </summary>
+            <seealso cref="T:Terrasoft.Messaging.Common.IMsgServiceLayer" />
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.ISignalRServiceLayer.OnNewConnection(Microsoft.AspNetCore.SignalR.HubCallerContext,Terrasoft.Messaging.SignalR.IClientHub)">
+            <summary>
+            Handles new hub's connection.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="caller">The caller.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.ISignalRServiceLayer.OnNewMessage(System.String,Terrasoft.Messaging.Common.IMsg)">
+            <summary>
+            Handles new hub's message.
+            </summary>
+            <param name="connectionId">The connection identifier.</param>
+            <param name="msg">The message from client.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.ISignalRServiceLayer.OnConnectionClosed(System.String)">
+            <summary>
+            Handles hub's connection closing.
+            </summary>
+            <param name="connectionId">The connection identifier.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.SignalR.MessagingHub">
+            <summary>
+            SignalR hub for receiving messages from client.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.SignalR.Hub" />
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.MessagingHub.#ctor(Terrasoft.Messaging.SignalR.ISignalRServiceLayer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Messaging.SignalR.MessagingHub"/> class.
+            </summary>
+            <param name="serviceLayer">The service layer.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.MessagingHub.OnConnectedAsync">
+            <summary>
+            Called when a new connection is established with the hub.
+            </summary>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task" /> that represents the asynchronous connect.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.MessagingHub.OnDisconnectedAsync(System.Exception)">
+            <summary>
+            Called when a connection with the hub is terminated.
+            </summary>
+            <param name="exception">Exception, if termination was not normal.</param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task" /> that represents the asynchronous disconnect.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.MessagingHub.SendMessage(Terrasoft.Messaging.Common.SimpleMessage)">
+            <summary>
+            The client message handler.
+            </summary>
+            <param name="msg">The message from client.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.MessagingHub.SendRawMessage(System.String)">
+            <summary>
+            The client message handler.
+            </summary>
+            <param name="msg">The message from client.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.MessagingHub.Echo(Terrasoft.Messaging.Common.SimpleMessage)">
+            <summary>
+            Echoes the specified message.
+            </summary>
+            <param name="msg">Message from client.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.MessagingHub.Ping">
+            <summary>
+            Pings this instance. Always returns 'Pong!' answer.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.SignalR.SignalRChannel">
+            <summary>
+            Messaging channel implementation for SignalR.
+            </summary>
+            <seealso cref="T:Terrasoft.Messaging.Common.IMsgChannel" />
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRChannel.#ctor(Terrasoft.Messaging.SignalR.IClientHub,System.Guid,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Messaging.SignalR.SignalRChannel"/> class.
+            </summary>
+            <param name="clientHub">The client hub.</param>
+            <param name="id">Admin unit identifier.</param>
+            <param name="name">User name.</param>
+            <param name="connectionId">The connection unique identifier.</param>
+        </member>
+        <member name="P:Terrasoft.Messaging.SignalR.SignalRChannel.Id">
+            <summary>
+            Admin unit identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.SignalR.SignalRChannel.Name">
+            <summary>
+            User name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.SignalR.SignalRChannel.ConnectionId">
+            <summary>
+            The connection unique identifier.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.SignalR.SignalRChannel.OnMessage">
+            <summary>
+            Occurs when new message from client received.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.SignalR.SignalRChannel.OnConnectionClose">
+            <summary>
+            Occurs when connection is closed.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRChannel.OnHubConnectionClosed(System.String)">
+            <summary>
+            Handles hub connection closing.
+            </summary>
+            <param name="connectionId">The connection identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRChannel.OnHubNewMessage(Terrasoft.Messaging.Common.IMsg,System.String)">
+            <summary>
+            Handles hub's new message from client.
+            </summary>
+            <param name="msg">The message.</param>
+            <param name="connectionId">The connection identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRChannel.PostMessage(Terrasoft.Messaging.Common.IMsg)">
+            <summary>
+            Posts the message to client.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRChannel.PostMessage(System.String)">
+            <summary>
+            Posts the message to client.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRMsgSession.Close(System.String)">
+            <summary>
+            Closes current session. SignalR doesn't allow to close connection by server side, so this methods does
+            nothing.
+            </summary>
+            <param name="reason">Closing reason.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRMsgSession.Post(System.String)">
+            <summary>
+            Sends message to client.
+            </summary>
+            <param name="msg">Message.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.SignalR.SignalRServiceCollectionExtensions">
+            <summary>
+            Class provides extension methods for SignalR messaging enabling.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceCollectionExtensions.AddSignalRMessaging(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds SignalR messaging to application.
+            </summary>
+            <param name="source">A collection of services.</param>
+            <returns>The same instance of <see cref="T:Microsoft.AspNetCore.SignalR.ISignalRServerBuilder"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceCollectionExtensions.RunSignalRMessaging(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Runs SignalR messaging for application.
+            </summary>
+            <param name="source">The application's builder.</param>
+            <returns>The same instance of <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.SignalR.SignalRServiceLayer">
+            <summary>
+            SignalR messaging layer.
+            </summary>
+            <seealso cref="T:Terrasoft.Messaging.Common.IMsgServiceLayer" />
+        </member>
+        <member name="P:Terrasoft.Messaging.SignalR.SignalRServiceLayer.IsInitialized">
+            <summary>
+            Gets a value indicating whether this instance is initialized. Always returns <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.SignalR.SignalRServiceLayer.ClientConnectionClassName">
+            <summary>
+            Gets a value with name of Js-client class that supports connection to this msg service.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.SignalR.SignalRServiceLayer.OnMsgChannelConnected">
+            <summary>
+            Occurs when new channel is connected.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceLayer.OnNewConnection(Microsoft.AspNetCore.SignalR.HubCallerContext,Terrasoft.Messaging.SignalR.IClientHub)">
+            <summary>
+            Handles new hub's connection.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="caller">The caller.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceLayer.OnNewMessage(System.String,Terrasoft.Messaging.Common.IMsg)">
+            <summary>
+            Handles new hub's message.
+            </summary>
+            <param name="connectionId">The connection identifier.</param>
+            <param name="msg">The message from client.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceLayer.OnConnectionClosed(System.String)">
+            <summary>
+            Handles hub's connection closing.
+            </summary>
+            <param name="connectionId">The connection identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceLayer.Initialize">
+            <summary>
+            Does nothing, always returns <c>true</c>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceLayer.StopService">
+            <summary>
+            Stops the service.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.SignalR.SignalRServiceLayer.GetServiceUrl(System.String)">
+            <summary>
+            Gets a service url for client connections.
+            </summary>
+            <param name="baseUrl">Base url for service connection.</param>
+            <returns>Service endpoint url that client must use to connect.</returns>
+        </member>
+    </members>
+</doc>

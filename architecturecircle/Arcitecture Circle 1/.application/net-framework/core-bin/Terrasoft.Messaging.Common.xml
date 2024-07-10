@@ -1,0 +1,1383 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Messaging.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Messaging.Common.ActiveCallCollection">
+            <summary>
+            Active <see cref="T:Terrasoft.Messaging.Common.Call"/> collection.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.ActiveCallCollection.CallExpireDuration">
+            <summary>
+            Call ttl (in minutes).
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            .ctor.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.#ctor(Terrasoft.Core.UserConnection,System.Guid)">
+            <summary>
+            .ctor.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <param name="userContactId">User identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.SetTimeFields(Terrasoft.Messaging.Common.Call,System.DateTime)">
+            <summary>
+            Sets <paramref name="callListItem"/> time fields. Field will be selected by call state.
+            Call duration properties will be recalculated.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="userDateTime">Call change time.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.UpdateCallListItem(Terrasoft.Messaging.Common.Call@,Terrasoft.Messaging.Common.Call,System.DateTime)">
+            <summary>
+            Updates <paramref name="callListItem"/> using values from <paramref name="updateInfo"/>.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="updateInfo">source <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="userDateTime">Call change time.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.UpdateConditionalCallFields(Terrasoft.Core.Entities.Entity,Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Updates <paramref name="callEntity"/> conditional fields using values from <paramref name="callListItem"/>.
+            </summary>
+            <param name="callEntity"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="callListItem">source <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.ClearExpiredCalls">
+            <summary>
+            Removes expired calls from collection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.GetCallOwnerUserConnection(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Returns call owner <see cref="T:Terrasoft.Core.UserConnection"/> instance.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>Call owner <see cref="T:Terrasoft.Core.UserConnection"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.CreateUserConnection(System.Guid)">
+            <summary>
+            Creates <see cref="T:Terrasoft.Core.UserConnection"/> instance for <paramref name="contactId"/>.
+            </summary>
+            <param name="contactId">Contact unique identifier.</param>
+            <returns><see cref="T:Terrasoft.Core.UserConnection"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.GetUserName(System.Guid)">
+            <summary>
+            Returns <paramref name="contactId"/> contact name.
+            </summary>
+            <param name="contactId">Contact unique identifier.</param>
+            <returns>Contact name.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.GetCallOwnerId(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Returns call owner identifier.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>Call owner identifier.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.UpdateCallTable(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Creates or updates call in database.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.SaveNewCallInDB(Terrasoft.Messaging.Common.Call,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Creates call in database.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="callEntity">Call <see cref="T:Terrasoft.Core.Entities.Entity"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.UpdateCallInDB(Terrasoft.Messaging.Common.Call,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Updates call in database.
+            </summary>
+            <param name="callItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="callEntity">Call <see cref="T:Terrasoft.Core.Entities.Entity"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.UpdateGloballyUniqueCallLinkageId(Terrasoft.Messaging.Common.Call,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Updates call GloballyUniqueCallLinkageId in database.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="callEntity">Call <see cref="T:Terrasoft.Core.Entities.Entity"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.GetIsDirectionChangedCallInDB(Terrasoft.Messaging.Common.Call,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Checks is call direction changed in database.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="callEntity">Call <see cref="T:Terrasoft.Core.Entities.Entity"/> instance.</param>
+            <returns><c>True</c> if call direction changed. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.GetIsNeedUpdateCallInDB(Terrasoft.Messaging.Common.Call,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Checks is call need to be saved in database.
+            </summary>
+            <param name="callListItem"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="callEntity">Call <see cref="T:Terrasoft.Core.Entities.Entity"/> instance.</param>
+            <returns><c>True</c> if call need to be saved. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.UpdateCallTimeFileds(Terrasoft.Messaging.Common.Call,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Updates time call filds in database.
+            </summary>
+            <param name="callListItem">Call from active call collection.</param>
+            <param name="callEntity">Call record from database.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.LogCallDurations(Terrasoft.Messaging.Common.Call,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Write logs with duration call info.
+            </summary>
+            <param name="callListItem">Call from active call collection.</param>
+            <param name="callEntity">Call record from database.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.GetStoreKey">
+            <summary>
+            Returns active call collection storage key.
+            </summary>
+            <returns>Active call collection storage hash key.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.LoadState">
+            <summary>
+            Loads active calls collection from storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.RefreshWithCallInfoPortion(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Updates current call with <paramref name="updateCall"/> properties.
+            </summary>
+            <param name="updateCall"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>Updated <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallCollection.SaveState">
+            <summary>
+            Saves active call collection in storage.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ActiveCallSnapshot">
+            <summary>
+            Message exchange library active calls collection snapshot.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.ActiveCallSnapshot.ActiveCalls">
+            <summary>
+            Active calls collection.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.ActiveCallSnapshot.CurrentCall">
+            <summary>
+            Current active call.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ActiveCallSnapshot.SerializeToString">
+            <summary>
+            Serializes current instance to string.
+            </summary>
+            <returns>Serialized active calls snapshot.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.CallEqualityComparer">
+            <summary>
+            Compare two calls API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.CallEqualityComparer.Equals(Terrasoft.Messaging.Common.Call,Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Compares two calls.
+            </summary>
+            <param name="x">First <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="y">Second <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>If calls are equal returns <c>true</c>. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.CallEqualityComparer.GetHashCode(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Returns <paramref name="obj"/> hash code.
+            </summary>
+            <param name="obj"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>Call hash code.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.Call">
+            <summary>
+            Call model.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.#ctor(System.String)">
+            <summary>
+            .ctor.
+            </summary>
+            <param name="id">Call identifier.</param>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.Id">
+            <summary>
+            Call identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.DataBaseUId">
+            <summary>
+            Call database identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.UserContactUId">
+            <summary>
+            Call owner contact identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CallFeaturesSet">
+            <summary>
+            Avaliable line <see cref="T:Terrasoft.Messaging.Common.GeneralizedCallFeatures"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.DeviceId">
+            <summary>
+            Device identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CallerId">
+            <summary>
+            Caller number.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CalledId">
+            <summary>
+            Called number.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.Direction">
+            <summary>
+            Call direction.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CallContext">
+            <summary>
+            Call context.
+            </summary>
+            <remarks>Additional call info.</remarks>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CallContextType">
+            <summary>
+            Call context type.
+            </summary>
+            <remarks>Sets type for call context.</remarks>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.StartTime">
+            <summary>
+            Call start time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.EndTime">
+            <summary>
+            Call end time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.State">
+            <summary>
+            Call state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.OldState">
+            <summary>
+            Call previous state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CurrentHoldStartTime">
+            <summary>
+            Call on hold start time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.TotalHoldDuration">
+            <summary>
+            Call on hold duration (in seconds).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.ConnectionStartTime">
+            <summary>
+            Connection established time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CurrentTalkStartTime">
+            <summary>
+            Talk start time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.TotalTalkDuration">
+            <summary>
+            Talk duration in seconds.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.RedirectingId">
+            <summary>
+            Redirecting phone number.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.RedirectionId">
+            <summary>
+            Redirected phone number.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.TimeStamp">
+            <summary>
+            Last call change timestamp.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.IsConsultCall">
+            <summary>
+            Sign that call is consult.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.Call.CallProvider">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.ITelephonyCall"/> implementation instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.ToString">
+            <inheritdoc cref="M:System.Object.ToString"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.MakeConsultCall(System.String)">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.ITelephonyCall.MakeConsultCall(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.AnswerCall">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.ITelephonyCall.AnswerCall"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.HoldCall">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.ITelephonyCall.HoldCall"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.DropCall">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.ITelephonyCall.DropCall"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.TransferCall(Terrasoft.Messaging.Common.Call)">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.ITelephonyCall.TransferCall(Terrasoft.Messaging.Common.Call)"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.SetupTransferCall">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.ITelephonyCall.SetupTransferCall"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.BlindTransferCall(System.String)">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.ITelephonyCall.BlindTransferCall(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.SendDtmf(System.String)">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.IDtmfSupported.SendDtmf(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Call.Equals(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Compares current call instance with <paramref name="other"/>.
+            </summary>
+            <param name="other"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>If calls are equal returns <c>true</c>. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.MsgEventInfo">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.IMsgEventInfo"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.MsgEventInfo.#ctor">
+            <summary>
+            .ctor.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.Connection">
+            <inheritdoc cref="P:Terrasoft.Messaging.Common.IMsgEventInfo.Connection"/>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.ConnectionUId">
+            <summary>
+            <see cref="P:Terrasoft.Messaging.Common.MsgEventInfo.Connection"/> identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.LibraryUId">
+            <summary>
+            Message excahnge library identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.CommandUId">
+            <inheritdoc cref="P:Terrasoft.Messaging.Common.IMsgEventInfo.CommandUId"/>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.EventType">
+            <inheritdoc cref="P:Terrasoft.Messaging.Common.IMsgEventInfo.EventType"/>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.Content">
+            <summary>
+            Event content.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.ContentType">
+            <inheritdoc cref="P:Terrasoft.Messaging.Common.IMsgEventInfo.ContentType"/>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.PrivateData">
+            <summary>
+            Event additional data.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.MsgEventInfo.ResultData">
+            <summary>
+            Serialized event.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ServerClientNotificationData">
+            <summary>
+            Object which contains data for operation notifier message sending.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.ServerClientNotificationData.OperationId">
+            <summary>
+            Id of operation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.ServerClientNotificationData.OperationType">
+            <summary>
+            Type of operation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.ServerClientNotificationData.Body">
+            <summary>
+            Message body.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.ServerClientNotificationData.UserIds">
+            <summary>
+            User ids which will receive notification.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.CallDirection">
+            <summary>
+            Call directions enum.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.CallDirection.Type">
+            <summary>
+            Direction type.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.CallDirection.Unknown">
+            <summary>
+            Direction unknown.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.CallDirection.Out">
+            <summary>
+            Outgoing call.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.CallDirection.In">
+            <summary>
+            Incoming call.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.CallDirection.TypeIdentifiers">
+            <summary>
+            Type identifiers.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.GeneralizedCallFeatures">
+            <summary>
+            Avaliable call operations enumeration.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanNothing">
+            <summary>
+            No avaliable operations.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanReCall">
+            <summary>
+            Recall.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanDial">
+            <summary>
+            Dial.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanAnswer">
+            <summary>
+            Answer.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanDrop">
+            <summary>
+            Drop.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanHold">
+            <summary>
+            Set call on hold.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanUnHold">
+            <summary>
+            Unhold call.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanSetupTransfer">
+            <summary>
+            Set up transfer.
+            </summary>
+            <remarks>TAPI only.</remarks>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanCompleteTransfer">
+            <summary>
+            Complete transfer.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanCancelCompleteTransfer">
+            <summary>
+            Cancel completing transfer.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanBlindTransfer">
+            <summary>
+            Blind transfer.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanMakeConsultCall">
+            <summary>
+            Make consult call.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallFeatures.CanDtmf">
+            <summary>
+            Send Dtmf command.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.GeneralizedCallStateEnum">
+            <summary>
+            Call states enum.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallStateEnum.None">
+            <summary>
+            Not active.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallStateEnum.Alerting">
+            <summary>
+            Incoming or outgoing call ringing.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallStateEnum.Connected">
+            <summary>
+            Connection established.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallStateEnum.Holded">
+            <summary>
+            Holded.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallStateEnum.Conferenced">
+            <summary>
+            Conference mode.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallStateEnum.Unknown">
+            <summary>
+            State unknown.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.GeneralizedCallStateEnum.Busy">
+            <summary>
+            Busy.
+            </summary>
+            <remarks>TAPI only.</remarks>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.MsgErrorType">
+            <summary>
+            Message exchange library error types.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.GeneralError">
+            <summary>
+            General error.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.LoadLibraryError">
+            <summary>
+            Library load error.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.OpenConnectionError">
+            <summary>
+            Conenction error.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.CommandError">
+            <summary>
+            Command error.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.CommandNotImplementedError">
+            <summary>
+            Command not implemented error.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.CallCentreNotAvailableError">
+            <summary>
+            Telephony not avaliable.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.AuthenticationError">
+            <summary>
+            Authentication error.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgErrorType.CallSavingError">
+            <summary>
+            Call saving error.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.MsgEventType">
+            <summary>
+            Message exchange library event types enum.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.LibraryInitialized">
+            <summary>
+            Library initialized.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.ConnectionCreated">
+            <summary>
+            Connection established.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.Error">
+            <summary>
+            Error.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.CommandInfo">
+            <summary>
+            Command invoke result.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.RingStarted">
+            <summary>
+            Call started.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.RingFinished">
+            <summary>
+            Call finished.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.CommutationStarted">
+            <summary>
+            Conneciton with the subscriber established.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.PutHoldAction">
+            <summary>
+            Call put on hold.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.EndHoldAction">
+            <summary>
+            Call put off hold.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.ActiveCallSnapshot">
+            <summary>
+            Active calls snapshot recived.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.LineStateChanged">
+            <summary>
+            Line state changed.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.AgentStateChanged">
+            <summary>
+            Agent state changed.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.AbonentBusy">
+            <summary>
+            Abonent state changed to Busy.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.Disconnected">
+            <summary>
+            Connection closed.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.CallSavedInDb">
+            <summary>
+            Call saved to database.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.RawData">
+            <summary>
+            Raw data from telephony server recived.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.CallInfoChanged">
+            <summary>
+            Call changed.
+            </summary>
+            <remarks>Call is identified by <see cref="P:Terrasoft.Messaging.Common.Call.DataBaseUId"/> field.</remarks>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.MsgEventType.DtmfEntered">
+            <summary>
+            Dtmf symbols set.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IConnectorFactory">
+            <summary>
+            Connector factory contract
+            It's some kind of delegating producing of connectors to it's own responsibility
+            By other word if connector implements currect interface then concrete factory method within connector assembly
+            will be used for creating concrete connector 
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IConnectorFactory.Create">
+            <summary>
+            Creates concrete connector library
+            </summary>
+            <returns><see cref="T:Terrasoft.Messaging.Common.IMsgLibrary"/> connector instance</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IDtmfSupported">
+            <summary>
+            DTMF support API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IDtmfSupported.SendDtmf(System.String)">
+            <summary>
+            Sends Dtmf signal.
+            </summary>
+            <param name="digits">Signal payload.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ILicenseAbleLibrary">
+            <summary>
+            Messaging library with licensing options API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ILicenseAbleLibrary.GetLicInfo">
+            <summary>
+            Returns current connector required licensed operations.
+            </summary>
+            <returns>Licensed operations.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgCommandProcessor">
+            <summary>
+            Messaging service command processor API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgCommandProcessor.ProcessMsgCommand(Terrasoft.Messaging.Common.MsgCommandInfo)">
+            <summary>
+            Messaging service command handler.
+            </summary>
+            <param name="msgCommand"><see cref="T:Terrasoft.Messaging.Common.MsgCommandInfo"/> instance.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgConnection">
+            <summary>
+            Message service connection API.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgConnection.MsgSessionUId">
+            <summary>
+            Current session identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgConnection.IsActive">
+            <summary>
+            Is connection active flag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgConnection.MsgLibrary">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.IMsgLibrary"/> implementation instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgConnection.IgnoreTryReconnection">
+            <summary>
+            Sign that do not need to try reconnecting to terrasoft messaging service.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.Common.IMsgConnection.OnMessage">
+            <summary>
+            On new message event.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.Common.IMsgConnection.OnConnectionClose">
+            <summary>
+            Close connection event.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgConnection.LibrarySpecificService(System.String,System.String)">
+            <summary>
+            Calls connector specific telephony service.
+            </summary>
+            <param name="serviceName">Service name..</param>
+            <param name="serviceParams">Serialized service parameters.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgConnection.SetMsgUserState(System.String,System.String)">
+            <summary>
+            Sets user state and reason codes.
+            </summary>
+            <param name="code">State code.</param>
+            <param name="reason">State change reason code.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgConnection.QueryMsgUserState">
+            <summary>
+            Requests current user state
+            </summary>
+            <remarks>Invokes <see cref="F:Terrasoft.Messaging.Common.MsgEventType.AgentStateChanged"/> command.</remarks>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgConnectionFactory">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.IMsgLibrary"/> implementation factory API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgConnectionFactory.CreateConnection(System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Creates <see cref="T:Terrasoft.Messaging.Common.IMsgConnection"/> implementation instance.
+            </summary>
+            <param name="parameters">Library parameters.</param>
+            <param name="sessionServiceParameters">Session service parameters.</param>
+            <returns><see cref="T:Terrasoft.Messaging.Common.IMsgConnection"/> implementation instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgEventInfo">
+            <summary>
+            Message exchange library event API.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgEventInfo.Connection">
+            <summary>
+            Event source <see cref="T:Terrasoft.Messaging.Common.IMsgConnection"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgEventInfo.EventType">
+            <summary>
+            Event type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgEventInfo.ContentType">
+            <summary>
+            Event content type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgEventInfo.CommandUId">
+            <summary>
+            Source command identifier.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.OnMessageHandler">
+            <summary>
+            On new message event handler.
+            </summary>
+            <param name="eventParams">Event parameters.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ConnectionCloseHandler">
+            <summary>
+            Close connection event handler.
+            </summary>
+            <param name="connection"><see cref="T:Terrasoft.Messaging.Common.IMsgConnection"/> implementation instance.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgLibrary">
+            <summary>
+            Message exchange library API.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgLibrary.Name">
+            <summary>
+            Library full name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgLibrary.IsActive">
+            <summary>
+            Is library active flag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgLibrary.MsgServer">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.IMsgServer"/> instance reference.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.OnMsgConnectionListenersCountChanged">
+            <summary>
+            <see cref="E:Terrasoft.Messaging.Common.IMsgServer.MsgConnectionListenersCountChanged"/> event handler.
+            </summary>
+            <param name="connection">Service connection instance.</param>
+            <param name="count">Active connections count.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IMsgServer">
+            <summary>
+            Messaging service API.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgServer.IsActive">
+            <summary>
+            Is service active flag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgServer.MessagingLibraries">
+            <summary>
+            Avaliable messaging libraries collection.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IMsgServer.Address">
+            <summary>
+            Service address.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.Common.IMsgServer.MsgConnectionListenersCountChanged">
+            <summary>
+            Telephony connections count changed event.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IMsgServer.GetMessagingLibrary(System.String)">
+            <summary>
+            Returns <see cref="T:Terrasoft.Messaging.Common.IMsgLibrary"/> implementation instance from <paramref name="assemblyName"/>.
+            </summary>
+            <param name="assemblyName">Message library fully qualified name.</param>
+            <returns><see cref="T:Terrasoft.Messaging.Common.IMsgLibrary"/> implementation instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IServerClientOperationNotifier">
+            <summary>
+            Interface to send notifications about different operations from the server to the client.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IServerClientOperationNotifier.Notify(Terrasoft.Messaging.Common.ServerClientNotificationData)">
+            <summary>
+            Sends notification message.
+            </summary>
+            <param name="serverClientNotificationData">Notification data
+            <see cref="T:Terrasoft.Messaging.Common.ServerClientNotificationData"/>.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IServerClientOperationNotifier.NotifyAll(Terrasoft.Messaging.Common.ServerClientNotificationData)">
+            <summary>
+            Sends notification message for all users.
+            </summary>
+            <param name="serverClientNotificationData">Notification data
+            <see cref="T:Terrasoft.Messaging.Common.ServerClientNotificationData"/>.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ITelephonyCall">
+            <summary>
+            Telephony provider call API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyCall.MakeConsultCall(System.String)">
+            <summary>
+            Starts consult call.
+            </summary>
+            <param name="targetAddress">Consult call address.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyCall.AnswerCall">
+            <summary>
+            Answers the call.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyCall.HoldCall">
+            <summary>
+            Changes current call on hold state.
+            </summary>
+            <remarks>If current call is active, then call state will be changed to on hold. 
+            If current call is on hold, then call state will be changed to active.</remarks>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyCall.DropCall">
+            <summary>
+            Closes call.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyCall.TransferCall(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Transfers call to <paramref name="consultationCall"/>.
+            </summary>
+            <param name="consultationCall">Consult call.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyCall.SetupTransferCall">
+            <summary>
+            Setups consult call transfer.
+            </summary>
+            <remarks>TAPI only.</remarks>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyCall.BlindTransferCall(System.String)">
+            <summary>
+            Makes blind call transfer to <paramref name="targetAddress"/>.
+            </summary>
+            <param name="targetAddress">Transfer destination address.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ITelephonyConnection">
+            <summary>
+            Telephony server connection API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.CloseConnection">
+            <summary>
+            Closes service connection and release used resources.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.MakeCall(System.String)">
+            <summary>
+            Starts call to <paramref name="targetAddress"/>.
+            </summary>
+            <param name="targetAddress">Target phone number.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.Hookup">
+            <summary>
+            Pick up the phone method.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.SetDnd">
+            <summary>
+            Sets "do not disturb" state.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.SetDndForAddress(System.String)">
+            <summary>
+            Sets "do not disturb" state for <paramref name="targetAddress"/>.
+            </summary>
+            <param name="targetAddress">Target line number.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.QueryLineState">
+            <summary>
+            Requests current line state.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.QueryCallState(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Requests current call state.
+            </summary>
+            <remarks>Server sends serialized call in response.</remarks>
+            <param name="call"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.QueryActiveCallSnapshot">
+            <summary>
+            Requests current active calls snapshot.
+            </summary>
+            <remarks>Invokes <see cref="F:Terrasoft.Messaging.Common.MsgEventType.ActiveCallSnapshot"/> event on success.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.SetCallCustomContext(Terrasoft.Messaging.Common.Call,System.String,System.String)">
+            <summary>
+            Cets call context properties.
+            </summary>
+            <param name="call"><see cref="T:Terrasoft.Messaging.Common.Call"/> instanse.</param>
+            <param name="contentTypeName">Content type name.</param>
+            <param name="content">Content string.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.SetCallProvider(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Sets <see cref="T:Terrasoft.Messaging.Common.ITelephonyCall"/> implementation link for <paramref name="call"/>.
+            </summary>
+            <param name="call"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.CancelTransfer(Terrasoft.Messaging.Common.Call,Terrasoft.Messaging.Common.Call)">
+            <summary>
+            CAncels transfer call.
+            </summary>
+            <param name="currentCall">Primary <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <param name="consultCall">Consult <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ITelephonyConnection.SetWrapUpUserState(System.Boolean)">
+            <summary>
+            Sets wrap up state.
+            </summary>
+            <param name="isWrapUpActive">Is wrap up state active flag.</param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ITelephonyLibrary">
+            <summary>
+            Telepfony messages exchange library API.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ITraceable">
+            <summary>
+            Trasable element API.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.ITraceable.TraceInfo">
+            <summary>
+            Traced steps collection.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.Managers.UpdateCallManager.CallEntityName">
+            <summary>
+            Call schema name.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.Managers.UpdateCallManager.SysMsgUserStateEntityName">
+            <summary>
+            User state schema name.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Managers.UpdateCallManager.LoadCallFromDb(System.Guid)">
+            <summary>
+            Loads call drom database.
+            </summary>
+            <param name="id">Call identifier.</param>
+            <returns>Loaded from database <see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Managers.UpdateCallManager.LogInMsgServer(Terrasoft.Messaging.Common.NewSessionParameters)">
+            <summary>
+            Authorizes user in message service.
+            </summary>
+            <param name="paramList">Параметры сессии.</param>
+            <returns>Returns unique identifier if authorization is successful, otherwise - empty string.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Managers.UpdateCallManager.UpdateCall(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Starts updating call information in database and timestamp of last update.
+            </summary>
+            <param name="call"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>If update was successful - call identifier in database, otherwise - error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Managers.UpdateCallManager.UpdateCallInfo(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Updates call information in database and timestamp of last update.
+            </summary>
+            <param name="callInfo"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>If update was successful - call identifier in database, otherwise - error message.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.MsgSvcHelper">
+            <summary>
+            <see cref="T:System.Data.IDataRecord"/> extention methods.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.MsgSvcHelper.GetValue``1(System.Data.IDataRecord,System.String)">
+            <summary>
+            Converts <paramref name="columnName"/> value from <paramref name="source"/>
+            to <typeparamref name="T"/> type.
+            </summary>
+            <typeparam name="T">Requested type.</typeparam>
+            <param name="source"><see cref="T:System.Data.IDataRecord"/> implementation instance.</param>
+            <param name="columnName">Value column name.</param>
+            <returns>Converted column value.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.MsgUtilService">
+            <summary>
+            Класс веб-сервиса сообщений.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.MsgUtilService.LogInMsgServer(Terrasoft.Messaging.Common.NewSessionParameters)">
+            <summary>
+            Authorizes user in message service.
+            </summary>
+            <param name="paramList">Параметры сессии.</param>
+            <returns>Returns unique identifier if authorization is successful, otherwise - empty string.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.MsgUtilService.UpdateCall(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Updates call information in database and timestamp of last update.
+            </summary>
+            <param name="call"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>If update was successful - call identifier in database, otherwise - error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.MsgUtilService.Ping">
+            <summary>
+            Pings messaging server.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ServerClientOperationNotifier">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.IServerClientOperationNotifier"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ServerClientOperationNotifier.Notify(Terrasoft.Messaging.Common.ServerClientNotificationData)">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.IServerClientOperationNotifier.Notify(Terrasoft.Messaging.Common.ServerClientNotificationData)"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ServerClientOperationNotifier.NotifyAll(Terrasoft.Messaging.Common.ServerClientNotificationData)">
+            <summary>
+            <see cref="M:Terrasoft.Messaging.Common.IServerClientOperationNotifier.NotifyAll(Terrasoft.Messaging.Common.ServerClientNotificationData)"/>
+            </summary>
+            <param name="serverClientNotificationData"></param>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.SimpleMsgCommandExecutor">
+            <summary>
+            Telephony message exchane library command executor.
+            </summary>
+            <remarks>Reflection methods are used for command invokation.</remarks>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.SimpleMsgCommandExecutor.ExecuteMsgCommand(System.Object,Terrasoft.Messaging.Common.MsgCommandInfo)">
+            <summary>
+            Invokes message exchane library command.
+            </summary>
+            <param name="executor">Command executor. <remarks>This parameter can be of
+            TelephonyConnectionBase or <see cref="T:Terrasoft.Messaging.Common.Call"/> types.</remarks></param>
+            <param name="msgCommand"><see cref="T:Terrasoft.Messaging.Common.MsgCommandInfo"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.TelephonyConfigUtilities.GetConnectionParams(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns connection parameters to telephony server.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <returns>Connection parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.TelephonyConfigUtilities.GetLibAssemblyName(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns telephony library assembly name.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <returns>Telephony library assembly name.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.TelephonyConfigUtilities.GetTelephonyConfig(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns telephony parameters config.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/> instance.</param>
+            <returns>Telephony parameters config.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.TelephonyException">
+            <summary>
+            Telephony specific exceptions.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.TelephonyException.#ctor(System.String,System.String,Terrasoft.Messaging.Common.MsgErrorType,System.Exception)">
+            <summary>
+            .ctor.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="errorCode">Error code.</param>
+            <param name="errorType">Error type. <seealso cref="T:Terrasoft.Messaging.Common.MsgErrorType"/>.</param>
+            <param name="innerException">Original exception instance.</param>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.TelephonyException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            .ctor.
+            </summary>
+            <param name="message">Error message.</param>
+            <param name="errorCode">Error code.</param>
+            <param name="innerException">Original exception instance.</param>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.TelephonyException.ErrorType">
+            <summary>
+            Error type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.TelephonyException.ErrorCode">
+            <summary>
+            Error code.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.ISecureAbleWebSocketService">
+            <summary>
+            Secure web socket service API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.ISecureAbleWebSocketService.Initialize(System.Int32,System.Boolean)">
+            <summary>
+            Initializes web socket service.
+            </summary>
+            <param name="port">Web socket service port.</param>
+            <param name="makeEncrypted">Use secure connection flag.</param>
+            <returns>Initialization result. If result <c>true</c>, then instance initialized successfully.
+            Returns <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.IWebSocketService">
+            <summary>
+            Web socket service API.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.IWebSocketService.ServicePort">
+            <summary>
+            Web socket service port.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.Common.IWebSocketService.OnMsgChannelConnected">
+            <summary>
+            On web socket channel connected event.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IWebSocketService.Initialize(System.Int32)">
+            <summary>
+            Initializes web socket service.
+            </summary>
+            <param name="port">Web socket service port.</param>
+            <returns>Initialization result. If result <c>true</c>, then instance initialized successfully.
+            Returns <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.IWebSocketService.StopService">
+            <summary>
+            Stops service instance.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.WebSocketServiceLayer">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.IMsgServiceLayer"/> implementation.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.WebSocketServiceLayer._applicationConnection">
+            <summary>
+            <see cref="T:Terrasoft.Core.AppConnection"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.WebSocketServiceLayer.Logger">
+            <summary>
+            <see cref="T:Common.Logging.ILog"/> implementation instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.WebSocketServiceLayer.WebSocketService">
+            <summary>
+            <see cref="T:Terrasoft.Messaging.Common.IWebSocketService"/> implementation instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.WebSocketServiceLayer.WebSocketScheme">
+            <summary>
+            Web socket channel scheme name. Can be <c>ws</c> or <c>wss</c>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.WebSocketServiceLayer.ServicePort">
+            <summary>
+            Web socket channel service port.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.WebSocketServiceLayer._servicePortForClient">
+            <summary>
+            Web socket client connections port.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Messaging.Common.WebSocketServiceLayer._isInitialized">
+            <summary>
+            Is channel initialized flag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Messaging.Common.WebSocketServiceLayer.ClientConnectionClassName">
+            <summary>
+            Gets a value with name of Js-client class that supports connection to this msg service.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.Messaging.Common.WebSocketServiceLayer.OnMsgChannelConnected">
+            <summary>
+            Web socket channel connected event.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.WebSocketServiceLayer.GetAdminUnitId(System.String)">
+            <summary>
+            Returns creatio user identifier.
+            </summary>
+            <param name="adminUnitName">Creatio user name.</param>
+            <returns>Creatio user identifier.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.WebSocketServiceLayer.Initilize(System.Int32)">
+            <summary>
+            Initializes the web-socket service. The port number depends on the number of the current workspace.
+            </summary>
+            <param name="workspaceNumber">The number of the current workspace.</param>
+            <remarks>The number of the workspace is added to the setting's port number.</remarks>
+            <returns><c>true</c>, if the service is successfully initialized. Otherwise - <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.WebSocketServiceLayer.Initialize">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.IMsgServiceLayer.Initialize"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.WebSocketServiceLayer.StopService">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.IMsgServiceLayer.StopService"/>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.WebSocketServiceLayer.GetServiceUrl(System.String)">
+            <inheritdoc cref="M:Terrasoft.Messaging.Common.IMsgServiceLayer.GetServiceUrl(System.String)"/>
+        </member>
+        <member name="T:Terrasoft.Messaging.Common.WSConfigurationSection">
+            <summary>
+            Creatio web socket configuration object.
+            </summary>
+        </member>
+    </members>
+</doc>

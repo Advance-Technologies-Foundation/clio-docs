@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.SmsIntegration</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.SmsIntegration.ISmsProviderRepository.GetCodeById(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="smsProviderId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.SmsIntegration.ISmsSender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Terrasoft.SmsIntegration.ISmsSender.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Terrasoft.SmsIntegration.ISmsSender.Send(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="phoneNumber"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:Terrasoft.SmsIntegration.ISmsSenderDeterminer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Terrasoft.SmsIntegration.ISmsSenderDeterminer.GetSmsSender">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

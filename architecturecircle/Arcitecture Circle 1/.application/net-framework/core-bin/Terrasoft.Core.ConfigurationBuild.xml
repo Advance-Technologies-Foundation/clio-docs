@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.ConfigurationBuild</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Core.ConfigurationBuild.ConfigurationBuilder.BuildChangedParallelAsync(System.String,System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Builds configuration with asynchronously generation of client static content for changed schemas.
+            </summary>
+            <param name="outputDirectory">Directory to write configuration client content to.</param>
+            <param name="packages">Configuration composed packages.</param>
+            <returns>Task that represents asynchronous build operation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.ConfigurationBuild.IAppConfigurationBuilder">
+            <summary>
+            Provides methods to build configuration client content to application defined output directory.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ConfigurationBuild.IAppConfigurationBuilder.BuildAll">
+            <summary>
+            Builds configuration client content for all schemas.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ConfigurationBuild.IAppConfigurationBuilder.BuildChanged">
+            <summary>
+            Builds configuration client content for changed schemas.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ConfigurationBuild.IAppConfigurationBuilder.BuildChangedParallel(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Builds configuration with asynchronous generation of static content for changed schemas.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ConfigurationBuild.IConfigurationBuilder">
+            <summary>
+            Provides methods to build configuration client content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ConfigurationBuild.IConfigurationBuilder.BuildAllAsync(System.String)">
+            <summary>
+            Builds configuration client content for all schemas asynchronously.
+            </summary>
+            <param name="outputDirectory">Directory to write configuration client content to.</param>
+            <returns>Task that represents asynchronous build operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ConfigurationBuild.IConfigurationBuilder.BuildChangedAsync(System.String)">
+            <summary>
+            Builds configuration client content for changed schemas asynchronously.
+            </summary>
+            <param name="outputDirectory">Directory to write configuration client content to.</param>
+            <returns>Task that represents asynchronous build operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ConfigurationBuild.IConfigurationBuilder.BuildChangedParallelAsync(System.String,System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Builds configuration with asynchronously generation of static content for changed schemas.
+            </summary>
+            <param name="outputDirectory">Directory to write configuration client content to.</param>
+            <param name="packages">Configuration composed packages.</param>
+            <returns>Task that represents asynchronous build operation.</returns>
+        </member>
+    </members>
+</doc>

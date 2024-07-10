@@ -1,0 +1,19 @@
+<Project>
+    <ItemGroup Condition="'$(PkgPath)' != ''">
+        <Compile Remove="$(PkgPath)/AtfRecordBoost/Assemblies/**"/>
+        <Compile Remove="$(PkgPath)/AtfRecordBoost/Data/**"/>
+        <Compile Remove="$(PkgPath)/AtfRecordBoost/SqlScripts/**"/>
+        <Compile Remove="$(PkgPath)/AtfRecordBoost/Schemas\**"/>
+        <Compile Remove="$(PkgPath)/AtfRecordBoost/Resources/**"/>
+        <EmbeddedResource Remove="$(PkgPath)/AtfRecordBoost/Assemblies/**"/>
+        <EmbeddedResource Remove="$(PkgPath)/AtfRecordBoost/Data/**"/>
+        <EmbeddedResource Remove="$(PkgPath)/AtfRecordBoost/SqlScripts/**"/>
+        <EmbeddedResource Remove="$(PkgPath)/AtfRecordBoost/Schemas/**"/>
+        <EmbeddedResource Remove="$(PkgPath)/AtfRecordBoost/Resources/**"/>
+        <None Remove="$(PkgPath)/AtfRecordBoost/Assemblies/**"/>
+        <None Remove="$(PkgPath)/AtfRecordBoost/Data/**"/>
+        <None Remove="$(PkgPath)/AtfRecordBoost/SqlScripts/**"/>
+        <None Remove="$(PkgPath)/AtfRecordBoost/Schemas/**"/>
+        <None Remove="$(PkgPath)/AtfRecordBoost/Resources/**"/>
+    </ItemGroup>
+</Project>

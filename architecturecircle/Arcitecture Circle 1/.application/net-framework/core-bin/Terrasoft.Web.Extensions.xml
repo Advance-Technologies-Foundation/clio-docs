@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Web.Extensions</name>
+    </assembly>
+    <members>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.MessageVersion">
+            <summary>
+            Message version that can be handled by the message encoders produced by the message encoder factory.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.MediaType">
+            <summary>
+            Media type that can be handled by the message encoders produced by the message encoder factory.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.Encoding">
+            <summary>
+            Encoding that can be handled by the message encoders produced by the message encoder factory.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.ReaderQuotas">
+            <remarks> This encoder does not enforces any quotas for the unsecure messages.
+            The quotas are enforced for the secure portions of messages when this encoder
+            is used in a binding that is configured with security. </remarks>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.CreateMessageEncoderFactory">
+            <summary>
+            Creates factory for custom text message encoder.
+            </summary>
+            <returns>Factory for custom text message encoder.</returns>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.Clone">
+            <summary>
+            Returns a copy of the binding element object.
+            </summary>
+            <returns>Copy of the binding element object.</returns>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.System#ServiceModel#Description#IWsdlExportExtension#ExportContract(System.ServiceModel.Description.WsdlExporter,System.ServiceModel.Description.WsdlContractConversionContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageBindingElement.System#ServiceModel#Description#IWsdlExportExtension#ExportEndpoint(System.ServiceModel.Description.WsdlExporter,System.ServiceModel.Description.WsdlEndpointConversionContext)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncoder.ContentType">
+            <summary>
+            MIME content type used by the encoder.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncoder.MediaType">
+            <summary>
+            Media type used by the encoder.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncoder.MessageVersion">
+            <summary>
+            Message version used by the encoder.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageEncoder.ReadMessage(System.ArraySegment{System.Byte},System.ServiceModel.Channels.BufferManager,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageEncoder.ReadMessage(System.IO.Stream,System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageEncoder.WriteMessage(System.ServiceModel.Channels.Message,System.Int32,System.ServiceModel.Channels.BufferManager,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageEncoder.WriteMessage(System.ServiceModel.Channels.Message,System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncoderFactory.Encoder">
+            <summary>
+            Message encoder that is produced by the factory.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncoderFactory.MessageVersion">
+            <summary>
+            Message version that is used by the encoders produced by the factory to encode messages.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncodingElement.BindingElementType">
+            <summary>
+            The <see cref="T:System.Type"/> object that represents the custom binding element.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncodingElement.MessageVersion">
+            <summary>
+            Message version configuration property.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncodingElement.MediaType">
+            <summary>
+            Media type configuration property.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncodingElement.Encoding">
+            <summary>
+            Encoding configuration property.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Extensions.CustomTextMessageEncodingElement.ReaderQuotasElement">
+            <summary>
+            Reader quotas configuration property.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageEncodingElement.CreateBindingElement">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.CustomTextMessageEncodingElement.ApplyConfiguration(System.ServiceModel.Channels.BindingElement)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.MessageVersionConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.MessageVersionConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.MessageVersionConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Web.Extensions.MessageVersionConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

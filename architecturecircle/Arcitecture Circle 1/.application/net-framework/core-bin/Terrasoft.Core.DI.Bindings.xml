@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.DI.Bindings</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Core.DI.Bindings.BuildConfigurationAssemblyModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.DI.Bindings.ClassFactoryInitializer">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.ClassFactoryInitializer.#ctor(System.Action)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.Core.DI.Bindings.ClassFactoryInitializer"/> type.
+            </summary>
+            <param name="initAction">ClassFactory initialization action.</param>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.ClassFactoryInitializer.Initialize">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.DI.Bindings.ConfigurationMetaInfoModule">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.ConfigurationMetaInfoModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.DI.Bindings.CoreDependencyInjection">
+            <summary>
+            Provides a set of a helper methods to configure core dependency injection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.CoreDependencyInjection.Initialize(Terrasoft.Core.AppConnection,Terrasoft.Core.DI.IModule[])">
+            <summary>
+            Performs loading of the core dependencies.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.CoreDependencyInjection.AddCoreModules(Terrasoft.Core.DI.ContainerBuilder,Terrasoft.Core.AppConnection)">
+            <summary>
+            Performs addition of the core modules to an instance of the <see cref="T:Terrasoft.Core.DI.ContainerBuilder"/>.
+            </summary>
+            <param name="source">Instance of the <see cref="T:Terrasoft.Core.DI.ContainerBuilder"/> to add core modules to.</param>
+            <param name="appConnection">Instance of the <see cref="T:Terrasoft.Core.AppConnection"/> type to use while module addition.
+            </param>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.CoreModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            When implemented in a derived class, performs registration of the dependencies.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.Extensions.EntitySchemaExecutorDIExtension.AddEntitySchemaQueryExecutor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers binding for entity schema executor by type.
+            </summary>
+            <param name="source">Instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <typeparam name="T">Type of <see cref="T:Terrasoft.Core.Entities.IEntityQueryExecutor"/></typeparam>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.Extensions.EntitySchemaExecutorDIExtension.AddEntitySchemaQueryExecutor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)">
+            <summary>
+            Registers binding for entity schema executor by type.
+            </summary>
+            <param name="source">Instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <param name="executorType">Executor type.</param>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.Extensions.EntitySchemaExecutorDIExtension.AddEntityQueryExecutorBindings(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Entry point to register <see cref="T:Terrasoft.Core.Entities.IEntityQueryExecutor"/>.
+            </summary>
+            <param name="source">Instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+        </member>
+        <member name="T:Terrasoft.Core.DI.Bindings.FileSystemInputOutputModule">
+            <summary>
+            Module that registers bindings for interaction with File System.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.FileSystemInputOutputModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.DI.Bindings.MessageBusModule">
+            <summary>
+            Message bus module.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.MessageBusModule.#ctor(Terrasoft.Core.AppConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.DI.Bindings.MessageBusModule" /> module.
+            </summary>
+            <param name="appConnection">Instance of the <see cref="T:Terrasoft.Core.AppConnection"/> type to initialize a module with.
+            </param>
+        </member>
+        <member name="P:Terrasoft.Core.DI.Bindings.MessageBusModule.UseConnectionStringProviderInMessageBus">
+            <summary>
+            Gets or sets value that indicates whether the FeatureUseConnectionStringProviderInMessageBus is enabled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.MessageBusModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.DI.Bindings.ProcessBindings">
+            <summary>
+            Binds dependency injection types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.ProcessBindings.SetupWorkspaceDependencies">
+            <summary>
+            Performs DI types binding for workspace.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.ProcessBindings.Initialize(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Performs DI types binding.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.DI.Bindings.SchemaManagerProviderModule">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.SchemaManagerProviderModule.#ctor(Terrasoft.Core.AppConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.DI.Bindings.SchemaManagerProviderModule" /> module.
+            </summary>
+            <param name="appConnection">Instance of the <see cref="T:Terrasoft.Core.AppConnection"/> type to initialize a module with.
+            </param>
+        </member>
+        <member name="M:Terrasoft.Core.DI.Bindings.SchemaManagerProviderModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Messaging.Cluster</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Messaging.Cluster.ClusterMessagingExtensions">
+            <summary>
+            Provides a set of extension methods for setup cluster messaging.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Cluster.ClusterMessagingExtensions.AddClusterMessaging(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Setups <see cref="T:Terrasoft.Messaging.Common.IWebSocketServer"/> with web farm support.
+            </summary>
+            <param name="source">Service descriptors.</param>
+        </member>
+    </members>
+</doc>

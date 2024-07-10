@@ -1,0 +1,596 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.File.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.File.Abstractions.Content.ContentStorageSelectorAttribute">
+            <summary>
+            Attribute class used for adjusting a selector position.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.ContentStorageSelectorAttribute.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.Abstractions.Content.ContentStorageSelectorAttribute"/> type. 
+            </summary>
+            <param name="position">Selector position.</param>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.ContentStorageSelectorAttribute.Position">
+            <summary>
+            Selector position.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.FileContentStorageInfo">
+            <summary>
+            Provides an information about the file content storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.FileContentStorageInfo.Id">
+            <summary>
+            Storage unique identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.FileContentStorageInfo.StorageType">
+            <summary>
+            Storage type. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.FileContentStorageInfo.MetadataType">
+            <summary>
+            Metadata type that this storage is responsible of.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext">
+            <summary>
+            A context for the <see cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.CopyAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)"/> and <see cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.MoveAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)"/>
+            methods.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext.SourceMetadata">
+            <summary>
+            An instance of the file metadata to perform copy/move operation from.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext.TargetMetadata">
+            <summary>
+            An instance of the file metadata to perform copy/move operation to.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.IFileContentDeleteContext">
+            <summary>
+            A context for the <see cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.DeleteAsync(Terrasoft.File.Abstractions.Content.IFileContentDeleteContext)"/> method.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.IFileContentReadContext">
+            <summary>
+            A context for the <see cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.ReadAsync(Terrasoft.File.Abstractions.Content.IFileContentReadContext)"/> method.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.IFileContentReadContext.FileMetadata">
+            <summary>
+            File metadata.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.IFileContentStorage">
+            <summary>
+            An interface for implementing a custom file content storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.ReadAsync(Terrasoft.File.Abstractions.Content.IFileContentReadContext)">
+            <summary>
+            Reads the file content.
+            </summary>
+            <param name="context">An instance of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentReadContext"/> type that describes
+            the file to read.</param>
+            <returns>An instance of the <see cref="T:System.IO.Stream"/> with the file binary content.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.WriteAsync(Terrasoft.File.Abstractions.Content.IFileContentWriteContext)">
+            <summary>
+            Writes file content.
+            </summary>
+            <param name="context">An instance of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentWriteContext"/> type that describes
+            the file to write.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.DeleteAsync(Terrasoft.File.Abstractions.Content.IFileContentDeleteContext)">
+            <summary>
+            Deletes file content.
+            </summary>
+            <param name="context">An instance of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentDeleteContext"/> type that
+            describes the file to delete.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.CopyAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)">
+            <summary>
+            Copies file content.
+            </summary>
+            <param name="context">An instance of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext"/> type that
+            describes the source and destination files.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.MoveAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)">
+            <summary>
+            Moves file content.
+            </summary>
+            <param name="context">An instance of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext"/> type that
+            describes the source and destination files.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.IFileContentStorageSelector">
+            <summary>
+            Provides a method for selecting an appropriate instance of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentStorage"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IFileContentStorageSelector.FindContentStorageId(Terrasoft.File.Abstractions.Metadata.FileMetadata,System.Boolean,System.Collections.Generic.IList{Terrasoft.File.Abstractions.Content.FileContentStorageInfo})">
+            <summary>
+            Selects an appropriate file content storage by a provided <paramref name="fileMetadata"/>.
+            </summary>
+            <param name="fileMetadata">An instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> or derived type.</param>
+            <param name="isForNew">Determines whether the file we need to get content storage for is new or already
+            existing.</param>
+            <param name="storages">The list of the registered storages.</param>
+            <returns>Selected file content storage identifier.</returns>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.IFileContentWriteContext">
+            <summary>
+            A context for the <see cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.WriteAsync(Terrasoft.File.Abstractions.Content.IFileContentWriteContext)"/> method.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.IFileContentWriteContext.WriteOptions">
+            <summary>
+            An instance of the <see cref="T:Terrasoft.File.Abstractions.FileWriteOptions"/> that determines the file write mode.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Content.IFileContentWriteContext.Stream">
+            <summary>
+            An instance of the <see cref="P:Terrasoft.File.Abstractions.Content.IFileContentWriteContext.Stream"/> to write.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Content.IInternalFileContentStorageSelector">
+            <summary>
+            Provides a method for selecting an appropriate instance of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentStorage"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IInternalFileContentStorageSelector.GetStorageType(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <summary>
+            Returns an appropriate file content storage by <see cref="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.FileContentStorageId"/> or finds an
+            initial one.
+            </summary>
+            <param name="fileMetadata">Instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> type.</param>
+            <returns>Information about selected file content storage.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Content.IInternalFileContentStorageSelector.GetInitialStorageId(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <summary>
+            Returns an initial file content storage identifier.
+            </summary>
+            <param name="fileMetadata">Instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> type.</param>
+            <returns>Id of the selected file content storage.</returns>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.FileNotFoundByLocatorException">
+            <summary>
+            The exception thrown when an attempt to access a file that does not found.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileNotFoundByLocatorException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.File.Abstractions.FileNotFoundByLocatorException"/> class.
+            </summary>
+            <param name="info">Serialization info.</param>
+            <param name="context">Streaming context.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileNotFoundByLocatorException.#ctor(Terrasoft.File.Abstractions.IFileLocator)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.File.Abstractions.FileNotFoundByLocatorException"/> class.
+            </summary>
+            <param name="locator">File locator.</param>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.FileNotFoundByLocatorException.FileLocator">
+            <summary>
+            File locator.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.FileOptions">
+            <summary>
+            Class that represents an options.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.FileOptions.RemoveMetadataOnDelete">
+            <summary>
+            Determines whether to remove metadata on <see cref="M:Terrasoft.File.Abstractions.IFile.DeleteAsync"/> call or not.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.FileOptions.UseRights">
+            <summary>
+            Flag indicates whether rights should be considered or not.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.FileOptions.Context">
+            <summary>
+            Context, used to provide custom data.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.FileStoringState">
+            <summary>
+            Describes a file storing state.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileStoringState.NotChanged">
+            <summary>
+            File is not changed.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileStoringState.New">
+            <summary>
+            File is new.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileStoringState.Modified">
+            <summary>
+            File was modified.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileStoringState.Deleted">
+            <summary>
+            File was deleted.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.FileUtils">
+            <summary>
+            Provides extension methods for work with file.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.SetAttributes(Terrasoft.File.Abstractions.IFile,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+            Sets attribute values.
+            </summary>
+            <param name="source">File.</param>
+            <param name="attributes">File attributes.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.Save(Terrasoft.File.Abstractions.IFile)">
+            <summary>
+            Saves file metadata.
+            </summary>
+            <param name="source">File.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.Read(Terrasoft.File.Abstractions.IFile)">
+            <summary>
+            Reads file content.
+            </summary>
+            <param name="source">File.</param>
+            <returns>Stream that represents file content.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.Write(Terrasoft.File.Abstractions.IFile,System.IO.Stream,Terrasoft.File.Abstractions.FileWriteOptions)">
+            <summary>
+            Writes file content with specific options to write.
+            </summary>
+            <param name="source">File.</param>
+            <param name="stream">Stream that represents file content.</param>
+            <param name="writeOptions">Options to write.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.Write(Terrasoft.File.Abstractions.IFile,System.Byte[])">
+            <summary>
+            Writes file content.
+            </summary>
+            <param name="source">File.</param>
+            <param name="content">Content.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.Delete(Terrasoft.File.Abstractions.IFile)">
+            <summary>
+            Deletes the specified file.
+            </summary>
+            <param name="source">File.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.Copy(Terrasoft.File.Abstractions.IFile,Terrasoft.File.Abstractions.IFile)">
+            <summary>
+            Copies an existing file to a new file.
+            </summary>
+            <param name="source">Existing file.</param>
+            <param name="target">New file.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.FileUtils.Move(Terrasoft.File.Abstractions.IFile,Terrasoft.File.Abstractions.IFile)">
+            <summary>
+            Moves an existing file to a new location.
+            </summary>
+            <param name="source">Existing file.</param>
+            <param name="target">New file location.</param>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.FileWriteOptions">
+            <summary>
+            Contains the file write options.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileWriteOptions.SinglePart">
+            <summary>
+            Write the single part file.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileWriteOptions.FirstPart">
+            <summary>
+            Write the first part of the file.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileWriteOptions.NextPart">
+            <summary>
+            Write the next part of the file.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Abstractions.FileWriteOptions.FinalPart">
+            <summary>
+            Write the final part of the file
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.IFile">
+            <summary>
+            Provides properties and methods for the reading, writing, copying, deletion and moving of file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.IFile.FileLocator">
+            <summary>
+            Gets the file locator assigned with the current instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.IFile.Name">
+            <summary>
+            Gets or sets the name of the file. 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.IFile.Length">
+            <summary>
+            Gets the size, in bytes, of the current file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.IFile.CreatedOn">
+            <summary>
+            Gets or sets the creation time of the current file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.IFile.ModifiedOn">
+            <summary>
+            Gets or sets the modification time of the current file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.IFile.Exists">
+            <summary>
+            Gets a value indicating whether a file exists.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.CopyAsync(Terrasoft.File.Abstractions.IFile)">
+            <summary>
+            Asynchronous copies the current file.
+            </summary>
+            <param name="target">File to copy.</param>
+            <returns>A task representing the asynchronous copy operation.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.MoveAsync(Terrasoft.File.Abstractions.IFile)">
+            <summary>
+            Asynchronous moves the current file.
+            </summary>
+            <param name="target">Destination file.</param>
+            <returns>A task representing the asynchronous move operation.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.DeleteAsync">
+            <summary>
+            Asynchronous deletes the current file.
+            </summary>
+            <returns>A task representing the asynchronous delete operation.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.WriteAsync(System.IO.Stream,Terrasoft.File.Abstractions.FileWriteOptions)">
+            <summary>
+            Asynchronous writes the current file content.
+            </summary>
+            <param name="stream">Stream that represents the current file content.</param>
+            <param name="writeOptions">Options to write file.</param>
+            <returns>A task representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.ReadAsync">
+            <summary>
+            Asynchronous reads the current file content
+            </summary>
+            <returns>A task representing the asynchronous read operation.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.SaveAsync">
+            <summary>
+            Asynchronous saves the current file metadata.
+            </summary>
+            <returns>A task representing the asynchronous save operation.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.SetAttribute``1(System.String,``0)">
+            <summary>
+            Sets the attribute value for the current file. 
+            </summary>
+            <param name="name">Attribute name.</param>
+            <param name="value">Attribute value.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.GetAttribute``1(System.String,``0)">
+            <summary>
+            Returns the attribute value for the current file. 
+            </summary>
+            <param name="name">Attribute name.</param>
+            <param name="defaultValue">Attribute default value to return.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFile.GetDefinedAttributeNames">
+            <summary>
+            Returns defined attribute names.
+            </summary>
+            <returns>Enumerable of attribute names.</returns>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.IFileFactory">
+            <summary>
+            Represents a set of methods for getting or creating an instances of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> types.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.IFileFactory.UseRights">
+            <summary>
+            Flag indicates whether rights should be considered or not.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFileFactory.Get(Terrasoft.File.Abstractions.IFileLocator,Terrasoft.File.Abstractions.FileOptions)">
+            <summary>
+            Returns an instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type by a provided <paramref name="fileLocator"/>.
+            </summary>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> type.</param>
+            <param name="options">An instance of the <see cref="T:Terrasoft.File.Abstractions.FileOptions"/> type.</param>
+            <returns>The corresponding instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.IFileFactory.Create(Terrasoft.File.Abstractions.IFileLocator,Terrasoft.File.Abstractions.FileOptions)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type by a provided <paramref name="fileLocator"/>.
+            </summary>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> type.</param>
+            <param name="options">An instance of the <see cref="T:Terrasoft.File.Abstractions.FileOptions"/> type.</param>
+            <returns>The corresponding instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type.</returns>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.IFileLocator">
+            <summary>
+            Represents serializable file locator.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Metadata.FileMetadata">
+            <summary>
+            Represents a file metadata record.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.Name">
+            <summary>
+            Name of the file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.Length">
+            <summary>
+            Length of the file in bytes.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.CreatedOn">
+            <summary>
+            File creation time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.ModifiedOn">
+            <summary>
+            File modification time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.FileContentStorageId">
+            <summary>
+            File content storage identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.StoringState">
+            <summary>
+            File storing state.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.File.Abstractions.Metadata.FileMetadata.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.FileMetadata.CanChangeStoringState(Terrasoft.File.Abstractions.FileStoringState)">
+            <summary>
+            Determines whether the current <see cref="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.StoringState"/> can be changed to <paramref name="newState"/>.
+            </summary>
+            <param name="newState">New storing state</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.FileMetadata.SetAttribute``1(System.String,``0)">
+            <summary>
+            Sets an additional file attribute by name.
+            </summary>
+            <param name="name">Attribute name to set.</param>
+            <param name="value">Attribute value to set.</param>
+            <typeparam name="TValue">Attribute value type.</typeparam>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.FileMetadata.GetAttribute``1(System.String,``0)">
+            <summary>
+            Gets an additional file attribute value or default value by name.
+            </summary>
+            <param name="name">Attribute name to get.</param>
+            <param name="defaultValue">Attribute default value to return.</param>
+            <typeparam name="TValue">Attribute value type.</typeparam>
+            <returns>Attribute value or default value.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.FileMetadata.GetDefinedAttributeNames">
+            <summary>
+            Returns defined attribute names.
+            </summary>
+            <returns>Enumerable of attribute names.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.FileMetadata.SetStoringState(Terrasoft.File.Abstractions.FileStoringState)">
+            <summary>
+            Sets the <see cref="P:Terrasoft.File.Abstractions.Metadata.FileMetadata.StoringState"/> to a <see cref="F:Terrasoft.File.Abstractions.FileStoringState.Modified"/> value if the
+            previous state value is not <see cref="F:Terrasoft.File.Abstractions.FileStoringState.New"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Metadata.FileMetadataStorageInfo">
+            <summary>
+            Provides an information about the file metadata storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadataStorageInfo.LocatorType">
+            <summary>
+            Locator type that the storage is responsible of.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadataStorageInfo.MetadataType">
+            <summary>
+            Metadata type that the storage is responsible of.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.FileMetadataStorageInfo.StorageType">
+            <summary>
+            Storage type. 
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorage`2">
+            <summary>
+            Provides a set of methods for working with the specific <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> type.
+            </summary>
+            <typeparam name="TFileLocator">File locator type that this storage is responsible of.</typeparam>
+            <typeparam name="TFileMetadata">File metadata type that this storage is responsible of.</typeparam>
+        </member>
+        <member name="P:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorage`2.FileOptions">
+            <summary>
+            Current file options.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorage`2.FindMetadata(`0)">
+            <summary>
+            Returns a metadata by a <paramref name="fileLocator"/>.
+            </summary>
+            <param name="fileLocator">Instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> derived type to return metadata
+            for.</param>
+            <returns>An instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> derived type that <paramref name="fileLocator"/>
+            is pointed by.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorage`2.CreateMetadata(`0)">
+            <summary>
+            Create an instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> derived type.
+            </summary>
+            <param name="fileLocator">Instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> derived type to create metadata
+            for.</param>
+            <returns>Created instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> derived type that <paramref name="fileLocator"/>
+            is pointed by.</returns>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorage`2.SaveMetadata(`1)">
+            <summary>
+            Saves an instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> derived type.
+            </summary>
+            <param name="fileMetadata">Instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/> derived type to save.</param>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorage`2.Delete(`0)">
+            <summary>
+            Deletes the metadata item by it's <paramref name="fileLocator"/>.
+            </summary>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> derived type to delete metadata of.
+            </param>
+        </member>
+        <member name="T:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorageSelector">
+            <summary>
+            Provides a method for selecting an appropriate instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadataStorageInfo"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorageSelector.GetStorage(System.Type)">
+            <summary>
+            Selects an appropriate file metadata storage by a provided <paramref name="fileLocatorType"/>.
+            </summary>
+            <param name="fileLocatorType">The type of the file locator.</param>
+            <returns>An instance of the <see cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadataStorageInfo"/> type.</returns>
+        </member>
+    </members>
+</doc>

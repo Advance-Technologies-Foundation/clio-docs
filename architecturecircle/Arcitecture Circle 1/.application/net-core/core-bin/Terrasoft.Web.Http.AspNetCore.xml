@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Web.Http.AspNetCore</name>
+    </assembly>
+    <members>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpContextImpl.SafeSession">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpCookieImpl.#ctor(System.String)">
+            <summary>
+            .ctor.
+            </summary>
+            <param name="value">Cookie value.</param>
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpCookieImpl.Value">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Cookies">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Files">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Form">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Headers">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.HttpMethod">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.QueryString">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.TotalBytes">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Url">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.UrlReferrer">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.UserAgent">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.UserLanguages">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.BaseUrl">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Scheme">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Host">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.ApplicationPath">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpRequestImpl.Path">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.#ctor(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl"/>.
+            </summary>
+            <param name="httpContext">Instance of the <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/>.</param>
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.ContentType">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.ClientDisconnectedToken">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Headers">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Location">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.OutputStream">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.StatusCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.StatusDescription">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.AddHeader(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Write(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Write(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Write(System.Char)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Write(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.ClearHeaders">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Redirect(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.AppendCookie(Terrasoft.Web.Http.Abstractions.HttpCookieOptions)">
+            <summary>
+            Adds an HTTP cookie to the HTTP response cookie collection.
+            </summary>
+            <param name="cookieOptions">Various cookie options.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Http.AspNetCore.HttpResponseImpl.Flush">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

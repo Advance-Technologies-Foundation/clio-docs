@@ -1,0 +1,63 @@
+2024-05-25 09:00:40,600 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Loading file: cliogate_netcore.gz 100%
+2024-05-25 09:00:40,848 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Configuration backup started.
+2024-05-25 09:00:40,848 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Loading packages from archive
+2024-05-25 09:00:40,939 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Package "cliogate_netcore" loaded
+2024-05-25 09:00:40,972 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Configuration backup successfully created.
+2024-05-25 09:00:41,218 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Preparing packages for installation
+2024-05-25 09:00:41,218 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Starting package installation
+2024-05-25 09:00:41,218 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Loading packages from archive
+2024-05-25 09:00:41,257 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Package "cliogate_netcore" loaded
+2024-05-25 09:00:41,273 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Skipped - Loading packages from database (new application)
+2024-05-25 09:00:41,273 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Composing packages
+2024-05-25 09:00:41,585 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Schema data "CanUseLoggerDashboard_SysAdminOperation" saved in package "cliogate_netcore"
+2024-05-25 09:00:41,593 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Schema data "SysAdminOperationGrantee_Telemetry" saved in package "cliogate_netcore"
+2024-05-25 09:00:41,620 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Files saved in package "cliogate_netcore"
+2024-05-25 09:00:41,630 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Package "cliogate_netcore" saved
+2024-05-25 09:00:41,641 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Added - dependencies of package "cliogate_netcore"
+2024-05-25 09:00:41,702 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Added - resources in package "cliogate_netcore"
+2024-05-25 09:00:41,702 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Added - schema caption localizations in package "cliogate_netcore"
+2024-05-25 09:00:43,376 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnPackageHierarchyUpdating - Package hierarchy actualization is started
+2024-05-25 09:00:44,082 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnPackageHierarchyUpdated - Package hierarchy actualization is completed. Affected records: 2
+2024-05-25 09:00:44,082 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnPackageHierarchySaved - Package hierarchy updated
+2024-05-25 09:00:44,093 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallStart - Updating tables structure in database
+2024-05-25 09:00:44,093 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallStart - Updating modified schemas
+2024-05-25 09:00:44,093 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallFinish - Updated modified schemas
+2024-05-25 09:00:44,124 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallStart - Installing data
+2024-05-25 09:00:44,991 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallSuccess - Data "CanUseLoggerDashboard_SysAdminOperation" from package "cliogate_netcore" installed
+2024-05-25 09:00:45,296 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallSuccess - Data "SysAdminOperationGrantee_Telemetry" from package "cliogate_netcore" installed
+2024-05-25 09:00:45,312 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallSuccess - Lookup values "SysAdminOperationGrantee_Telemetry" from package "cliogate_netcore" installed
+2024-05-25 09:00:45,364 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage OnInstallSuccess - Lookup values "CanUseLoggerDashboard_SysAdminOperation" from package "cliogate_netcore" installed
+2024-05-25 09:00:45,443 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage ConfigurationBuildStarted - Configuration build started
+2024-05-25 09:00:45,456 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage GetConfigurationSchemasState - Current schemas info loaded
+2024-05-25 09:00:45,861 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage GetConfigurationSchemasState - New schemas info loaded
+2024-05-25 09:00:46,039 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage GetConfigurationSchemasState - Configuration state loaded
+2024-05-25 09:00:46,039 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Schemas content generate started
+2024-05-25 09:00:46,100 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - File content generation started
+2024-05-25 09:00:46,622 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - File content descriptors obtained
+2024-05-25 09:00:46,634 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - File content descriptors generated
+2024-05-25 09:00:46,644 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - File content bootstraps generated
+2024-05-25 09:00:50,926 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Schemas content generate finished
+2024-05-25 09:00:50,926 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Resource JS routes updated
+2024-05-25 09:00:50,926 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage SaveEmptyResourceSchemasInfo - Empty resource schemas info saved
+2024-05-25 09:00:50,956 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Schema JS module descriptors updated
+2024-05-25 09:00:50,956 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Schema JS module items loaded
+2024-05-25 09:00:50,956 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Schema JS module paths generated
+2024-05-25 09:00:50,956 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Schema JS module paths updated
+2024-05-25 09:00:50,956 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - Schema content bootstrap updated
+2024-05-25 09:00:50,956 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage BuildChangedServerContent - Configuration server content generation started
+2024-05-25 09:00:50,956 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage BuildChangedServerContent - Configuration server content generated
+2024-05-25 09:00:51,003 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage UpdateMetaInfo - Meta info file updated
+2024-05-25 09:00:51,014 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage ConfigurationBuildFinished - Configuration build finished
+2024-05-25 09:00:51,066 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage InstallFromUnzippedFiles - Package installation finished
+2024-05-25 09:14:20,768 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Configuration build started
+2024-05-25 09:14:20,784 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Current schemas info loaded
+2024-05-25 09:14:21,102 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - New schemas info loaded
+2024-05-25 09:14:21,297 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Configuration state loaded
+2024-05-25 09:14:21,297 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Configuration server content generation started
+2024-05-25 09:14:21,297 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Configuration server content generated
+2024-05-25 09:14:21,332 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - Meta info file updated
+2024-05-25 09:14:21,332 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage LogInfo - File content generation started
+2024-05-25 09:14:21,879 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - File content descriptors obtained
+2024-05-25 09:14:21,890 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - File content descriptors generated
+2024-05-25 09:14:21,890 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage MoveNext - File content bootstraps generated
+2024-05-25 09:14:21,890 [.NET ThreadPool Worker] INFO Supervisor InstallZipPackage ConfigurationBuildFinished - Configuration build finished

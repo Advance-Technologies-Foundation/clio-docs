@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.ServerContentGeneration</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.ServerContentGeneration.IConfigurationServerContentGenerator">
+            <summary>
+            Provides methods to generate configuration server content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServerContentGeneration.IConfigurationServerContentGenerator.Generate(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})">
+            <summary>
+            Generates configuration server content for provided <paramref name="schemas"/>.
+            </summary>
+            <param name="schemas">Dictionary of changed schemas, where key is manager name and value is collection of 
+            changed schema names.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServerContentGeneration.IConfigurationServerContentGenerator.Generate">
+            <summary>
+            Generates configuration server content for all schemas.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.ServerContentGeneration.IEntitySchemaRuntimeContentWriter">
+            <summary>
+            Provides methods to write schemas runtime configuration server content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServerContentGeneration.IEntitySchemaRuntimeContentWriter.Write(Terrasoft.Core.Entities.EntitySchema,System.String)">
+            <summary>
+            Writes schema runtime configuration server content.
+            </summary>
+            <param name="schema">Schema which content should be written.</param>
+            <param name="runtimeContent">Runtime content of schema.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ServerContentGeneration.IEntitySchemaRuntimeContentWriter.Delete(System.Guid)">
+            <summary>
+            Deletes schemas runtime configuration server content.
+            </summary>
+            <param name="schemaUId">Schema UId which content should be deleted.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServerContentGeneration.IEntitySchemaRuntimeMetadataGenerator">
+            <summary>
+            Provides methods to generate runtime metadata for entity schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServerContentGeneration.IEntitySchemaRuntimeMetadataGenerator.Generate(Terrasoft.Core.Entities.EntitySchema,System.IO.Stream)">
+            <summary>
+            Writes runtime metadata of entity schema to stream.
+            </summary>
+            <param name="schema">Entity schema.</param>
+            <param name="stream">Stream.</param>
+        </member>
+        <member name="T:Terrasoft.Core.ServerContentGeneration.IEntitySchemaServerContentGenerator">
+            <summary>
+            Provides methods to generate runtime server content for entity schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ServerContentGeneration.IEntitySchemaServerContentGenerator.Generate(Terrasoft.Core.Entities.EntitySchema)">
+            <summary>
+            Generates runtime server content for provided <paramref name="schema"/>.
+            </summary>
+            <param name="schema">Schema which content should be generated.</param>
+        </member>
+    </members>
+</doc>

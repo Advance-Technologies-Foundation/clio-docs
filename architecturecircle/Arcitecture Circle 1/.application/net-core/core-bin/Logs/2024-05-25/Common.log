@@ -1,0 +1,276 @@
+2024-05-25 08:55:49,534 [1] WARN  Terrasoft.WebHost.Application OnAfterConfigure - Application starting
+2024-05-25 08:55:50,008 [1] WARN  Terrasoft.Core.SystemUserConnection FillCurrentSystemUser - System user initialized by default values. Id='7f3b869f-34f3-4f20-ab4d-7480a5fdf647', Name='Supervisor', ContactId='410006e1-ca4e-4502-a9ec-e54d922d2c00', AccountId='e308b781-3c5b-4ecb-89ef-5c1ed4da488e'
+2024-05-25 08:55:55,081 [1] INFO  Terrasoft.Core.InMemoryPubSubServer .ctor - InMemoryPubSubServer started.
+2024-05-25 08:55:57,703 [.NET ThreadPool Worker] INFO  Creatio.Messaging.MessageBus.RabbitMQ.Actors.OperationModeDispatcherActor OnReceive - OperationModeDispatcher initialized
+2024-05-25 08:55:57,703 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Starting scheduler...
+2024-05-25 08:55:57,766 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Scheduler started
+2024-05-25 08:55:57,870 [1] WARN  Terrasoft.Core.AppConnection GetValidSettingValue - System setting value "S3FilePartSize" is out of range. Set value of system setting is "5"
+2024-05-25 08:55:57,970 [1] INFO  Terrasoft.WebHost.Startup <MapODataServiceRoute>b__12_0 - OData service initialized successfully
+2024-05-25 08:56:07,170 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: start cleaning Buffered import entities.
+2024-05-25 08:56:07,170 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: finish cleaning Buffered import entities.
+2024-05-25 08:56:07,285 [1] WARN  Terrasoft.WebHost.Application OnStart - Application started
+2024-05-25 08:57:57,968 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [PeFeDATwEeOBekk6LePGw.job] [CalendarFailoverJob] started.
+2024-05-25 08:57:58,067 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [PeFeDATwEeOBekk6LePGw.job] [CalendarFailoverJob] 0 accounts received for enabling synchronization.
+2024-05-25 08:57:58,067 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [PeFeDATwEeOBekk6LePGw.job] [CalendarFailoverJob] Synchronization of 0 accounts is enabled.
+2024-05-25 08:57:58,079 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [PeFeDATwEeOBekk6LePGw.job] [CalendarFailoverJob] ended.
+2024-05-25 08:58:00,690 [.NET ThreadPool Worker] WARN  Terrasoft.Core.DB.EntitySchemaDbInfoActualizer Actualize - Actualization of EntitySchemaDbInfo started.
+2024-05-25 08:58:00,740 [.NET ThreadPool Worker] WARN  Terrasoft.Core.DB.EntitySchemaDbInfoActualizer Actualize - Actualization of EntitySchemaDbInfo completed.
+2024-05-25 09:00:23,836 [.NET ThreadPool Worker] WARN  SysAdminUnit UpdateUserPasswordHashToNewVersion - Password hash for user Supervisor was updated
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'NotificationV2' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'NotificationsOnOneClassJob' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UsePersistentFileImport' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'IsMailboxSyncSettingsCached' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'ProcessFeatures.UseRootIdInArchiveOperations' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'ProcessFeatures.UseProcessLogPartitioning' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'IsCalendarCached' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UseNewSchemaHierarchyFolding' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,439 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'ProcessFeatures.UseRemovingSubProcessDataInFinalState' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:25,578 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.FeatureChangedNotificationHandler MoveNext - Handling  feature state change to 
+2024-05-25 09:00:26,618 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UseNewSchemaHierarchyFolding' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:00:43,376 [.NET ThreadPool Worker] WARN Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer LogWarn - Starting package hierarchy actualization
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] WARN Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer LogWarn - Packages and packages dependencies initialization is completed
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 77633143-6696-4aab-becd-fcfe3af0953b
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ed036a19-7874-4e4b-8550-0045712e8f93
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: dbb8aaa0-b283-45fa-85b7-2d8640ba253b
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: d7843453-c67c-49da-bb6a-a7e914810144
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 2fe03a97-dc37-4cc8-9f6e-5f388cfd8fcc
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: b4f6c048-f694-4bf6-83c2-56e41e62ee09
+2024-05-25 09:00:43,400 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 7656f874-5ca1-48f3-8067-154c11525017
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 18785943-cea4-4527-b39d-42a03c3a7cc3
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: a798a98c-8f7d-4121-84b5-e200c1330f72
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: cfabce7a-b6ad-4820-8f4c-99ab474f4b94
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 0a034653-f4dd-46c6-a359-81d70993e0cf
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 729b0b97-170c-4abb-873a-573362dd1522
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: e3ca51d9-2e5d-4d98-8a25-d11612399544
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 7d2697e1-4d07-4ac3-b8f0-0b0078eedd16
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 26f98920-9e78-41ef-812e-7ac317f71da6
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 539ba000-e59a-485d-886a-33f2293f258c
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 9dcb4e67-edbf-4764-a0e5-256141ef2273
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 068378a0-53ff-4071-b1b6-8229c70492c1
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 871d2d0e-2699-4cfb-a3a5-2020f3c00088
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 794a8437-2738-4dab-b017-b03c84748818
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 88c8e383-ac6f-474c-9cb0-29cc3a4f66a0
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 0f48e3e6-3059-4d58-9313-8b5f92c59a38
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 52d7dc3e-0bc2-47d3-9066-3943746dfa4b
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: b0d0517a-764c-47ff-bc44-b94362355346
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: dcab46b1-ca0b-4019-b228-f3eb9996e7ca
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: b277baee-d93b-4730-9120-71a2ba8953f8
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 41207e9b-d41f-4a62-b507-034edb907ec3
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: d2fb33d1-1170-4b02-975f-872aa6a2083c
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: e2b1b41e-aee9-4999-9859-7c984ba68283
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 5b8934f9-d552-4246-992f-dee7f231722b
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f67c12d8-0059-4261-b325-aa037b31273d
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ed5b4b50-e2a2-41fc-8f11-4d21b88b689a
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 3f127ff5-d0cf-4420-a2fa-54e84e735322
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f6c28a33-842c-49d5-b084-3a11759ac6b1
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 9cd96762-f1bd-4ff3-9ef6-1d8f9209691c
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: bbcd8cd6-ac33-4d46-b7d7-1a23f792c9a7
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 467f16f7-d96c-425b-8132-900f2f394572
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 268309d1-d561-4025-b1d6-a6de17f78f2b
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: b134944e-c67e-4e7d-8352-92e7764eef0a
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 83ab6844-1893-4484-bc35-ffd7026f5e9d
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: b488ed32-4bbe-4e60-92c2-59e92deadc79
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: e2d1463f-e853-4dbc-9020-ee5b453b6593
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: fd7f5fd8-f11c-4b19-b294-5f2dabd2d781
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 19135cdd-bfab-441e-8dc8-314606ab82ba
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 9b4b0e60-4687-47fa-aa78-6c5677c0b750
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f07714f2-75f5-4cb2-8440-ca059ac497af
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 39d778e5-ed5c-465f-9d23-d06c710dde18
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f87f829e-e68b-4f74-8aed-c594337ab6ae
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 3d61702a-6a86-4ba6-af1d-5fb901bf4058
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 241baef7-9ec5-482e-b928-60c4b47b2293
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: fa3c24b9-6c7f-4195-8695-9a48cf7abb3c
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ab05a7d4-9253-46fc-9116-90f17daaff6e
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: acd905f9-f2a1-4046-8b78-a33290438a42
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 357c3c77-6d7b-4be6-8db1-ad4b0ce8f067
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 10506b63-653c-4432-8f5d-89b188d56113
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: e35fe839-cec9-4e28-8ec6-25369f0fcef1
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ce0e892e-169c-4fc8-b7ef-411cec9d6f73
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: dea755c9-abc3-4d88-923d-3a2b700fbdf8
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: e2b93f2f-c016-4b99-8beb-d3fa25f8bf6b
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 8630acb1-f8a6-4ddc-a5d9-fac6c26b9504
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: b316ed31-31b7-483d-8175-d060f19ff236
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 7b082376-3b3a-47be-b6ef-0f94de7c09f5
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 375360ac-1c58-4116-a102-9dbc936ddb00
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: cd060b4f-b05f-4ce8-80c3-20865157d038
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 3413c4fd-bb77-490f-af6c-5cb79b815a39
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f6147369-2235-4333-9a9c-5ab3c877b226
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 0a452087-a4db-45ec-96ec-27c9645d08b6
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 3883309a-94b1-43af-83ab-93bb028885e4
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f41be0cd-a62b-444f-b48d-b96bd9ce8f8d
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 4c06692e-db9f-49c6-b760-0279885ec3db
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 3af07740-dc3d-453e-8d7a-cd57b1f8469c
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 58c26ad4-c5e4-43ea-80b4-7d12e54244c3
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 06c56a17-fe13-442e-b33b-9ce03fe32d41
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 46ff9fe8-75b7-4513-9b4b-04e1522b7ee0
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 31103af0-f545-4f61-a9e5-74b58716c0c6
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: c636c3b0-63eb-4855-b5f1-f93397c79501
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 77f1eed5-fe76-497d-b729-982744de41d4
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: c1ffda95-759c-4396-a34e-90081e2cf5ba
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 1b082d40-f444-4bd9-826c-eb365215efbe
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ed1b339f-4504-4951-b5a7-889c48d980c7
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 01dce836-dede-40b4-8b37-eda2fbabc40b
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 13964d7b-1e91-4431-8d6d-2131db014adc
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 6b97874b-eacb-4b67-8910-b31cb0302199
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 0da2d1ae-b5ff-432e-8b54-48f30f0740a7
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 4b2c9267-d435-4d80-ac60-de8b377b4bee
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f0c0a0b9-33c7-441c-b023-1f6358a93ef4
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: a9777cc1-8e49-4a90-af29-8a9a204e8b0d
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 93e0c86e-77a3-4cd3-a4a3-061e754cb9c4
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 06fb4919-d12c-422d-94ee-9e0d571de59c
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 08e1e2ae-e0cb-415a-a59e-a938077bd810
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 3668187d-7902-4f27-93a5-6be63a0c008a
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 2c41e6a1-a640-4fbc-9068-8ae5f0cc4c40
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 21a3ea37-6ef6-4dc5-9d7f-f3d22cb33fb8
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: c6ccd714-6165-421c-99e7-4aeb75fc6d44
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 60b317fc-4b54-4359-958b-5f89538cbc54
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ac8832fb-7700-4a45-bf71-930d2bd55eea
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 3fa1bbc9-e8c6-4b45-b46e-86ca952167ec
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 40ada521-2bb1-4cc0-b53a-cf2c75f57dcd
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 8fd94867-975a-438f-8c2d-45ec9f35554a
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 0ea846a0-8bd4-4a85-9b60-131de8df29a5
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 9a675429-c752-432f-ad3d-bed1378e525e
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 98d317a1-3180-4292-ac29-a9af256eef0e
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 8140dcfa-0889-407c-9ef2-eb709fda7abb
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 40f8405e-4816-402e-ba6e-4e1d4b6a4f9d
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 39cfc8e6-df17-47c3-a88a-83c2020dc9c2
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: a87d1ce5-a9ff-4683-a840-9a6a7d76a2ba
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 8c714fda-858f-4096-b5b7-cba3ea299aaa
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: e194ba0c-b79f-41d4-bb8c-80e2ad25f2b0
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 30e28cee-62d0-4b10-9af2-d50e2b05a03d
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ce409b97-5eab-4a6e-9441-753651f104c3
+2024-05-25 09:00:43,404 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 17a0afd6-7631-4828-8353-4bf9bffd04b8
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: c85453d5-fb7e-4c04-acfc-9f49aadf3559
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 1ca73afe-bcaa-426b-bb93-a40dce1f5567
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: aa73563b-79de-4e4f-a310-6897b7999b49
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 17987de5-d708-46e6-8c34-6373db1a1497
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 0e32af6d-13b3-49ae-89f3-d74f68d61d26
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: ddf4f931-5ab4-493c-a30c-b10f05842b97
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 8d2f2d0c-02b1-4396-81a7-c2d34b679f6b
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f55c64c9-5367-4330-b6da-36faacc7e834
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 7ccc9702-b561-4635-ab19-9ba6bd1625af
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: eba8203f-92a4-423c-bdd6-62288037a985
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 5daf7184-0670-418a-b68d-fcb289fa2cca
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: edc4cdde-695c-4d34-a9f6-080a7dc7bbf2
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 5cd1cffb-7b09-47f6-ac64-832843c65643
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f1a0454e-2619-4eca-870b-44b21fc62aea
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 1ee3e226-4271-4ee7-95a6-01acbf2892d5
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: e35dbf9f-e389-4813-aef4-78736abf2b62
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 0d5794da-919c-407a-9b19-36a1e71b85bd
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 24d10da4-a370-468a-b691-486db586d660
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 76c4830e-5dca-45c1-b746-211f71db857e
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 7aa9054b-5ed7-4096-bbfd-2c331041b712
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f40871f7-94d5-4593-a417-d5572b4f82c5
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 88fac3c8-2f61-4053-8232-10acfa774cc6
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: cf7e8917-cd38-4c53-84f5-880e941a0f0b
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: f5235b7d-da26-43ad-9c4b-b381176dc732
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: cee9e64d-4156-4331-a01b-0ab719a8a767
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 6bd5faff-4b1b-48b8-ac7c-c83a9889f077
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 64c2e958-0788-4178-ac61-43d676350efb
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: b3ad6991-3055-4eb4-a67e-d8cd598e9903
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 507c9017-1740-4837-9dda-c8b4e2d7ca7f
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer ForEach - Package hierarchies calculation started. Package Id: 688d7aed-cfdb-4d29-a854-a4817a846709
+2024-05-25 09:00:43,421 [.NET ThreadPool Worker] WARN Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer LogWarn - Package hierarchy calculation completed
+2024-05-25 09:00:43,492 [.NET ThreadPool Worker] WARN Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer LogWarn - Package hierarchy initialization is completed
+2024-05-25 09:00:43,511 [.NET ThreadPool Worker] WARN Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer LogWarn - Package hierarchy have been successfully updated in the DB. Inserting records: 2, deleting records: 0, affected records: 2
+2024-05-25 09:00:44,082 [.NET ThreadPool Worker] WARN Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer LogWarn - Package hierarchy level have been successfully updated in the DB
+2024-05-25 09:00:44,082 [.NET ThreadPool Worker] WARN Supervisor Terrasoft.Core.PackageHierarchy.PackageHierarchyActualizer LogWarn - Package hierarchy actualization is completed
+2024-05-25 09:00:44,967 [.NET ThreadPool Worker] INFO Supervisor EventSourcing PublishEntityEvent - Adding event to stream. Event group entity-installation-backup-group, event stream 4401b6b3-6b8f-497c-a465-e46b34063fb6. EventId: d27de2e7-80cf-4d6c-9967-692231cb5d5f.
+2024-05-25 09:00:45,296 [.NET ThreadPool Worker] INFO Supervisor EventSourcing PublishEntityEvent - Adding event to stream. Event group entity-installation-backup-group, event stream 4401b6b3-6b8f-497c-a465-e46b34063fb6. EventId: 6e2637c4-c1a9-4a6a-a41b-d597f03f2ede.
+2024-05-25 09:00:45,296 [.NET ThreadPool Worker] INFO Supervisor EventSourcing PublishEntityEvent - Adding event to stream. Event group entity-installation-backup-group, event stream 4401b6b3-6b8f-497c-a465-e46b34063fb6. EventId: f2273d72-1033-4a37-9736-0fcc96aa096c.
+2024-05-25 09:00:45,413 [.NET ThreadPool Worker] INFO Supervisor EventSourcing ClearStream - Commiting stream. Event group entity-installation-backup-group, event stream 4401b6b3-6b8f-497c-a465-e46b34063fb6. CommitId: 5ca53f1a-9434-44fd-80c0-f12fa3c50ea3.
+2024-05-25 09:00:45,432 [.NET ThreadPool Worker] INFO Supervisor EventSourcing ClearStream - Successfully commit stream. Event group entity-installation-backup-group, event stream 4401b6b3-6b8f-497c-a465-e46b34063fb6. CommitId: 5ca53f1a-9434-44fd-80c0-f12fa3c50ea3.
+2024-05-25 09:00:51,622 [.NET ThreadPool Worker] WARN  Terrasoft.WebHost.Application OnShutdown - Application_End
+2024-05-25 09:00:51,648 [.NET ThreadPool Worker] INFO  Terrasoft.Core.EventBuffering.BufferPool RunFromThreadPoolDispatchLoop - Disabling buffering.
+2024-05-25 09:00:51,654 [.NET ThreadPool Worker] INFO  Terrasoft.Core.EventBuffering.BufferPool RunFromThreadPoolDispatchLoop - Disabled buffering of Terrasoft.Core.Process.EventBuffering.IProcessEventWriter(free: 2, rent: 0)
+2024-05-25 09:00:51,717 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker Dispose - Disabling recursion depth checker.
+2024-05-25 09:00:51,717 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabled Background recursion depth checker.
+2024-05-25 09:00:51,717 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabled Foreground recursion depth checker.
+2024-05-25 09:00:51,717 [.NET ThreadPool Worker] INFO  Terrasoft.Core.InMemoryPubSubServer ExecutionContextCallback - InMemoryPubSubServer stopped.
+2024-05-25 09:00:54,990 [1] WARN  Terrasoft.WebHost.Application OnAfterConfigure - Application starting
+2024-05-25 09:00:55,434 [1] WARN  Terrasoft.Core.SystemUserConnection FillCurrentSystemUser - System user initialized by default values. Id='7f3b869f-34f3-4f20-ab4d-7480a5fdf647', Name='Supervisor', ContactId='410006e1-ca4e-4502-a9ec-e54d922d2c00', AccountId='e308b781-3c5b-4ecb-89ef-5c1ed4da488e'
+2024-05-25 09:00:57,091 [1] WARN  Terrasoft.WebHost.Application OnAfterConfigure - Application starting
+2024-05-25 09:00:57,650 [1] WARN  Terrasoft.Core.SystemUserConnection FillCurrentSystemUser - System user initialized by default values. Id='7f3b869f-34f3-4f20-ab4d-7480a5fdf647', Name='Supervisor', ContactId='410006e1-ca4e-4502-a9ec-e54d922d2c00', AccountId='e308b781-3c5b-4ecb-89ef-5c1ed4da488e'
+2024-05-25 09:01:00,535 [1] INFO  Terrasoft.Core.InMemoryPubSubServer .ctor - InMemoryPubSubServer started.
+2024-05-25 09:01:03,676 [.NET ThreadPool Worker] INFO  Creatio.Messaging.MessageBus.RabbitMQ.Actors.OperationModeDispatcherActor OnReceive - OperationModeDispatcher initialized
+2024-05-25 09:01:03,676 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Starting scheduler...
+2024-05-25 09:01:03,975 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Scheduler started
+2024-05-25 09:01:04,508 [1] INFO  Terrasoft.Core.InMemoryPubSubServer .ctor - InMemoryPubSubServer started.
+2024-05-25 09:01:04,622 [1] INFO  Terrasoft.WebHost.Startup <MapODataServiceRoute>b__12_0 - OData service initialized successfully
+2024-05-25 09:01:07,860 [.NET ThreadPool Worker] INFO  Creatio.Messaging.MessageBus.RabbitMQ.Actors.OperationModeDispatcherActor OnReceive - OperationModeDispatcher initialized
+2024-05-25 09:01:07,860 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Starting scheduler...
+2024-05-25 09:01:08,396 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Scheduler started
+2024-05-25 09:01:09,659 [1] INFO  Terrasoft.WebHost.Startup <MapODataServiceRoute>b__12_0 - OData service initialized successfully
+2024-05-25 09:01:10,424 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: start cleaning Buffered import entities.
+2024-05-25 09:01:10,424 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: finish cleaning Buffered import entities.
+2024-05-25 09:01:10,611 [1] WARN  Terrasoft.WebHost.Application OnStart - Application started
+2024-05-25 09:01:14,455 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: start cleaning Buffered import entities.
+2024-05-25 09:01:14,455 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: finish cleaning Buffered import entities.
+2024-05-25 09:01:14,564 [1] WARN  Terrasoft.WebHost.Application OnStart - Application started
+2024-05-25 09:02:37,949 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UsePersistentFileImport' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:02:38,202 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.FeatureChangedNotificationHandler MoveNext - Handling  feature state change to 
+2024-05-25 09:02:39,248 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UseNewSchemaHierarchyFolding' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:09:56,551 [.NET ThreadPool Worker] WARN  Terrasoft.WebHost.Application OnShutdown - Application_End
+2024-05-25 09:09:56,609 [.NET ThreadPool Worker] INFO  Terrasoft.Core.EventBuffering.BufferPool RunFromThreadPoolDispatchLoop - Disabling buffering.
+2024-05-25 09:09:56,609 [.NET ThreadPool Worker] INFO  Terrasoft.Core.EventBuffering.BufferPool RunFromThreadPoolDispatchLoop - Disabled buffering of Terrasoft.Core.Process.EventBuffering.IProcessEventWriter(free: 1, rent: 0)
+2024-05-25 09:09:56,666 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker Dispose - Disabling recursion depth checker.
+2024-05-25 09:09:56,666 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabled Background recursion depth checker.
+2024-05-25 09:09:56,666 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabled Foreground recursion depth checker.
+2024-05-25 09:09:56,666 [.NET ThreadPool Worker] INFO  Terrasoft.Core.InMemoryPubSubServer ExecutionContextCallback - InMemoryPubSubServer stopped.
+2024-05-25 09:10:00,943 [1] WARN  Terrasoft.WebHost.Application OnAfterConfigure - Application starting
+2024-05-25 09:10:01,392 [1] WARN  Terrasoft.Core.SystemUserConnection FillCurrentSystemUser - System user initialized by default values. Id='7f3b869f-34f3-4f20-ab4d-7480a5fdf647', Name='Supervisor', ContactId='410006e1-ca4e-4502-a9ec-e54d922d2c00', AccountId='e308b781-3c5b-4ecb-89ef-5c1ed4da488e'
+2024-05-25 09:10:01,813 [1] WARN  Terrasoft.WebHost.Application OnAfterConfigure - Application starting
+2024-05-25 09:10:02,276 [1] WARN  Terrasoft.Core.SystemUserConnection FillCurrentSystemUser - System user initialized by default values. Id='7f3b869f-34f3-4f20-ab4d-7480a5fdf647', Name='Supervisor', ContactId='410006e1-ca4e-4502-a9ec-e54d922d2c00', AccountId='e308b781-3c5b-4ecb-89ef-5c1ed4da488e'
+2024-05-25 09:10:06,410 [1] INFO  Terrasoft.Core.InMemoryPubSubServer .ctor - InMemoryPubSubServer started.
+2024-05-25 09:10:09,657 [1] INFO  Terrasoft.Core.InMemoryPubSubServer .ctor - InMemoryPubSubServer started.
+2024-05-25 09:10:09,691 [.NET ThreadPool Worker] INFO  Creatio.Messaging.MessageBus.RabbitMQ.Actors.OperationModeDispatcherActor OnReceive - OperationModeDispatcher initialized
+2024-05-25 09:10:09,691 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Starting scheduler...
+2024-05-25 09:10:09,748 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Scheduler started
+2024-05-25 09:10:11,280 [1] INFO  Terrasoft.WebHost.Startup <MapODataServiceRoute>b__12_0 - OData service initialized successfully
+2024-05-25 09:10:12,473 [.NET ThreadPool Worker] INFO  Creatio.Messaging.MessageBus.RabbitMQ.Actors.OperationModeDispatcherActor OnReceive - OperationModeDispatcher initialized
+2024-05-25 09:10:12,473 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Starting scheduler...
+2024-05-25 09:10:12,566 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Scheduler started
+2024-05-25 09:10:13,114 [1] INFO  Terrasoft.WebHost.Startup <MapODataServiceRoute>b__12_0 - OData service initialized successfully
+2024-05-25 09:10:13,748 [1] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabling recursion depth checker.
+2024-05-25 09:10:13,748 [1] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker DisableUpdater - Disabled Background recursion depth checker.
+2024-05-25 09:10:13,749 [1] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker DisableUpdater - Disabled Foreground recursion depth checker.
+2024-05-25 09:10:13,749 [.NET ThreadPool Worker] INFO  Terrasoft.Core.InMemoryPubSubServer MoveNext - InMemoryPubSubServer stopped.
+2024-05-25 09:10:18,002 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: start cleaning Buffered import entities.
+2024-05-25 09:10:18,002 [1] INFO  FileImportAppender CleanBufferedImportEntities - ImportEntitiesDataProvider: finish cleaning Buffered import entities.
+2024-05-25 09:10:18,140 [1] WARN  Terrasoft.WebHost.Application OnStart - Application started
+2024-05-25 09:10:59,957 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [fZbcrmevEiLhJdTVi1kuw.job] [CalendarFailoverJob] started.
+2024-05-25 09:11:00,600 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [fZbcrmevEiLhJdTVi1kuw.job] [CalendarFailoverJob] 0 accounts received for enabling synchronization.
+2024-05-25 09:11:00,600 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [fZbcrmevEiLhJdTVi1kuw.job] [CalendarFailoverJob] Synchronization of 0 accounts is enabled.
+2024-05-25 09:11:00,892 [.NET ThreadPool Worker] INFO  Calendar LogInfo - [fZbcrmevEiLhJdTVi1kuw.job] [CalendarFailoverJob] ended.
+2024-05-25 09:11:25,835 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UsePersistentFileImport' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:11:25,835 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UseNewSchemaHierarchyFolding' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:11:26,202 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.FeatureChangedNotificationHandler MoveNext - Handling  feature state change to 
+2024-05-25 09:11:27,034 [.NET ThreadPool Worker] INFO Supervisor Terrasoft.Core.FeatureToggling.DbFeatureProvider AddOrUpdate - Merged duplicate 'UseNewSchemaHierarchyFolding' admin unit feature value. AdminUnitId = '7f3b869f-34f3-4f20-ab4d-7480a5fdf647'
+2024-05-25 09:14:22,023 [.NET ThreadPool Worker] WARN  Terrasoft.WebHost.Application OnShutdown - Application_End
+2024-05-25 09:14:22,560 [.NET ThreadPool Worker] INFO  Terrasoft.Core.EventBuffering.BufferPool RunFromThreadPoolDispatchLoop - Disabling buffering.
+2024-05-25 09:14:22,561 [.NET ThreadPool Worker] INFO  Terrasoft.Core.EventBuffering.BufferPool RunFromThreadPoolDispatchLoop - Disabled buffering of Terrasoft.Core.Process.EventBuffering.IProcessEventWriter(free: 1, rent: 0)
+2024-05-25 09:14:22,620 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker Dispose - Disabling recursion depth checker.
+2024-05-25 09:14:22,620 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabled Background recursion depth checker.
+2024-05-25 09:14:22,620 [.NET ThreadPool Worker] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabled Foreground recursion depth checker.
+2024-05-25 09:14:22,620 [.NET ThreadPool Worker] INFO  Terrasoft.Core.InMemoryPubSubServer ExecutionContextCallback - InMemoryPubSubServer stopped.
+2024-05-25 09:14:25,942 [1] WARN  Terrasoft.WebHost.Application OnAfterConfigure - Application starting
+2024-05-25 09:14:26,391 [1] WARN  Terrasoft.Core.SystemUserConnection FillCurrentSystemUser - System user initialized by default values. Id='7f3b869f-34f3-4f20-ab4d-7480a5fdf647', Name='Supervisor', ContactId='410006e1-ca4e-4502-a9ec-e54d922d2c00', AccountId='e308b781-3c5b-4ecb-89ef-5c1ed4da488e'
+2024-05-25 09:14:27,318 [1] WARN  Terrasoft.WebHost.Application OnAfterConfigure - Application starting
+2024-05-25 09:14:27,790 [1] WARN  Terrasoft.Core.SystemUserConnection FillCurrentSystemUser - System user initialized by default values. Id='7f3b869f-34f3-4f20-ab4d-7480a5fdf647', Name='Supervisor', ContactId='410006e1-ca4e-4502-a9ec-e54d922d2c00', AccountId='e308b781-3c5b-4ecb-89ef-5c1ed4da488e'
+2024-05-25 09:14:31,721 [1] INFO  Terrasoft.Core.InMemoryPubSubServer .ctor - InMemoryPubSubServer started.
+2024-05-25 09:14:35,235 [.NET ThreadPool Worker] INFO  Creatio.Messaging.MessageBus.RabbitMQ.Actors.OperationModeDispatcherActor OnReceive - OperationModeDispatcher initialized
+2024-05-25 09:14:35,235 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Starting scheduler...
+2024-05-25 09:14:35,313 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Scheduler started
+2024-05-25 09:14:35,361 [1] INFO  Terrasoft.Core.InMemoryPubSubServer .ctor - InMemoryPubSubServer started.
+2024-05-25 09:14:36,566 [1] INFO  Terrasoft.WebHost.Startup <MapODataServiceRoute>b__12_0 - OData service initialized successfully
+2024-05-25 09:14:38,278 [.NET ThreadPool Worker] INFO  Creatio.Messaging.MessageBus.RabbitMQ.Actors.OperationModeDispatcherActor OnReceive - OperationModeDispatcher initialized
+2024-05-25 09:14:38,280 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Starting scheduler...
+2024-05-25 09:14:38,405 [1] INFO  Terrasoft.WebHost.Application StartApplicationScheduler - Scheduler started
+2024-05-25 09:14:40,654 [1] INFO  Terrasoft.WebHost.Startup <MapODataServiceRoute>b__12_0 - OData service initialized successfully
+2024-05-25 09:14:41,192 [1] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker InternalDisable - Disabling recursion depth checker.
+2024-05-25 09:14:41,192 [1] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker DisableUpdater - Disabled Background recursion depth checker.
+2024-05-25 09:14:41,192 [1] INFO  Terrasoft.Core.UsageContext.RecursionDepthTracker DisableUpdater - Disabled Foreground recursion depth checker.
+2024-05-25 09:14:41,192 [.NET ThreadPool Worker] INFO  Terrasoft.Core.InMemoryPubSubServer MoveNext - InMemoryPubSubServer stopped.
+2024-05-25 09:14:41,375 [1] INFO  FileImportAppender ClearBufferedImportEntities - ImportEntitiesDataProvider: start cleaning Buffered import entities.
+2024-05-25 09:14:41,375 [1] INFO  FileImportAppender ClearBufferedImportEntities - ImportEntitiesDataProvider: finish cleaning Buffered import entities.
+2024-05-25 09:14:41,538 [1] WARN  Terrasoft.WebHost.Application OnStart - Application started

@@ -1,0 +1,1004 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.Scheduler</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction">
+            <summary>
+            Misfire instructions.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.SmartPolicy">
+            <summary>
+            Use smart policy.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.IgnoreMisfirePolicy">
+            <summary>
+            Instructs the <see cref="T:Terrasoft.Core.Scheduler.AppScheduler" /> that the Job will never be evaluated for a misfire situation, and
+            that the scheduler will simply try to fire it as soon as it can, and then update the Job as if it had
+            fired at the proper time.
+            </summary>
+            <remarks>
+            NOTE: if a Job uses this instruction, and it has missed several of its scheduled firings, then several
+            rapid firings may occur as the Job attempt to catch back up to where it would have been. For example, a Job
+            that fires every 2 minutes which has misfired for 10 minutes will fire 5 times once it gets the chance to
+            fire.
+            </remarks>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.FireNow">
+            <summary> 
+            Instructs the <see cref="T:Terrasoft.Core.Scheduler.AppScheduler" /> that upon a mis-fire situation, the Job wants to be fired now by
+            <see cref="T:Terrasoft.Core.Scheduler.AppScheduler" />.
+            <para>
+            <i>NOTE:</i> This instruction should typically only be used for 'one-shot' (non-repeating) Job. If it is
+            used on a Job with a repeat count > 0 then it is equivalent to the instruction
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithRemainingRepeatCount" />.
+            </para>
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNextWithExistingCount">
+            <summary>
+            Instructs the <see cref="T:Terrasoft.Core.Scheduler.AppScheduler" /> that upon a mis-fire situation, the Job wants to be re-scheduled
+            to the next scheduled time after 'now'.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNextWithRemainingCount">
+            <summary> 
+            Instructs the <see cref="T:Terrasoft.Core.Scheduler.AppScheduler" /> that upon a mis-fire situation, the Job wants to be re-scheduled
+            to the next scheduled time after 'now', and with the repeat count set to what it would be, if it had not
+            missed any firings.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithExistingRepeatCount">
+            <summary>
+            Instructs the <see cref="T:Terrasoft.Core.Scheduler.AppScheduler" /> that upon a mis-fire situation, the Job wants to be re-scheduled
+            to 'now' with the repeat count left as-is. This does obey the Job end-time however, so if 'now' is after
+            the end-time the Job will not fire again.
+            </summary>
+            <remarks>
+            <para>
+            <i>NOTE:</i> Use of this instruction causes the Job to 'forget' the start-time and repeat-count that it
+            was originally setup with (this is only an issue if you for some reason wanted to be able to tell what the
+            original values were at some later time).
+            </para>
+            </remarks>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithRemainingRepeatCount">
+            <summary>
+            Instructs the <see cref="T:Terrasoft.Core.Scheduler.AppScheduler" /> that upon a mis-fire situation, the Job wants to be re-scheduled
+            to 'now' with the repeat count set to what it would be, if it had not missed any firings. This does obey
+            the Job end-time however, so if 'now' is after the end-time the Job will not fire again.
+            <para>
+            <i>NOTE:</i> Use of this instruction causes the Job to 'forget' the start-time and repeat-count that it
+            was originally setup with. Instead, the repeat count on the Job will be changed to whatever the remaining
+            repeat count is (this is only an issue if you for some reason wanted to be able to tell what the original
+            values were at some later time).
+            </para>
+            <para>
+            <i>NOTE:</i> This instruction could cause the Job to go to the 'COMPLETE' state after firing 'now', if all
+            the repeat-fire-times where missed.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.AppScheduler">
+            <summary>Вспомогательный класс для интеграции планировщика Quartz.NET с веб-приложением.</summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.AppScheduler.Instance">
+            <summary>Instance of scheduler.</summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateProcessDataMap(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Создает объект параметров задания планировщика.
+            </summary>
+            <param name="processName">Название процесса.</param>
+            <param name="workspaceName">Рабочее пространство, в котором необходимо запустить процесс.</param>
+            <param name="userName">Пользователь, от имени которого будет запускаться процесс.</param>
+            <param name="parameters">Параметры, которые будут передаваться в процесс.</param>
+            <param name="isSystemUser">Признак системного пользователя. Если значение <c>true</c>, планировщик будет
+            запускаться от имени пользователя, полученного из системной настройки <c>"Пользователь для выполнения
+            системных операций"</c>.</param>
+            <returns>Объект параметров задания планировщика.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateClassDataMap(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Returns object of job parameters.
+            </summary>
+            <param name="className">Class name.</param>
+            <param name="workspaceName">Workspace in which сlass must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">Parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+            <returns>Object of scheduler task parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.AddDefaultDataMap(Quartz.JobDataMap,System.String,System.String,System.Boolean)">
+            <summary>
+            Returns object of default scheduler task parameters.
+            </summary>
+            <param name="jobDataMap">Object of scheduler task parameters.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateIntermediateTimerJobDataMap(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Создает объект параметров задания планировщика для промежуточного ожидающего таймера.
+            </summary>
+            <param name="processElementUId">Идентификатор элемента процесса.</param>
+            <param name="workspaceName">Рабочее пространство, в котором необходимо запустить процесс.</param>
+            <param name="userName">Пользователь, от имени которого будет запускаться процесс.</param>
+            <param name="isSystemUser">Признак системного пользователя. Если значение <c>true</c>, планировщик будет
+            запускаться от имени пользователя, полученного из системной настройки <c>"Пользователь для выполнения
+            системных операций"</c>.</param>
+            <returns>Объект параметров задания планировщика.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateCalendarIntervalJob(Quartz.JobKey,Quartz.TriggerKey,Quartz.JobDataMap,System.Int32,System.Boolean,Quartz.IScheduler)">
+            <summary>
+            Создает новое периодическое задание.
+            </summary>
+            <param name="jobKey">Идентификатор задания.</param>
+            <param name="triggerKey">Идентификатор триггера задания.</param>
+            <param name="jobDataMap">Параметры задания.</param>
+            <param name="periodInMinutes">Интервал запуска процесса в минутах.</param>
+            <param name="useMisfireInstructionFireOnceNow">Если признак <c>true</c>> тогда сразу же запускается
+            первое просроченное задание планировщика, но только одно из пула, остальные в контексте планировщика
+            отменяются. Если признак <c>false</c> тогда используются стандартые механизмы контроля выполнения
+            заданий.</param>>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <remarks>Если задание и/или триггер с заданными ключами уже существуют, то они будут замещены новым
+            заданием и триггером.</remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.UpdateCalendarIntervalJob(Quartz.IJobDetail,Quartz.Impl.Triggers.CalendarIntervalTriggerImpl,Quartz.JobDataMap,System.Int32,System.Boolean,Quartz.IScheduler)">
+            <summary>
+            Обновляет существующее периодическое задание.
+            </summary>
+            <param name="oldJob">Существующее задание.</param>
+            <param name="oldTrigger">Существующий триггер задания.</param>
+            <param name="jobDataMap">Новые параметры задания.</param>
+            <param name="periodInMinutes">Новый интервал запуска процесса в минутах.</param>
+            <param name="useMisfireInstructionFireOnceNow">Если признак <c>true</c>> тогда сразу же запускается
+            первое просроченное задание планировщика, но только одно из пула, остальные в контексте планировщика
+            отменяются. Если признак <c>false</c> тогда используются стандартые механизмы контроля выполнения
+            заданий.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <remarks>Если интервал запуска задания не поменялся, то триггер задания не будет запланирован повторно.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ValidationStringParameters(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Checks the validity of string parameters.
+            </summary>
+            <param name="parameters">Dictionary settings.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerNonDurableJob(Quartz.IJobDetail,System.Boolean,System.Boolean,Quartz.IScheduler)">
+            <summary>
+            Creates non-durable job.
+            </summary>
+            <param name="job">Detail properties of a given job instance.</param>
+            <param name="isReplace">If <c>true</c> then add job with replace.</param>
+            <param name="isStoreNonDurableWhileAwaitingScheduling">If <c>true</c>, a
+            non-durable job can be stored. Once it is scheduled, it will resume normal
+            non-durable behavior</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ShutdownSchedulers(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Halts all Quartz.IScheduler's threads and cleans up all resources associated with the Scheduler.
+            </summary>
+            <param name="waitForJobsToComplete">If true the scheduler will not allow this method to return until
+            all currently executing jobs have complete.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>Creates the Job for process execution.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the Job belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="parameters">The parameters that will be passed to the process.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <returns>Job instance for process execution.</returns>
+            <overloads><summary>There are overloaded versions of this method.</summary></overloads>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>Creates the Job for process execution.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the Job belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="parameters">The parameters that will be passed to the process.</param>
+            <returns>Job instance for process execution.</returns>
+            <overloads><summary>There are overloaded versions of this method.</summary></overloads>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>Creates the Job for process execution.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the Job belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <returns>Job instance for process execution.</returns>
+            <overloads><summary>There are overloaded versions of this method.</summary></overloads>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateProcessJob(System.String,System.String,System.String,System.String,System.String)">
+            <summary>Creates the Job for process execution.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the Job belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <returns>Job instance for process execution.</returns>
+            <overloads><summary>There are overloaded versions of this method.</summary></overloads>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateProcessJob(System.String,System.String,System.String,System.String,System.String,Terrasoft.Core.Scheduler.JobOptions)">
+            <summary>Creates the Job for process execution.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the Job belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="jobOptions">Additional Job options.</param>
+            <returns>Job instance for process execution.</returns>
+            <overloads><summary>There are overloaded versions of this method.</summary></overloads>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Terrasoft.Core.Scheduler.JobOptions)">
+            <summary>Creates the Job for process execution.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the Job belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="parameters">The parameters that will be passed to the process.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <param name="jobOptions">Additional Job options.</param>
+            <returns>Job instance for process execution.</returns>
+            <overloads><summary>There are overloaded versions of this method.</summary></overloads>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateClassJob(System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Creates the task for class execution.
+            </summary>
+            <param name="className">Class name.</param>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which class must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateClassJob``1(System.String,System.String,Terrasoft.Core.UserConnection,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Creates the task for class execution.
+            </summary>
+            <param name="jobName">The name of the task.</param>
+            <param name="jobGroupName">The name of the group to which the task belongs.</param>
+            <param name="userConnection"></param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateClassJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Creates the task for class execution.
+            </summary>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which class must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.GetSchedulerOrDefault(System.String)">
+            <summary>
+            Returns an instance of the scheduler with the specified name, or the default instance.
+            </summary>
+            <param name="schedulerName">Scheduler name.</param>
+            <returns>Instance of <see cref="T:Quartz.IScheduler"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleMinutelyProcessJob(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,System.Boolean,Quartz.IScheduler)">
+            <summary>Планирование задания для запуска процесса с определенным интервалом.</summary>
+            <param name="jobName">Название задания.</param>
+            <param name="jobGroup">Название группы, к которой относится задание.</param>
+            <param name="processName">Название процесса.</param>
+            <param name="workspaceName">Рабочее пространство, в котором необходимо запустить процесс.</param>
+            <param name="userName">Пользователь, от имени которого будет запускаться процесс.</param>
+            <param name="periodInMinutes">Интервал запуска процесса в минутах.</param>
+            <param name="parameters">Параметры, которые будут передаваться в процесс.</param>
+            <param name="isSystemUser">Признак системного пользователя. Если значение <c>true</c>, задание будет
+            запускаться от имени пользователя, полученного из системной настройки <c>"Пользователь для выполнения
+            системных операций"</c>.</param>
+            <param name="useMisfireInstructionFireOnceNow">Если признак <c>true</c>> тогда сразу же запускается
+            первое просроченное задание планировщика, но только одно из пула, остальные в контексте планировщика
+            отменяются. Если признак <c>false</c> тогда используются стандартые механизмы контроля выполнения
+            заданий.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <exception cref="T:System.ArgumentException">Если в качестве одного из параметров <paramref name="jobName"/>, 
+            <paramref name="jobGroup"/>, <paramref name="processName"/>, <paramref name="workspaceName"/>, 
+            <paramref name="userName"/> передано пустое значение или <c>null</c>.</exception>
+            <remarks>Если задание с именем <paramref name="jobName"/> и триггером типа
+            <c>CalendarIntervalTriggerImpl</c> уже существует в группе
+            <paramref name="jobGroup"/>, оно будет обновлено, иначе - оно будет пересоздано заново.</remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleMinutelyJob(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction,Quartz.IScheduler,System.Int32)">
+            <summary>
+            A schedule that is used to fire a Job and repeat it at a minutely interval.
+            </summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which job must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="periodInMinutes">Specify an interval in the minutes that the produced job will repeat at.
+            </param>
+            <param name="parameters">The parameters that will be passed to the process.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <param name="misfireInstruction"> If the Job misfires, use the
+            <see cref="T:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction" /> instruction. If not explicitly set, the default value is
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithRemainingRepeatCount"/>.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <param name="priority">Triggers priority. Default value is 5.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">In case if <c>null</c> or empty string passed as value of
+            parameter <paramref name="jobName"/>, <paramref name="jobGroup"/>, <paramref name="processName"/>,
+            <paramref name="workspaceName"/>, <paramref name="userName"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">In case if value of parameter
+            <paramref name="periodInMinutes"/> less or equal 0.</exception>
+            <remarks>
+            If <paramref name="misfireInstruction"/> equal to
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithRemainingRepeatCount"/> is passed to the method,
+            the scheduler will be updating misfired triggers, as if
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithExistingRepeatCount"/> value was passed.
+            This works both ways. Same applies for the
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNextWithRemainingCount"/> and
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNextWithExistingCount"/> value pair.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleMinutelyJob``1(System.String,System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction,Quartz.IScheduler,System.Int32)">
+            <summary>
+            A schedule that is used to fire a Job and repeat it at a minutely interval.
+            </summary>
+            <typeparam name="T">Type of a task.</typeparam>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which job must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="periodInMinutes">Specify an interval in the minutes that the produced job will repeat at.
+            </param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <param name="misfireInstruction"> If the Job misfires, use the
+            <see cref="T:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction" /> instruction. If not explicitly set, the default value is
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithRemainingRepeatCount"/>.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <param name="priority">Triggers priority. Default value = 5.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">In case if <c>null</c> or empty string passed as value of
+            <paramref name="jobGroup"/>, <paramref name="workspaceName"/>, <paramref name="userName"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">In case if value of parameter
+            <paramref name="periodInMinutes"/> less or equal 0.</exception>
+            <remarks>
+            If <paramref name="misfireInstruction"/> equal to
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithRemainingRepeatCount"/> is passed to the method,
+            the scheduler will be updating misfired triggers, as if
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNowWithExistingRepeatCount"/> value was passed.
+            This works both ways. Same applies for the
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNextWithRemainingCount"/> and
+            <see cref="F:Terrasoft.Core.Scheduler.AppSchedulerMisfireInstruction.RescheduleNextWithExistingCount"/> value pair.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)">
+            <summary>
+            Plans a task for immediate one-time start of process.
+            </summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="parameters">The parameters that will be passed to the process.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <remarks>
+            <para>
+            In contrast to <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/>, the <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> schedules job 
+            with next fire time set to now, while <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> triggers job immediately. 
+            As a result, delay between <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> call and actual trigger fire time 
+            can be greater than one after calling <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/>.
+            </para>
+            <para>
+            If job with the same name within the same group already exists it will be recreated.
+            </para>
+            <para>
+            If trigger can not be fired immediately it will be fired as soon as possible.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler,System.Int32)">
+            <summary>
+            Plans a task for immediate one-time start of class.
+            </summary>
+            <typeparam name="T">Type of a task.</typeparam>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which class must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <param name="priority">Triggers priority. Default value = 5.</param>
+            <remarks>
+            <para>
+            In contrast to <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/>, the <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler,System.Int32)"/> schedules job
+            with next fire time set to now, while <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> triggers job immediately.
+            As a result, delay between <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler,System.Int32)"/> call and actual trigger fire time
+            can be greater than one after calling <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/>.
+            </para>
+            <para>
+            If job with the same name within the same group already exists it will be recreated.
+            </para>
+            <para>
+            If trigger can not be fired immediately it will be fired as soon as possible.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)">
+            <summary>
+            Creates a task for immediate one-time start of process.
+            </summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="processName">Process name.</param>
+            <param name="workspaceName">Workspace in which process must be started.</param>
+            <param name="userName">The user on whose behalf process will be started.</param>
+            <param name="parameters">The parameters that will be passed to the process.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <remarks>
+            <para>
+            In contrast to <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/>, the <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> triggers job
+            immediately, while <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> schedules job with next fire time set to now.
+            As a result, delay between <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> call and actual trigger fire can be smaller
+            than one after calling <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/>.
+            </para>
+            <para>
+            If job with the same name within the same group already exists it will be recreated.
+            </para>
+            <para>
+            If trigger can not be fired immediately it will be fired as soon as possible.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)">
+            <summary>
+            Creates a task for immediate one-time start of class.
+            </summary>
+            <typeparam name="T">Type of a task.</typeparam>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which class must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <remarks>
+            <para>
+            In contrast to <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler,System.Int32)"/>, the <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> triggers job
+            immediately, while <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler,System.Int32)"/> schedules job with next fire time set to now.
+            As a result, delay between <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.TriggerJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/> call and actual trigger fire can be smaller
+            than one after calling <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler,System.Int32)"/>.
+            </para>
+            <para>
+            If job with the same name within the same group already exists it will be recreated.
+            </para>
+            <para>
+            If trigger can not be fired immediately it will be fired as soon as possible.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.CreateIntermediateTimerJob(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>Создание задания для регистрации промежуточного обрабатывающего таймера
+            бизнес-процесса.</summary>
+            <param name="jobName">Название задания.</param>
+            <param name="jobGroup">Название группы, к которой относится задание.</param>
+            <param name="processElementUId">Идентификатор элемента "Таймер" процесса.</param>
+            <param name="workspaceName">Рабочее пространство, в котором необходимо запустить процесс.</param>
+            <param name="userName">Пользователь, от имени которого будет запускаться процесс.</param>
+            <param name="isSystemUser">Признак системного пользователя. Если значение <c>true</c>, процесс будет
+            запускаться от имени пользователя, полученного из системной настройки <c>"Пользователь для выполнения
+            системных операций"</c>.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">Если в качестве одного из 
+            параметров <paramref name="jobName"/>, 
+            <paramref name="jobGroup"/>, <paramref name="processElementUId"/>, <paramref name="workspaceName"/>, 
+            <paramref name="userName"/> передано пустое значение или <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.RemoveJob(System.String,System.String)">
+            <summary>Remove the specified job in the specified group.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">Job group name.</param>
+            <returns><c>true</c>, if <paramref name="jobGroup"/> has jobs, else - <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobName"/> empty or <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.RemoveJob(System.String,System.String,Quartz.IScheduler)">
+            <summary>Remove the specified job in the specified group.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">Job group name.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <returns><c>true</c>, if <paramref name="jobGroup"/> has jobs, else - <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobName"/> empty or <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="scheduler"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.DoesJobExist(System.String,System.String)">
+            <summary>Checks whether Job exists.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">Job group name.</param>
+            <returns><c>true</c> if Job with <paramref name="jobName"/> and
+            <paramref name="jobGroup"/> exists, otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.DoesJobExist(System.String,System.String,Quartz.IScheduler)">
+            <summary>Checks whether Job exists.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">Job group name.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <returns><c>true</c> if Job with <paramref name="jobName"/> and
+            <paramref name="jobGroup"/> exists, otherwise returns <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobName"/> empty or <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="scheduler"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.DoesJobGroupExist(System.String)">
+            <summary>Checking the existence of jobs in a given group.</summary>
+            <param name="jobGroup">Group name.</param>
+            <returns><c>true</c>, if <paramref name="jobGroup"/> has jobs, else - <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.DoesJobGroupExist(System.String,Quartz.IScheduler)">
+            <summary>Checking the existence of jobs in a given group.</summary>
+            <param name="jobGroup">Group name.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+            <returns><c>true</c>, if <paramref name="jobGroup"/> has jobs, else - <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="scheduler"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.RemoveGroupJobs(System.String)">
+            <summary>Remove all jobs in the specified group.</summary>
+            <param name="jobGroup">Group name.</param>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.RemoveGroupJobs(System.String,Quartz.IScheduler)">
+            <summary>Remove all jobs in the specified group.</summary>
+            <param name="jobGroup">Group name.</param>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="scheduler"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.AddScheduler(Quartz.IScheduler)">
+            <summary>
+            Adds scheduler inctance to collection.
+            </summary>
+            <param name="scheduler">Instance of <see cref="T:Quartz.IScheduler"/>.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.StartSchedulers">
+            <summary>
+            Starts all Quartz.IScheduler's threads.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.ShutdownSchedulers(System.Boolean)">
+            <summary>
+            Halts all Quartz.IScheduler's threads and cleans up all resources associated with the Scheduler.
+            </summary>
+            <param name="waitForJobsToComplete">If true the scheduler will not allow this method to return until
+            all currently executing jobs have complete.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.FindScheduler(System.String)">
+            <summary>
+            Returns an instance of the scheduler with the specified name.
+            </summary>
+            <param name="schedulerName">Scheduler name.</param>
+            <returns>Instance of <see cref="T:Quartz.IScheduler"/>.</returns>
+            <exception cref="T:Terrasoft.Common.ArgumentEmptyException">If <paramref name="schedulerName"/> empty or null.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.SetDefaultScheduler(System.String)">
+            <summary>
+            Finds scheduler by name and set it as default.
+            </summary>
+            <param name="schedulerName">Default scheduler name.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentEmptyException">If <paramref name="schedulerName"/> empty or null.</exception>
+            <exception cref="T:System.InvalidOperationException">If scheduler with specified name not found.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.GetJobKeysForJobGroup(System.String)">
+            <summary>
+            Returns job names registered in <paramref name="jobGroupName"/>.
+            </summary>
+            <param name="jobGroupName">Job name.</param>
+            <returns>Job names list.</returns>
+            <remarks>Will use JOB_DETAILS as information source.</remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppScheduler.GetActiveTriggerKeysForJobGroup(System.String)">
+            <summary>
+            Returns active job names registered in <paramref name="jobGroupName"/>.
+            </summary>
+            <param name="jobGroupName">Job name.</param>
+            <returns>Job names list.</returns>
+            <remarks>Will check that trigger exists for job.</remarks>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.AppSchedulerFactory">
+            <summary>
+            Provides methods to create scheduler instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerFactory.CreateScheduler(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates a new instance of scheduler.
+            </summary>
+            <param name="props">Properties used for create scheduler instance.</param>
+            <returns>New instance of scheduler.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerFactory.CreateScheduler(System.Collections.Specialized.NameValueCollection,Quartz.Simpl.SimpleJobFactory)">
+            <summary>
+            Creates a new instance of scheduler.
+            </summary>
+            <param name="props">Properties used to create scheduler instance.</param>
+            <param name="jobFactory">Job factory used to create scheduler instance.</param>
+            <returns>New instance of scheduler.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.AppSchedulerWraper">
+            <summary>
+            Wrapper class for Quartz.NET scheduler.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.AppSchedulerWraper.Instance">
+            <summary>
+            Scheduler instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.CreateIntermediateTimerJob(System.String,System.String,System.String,System.String,System.String)">
+            <summary>Creates job for intemediate business process timer element.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">Job group name.</param>
+            <param name="processElementUId">Process "Timer" element Id.</param>
+            <param name="workspaceName">Workspace name for process context.</param>
+            <param name="userName">User name for process context.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">When any parameter <paramref name="jobName"/>, 
+            <paramref name="jobGroup"/>, <paramref name="processElementUId"/>, <paramref name="workspaceName"/>, 
+            <paramref name="userName"/> is empty or <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.RemoveJob(System.String,System.String)">
+            <summary>Removes target job from job group.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">Job group name.</param>
+            <returns><c>true</c>, if job <paramref name="jobName"/> succesfully removed from group 
+            <paramref name="jobGroup"/>, else - <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">When any parameter <paramref name="jobName"/>, 
+            <paramref name="jobGroup"/> is empty or <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.ScheduleImmediateJob``1(System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Plans a task for immediate one-time start of class.
+            </summary>
+            <typeparam name="T">Type of a task.</typeparam>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which class must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.DoesJobExist(System.String,System.String)">
+            <summary>Checks existance of job in target job group.</summary>
+            <param name="jobName">Job name.</param>
+            <param name="jobGroup">Job group name.</param>
+            <returns><c>true</c>, if job <paramref name="jobName"/> exists in group
+            <paramref name="jobGroup"/>, else - <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.CreateClassJob(System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Creates the task for class execution.
+            </summary>
+            <param name="className">Class name.</param>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which class must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.CreateClassJob``1(System.String,System.String,Terrasoft.Core.UserConnection,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Creates the task for class execution.
+            </summary>
+            <param name="jobName">The name of the task.</param>
+            <param name="jobGroupName">The name of the group to which the task belongs.</param>
+            <param name="userConnection"></param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.CreateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Creates the task for process execution.
+            </summary>
+            <param name="jobName">Job name.</param>
+            <param name="processName">Process name.</param>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which class must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">Indicates system user.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.DoesJobGroupExist(System.String)">
+            <summary>Checking the existence of jobs in a given group.</summary>
+            <param name="jobGroup">Group name.</param>
+            <returns><c>true</c>, if <paramref name="jobGroup"/> has jobs, elese - <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.RemoveGroupJobs(System.String)">
+            <summary>Remove all jobs in the specified group.</summary>
+            <param name="jobGroup">Group name.</param>
+            <exception cref="T:System.ArgumentException">If <paramref name="jobGroup"/> empty or <c>null</c>.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.FindScheduler(System.String)">
+            <summary>
+            Returns an instance of the scheduler with the specified name.
+            </summary>
+            <param name="schedulerName">Scheduler name.</param>
+            <returns>Instance of <see cref="T:Quartz.IScheduler"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Calls <see cref="M:Terrasoft.Core.Scheduler.AppScheduler.ScheduleImmediateProcessJob(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,Quartz.IScheduler)"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.ScheduleMinutelyJob``1(System.String,System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            A schedule that is used to fire a Job and repeat it at a minutely interval.
+            </summary>
+            <typeparam name="T">Type of a task.</typeparam>
+            <param name="jobGroup">The name of the group to which the task belongs.</param>
+            <param name="workspaceName">Workspace in which job must be started.</param>
+            <param name="userName">The user on whose behalf class will be started.</param>
+            <param name="periodInMinutes">Specify an interval in the minutes that the produced job will repeat at.
+            </param>
+            <param name="parameters">The parameters that will be passed to the class.</param>
+            <param name="isSystemUser">System user flag. If <c>true</c>, Job will run on behalf of the user obtained
+            from <c>"System operations user"</c> system setting.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.ScheduleMinutelyJob(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)">
+            <inheritdoc cref="M:Terrasoft.Core.IAppSchedulerWraper.ScheduleMinutelyJob(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean)"/> 
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.CreateAndScheduleJob``1(System.String,System.String,Terrasoft.Core.UserConnection,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.String,System.Boolean,System.DateTime,System.DateTime,System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.IAppSchedulerWraper.CreateAndScheduleJob``1(System.String,System.String,Terrasoft.Core.UserConnection,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.String,System.Boolean,System.DateTime,System.DateTime,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.GetJobKeysForJobGroup(System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.IAppSchedulerWraper.GetJobKeysForJobGroup(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.AppSchedulerWraper.GetActiveTriggerKeysForJobGroup(System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.IAppSchedulerWraper.GetActiveTriggerKeysForJobGroup(System.String)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.CrossAppDomainJobFactory">
+            <summary>Фабрика для создания задач планировщика, которые должны будут выполняться в другом домене</summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.CrossAppDomainJobFactory.NewJob(Quartz.Spi.TriggerFiredBundle,Quartz.IScheduler)">
+            <summary>Создает задачу. Если это задача для выполнения бизнес-процесса, то создается специальная 
+            "заглушечная" задача, которая выполнит бизнес-процесс в нужном домене приложения</summary>
+            <param name="bundle"></param>
+            <param name="scheduler">Планировщик</param>
+            <returns>Созданный экземпляр задачи либо задачу-"заглушку" для выполнения процесса в другом домене</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.JobOptions">
+            <summary>
+            Provides Job creation options.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.JobOptions.Default">
+            <summary>
+            Gets default Job options.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.JobOptions.RequestsRecovery">
+            <summary>
+            Gets or sets a value indicating whether the scheduler should re-execute the Job if a 'recovery' or
+            'fail-over' situation is encountered.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.JobOptions.IsDurable">
+            <summary>
+            Gets or sets a value indicating whether the Job should remain stored after it is orphaned
+            (no triggers point to it).
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.JobUserConnection">
+            <summary>
+            Job user connection.
+            </summary>
+            <inheritdoc cref="T:Terrasoft.Core.BackgroundUserConnection" />
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.ProcessJobProxy">
+            <summary>A proxy class designed to run jobs from other domains in web application domain.</summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.ProcessJobProxy.AppConnection">
+            <summary>Current web application AppConnection instance.</summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.ProcessJobProxy.Execute(Terrasoft.Core.Scheduler.IWebAppJob,Quartz.IJobExecutionContext)">
+            <summary>Performs the specified task in web application app domain.</summary>
+            <param name="job">The task</param>
+            <param name="context">Task Context</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.ProcessJobStub.Execute(Quartz.IJobExecutionContext)">
+            <summary>Performs the job (starts a business process) in the context of the required domain.</summary>
+            <param name="context">Job context.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.QuartzConfigurationSection">
+            <summary>
+            Represents a "quartzConfig" section within a configuration file
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Scheduler.QuartzConfigurationSection.InstanceNameKey">
+            <summary>
+            Property key contains instance name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzConfigurationSection.DefaultScheduler">
+            <summary>
+            Default scheduler.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzConfigurationSection.Schedulers">
+            <summary>
+            Collection of <see cref="T:Terrasoft.Core.Scheduler.QuartzElement"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.QuartzElement">
+            <summary>
+            Represents a "quartz" element within a configuration file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzElement.IsActive">
+            <summary>
+            Flag that determinants active scheduler instance.
+            If true, that instance starts threads for handle tasks.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzElement.Props">
+            <summary>
+            Returns a "quartz" element properties.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzElement.Key">
+            <summary>
+            Returns value of property "quartz.scheduler.instanceName".
+            </summary>
+            <exception cref="T:System.Exception">If property with key "quartz.scheduler.instanceName"
+            not found or empty.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.QuartzElement.GetSchedulerProps">
+            <summary>
+            Returns a "quartz" element properties as <see cref="T:System.Collections.Specialized.NameValueCollection"/>
+            collection.
+            </summary>
+            <returns>Instance of <see cref="T:System.Collections.Specialized.NameValueCollection"/>.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.QuartzElementCollection">
+            <summary>
+            Represents a collection of <see cref="T:Terrasoft.Core.Scheduler.QuartzElement"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzElementCollection.ElementName">
+            <summary>
+            Name used to identify element.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzElementCollection.CollectionType">
+            <summary>
+            Gets the type of the <see cref="T:System.Configuration.ConfigurationElementCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.QuartzElementCollection.CreateNewElement">
+            <summary>
+            Creates a new <see cref="T:Terrasoft.Core.Scheduler.QuartzElement"/> instance.
+            </summary>
+            <returns>Instance of <see cref="T:Terrasoft.Core.Scheduler.QuartzElement"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.QuartzElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Returns key of element.
+            </summary>
+            <param name="element">Instance of <see cref="T:Terrasoft.Core.Scheduler.QuartzElement"/>.</param>
+            <returns>String key value.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.QuartzPropElement">
+            <summary>
+            Represents a "quartz" element properties within a configuration file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzPropElement.Key">
+            <summary>
+            Key of property.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzPropElement.Value">
+            <summary>
+            Value of property.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.QuartzPropCollection">
+            <summary>
+            Represents a collection of <see cref="T:Terrasoft.Core.Scheduler.QuartzPropElement"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzPropCollection.ElementName">
+            <summary>
+            Name used to identify element.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Scheduler.QuartzPropCollection.CollectionType">
+            <summary>
+            Gets the type of the <see cref="T:System.Configuration.ConfigurationElementCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.QuartzPropCollection.CreateNewElement">
+            <summary>
+            Creates a new <see cref="T:Terrasoft.Core.Scheduler.QuartzPropElement"/> instance.
+            </summary>
+            <returns>Instance of <see cref="T:Terrasoft.Core.Scheduler.QuartzPropElement"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.QuartzPropCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Returns key of element.
+            </summary>
+            <param name="element">Instance of <see cref="T:Terrasoft.Core.Scheduler.QuartzPropElement"/></param>
+            <returns>String key value.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.WebAppJobFactory.#ctor(Terrasoft.Core.AppConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.Scheduler.WebAppJobFactory"/> class.
+            </summary>
+            <param name="appConnection">The application connection.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">appConnection.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.WebAppJobFactory.NewJob(Quartz.Spi.TriggerFiredBundle,Quartz.IScheduler)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.RunAppJob.GetUserConnection(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Gets the user connection.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="timeZoneId">The time zone identifier.</param>
+            <param name="sessionId">The session identifier.</param>
+            <param name="isSystemUser">If set to <c>true</c> then userName is system user.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.SchedulerJob.#ctor(Terrasoft.Core.Scheduler.IWebAppJob)">
+            <summary>
+            Initialize new instance SchedulerJob.
+            </summary>
+            <param name="job">New job.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.SchedulerJob.Execute(Quartz.IJobExecutionContext)">
+            <summary>
+            Performs the job in the context of the required domain.
+            </summary>
+            <param name="context">Job context.</param>
+            <returns>Returns task.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Scheduler.SchedulerJobFactory">
+            <summary>
+            Scheduler job factory used by Quartz.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Scheduler.SchedulerJobFactory.NewJob(Quartz.Spi.TriggerFiredBundle,Quartz.IScheduler)">
+            <summary>
+            Called by the scheduler at the time of the trigger firing, in order to produce a IJob instance
+            on which to call Execute.
+            </summary>
+            <param name="bundle">On TriggerFiredBundle from which the JobDetail and other info relating to the trigger
+            firing can be obtained.</param>
+            <param name="scheduler">Scheduler.</param>
+            <returns>Returns new job.</returns>
+        </member>
+    </members>
+</doc>

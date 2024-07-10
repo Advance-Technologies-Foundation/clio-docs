@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.Process.ActorSystem</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.BatchCancelProcessActor">
+            <summary>
+            Batch process cancellation actor.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.BatchCancelProcessActor.#ctor(Terrasoft.ActorSystem.ManualPoolResizer,Akka.Actor.IActorRef,Akka.Actor.IActorRef)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.BatchCancelProcessActor"/>.
+            </summary>
+            <param name="resizer">An instance of the <see cref="T:Terrasoft.ActorSystem.ManualPoolResizer"/> type.</param>
+            <param name="cancelProcessActor">Cancel process actor.</param>
+            <param name="callBackActor">It receives message after successful resize.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.BatchCancelProcessActor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.BatchCancelProcessActor"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Process.ActorSystem.BatchCancelProcessActor.Stash">
+            <inheritdoc cref="P:Akka.Actor.IActorStash.Stash"/>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.CancelledProcessMessage">
+            <summary>
+            Message that notifies the process cancellation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.CancelledProcessMessage.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.CancelledProcessMessage" /> type.
+            </summary>
+            <param name="successfullyCancelled">Successfully cancelled.</param>
+        </member>
+        <member name="P:Terrasoft.Core.Process.ActorSystem.CancelledProcessMessage.SuccessfullyCancelled">
+            <summary>
+            Process was successfully cancelled.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.CancelProcessActor">
+            <summary>
+            Actor which cancels the execution of the process.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.CancelProcessActor.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.CancelProcessActor"/> type.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.ContinueProcessActor">
+            <summary>
+            Actor which continues the execution of the process.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ContinueProcessActor.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.ContinueProcessActor"/> type.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.DBProcessTraceWriterActor">
+            <summary>
+            Represents process trace writer actor, that handles process trace write messages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.DBProcessTraceWriterActor.#ctor">
+            <summary>
+            Base trace actor constructor.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.DBProcessTraceWriterActor.SaveTrace(Terrasoft.Core.Process.Tracing.DBProcessTraceWriteMessage)">
+            <summary>
+            Saves trace content inot trace log schema.
+            </summary>
+            <param name="message">Insert message.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.ExecutionCompletedMessage">
+            <summary>
+            Message that notifies the completion of the process execution.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.ProcessActorsAssemblyProvider">
+            <summary>
+            Represents process actors assembly provider.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessActorsAssemblyProvider.GetActorRootAssemblies">
+            <summary>
+            Returns assemblies containing classes of the root actors.
+            </summary>
+            <returns>A list of assemblies.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessActorsAssemblyProvider.GetRegistratorAssemblies">
+            <summary>
+            Returns assemblies containing classes that implements <see cref="T:Terrasoft.ActorSystem.IActorRegistrator"/> interface.
+            </summary>
+            <returns>An array of assemblies.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.ProcessActorsRegistrator">
+            <summary>
+            Represents method for registration of process actors.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessActorsRegistrator.#ctor">
+            <summary>
+            Process actors registration method.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.ProcessEngineActor">
+            <summary>
+            Root actor of the process actor subsystem.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessEngineActor.#ctor(Akka.Actor.IActorRef,System.Func{Akka.Actor.Props,System.String,Akka.Actor.IActorRef})">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.ProcessEngineActor" /> type for test purposes.
+            </summary>
+            <param name="startProcessActor">The start process actor reference.</param>
+            <param name="childrenFactory">Child actor factory.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessEngineActor.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.ProcessEngineActor"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessEngineActor.GetProcessExecutionActorName(System.Guid)">
+            <summary>
+            Gets the name of the process execution actor for the specified process.
+            </summary>
+            <param name="processUId">The process unique identifier.</param>
+            <returns>The name of the actor.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.ProcessExecutionActor">
+            <summary>
+            Actor which continues or cancels the process.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessExecutionActor.#ctor(Akka.Actor.IActorRef,Akka.Actor.IActorRef,System.Nullable{System.TimeSpan})">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.ProcessExecutionActor" /> type.
+            </summary>
+            <param name="continueProcessActor">The continue process actor.</param>
+            <param name="cancelProcessActor">The cancel process actor.</param>
+            <param name="receiveTimeout">The receive timeout. If <c>null</c> then actor waits messages indefinitely.
+            </param>
+        </member>
+        <member name="P:Terrasoft.Core.Process.ActorSystem.ProcessExecutionActor.Stash">
+            <summary>
+            Gets or sets the stash.
+            This will be automatically populated by the framework AFTER the constructor has been run.
+            Implement this as an auto property.
+            </summary>
+            <value>The stash.</value>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.ProcessMessageStoreActor">
+            <summary>
+            Actor that performs adding and removing operations in store.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.ProcessMessageStoreActor.#ctor">
+            <summary>
+            Creates an instance of <see cref="T:Terrasoft.Core.Process.ActorSystem.ProcessMessageStoreActor"/> and initializes message listeners.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Process.ActorSystem.StartProcessActor">
+            <summary>
+            Actor which starts processes.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.StartProcessActor.#ctor(Akka.Actor.IActorRef)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.StartProcessActor" /> type for test purposes.
+            </summary>
+            <param name="callBackActor">Will receive message after success start of process.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Process.ActorSystem.StartProcessActor.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.Process.ActorSystem.StartProcessActor"/> type.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.ComponentSpace.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore">
+            <summary>
+            Interface provides custom methods for saml session storage.
+            </summary>
+            <remarks>External dependency allocation.</remarks>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore.GetProperty(System.String)">
+            <summary>
+            Returns item from internal session storage.
+            </summary>
+            <param name="key">Item key.</param>
+            <returns>Item value.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore.SetProperty(System.String,System.Object)">
+            <summary>
+            Stores item to internal session storage.
+            </summary>
+            <param name="key">Item key.</param>
+            <param name="value">Item value.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ICustomSamlSessionStore.ClearSession(System.String)">
+            <summary>
+            Clears all <paramref name="sessionId"/> data from session storage.
+            </summary>
+            <param name="sessionId">Saml session identifier.</param>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata">
+            <summary>
+            Methods for SAML metadata processing and generation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata.GetSpMetadata(System.String)">
+            <summary>
+            Returns SAML metadata instance for <paramref name="creatioUrl"/>.
+            </summary>
+            <param name="creatioUrl">Creatio instance url.</param>
+            <returns>XML metadata stream.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlMetadata.ParseIdpMetadata(System.Xml.XmlDocument)">
+            <summary>
+            Returns <see cref="T:Terrasoft.Core.Sso.SsoIdentityProvider"/> instance parced from <paramref name="metadata"/>.
+            </summary>
+            <param name="metadata">Raw identity provider metadata.</param>
+            <returns><see cref="T:Terrasoft.Core.Sso.SsoIdentityProvider"/> instance.</returns>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi">
+            <summary>
+            Interface provides SAML service provider API methods.
+            </summary>
+            <remarks>External dependency allocation.</remarks>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSso(System.String)">
+            <summary>
+            Initiates SSO session.
+            </summary>
+            <param name="partnerIdP">SAML partner identifier.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSso(System.Guid)">
+            <summary>
+            Initiates SSO session.
+            </summary>
+            <param name="partnerIdPId">SAML partner identifier.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.ReceiveSso">
+            <summary>
+            Process recived SSO session data.
+            </summary>
+            <returns>Claim attributes dictionary.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.InitiateSlo(System.String)">
+            <summary>
+            Starts single logout flow for <paramref name="partnerIdP"/>.
+            </summary>
+            <param name="partnerIdP">Partner identity provider name.</param>
+            <returns>Redirect page path.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.ReceiveSlo">
+            <summary>
+            Tells the application if logout operation needs to be done.
+            </summary>
+            <returns> Sign of request action, if true then need to close session,
+            if false then need to redirect.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.SendSlo">
+            <summary>
+            Completes SP-initiated SLO.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.GetCanDoSlo">
+            <summary>
+            Checks is single logout can be executed.
+            </summary>
+            <returns><c>True</c> if SLO can be executed. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.SetUserType(System.String)">
+            <summary>
+            Set user type to SSO session store.
+            </summary>
+            <param name="userType">User type.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlServiceProviderApi.GetUserType">
+            <summary>
+            Gets user type.
+            </summary>
+            <returns>User type.</returns>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore">
+            <summary>
+            Saml session storage interface.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.SsoSessionRequestCookieValue">
+            <summary>
+            Sso session cookie from <see cref="T:System.Web.HttpRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.Load(System.Type)">
+            <summary>
+            Loads <paramref name="type"/> object from storage to memory.
+            </summary>
+            <param name="type"><see cref="T:System.Type"/> instance.</param>
+            <returns>Type object from storage instance.</returns>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.Save(System.Object)">
+            <summary>
+            Saves <paramref name="ssoSession"/> object to storage
+            </summary>
+            <param name="ssoSession">Session object instance.</param>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.InitInstance">
+            <summary>
+            Initializes store instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.LoadEmptySsoSession">
+            <summary>
+            Loads empty single sign on session from storage to instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ComponentSpace.Interfaces.ISamlSessionStore.GetEmptySsoSession">
+            <summary>
+            Returns empty single sign on session from instance.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.Interfaces.SamlConsts">
+            <summary>
+            Saml constants class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.SamlUserNameAttribute">
+            <summary>
+            Saml name id property name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.StartSsoParameterName">
+            <summary>
+            Stars service initiated SSO flow query parameter name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.UseSsoParameterName">
+            <summary>
+            Use service initiated SSO flow query parameter name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.InitSloServicePath">
+            <summary>
+            Service initiated SLO flow entry point path.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.SessionCookieName">
+            <summary>
+            Cookie name for single sign on session.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.ReturnUrlHash">
+            <summary>
+            Key of QueryCollection in response.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.UserTypeCookieName">
+            <summary>
+            Cookie name for user type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.SsoRequestedPropertyName">
+            <summary>
+            Single login flow requested property name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.SsoLogoutCookieName">
+            <summary>
+            Single logout cookie name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.AssertionConsumerServicePath">
+            <summary>
+            SAML assertion consumer entry point path.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.SingleLogoutServicePath">
+            <summary>
+            Single logout entry point path.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.HttpPostBindingType">
+            <summary>
+            SAML endpoint HTTP-POST binding type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.HttpRedirectBindingType">
+            <summary>
+            SAML endpoint HTTP-Redirect binding type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.HasSsoSession">
+            <summary>
+            User logged in using SSO.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ComponentSpace.Interfaces.SamlConsts.EndSessionOnSloParameterName">
+            <summary>
+            End creatio session on slo flag.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ComponentSpace.Interfaces.ServiceProviderApiException">
+            <summary>
+            <see cref="T:System.IServiceProvider"/> instance exception.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,88 @@
+2024-05-25 08:55:50,645 --> PackageDBStorage.Load
+2024-05-25 08:55:51,959 <-- PackageDBStorage.Load
+2024-05-25 09:00:40,848 --> PackageZipFileStorage.Load
+2024-05-25 09:00:40,848 --> PackageZipFileStorage.UnZipPackages
+2024-05-25 09:00:40,905 <-- PackageZipFileStorage.UnZipPackages
+2024-05-25 09:00:40,939 <-- PackageZipFileStorage.Load
+2024-05-25 09:00:40,939 --> PackageStorageComposer.Compose
+2024-05-25 09:00:40,939 --> PackageStorageComposer.SpecifySourceStorageChanges
+2024-05-25 09:00:40,939 <-- PackageStorageComposer.SpecifySourceStorageChanges
+2024-05-25 09:00:40,939 --> IntermediatePackageStorage.ActualizePackageResourcesState
+2024-05-25 09:00:40,939 <-- IntermediatePackageStorage.ActualizePackageResourcesState
+2024-05-25 09:00:40,939 <-- PackageStorageComposer.Compose
+2024-05-25 09:00:41,218 --> PackageZipFileStorage.Load
+2024-05-25 09:00:41,218 --> PackageZipFileStorage.UnZipPackages
+2024-05-25 09:00:41,218 <-- PackageZipFileStorage.UnZipPackages
+2024-05-25 09:00:41,257 <-- PackageZipFileStorage.Load
+2024-05-25 09:00:41,273 --> PackageStorageComposer.Compose
+2024-05-25 09:00:41,273 --> PackageStorageComposer.SpecifySourceStorageChanges
+2024-05-25 09:00:41,273 <-- PackageStorageComposer.SpecifySourceStorageChanges
+2024-05-25 09:00:41,273 --> IntermediatePackageStorage.ActualizePackageResourcesState
+2024-05-25 09:00:41,273 <-- IntermediatePackageStorage.ActualizePackageResourcesState
+2024-05-25 09:00:41,273 <-- PackageStorageComposer.Compose
+2024-05-25 09:00:41,506 --> PackageDBStorageInternal.SavePackage - cliogate_netcore
+2024-05-25 09:00:41,515 --> PackageDBStorage.Load
+2024-05-25 09:00:41,531 <-- PackageDBStorage.Load
+2024-05-25 09:00:41,620 <-- PackageDBStorageInternal.SavePackage - cliogate_netcore
+2024-05-25 09:00:41,665 Schema 'RealogCSS' not found in ClientUnitSchemaManager
+2024-05-25 09:00:41,665 Schema 'RealogCSS' not found in ClientUnitSchemaManager
+2024-05-25 09:00:41,665 Schema 'Realog' not found in ClientUnitSchemaManager
+2024-05-25 09:00:41,683 Added - 1 ru-RU resource values for schema 'SystemDesigner'
+2024-05-25 09:00:41,683 Added - 1 en-US resource values for schema 'SystemDesigner'
+2024-05-25 09:00:41,690 Schema 'Realog' not found in ClientUnitSchemaManager
+2024-05-25 09:00:45,296 InstallColumnLookupValues. Count (total): 1
+2024-05-25 09:00:45,296 Count (by package [e24226f9-c177-458f-af34-9338e2699983]): 2
+2024-05-25 09:00:45,296 Count (by schema [SysAdminOperationGrantee]): 1
+2024-05-25 09:00:45,312 Count (by schema [SysAdminOperation]): 2
+2024-05-25 09:00:56,001 --> PackageDBStorage.Load
+2024-05-25 09:00:57,512 <-- PackageDBStorage.Load
+2024-05-25 09:00:58,707 --> PackageDBStorage.Load
+2024-05-25 09:01:00,226 <-- PackageDBStorage.Load
+2024-05-25 09:10:01,961 --> PackageDBStorage.Load
+2024-05-25 09:10:02,859 --> PackageDBStorage.Load
+2024-05-25 09:10:03,319 <-- PackageDBStorage.Load
+2024-05-25 09:10:04,352 <-- PackageDBStorage.Load
+2024-05-25 09:10:14,783 --> PackageInstallUtilities.LoadPackagesToFileSystem
+2024-05-25 09:10:14,783 --> PackageStorageComposer.Compose
+2024-05-25 09:10:14,783 --> PackageFileDesignModeDBStorage.Load
+2024-05-25 09:10:24,539 <-- PackageFileDesignModeDBStorage.Load
+2024-05-25 09:10:24,539 --> PackageFileDesignModeStorage.Load
+2024-05-25 09:10:24,547 <-- PackageFileDesignModeStorage.Load
+2024-05-25 09:10:24,547 --> PackageStorageComposer.SpecifySourceStorageChanges
+2024-05-25 09:10:24,547 <-- PackageStorageComposer.SpecifySourceStorageChanges
+2024-05-25 09:10:24,547 --> PackageFileDesignModeStorage.ActualizePackageResourcesState
+2024-05-25 09:10:24,547 <-- PackageFileDesignModeStorage.ActualizePackageResourcesState
+2024-05-25 09:10:24,547 <-- PackageStorageComposer.Compose
+2024-05-25 09:10:24,571 --> PackageFileDesignModeStorage.Save: Packages [141] Schemas [5361] ReferenceAssemblies [33] SqlScripts [918] PackageData [2887] SchemaResources [114409] CoreResources [0]
+2024-05-25 09:10:24,571 --> PackageFileDesignModeStorage.MarkNotEditablePackagesAsNotChanged
+2024-05-25 09:10:24,571 <-- PackageFileDesignModeStorage.MarkNotEditablePackagesAsNotChanged
+2024-05-25 09:10:24,577 --> PackageFileDesignModeStorage.SavePackage - Custom
+2024-05-25 09:10:24,577 --> PackageFileDesignModeStorage.SavePackageDescriptor - Custom
+2024-05-25 09:10:24,577 <-- PackageFileDesignModeStorage.SavePackageDescriptor - Custom
+2024-05-25 09:10:24,577 --> PackageFileDesignModeStorage.SavePackageSchemas - Custom
+2024-05-25 09:10:24,577 <-- PackageFileDesignModeStorage.SavePackageSchemas - Custom
+2024-05-25 09:10:24,598 --> PackageFileDesignModeStorage.SavePackageReferenceAssemblies - Custom
+2024-05-25 09:10:24,598 <-- PackageFileDesignModeStorage.SavePackageReferenceAssemblies - Custom
+2024-05-25 09:10:24,598 --> PackageFileDesignModeStorage.SavePackageSqlScripts - Custom
+2024-05-25 09:10:24,598 <-- PackageFileDesignModeStorage.SavePackageSqlScripts - Custom
+2024-05-25 09:10:24,598 --> PackageFileDesignModeStorage.SavePackageData - Custom
+2024-05-25 09:10:24,598 <-- PackageFileDesignModeStorage.SavePackageData - Custom
+2024-05-25 09:10:24,598 <-- PackageFileDesignModeStorage.SavePackage - Custom
+2024-05-25 09:10:24,705 <-- PackageFileDesignModeStorage.Save
+2024-05-25 09:10:24,705 --> PackageInstallUtilities.UpdatePackagesAutogeneratedContent
+2024-05-25 09:10:24,705 --> PackageDBStorage.Load
+2024-05-25 09:10:32,476 <-- PackageDBStorage.Load
+2024-05-25 09:10:47,182 --> PackageInstallUtilities.UpdateWorkspaceSolution
+2024-05-25 09:10:47,182 --> PackageDBStorage.Load
+2024-05-25 09:10:55,622 <-- PackageDBStorage.Load
+2024-05-25 09:11:13,366 <-- PackageInstallUtilities.UpdateWorkspaceSolution
+2024-05-25 09:11:13,366 <-- PackageInstallUtilities.UpdatePackagesAutogeneratedContent
+2024-05-25 09:11:13,366 <-- PackageInstallUtilities.LoadPackagesToFileSystem
+2024-05-25 09:11:41,582 --> PackageDBStorage.Load
+2024-05-25 09:11:52,127 <-- PackageDBStorage.Load
+2024-05-25 09:11:52,217 --> PackageDBStorage.Load
+2024-05-25 09:12:01,111 <-- PackageDBStorage.Load
+2024-05-25 09:14:26,954 --> PackageDBStorage.Load
+2024-05-25 09:14:28,289 <-- PackageDBStorage.Load
+2024-05-25 09:14:28,420 --> PackageDBStorage.Load
+2024-05-25 09:14:29,965 <-- PackageDBStorage.Load

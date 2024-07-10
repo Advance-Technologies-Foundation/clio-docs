@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.OAuthIntegration</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.OAuthIntegration.DTO.ApiResourceInfo">
+            <summary>
+            Represents Identity service API resource.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ApiResourceInfo.Properties">
+            <summary>
+            Resource properties.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.DTO.ClientAppInfo">
+            <summary>
+            Represents Identity service client application.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.ClientId">
+            <summary>
+            Client identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.Enabled">
+            <summary>
+            Specifies if client is enabled.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.Secret">
+            <summary>
+            Client secret.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.ClientName">
+            <summary>
+            Client display name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.Description">
+            <summary>
+            Client description.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.ClientUri">
+            <summary>
+            Uri of the client's site.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.AccessTokenLifetime">
+            <summary>
+            Duration (seconds) of access tokens issued for the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.CustomerId">
+            <summary>
+            Client's identifier as customer.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfo.RedirectUri">
+            <summary>
+            Redirect uri for auth code flow.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest">
+            <summary>
+            Represents client application object to request IdentityServiceWrapper.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.ClientId">
+            <summary>
+            Client identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.CustomerId">
+            <summary>
+            Client's identifier as customer.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.ClientAppName">
+            <summary>
+            Client application display name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.ClientAppDescription">
+            <summary>
+            Client app description.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.ClientAppUri">
+            <summary>
+            Uri of the client's site.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.AccessTokenLifetime">
+            <summary>
+            Duration (seconds) of access tokens issued for the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.SystemUserId">
+            <summary>
+            Id of the user under which actions in the system are performed.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.Enabled">
+            <summary>
+            Specifies if client is enabled.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest.RedirectUris">
+            <summary>
+            Redirect uri for auth code flow.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.DTO.ClientResources">
+            <summary>
+            Client resources description.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientResources.ClientId">
+            <summary>
+            The client id.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientResources.ClientName">
+            <summary>
+            The name of the client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientResources.ClientUri">
+            <summary>
+            The client URI.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientResources.CustomerId">
+            <summary>
+            The customer identifier (CID).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientResources.Resources">
+            <summary>
+            The resources.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientScopesRequest.ClientId">
+            <summary>
+            The client identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ClientScopesRequest.AllowedScopes">
+            <summary>
+            Scopes to be added.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.DTO.ExpirableResourceInfo">
+            <summary>
+            Represents expirable Identity service resource.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ExpirableResourceInfo.ExpirationDate">
+            <summary>
+            Resource expiration UTC date (if any determined).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ExpirableResourceInfo.AdditionalProperties">
+            <summary>
+            Gets or sets a additional properties.
+            </summary>
+            <value>
+            The additional properties.
+            </value>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.FindIdentityClientsFilter.CustomerIds">
+            <summary>
+            The customer id list.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.FindIdentityClientsFilter.ClientId">
+            <summary>
+            The client identifier.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.DTO.ResourceInfo">
+            <summary>
+            Represents Identity service resource.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ResourceInfo.Name">
+            <summary>
+            Resource unique name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ResourceInfo.DisplayName">
+            <summary>
+            Display name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ShortIdentityClientInfo.ClientId">
+            <summary>
+            Client identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ShortIdentityClientInfo.ClientName">
+            <summary>
+            Client display name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ShortIdentityClientInfo.Description">
+            <summary>
+            Client description.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.DTO.ShortIdentityClientInfo.CustomerId">
+            <summary>
+            Client's identifier as customer.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.Exception.ApiServerConnectivityException">
+            <summary>
+            The exception that is thrown when api call failes due to client timeout, network problems, DNS failure, etc.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.Exception.ApiServerConnectivityException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.OAuthIntegration.Exception.ApiServerConnectivityException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.Exception.ApiServerConnectivityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.OAuthIntegration.Exception.ApiServerConnectivityException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference
+            if no inner exception is specified.</param>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.Exception.ApiServerException">
+            <summary>
+            The exception that is thrown when wrapper gets error from api server.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.Exception.ApiServerException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.OAuthIntegration.Exception.ApiServerException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.Exception.ApiServerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.OAuthIntegration.Exception.ApiServerException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference
+            if no inner exception is specified.</param>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.Exception.OAuthForbiddenException">
+            <summary>
+            The exception that is thrown when the requested resource is not accessible.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.Exception.OAuthForbiddenException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.OAuthIntegration.Exception.ApiServerException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.Exception.OAuthUnauthorizedException">
+            <summary>
+            The exception that is thrown when the oauth request is not authorized
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.Exception.OAuthUnauthorizedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.OAuthIntegration.Exception.ApiServerException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.HealthCheck.EnableOAuthHealthCheck">
+            <summary>
+            Indicates whether to enable health check for the OAuth functionality.
+            </summary>
+            <inheritdoc cref="T:Creatio.FeatureToggling.FeatureMetadata"/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.HealthCheck.EnableOAuthHealthCheck.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.OAuthIntegration.HealthCheck.EnableOAuthHealthCheck"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.HealthCheck.IOAuthHealthCheckService">
+            <summary>
+            Provides the state of the OAuth functionality
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.HealthCheck.IOAuthHealthCheckService.GetHealthStatus">
+            <summary>
+            Checks the state of the OAuth functionality
+            </summary>
+            <returns>An object that represents current state of the OAuth functionality</returns>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckService">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckService.#ctor(Terrasoft.Core.SystemUserConnection)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckService"/>.
+            </summary>
+            <param name="systemUserConnection">System UserConnection.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckService.GetHealthStatus">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckStatus">
+            <summary>
+            An object that contains a status of the OAuth functionality state
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckStatus.HasProblem">
+            <summary>
+            Indicates whether there is a problem 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckStatus.IsSystemSettingsFilledIn">
+            <summary>
+            Indicates whether OAuth system setting is filled in
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckStatus.IsIdentityServiceAvailable">
+            <summary>
+            Indicates whether IdentityService is available
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckStatus.IsAccessTokenRetrievableForSystemActions">
+            <summary>
+            Indicates whether access token for system actions is retrievable 
+            </summary>
+        </member>
+        <member name="P:Terrasoft.OAuthIntegration.HealthCheck.OAuthHealthCheckStatus.Message">
+            <summary>
+            Additional message.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.IsIdentityClientInitialized">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.AddResource(Terrasoft.OAuthIntegration.DTO.ApiResourceInfo,System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.GetAccessToken(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.RemoveResource(System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.GetResourcesList(System.String,System.String[],System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.GetResourcesList(System.String,System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.FindClients(Terrasoft.OAuthIntegration.DTO.FindIdentityClientsFilter)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.UpdateResource(Terrasoft.OAuthIntegration.DTO.ApiResourceInfo,System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.AddClient(Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.UpdateClient(Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.RemoveClient(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.GetClientInfo(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.GrantAccess(Terrasoft.OAuthIntegration.DTO.GrantAccessInfo)">
+            <summary>
+            Adds scopes to specified client in IdentityService
+            </summary>
+            <param name="grantAccessInfo">Grant Access Info that contains client id and name of the scopes.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.DeleteClientScopes(Terrasoft.OAuthIntegration.DTO.ClientScopesRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.CreateClientUser(System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.DeactivateUser(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.ActivateUser(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.RemoveClientUser(System.String,System.String)">
+            <summary>
+            Removes user access to specified client.
+            </summary>
+            <param name="clientId">Client Identifier.</param>
+            <param name="userId">User subject at Identity.</param>
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IdentityServiceWrapper.RemoveAllClientUser(System.String)">
+            <summary>
+            Removes specified client.
+            </summary>
+            <param name="clientId">Client Identifier.</param>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.IIdentityServiceWrapper">
+            <summary>
+            Represents calls to IdentityService API.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.IsIdentityClientInitialized">
+            <summary>
+            Checks if all required params for IdentityService client were initialized.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.AddResource(Terrasoft.OAuthIntegration.DTO.ApiResourceInfo,System.String[])">
+            <summary>
+            Adds new API resource to IdentityService.
+            </summary>
+            <param name="resource">Resource info.</param>
+            <param name="granteeClientIds">Identifiers of clients to grant access to.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.UpdateResource(Terrasoft.OAuthIntegration.DTO.ApiResourceInfo,System.String[])">
+            <summary>
+            Updates API resource in IdentityService.
+            </summary>
+            <param name="resource">Resource info.</param>
+            <param name="granteeClientIds">Identifiers of clients to grant access to.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.GetAccessToken(System.String)">
+            <summary>
+            Gets token to access IdentityService API.
+            </summary>
+            <param name="scopes">API scopes.</param>
+            <returns>Access token.</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.RemoveResource(System.String[])">
+            <summary>
+            Removes resources from IdentityService.
+            </summary>
+            <param name="resourceIds">Resource identifiers.</param>
+            <returns>Removed resources count.</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.GetResourcesList(System.String,System.String[])">
+            <summary>
+            Gets resources list for given customers.
+            </summary>
+            <param name="resourceType">Resource type.</param>
+            <param name="customerIds">Customers identifiers list.</param>
+            <returns>Resources list.</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.GetResourcesList(System.String,System.String[],System.String)">
+            <summary>
+            Gets resources list for given customers or client identifiers.
+            </summary>
+            <param name="resourceType">Resource type.</param>
+            <param name="customerIds">Customers identifiers list.</param>
+            <param name="clientId">Client identifier.</param>
+            <returns>Resources list.</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.FindClients(Terrasoft.OAuthIntegration.DTO.FindIdentityClientsFilter)">
+            <summary>
+            Finds clients by customer or client identifiers.
+            </summary>
+            <param name="clientsFilter">Filter object.</param>
+            <returns>Client info list.</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.AddClient(Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest)">
+            <summary>
+            Adds new client application to IdentityService.
+            </summary>
+            <param name="clientApp">Client Application info.</param>
+            <returns>Client application info with client id and client secret</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.UpdateClient(Terrasoft.OAuthIntegration.DTO.ClientAppInfoRequest)">
+            <summary>
+            Updates existing client in IdentityService
+            </summary>
+            <param name="clientApp">Client Application info.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.RemoveClient(System.String)">
+            <summary>
+            Removes existing client in IdentityService
+            </summary>
+            <param name="clientId">Client identifier.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.GetClientInfo(System.String)">
+            <summary>
+            Gets client info from IdentityService
+            </summary>
+            <param name="clientId"></param>
+            <returns>Client App Info for specified client.</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.GrantAccess(Terrasoft.OAuthIntegration.DTO.GrantAccessInfo)">
+            <summary>
+            Adds scopes to specified client in IdentityService
+            </summary>
+            <param name="grantAccessInfo">Grant Access Info that contains client id and name of the scopes.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.DeleteClientScopes(Terrasoft.OAuthIntegration.DTO.ClientScopesRequest)">
+            <summary>
+            Removes scopes from specified client in IdentityService
+            </summary>
+            <param name="clientScopes">Grant Access Info that contains client id and name of the scopes.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.CreateClientUser(System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gives user access to a client application with the specified roles.
+            </summary>
+            <param name="clientId">Client identifier.</param>
+            <param name="userId">User subject at Identity.</param>
+            <param name="roles">User roles in the client application.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.DeactivateUser(System.String)">
+            <summary>
+            Deactivates user at Identity.
+            </summary>
+            <param name="userId">User identifier at Identity.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.ActivateUser(System.String)">
+            <summary>
+            Activates user at Identity.
+            </summary>
+            <param name="userId">User identifier at Identity.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.RemoveClientUser(System.String,System.String)">
+            <summary>
+            Removes user access to specified client.
+            </summary>
+            <param name="clientId">Client Identifier.</param>
+            <param name="userId">User subject at Identity.</param>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IIdentityServiceWrapper.RemoveAllClientUser(System.String)">
+            <summary>
+            Removes specified client.
+            </summary>
+            <param name="clientId">Client Identifier.</param>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.IOAuthClientPropertiesGenerator">
+            <summary>
+            Generates client id and secret.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IOAuthClientPropertiesGenerator.GetClientId(System.Int32)">
+            <summary>
+            Generates client id.
+            </summary>
+            <returns>Client id.</returns>
+        </member>
+        <member name="M:Terrasoft.OAuthIntegration.IOAuthClientPropertiesGenerator.GetClientSecret(System.Int32)">
+            <summary>
+            Generates client secret.
+            </summary>
+            <returns>Client secret.</returns>
+        </member>
+        <member name="T:Terrasoft.OAuthIntegration.OAuthClientPropertiesGenerator">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

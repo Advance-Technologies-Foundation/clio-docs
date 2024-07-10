@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Nui.ServiceModel.WebService</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDataService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.SelectQuery)">
+            <summary>
+            Logic to process select query.
+            </summary>
+            <param name="query">Select query settings.</param>
+            <returns>Data filtered by query settings.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDataService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.SelectLocalizationQuery)">
+            <summary>
+            Logic to process select localization query.
+            </summary>
+            <param name="query">Select query settings.</param>
+            <returns>Data filtered by query settings.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDataService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.GetTelephonyConfig)">
+            <summary>
+            Returns telephony parameters config.
+            </summary>
+            <param name="telephonyConfig"><see cref="T:Terrasoft.Nui.ServiceModel.DataContract.GetTelephonyConfig"/> instance.</param>
+            <returns>Telephony parameters config.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDataService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.InsertSysSettingRequest)">
+            <summary>
+            Adds a system setting in the database.
+            </summary>
+            <param name="insertSysSettingRequest">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDataService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.UpdateSysSettingRequest)">
+            <summary>
+            Updates the system setting in the database.
+            </summary>
+            <param name="updateSysSettingRequest">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDataService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.DeleteSysSettingRequest)">
+            <summary>
+            Deletes the system settings from the database.
+            </summary>
+            <param name="deleteSysSettingRequest">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDcmSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.ContractDcmSchema)">
+            <summary>
+            Saves schema.
+            </summary>
+            <param name="schema">Dcm schema.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDcmSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.RemoveDcmSchemaRequest)">
+            <summary>
+            Removes schema.
+            </summary>
+            <param name="schemaRequest">>Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDcmSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.SetEnabledDcmSchemaRequest)">
+            <summary>
+            Sets schema Enabled property.
+            </summary>
+            <param name="request">Request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDcmSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.ValidateDcmFormula)">
+            <summary>
+            Validates the given dcm process formula value.
+            </summary>
+            <param name="validationConfig">The validation configuration.</param>
+            <returns>The result of the validation.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseDcmSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaManagerRequest)">
+            <summary>
+            Return dcm schema manager items.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseProcessManagerService.WriteErrorLog(System.Exception)">
+            <summary>
+            Writes error to log.
+            </summary>
+            <param name="exception">Exception.</param>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseProcessManagerService.CreateErrorResponseWithErrorInfo``1(System.Exception)">
+            <summary>
+            Returns response with error information.
+            </summary>
+            <param name="exception">Exception.</param>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseProcessManagerService.WriteErrorResponse(System.Exception,Terrasoft.Nui.ServiceModel.DataContract.SchemaDesignerResponse)">
+            <summary>
+            Writes error information to response.
+            </summary>
+            <param name="exception">Exception.</param>
+            <param name="response">Response.</param>
+        </member>
+        <member name="P:Terrasoft.Nui.ServiceModel.WebService.BaseProcessUserTaskSchemaManagerService.ProcessUserTaskSchemaManager">
+            <summary>
+            Gets a process user task schema manager.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseProcessUserTaskSchemaManagerService.GetPackageIdByUId(Terrasoft.Core.ISchemaManagerItem{Terrasoft.Core.Process.ProcessUserTaskSchema})">
+            <summary>
+            Returns package Id by the specified package UId.
+            </summary>
+            <param name="managerItem">Manager item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseProcessUserTaskSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.ProcessUserTaskSchemaRequest)">
+            <summary>
+            Returns process user task schemas.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseProcessUserTaskSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.ProcessUserTaskSchemaResetRequest)">
+            <summary>
+            Removes process user task contracts from cache by the specified items.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.BaseProcessUserTaskSchemaManagerService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.ProcessUserTaskSchemaResetAllRequest)">
+            <summary>
+            Removes all the process user task contracts from cache.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.WebService.BaseService">
+            <summary>
+            Base class of ServiceStack services.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Nui.ServiceModel.WebService.BaseService._userConnection">
+            <summary>
+            User connection.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.CampaignSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.CampaignSchemaRequest)">
+            <summary>
+            Returns campaign schema info by request.
+            </summary>
+            <param name="schemaRequest">>Request object.</param>
+            <returns>Campaign schema info.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.CampaignSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ContractCampaignSchema)">
+            <summary>
+            Saves campaign schema.
+            </summary>
+            <param name="schema">Campaign schema contract.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.CampaignSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.CampaignValidateRequest)">
+            <summary>
+            Validates campaign schema.
+            </summary>
+            <param name="schema">Campaign schema contract.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.GetDcmUIds(Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaInfoItemsRequest)">
+            <summary>
+            Return dcm schema manager item UIds.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>List of UIds.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.GetDcmSchemaInfo(System.Guid)">
+            <summary>
+            Returns schema info by UId.
+            </summary>
+            <param name="uId">>Request object.</param>
+            <returns>Dcm schema info.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaRequest)">
+            <summary>
+            Returns schema info by request.
+            </summary>
+            <param name="request">>Request object.</param>
+            <returns>Dcm schema info.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaInfoRequest)">
+            <summary>
+            Returns DCM schema info.
+            </summary>
+            <param name="request">An instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaInfoRequest"/> request type.</param>
+            <returns>An instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaInfoResponse"/> response type.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaInfoItemsRequest)">
+            <summary>
+            Returns DCM schema info collection.
+            </summary>
+            <param name="request">An instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaInfoItemsRequest"/> request type.</param>
+            <returns>An instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaInfoItemsResponse`1"/> response type.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ContractDcmSchema)">
+            <summary>
+            Saves schema.
+            </summary>
+            <param name="schema">Dcm schema.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.RemoveDcmSchemaRequest)">
+            <summary>
+            Removes schema.
+            </summary>
+            <param name="schemaRequest">>Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.SetEnabledDcmSchemaRequest)">
+            <summary>
+            Sets schema Enabled property.
+            </summary>
+            <param name="request">Request.</param>
+            <returns>Returns object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ValidateDcmFormula)">
+            <summary>
+            Validates the given dcm process formula value.
+            </summary>
+            <param name="validationConfig">The validation configuration.</param>
+            <returns>The result of the validation.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.DcmRunningProcessRequest)">
+            <summary>
+            Returns dcm running process.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.DcmSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.DcmSchemaManagerRequest)">
+            <summary>
+            Return dcm schema manager items.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.WebService.EmbeddedProcessSchemaManagerService">
+            <summary>
+            The service for embedded process schema manager.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Nui.ServiceModel.WebService.EmbeddedProcessSchemaManagerService.ProcessSchemaManager">
+            <summary>
+            Gets the process schema manager.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Nui.ServiceModel.WebService.EmbeddedProcessSchemaManagerService.SchemaDesigner">
+            <summary>
+            Gets or sets instance that implements the <see cref="T:Terrasoft.Nui.ServiceModel.WebService.IEmbeddedProcessSchemaDesigner"/> interface.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.EmbeddedProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.EmbeddedProcessSchemaRequest)">
+            <summary>
+            Returns the embedded process schema data.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.EmbeddedProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ContractEmbeddedProcessSchema)">
+            <summary>
+            Saves the embedded process schema.
+            </summary>
+            <param name="processSchema">Contract embedded process schema.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.EmbeddedProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ValidateEmbeddedProcessFormula)">
+            <summary>
+            Validates the given embedded process formula value.
+            </summary>
+            <param name="validationConfig">The validation configuration.</param>
+            <returns>The result of the validation.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.AggregatedEntitySchemaRequest)">
+            <summary>
+            Returns response that encapsulates aggregated entity schema data.
+            </summary>
+            <param name="request">Request <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.AggregatedEntitySchemaRequest"/>.</param>
+            <returns>Instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.SchemaResponse`1"/> class.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.AggregatedClientUnitSchemaRequest)">
+            <summary>
+            Returns response that encapsulates aggregated client unit schema data.
+            </summary>
+            <param name="request">Request <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.AggregatedClientUnitSchemaRequest"/>.</param>
+            <returns>Instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.SchemaResponse`1"/> class.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.EntitySchemaManagerRequest)">
+            <summary>
+            Returns a collection of entity schema items.
+            </summary>
+            <param name="request">Instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.EntitySchemaManagerRequest"/>.</param>
+            <returns>Instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.SchemaManagerResponse`1"/> with
+            Entity schema items.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.GetUserPropertyRequest)">
+            <summary>
+            Returns user property name and value.
+            </summary>
+            <param name="userPropertyRequest">User property request.</param>
+            <returns>Returns user property name and value.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.GetUserPropertiesRequest)">
+            <summary>
+            Returns user properties.
+            </summary>
+            <param name="userPropertyRequest">User property request.</param>
+            <returns>Returns user properties.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.SetUserPropertyRequest)">
+            <summary>
+            Sets user property.
+            </summary>
+            <param name="userPropertyRequest">User property request.</param>
+            <returns>Sets user property.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.SetUserPropertiesRequest)">
+            <summary>
+            Sets user properties.
+            </summary>
+            <param name="userPropertyRequest">User property request.</param>
+            <returns>Sets user properties.</returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.WebService.ProcessDashboardService">
+            <summary>
+            Represents process dashboard service.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessDashboardService.#ctor(Terrasoft.Core.Process.IProcessEntityDataStorage)">
+            <summary>
+            Creates a new instance oif the <see cref="T:Terrasoft.Nui.ServiceModel.WebService.ProcessDashboardService"/> class.
+            </summary>
+            <param name="processEntityDataStorage">Instance that implements the <see cref="T:Terrasoft.Core.Process.IProcessEntityDataStorage"/>
+            interface.</param>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessDashboardService.#ctor">
+            <summary>
+            Creates a new instance oif the <see cref="T:Terrasoft.Nui.ServiceModel.WebService.ProcessDashboardService"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessDashboardService.Post(Terrasoft.Nui.ServiceModel.DataContract.ProcessActionDashboardRequest)">
+            <summary>
+            Returns data of the process action dashboard items.
+            </summary>
+            <param name="request">Process action dashboard request.</param>
+            <returns>Instance of the <see cref="T:Terrasoft.Nui.ServiceModel.DataContract.SelectQueryResponse"/> class.</returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService">
+            <summary>
+            The service for process schema manager.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ProcessSchemaRequest)">
+            <summary>
+            Returns the process schema data.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ContractProcessSchema)">
+            <summary>
+            Saves the process schema.
+            </summary>
+            <param name="processSchema">Contract process schema.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.RemoveProcessSchemaRequest)">
+            <summary>
+            Removes process schema.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ProcessStatisticInfoRequest)">
+            <summary>
+            Response process log statistic data.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ProcessMultiInstanceStatisticInfoRequest)">
+            <summary>
+            Returns multi-instance process log statistic data.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ValidateProcessFormula)">
+            <summary>
+            Validates the given process formula value.
+            </summary>
+            <param name="validationConfig">The validation configuration.</param>
+            <returns>The result of the validation.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.GetLazyPropertiesRequest)">
+            <summary>
+            Saves the process schema.
+            </summary>
+            <param name="request">Contract process schema.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessUserTaskSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ProcessUserTaskSchemaRequest)">
+            <summary>
+            Returns process user task schemas.
+            </summary>
+            <param name="request">Request object.</param>
+            <returns>Response object.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessUserTaskSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ProcessUserTaskSchemaResetRequest)">
+            <summary>
+            Removes process user task contracts from cache by the specified items.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.ProcessUserTaskSchemaManagerService.Post(Terrasoft.Nui.ServiceModel.DataContract.ProcessUserTaskSchemaResetAllRequest)">
+            <summary>
+            Removes all the process user task contracts from cache.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.WebService.SchemaDesignerUtilitiesService">
+            <summary>
+            SchemaDesignerUtilitiesService class.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Nui.ServiceModel.WebService.SchemaDesignerUtilitiesService._workspaceUtilities">
+            <summary>
+            Workspace utilities.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Nui.ServiceModel.WebService.SchemaDesignerUtilitiesService._lockerManager">
+            <summary>
+            Locker manager.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.SchemaDesignerUtilitiesService.Post(Terrasoft.Nui.ServiceModel.DataContract.GetSchemasWithForeignLockRequest)">
+            <summary>
+            Returns schemas with foreign lock.
+            </summary>
+            <param name="request">Request.</param>
+            <returns>Schemas with foreign lock.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.WebService.SspDataService.InternalPost(Terrasoft.Nui.ServiceModel.DataContract.SelectQuery)">
+            <summary>
+            Logic for SSP users to process select query.
+            </summary>
+            <param name="query">Select query settings.</param>
+            <returns>Data filtered by query settings.</returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.ServiceStackCompatibleAttribute">
+            <summary>
+            Used to mimic ServiceStack's behavior on exception.
+            </summary>
+            <remarks>Attribute was added only in compatibility considerations and does nothing.</remarks>
+        </member>
+    </members>
+</doc>

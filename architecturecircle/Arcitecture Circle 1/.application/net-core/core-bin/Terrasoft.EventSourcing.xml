@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.EventSourcing</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.EventSourcing.Configuration.EventSourcingConfigurationSection">
+            <summary>
+            Represents "eventSourcing" section within a configuration file.
+            </summary>
+        </member>
+    </members>
+</doc>

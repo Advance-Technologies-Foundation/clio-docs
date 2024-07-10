@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Store.WebAdapters</name>
+    </assembly>
+    <members>
+        <member name="P:Terrasoft.Store.WebAdapters.Proxies.CacheRequestLoggingProxy.IsLocalCache">
+            <summary>
+            Признак, определяющий, что данные хранятся в локальной памяти.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Store.WebAdapters.SessionCacheStore.IsLocalCache">
+            <summary>
+            Признак, определяющий, что данные хранятся в локальной памяти.
+            </summary>
+        </member>
+    </members>
+</doc>

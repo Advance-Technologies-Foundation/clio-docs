@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.GoogleServerConnector</name>
+    </assembly>
+    <members>
+        <member name="F:Terrasoft.GoogleServerConnector.GoogleServerConnector._consumerInfoServiceUri">
+            <summary>
+            Returns URI of social service.
+            </summary>
+            <value>URI of social service.</value>
+        </member>
+        <member name="F:Terrasoft.GoogleServerConnector.GoogleServerConnector._consumerInfoServiceAccessInfoPageUri">
+            <summary>
+            Returns URI of access inforamation page.
+            </summary>
+            <value>URI of access information page.</value>
+        </member>
+        <member name="M:Terrasoft.GoogleServerConnector.GoogleServerConnector.CreateServiceRequest(System.String)">
+            <summary>
+            Creates request to social service.
+            <param name="parameter">Method name.</param>
+            </summary>
+            <returns>Request.</returns>
+        </member>
+        <member name="M:Terrasoft.GoogleServerConnector.GoogleServerConnector.ExecuteConsumerInfoServiceMethod``1(System.String)">
+            <summary>
+            Executes social service method.
+            <param name="parameter">Method name.</param>
+            </summary>
+            <returns>Json result.</returns>
+        </member>
+        <member name="M:Terrasoft.GoogleServerConnector.GoogleServerConnector.GetConsumerInfo">
+            <summary>
+            Returns consumer information about google shared application.
+            </summary>
+            <returns>Consumer information.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,8 @@
+2024-05-25 09:00:40,859 Creating storage directory [D:\WINDOWS\TEMP/dev_net6/dev_net6\PackageInstallation\Temp]
+2024-05-25 09:00:40,859 Downloading file [cliogate_netcore.gz]
+2024-05-25 09:00:40,859 Unzipping [D:\WINDOWS\TEMP/dev_net6/dev_net6\PackageInstallation\Temp\cliogate_netcore.gz]
+2024-05-25 09:00:40,905 Unzipped [D:\WINDOWS\TEMP/dev_net6/dev_net6\PackageInstallation\Temp\cliogate_netcore.gz] to [D:\WINDOWS\TEMP/dev_net6/dev_net6\PackageInstallation\Temp\cliogate_netcore]
+2024-05-25 09:00:44,093 Generating schema sources count [0]: []
+2024-05-25 09:00:44,093 Generated schema sources count [0]
+2024-05-25 09:11:41,582 Operation [Build] started
+2024-05-25 09:14:20,768 Operation [Build] took 159 s 192 ms

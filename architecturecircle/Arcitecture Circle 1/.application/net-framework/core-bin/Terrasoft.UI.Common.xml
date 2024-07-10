@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.UI.Common</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.UpdateUserProfile(Terrasoft.Core.UserConnection,Terrasoft.UI.WebControls.ResourceHandlers.UserProfile,System.Guid)">
+            <summary>
+            Устанавливает новое значение профиля запись с таблицы профиля по идентификатору.
+            </summary>
+            <param name="userConnection">Пользовательское подключение.</param>
+            <param name="profile">Данные профиля пользователя.</param>
+            <param name="profileId">Идентификатор записи в таблице данных профиля.</param>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.DeleteUserProfile(Terrasoft.Core.UserConnection,System.Guid)">
+            <summary>
+            Deletes an entry from the profile table by Id.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="profileId">The record Id in the profile data table.</param>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.CreateUserProfile(Terrasoft.Core.UserConnection,Terrasoft.UI.WebControls.ResourceHandlers.UserProfile)">
+            <summary>
+            Creates a new entry in the profile table..
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="profile">User profile data.</param>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.GetContactCaseQuery">
+            <summary>
+            Returns contact case isnull query.
+            </summary>
+            <returns>Contact case query.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.GetCultureCaseQuery(System.Guid,System.Guid)">
+            <summary>
+            Returns culture case position query.
+            </summary>
+            <param name="currentUserCultureId">Current user culture id.</param>
+            <param name="defaultCultureId">Default culture id.</param>
+            <returns>Culture case position query.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.GetUserProfileInsert(Terrasoft.Core.UserConnection,Terrasoft.UI.WebControls.ResourceHandlers.UserProfile)">
+            <summary>
+            Gets the user profile insert query
+            </summary>
+            <param name="userConnection"></param>
+            <param name="profile"></param>
+            <returns>The user profile insert query</returns>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.FindUserProfileId(Terrasoft.Core.UserConnection,Terrasoft.UI.WebControls.ResourceHandlers.UserProfile)">
+            <summary>
+            Returns row id in profile data table.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="profile">User profile.</param>
+            <returns>Profile data id.</returns>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.Fetch">
+            <summary>
+            Returns profile data.
+            </summary>
+            <remarks>Returns profile data for profile key and current culture.</remarks>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.GetUniqueKeys">
+            <summary>
+            Returns profile unique keys list.
+            </summary>
+            <summary>
+            Returns profile unique keys list.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.BaseUserProfileResourceHandler.SaveUserProfile(Terrasoft.Core.UserConnection,Terrasoft.UI.WebControls.ResourceHandlers.UserProfile)">
+            <summary>
+            Saves data to profile.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="profile">User profile data.</param>
+            <remarks>If profile data does not set, than profile cleans.</remarks>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.UserProfileResourceHandler.SaveUserProfile(Terrasoft.Core.UserConnection,Terrasoft.UI.WebControls.ResourceHandlers.UserProfile)">
+            <summary>
+            Saves data to profile.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="profile">User profile data.</param>
+            <remarks>If profile data does not set, than profile cleans.</remarks>
+        </member>
+        <member name="M:Terrasoft.UI.WebControls.ResourceHandlers.UserSchemaProfileResourceHandler.Fetch">
+            <summary>
+            Returns profile data.
+            </summary>
+            <remarks>Returns schema profile data for profile key.</remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Nui.ServiceModel.AspNetFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.BaseDataServiceController">
+            <summary>
+            Base class for DataService controllers.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ClientLogController">
+            <summary>
+            Controller class for client logging.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ClientScriptController.GenerateLoginScripts">
+            <summary>
+            Returns scripts for login page.
+            </summary>
+            <returns>Scripts for login page.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ClientScriptController.GenerateViewModuleScripts">
+            <summary>
+            Returns scripts for view module page.
+            </summary>
+            <returns>Scripts for view module page.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ClientScriptController.GenerateFeedbackScripts">
+            <summary>
+            Returns scripts for Feedback page.
+            </summary>
+            <returns>Scripts for login page.</returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ConfigurationStatusController">
+            <summary>
+            Controller for checking configuration validity.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ConfigurationStatusController.#ctor">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ConfigurationStatusController"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ConfigurationStatusController.GetConfigurationStatusReport">
+            <summary>
+            Endpoint for obtaining the configuration status report.
+            </summary>
+            <returns>
+            <para>Returns a 200 OK status if request processed correctly.</para>
+            <para>Returns a 403 Forbidden if user doesn't have admin rights.</para>
+            <para>Returns a 403 Forbidden if current functionality is disabled.</para>
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.ConfigurationStatusController.GetLastCompilationResult">
+            <summary>
+            Endpoint for obtaining last compilation result.
+            </summary>
+            <returns>
+            <para>Returns a 200 OK status if request processed correctly.</para>
+            <para>Returns a 403 Forbidden if user doesn't have admin rights.</para>
+            <para>Returns a 403 Forbidden if current functionality is disabled.</para>
+            </returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.DataServiceController">
+            <summary>
+            Controller class for operations of DataService.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.GetTelephonyConfigController">
+            <summary>
+            Controller class for getting telephony config of DataService.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.GetTelephonyConfigController.GetTelephonyConfig">
+            <summary>
+            Returns telephony parameters config.
+            </summary>
+            <returns>Telephony parameters config.</returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.HealthCheckController">
+            <summary>
+            Controller class for checking application health operations.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.OAuthHealthCheckController">
+            <summary>
+            Controller for checking OAuth functionality health status.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.OAuthHealthCheckController.#ctor">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.OAuthHealthCheckController"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.OAuthHealthCheckController.Get">
+            <summary>
+            Endpoint for obtaining the health status of OAuth functionality
+            </summary>
+            <returns>
+            <para>Returns a 200 OK status if the OAuth functionality is healthy.</para>
+            <para>Returns a 503 Service Unavailable status and json with problem details
+            if the OAuth functionality doesn't work</para>
+            </returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Probes.ProbesController">
+            <summary>
+            Controller class for checks and updates probes.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Probes.ProbesController.#ctor">
+            <summary>
+            Controller's constructor. Resolves internal dependencies.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Probes.ProbesController.RuntimeReady">
+            <summary>
+            Returns a sign that current creatio node is ready for executes client's requests.
+            Method is anonymous.
+            </summary>
+            <returns>Returns 200 when ready and 503 in other cases.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Probes.ProbesController.SetRuntimeReady(Terrasoft.Nui.ServiceModel.DataContract.Probes.ReadinessContract)">
+            <summary>
+            Sets runtime readiness status value for creatio node.
+            </summary>
+            <param name="status">New status contract.</param>
+            <returns>Returns 200 when status has been changed successfully.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Probes.ProbesController.DesignReady">
+            <summary>
+            Returns flag that indicates that creatio node is ready for design.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Ssp.SspDataServiceController">
+            <summary>
+            Controller class for ssp CRUD-operations of DataService.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Ssp.SspUserProfileController">
+            <summary>
+            API controller providing operations with ssp user profile.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.Ssp.SspUserSchemaProfileController">
+            <summary>
+            API controller providing operations with ssp user schema profile.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.SysSettingsController">
+            <summary>
+            API controller providing operations with system settings.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.Controllers.TracingController.ChannelPerfLogger.Log(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.WebApiConfig">
+            <summary>
+            Represents methods for Web API configuration.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.WebApiConfig.IsWebApiPath(System.String)">
+            <summary>
+            Returns <b>true</b> if specified path is path to Web API controllers corresponds to one of route prefixes.
+            </summary>
+            <param name="path">Path.</param>
+            <returns><b>true</b> if specified path is path to Web API controllers corresponds to one of route prefixes,
+            otherwise - <b>false</b>.</returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetFramework.CallContextInitializerAttribute">
+            <summary>
+            Provides a methods that initializes and resets the call context state for each webapi request.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.CallContextInitializerAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <inheritdoc cref="M:System.Web.Http.Filters.ActionFilterAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)"/>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetFramework.CallContextInitializerAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <inheritdoc cref="M:System.Web.Http.Filters.ActionFilterAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)"/>
+        </member>
+        <member name="T:Terrasoft.WebApp.Controllers.Ssp.SspStreamingController">
+            <summary>
+            API controller providing operations with SspStreamingController for ssp users.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Redis.ApplicationDataRedisStore">
+            <summary>
+            Хранилище данных приложения.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Redis.ApplicationDataRedisStore.HashId">
+            <summary>
+            Возвращает ключ, по которому будут храниться данные хранилища в Redis.
+            </summary>
+            <value>
+            Значение ключа в Redis.
+            </value>
+        </member>
+        <member name="P:Terrasoft.Redis.ApplicationDataRedisStore.Keys">
+            <summary>
+            Возвращает список всех ключей хранилища.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Redis.GeneralCacheRedisStore.IsLocalCache">
+            <summary>
+            Признак, определяющий, что данные хранятся в локальной памяти.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Redis.ProcessMessageStore">
+            <summary>
+            Provides methods for storing, removing and getting of Process actor's messages in Redis.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Redis.ProcessMessageStore.#ctor(Terrasoft.Redis.RedisClientFactory,Terrasoft.Core.IDateTimeProvider,Terrasoft.Core.IRetryOperationFactory)">
+            <summary>
+            Initialize new instance of <see cref="T:Terrasoft.Redis.ProcessMessageStore"/>.
+            </summary>
+            <param name="redisClientFactory"><see cref="T:Terrasoft.Redis.RedisClientFactory"/> delegate instance.</param>
+            <param name="dateTimeProvider"><see cref="T:Terrasoft.Core.IDateTimeProvider"/> instance.</param>
+            <param name="retryOperationFactory">Retry operation factory that creates retries.</param>
+        </member>
+        <member name="M:Terrasoft.Redis.ProcessMessageStore.Register``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Redis.ProcessMessageStore.Remove``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Redis.ProcessMessageStore.GetMessages``1(System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Redis.RedisClientFactory">
+            <summary>
+            Provides a delegate to method that is called to get <see cref="T:Terrasoft.Redis.Abstractions.IRedisClient"/> instance.
+            </summary>
+            <returns><see cref="T:Terrasoft.Redis.Abstractions.IRedisClient"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Redis.RedisClientsManager.#ctor">
+            <summary>
+            Creates an instance of <see cref="T:Terrasoft.Redis.RedisClientsManager"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Redis.RedisClientsManager.#ctor(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:Terrasoft.Redis.RedisClientsManager"/>.
+            </summary>
+            <param name="connectionStringName">Custom connection string name to use.</param>
+        </member>
+        <member name="M:Terrasoft.Redis.RedisClientsManager.#ctor(System.String,Terrasoft.Redis.IRedisValidator)">
+            <summary>
+            Creates an instance of <see cref="T:Terrasoft.Redis.RedisClientsManager"/>.
+            </summary>
+            <param name="connectionStringName">Custom connection string name to use.</param>
+            <param name="redisValidator">Redis Validator.</param>
+        </member>
+        <member name="P:Terrasoft.Redis.RedisClientsManager.Instance">
+            <summary>
+            Singleton instance of <see cref="T:Terrasoft.Redis.RedisClientsManager"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Redis.RedisClientsManager.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Redis.RedisDistributedLock">
+            <summary>
+            Provides mechanism for distributed locking on Redis.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Redis.RedisDistributedLock.#ctor(Terrasoft.Redis.RedisClientFactory,Terrasoft.Core.IRetryOperationFactory)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.Redis.RedisDistributedLock"/>.
+            </summary>
+            <param name="redisClientFactory"><see cref="T:Terrasoft.Redis.RedisClientFactory"/> delegate instance.</param>
+            <param name="retryOperationFactory">Retry operation factory that creates retries.</param>
+        </member>
+        <member name="M:Terrasoft.Redis.RedisDistributedLock.#ctor(Terrasoft.Redis.RedisClientFactory,System.TimeSpan,System.TimeSpan,Terrasoft.Core.IRetryOperationFactory,Common.Logging.ILog)">
+            <summary>
+            Initializes new instance of <see cref="T:Terrasoft.Redis.RedisDistributedLock"/>.
+            </summary>
+            <param name="redisClientFactory"><see cref="T:Terrasoft.Redis.RedisClientFactory"/> delegate instance.</param>
+            <param name="keyExpiryTimeout">Timeout, in which key will expire in Redis.</param>
+            <param name="retryAcquireTimeout">Timeout, in which timer will try to acquire lock again.</param>
+            <param name="retryOperationFactory">Retry operation factory that creates retries.</param>
+            <param name="log">Logger instance.</param>
+        </member>
+        <member name="M:Terrasoft.Redis.RedisDistributedLock.TryLock(System.String,System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Redis.RedisDistributedLock.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Redis.RedisRateLimitsStore.IsLocalCache">
+            <summary>
+            Indicates that data is stored in local application memory.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Redis.RedisRateLimitsStore.Keys">
+            <summary>
+            Returns all keys to storage.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.CodeAnalyzer</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.CodeAnalyzer.CSharpCodeAnalyzer">
+            <summary>
+            The syntax analyzer for C# code.
+            </summary>
+            <seealso cref="T:Terrasoft.CodeAnalyzer.ICodeAnalyzer" />
+        </member>
+        <member name="M:Terrasoft.CodeAnalyzer.CSharpCodeAnalyzer.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.CodeAnalyzer.CSharpCodeAnalyzer"/> class.
+            </summary>
+            <param name="code">Parsed code.</param>
+        </member>
+        <member name="M:Terrasoft.CodeAnalyzer.CSharpCodeAnalyzer.Analyze(Terrasoft.CodeAnalyzer.ISyntaxWalker)">
+            <inheritdoc cref="M:Terrasoft.CodeAnalyzer.ICodeAnalyzer.Analyze(Terrasoft.CodeAnalyzer.ISyntaxWalker)" />
+        </member>
+        <member name="T:Terrasoft.CodeAnalyzer.ICodeAnalyzer">
+            <summary>
+            Represents methods for the parsing code.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.CodeAnalyzer.ICodeAnalyzer.Analyze(Terrasoft.CodeAnalyzer.ISyntaxWalker)">
+            <summary>
+            Analyzes the code using specified syntax walker.
+            </summary>
+            <param name="walker">The syntax walker.</param>
+        </member>
+        <member name="T:Terrasoft.CodeAnalyzer.ISyntaxWalker">
+            <summary>
+            Represents methods and properties for the specific kind of Microsoft.CodeAnalysis.SyntaxVisitor
+            which recursively visits a node and each of its children.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.CodeAnalyzer.ISyntaxWalker.Matches">
+            <summary>
+            Gets the matches list.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.CodeAnalyzer.ISyntaxWalker.Errors">
+            <summary>
+            Gets the errors list.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.CodeAnalyzer.ISyntaxWalker.Visit(Microsoft.CodeAnalysis.SyntaxNode)">
+            <summary>
+            Recursively visits the specified node and each of its children.
+            </summary>
+            <param name="node">The node.</param>
+        </member>
+        <member name="T:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker">
+            <summary>
+            Implements an <see cref="T:Terrasoft.CodeAnalyzer.ISyntaxWalker" /> interface for finding methods for accessing the properties
+            of process elements in user scripts.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker.#ctor(System.Collections.Generic.HashSet{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker"/> class.
+            </summary>
+            <param name="matches">The matches collection.</param>
+            <param name="errors">The errors collection.</param>
+        </member>
+        <member name="P:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker.Matches">
+            <inheritdoc cref="P:Terrasoft.CodeAnalyzer.ISyntaxWalker.Matches" />
+        </member>
+        <member name="P:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker.Errors">
+            <inheritdoc cref="P:Terrasoft.CodeAnalyzer.ISyntaxWalker.Errors" />
+        </member>
+        <member name="M:Terrasoft.CodeAnalyzer.PropertyAccessMethodWalker.Visit(Microsoft.CodeAnalysis.SyntaxNode)">
+            <inheritdoc cref="M:Terrasoft.CodeAnalyzer.ISyntaxWalker.Visit(Microsoft.CodeAnalysis.SyntaxNode)" />
+        </member>
+    </members>
+</doc>

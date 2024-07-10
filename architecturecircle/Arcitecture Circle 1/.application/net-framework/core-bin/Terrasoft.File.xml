@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.File</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.File.Content.BaseExternalFileContentStorage.WriteAsync(Terrasoft.File.Abstractions.Content.IFileContentWriteContext)">
+            <inheritdoc cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.WriteAsync(Terrasoft.File.Abstractions.Content.IFileContentWriteContext)"/> 
+        </member>
+        <member name="T:Terrasoft.File.Content.EntityFileContentStorage">
+            <inheritdoc />
+            <summary>
+            Represents file content storage which is based on entity framework.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.File.Content.EntityFileContentStorage.StorageId">
+            <summary>
+            Identifier of the current storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Content.EntityFileContentStorage.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.Content.EntityFileContentStorage"/> class.
+            </summary>
+            <param name="userConnection">User connection.</param>
+        </member>
+        <member name="P:Terrasoft.File.Content.EntityFileContentStorage.IsFeatureEnabledToUseObjectFileDisplayValues">
+            <summary>
+            Gets or sets value that indicates whether the feature FeatureUseObjectFileDisplayValues is enabled.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Content.EntityFileContentStorage.ReadAsync(Terrasoft.File.Abstractions.Content.IFileContentReadContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.EntityFileContentStorage.WriteAsync(Terrasoft.File.Abstractions.Content.IFileContentWriteContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.EntityFileContentStorage.DeleteAsync(Terrasoft.File.Abstractions.Content.IFileContentDeleteContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.EntityFileContentStorage.CopyAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.EntityFileContentStorage.MoveAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Content.FileContentCopyMoveContext">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentCopyMoveContext.SourceMetadata">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentCopyMoveContext.TargetMetadata">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Content.FileContentReadContext">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentReadContext.#ctor(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.Content.FileContentReadContext"/> class.
+            </summary>
+            <param name="fileMetadata"></param>
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentReadContext.FileMetadata">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Content.FileContentStorageSelector">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStorageSelector.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.Content.FileContentStorageSelector"/> type.
+            </summary>
+            <param name="userConnection">Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> to initialize current instance
+            with.</param>
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStorageSelector.FindContentStorageId(Terrasoft.File.Abstractions.Metadata.FileMetadata,System.Boolean,System.Collections.Generic.IList{Terrasoft.File.Abstractions.Content.FileContentStorageInfo})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Content.FileContentStorageSelectorOrderProvider">
+            <inheritdoc cref="T:Terrasoft.File.Content.IFileContentStorageSelectorOrderProvider"/>
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStorageSelectorOrderProvider.GetOrderedSelectors(System.Collections.Generic.IEnumerable{Terrasoft.File.Abstractions.Content.IFileContentStorageSelector})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Content.FileContentStream">
+            <summary>
+            Wrapper for readonly <see cref="T:System.IO.Stream"/> that provides read bytes counting support and OnDisposed notification.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.CanRead">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.CanSeek">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.CanWrite">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.CanTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.Length">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.WriteTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.ReadTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.Position">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.Content.FileContentStream.TotalBytesRead">
+            <summary>
+            Returns total amount of bytes read from source stream.
+            </summary>
+        </member>
+        <member name="E:Terrasoft.File.Content.FileContentStream.Disposed">
+            <summary>
+            Occurred when <see cref="M:System.IO.Stream.Dispose"/> method called.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.OnDisposed">
+            <summary>
+            Triggers <see cref="E:Terrasoft.File.Content.FileContentStream.Disposed"/> event.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.Create(System.IO.Stream)">
+            <summary>
+            Creates new instance of <see cref="T:Terrasoft.File.Content.FileContentStream"/>.
+            </summary>
+            <param name="source">Source stream.</param>
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.Close">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.ReadByte">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.EndRead(System.IAsyncResult)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.EndWrite(System.IAsyncResult)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.WriteByte(System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.Flush">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.FlushAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Content.FileContentStream.SetLength(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Content.IFileContentStorageSelectorOrderProvider">
+            <summary>
+            Provides a methods for retrieving the list of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentStorageSelector"/> types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Content.IFileContentStorageSelectorOrderProvider.GetOrderedSelectors(System.Collections.Generic.IEnumerable{Terrasoft.File.Abstractions.Content.IFileContentStorageSelector})">
+            <summary>
+            Returns an ordered list of the <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentStorageSelector"/> types.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.File.Content.InternalFileContentStorageSelector">
+            <inheritdoc cref="T:Terrasoft.File.Abstractions.Content.IInternalFileContentStorageSelector"/>
+            <inheritdoc cref="T:Terrasoft.Core.IUserConnectionRequired"/>
+        </member>
+        <member name="M:Terrasoft.File.Content.InternalFileContentStorageSelector.#ctor(Terrasoft.File.IFileStorageConfigRepository,Terrasoft.File.Content.IFileContentStorageSelectorOrderProvider,System.Func{Terrasoft.Core.UserConnection,Terrasoft.File.Abstractions.Content.IFileContentStorageSelector})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.Content.InternalFileContentStorageSelector"/> type.
+            </summary>
+            <param name="configRepository">An instance of the <see cref="T:Terrasoft.File.IFileStorageConfigRepository"/> type to
+            initialize current instance with.</param>
+            <param name="selectorOrderProvider">An instance of the
+            <see cref="T:Terrasoft.File.Content.IFileContentStorageSelectorOrderProvider"/> type to initialize current instance with.</param>
+            <param name="defaultSelectorFactory">Delegate that is used to create the default selector.</param>
+        </member>
+        <member name="M:Terrasoft.File.Content.InternalFileContentStorageSelector.#ctor(Terrasoft.File.IFileStorageConfigRepository,Terrasoft.File.Content.IFileContentStorageSelectorOrderProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.Content.InternalFileContentStorageSelector"/> type.
+            </summary>
+            <param name="configRepository">An instance of the <see cref="T:Terrasoft.File.IFileStorageConfigRepository"/> type to
+            initialize current instance with.</param>
+            <param name="selectorOrderProvider"></param>
+        </member>
+        <member name="M:Terrasoft.File.Content.InternalFileContentStorageSelector.GetStorageType(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <inheritdoc cref="M:Terrasoft.File.Abstractions.Content.IInternalFileContentStorageSelector.GetInitialStorageId(Terrasoft.File.Abstractions.Metadata.FileMetadata)" />
+        </member>
+        <member name="M:Terrasoft.File.Content.InternalFileContentStorageSelector.GetInitialStorageId(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <inheritdoc cref="M:Terrasoft.File.Abstractions.Content.IInternalFileContentStorageSelector.GetInitialStorageId(Terrasoft.File.Abstractions.Metadata.FileMetadata)" />
+        </member>
+        <member name="M:Terrasoft.File.Content.InternalFileContentStorageSelector.Terrasoft#Core#IUserConnectionRequired#SetUserConnection(Terrasoft.Core.UserConnection)">
+            <inheritdoc cref="M:Terrasoft.Core.IUserConnectionRequired.SetUserConnection(Terrasoft.Core.UserConnection)"/>
+        </member>
+        <member name="T:Terrasoft.File.EntityFileLocator">
+            <summary>
+            Represents serializable file locator for entity.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.EntityFileLocator.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.EntityFileLocator"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.EntityFileLocator.#ctor(System.String,System.Guid)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.EntityFileLocator"/> class.
+            </summary>
+            <param name="entitySchemaName">Entity schema name.</param>
+            <param name="recordId">ID of the record.</param>
+        </member>
+        <member name="P:Terrasoft.File.EntityFileLocator.EntitySchemaName">
+            <summary>
+            Metadata entity schema name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.EntityFileLocator.RecordId">
+            <summary>
+            Metadata record identifier.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.EntityFileLocator.WritePropertyValues(Terrasoft.Common.DataWriter)">
+            <summary>
+            Writes property values.
+            </summary>
+            <param name="dataWriter">Data writer.</param>
+        </member>
+        <member name="M:Terrasoft.File.EntityFileLocator.ReadPropertyValues(Terrasoft.Common.DataReader)">
+            <summary>
+            Reads property values.
+            </summary>
+            <param name="dataReader">Data reader.</param>
+        </member>
+        <member name="M:Terrasoft.File.EntityFileLocator.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.EntityFileLocator.Terrasoft#Common#ISerializableObject#Serialize(Terrasoft.Common.DataWriter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.EntityFileLocator.Terrasoft#Common#ISerializableObject#Deserialize(Terrasoft.Common.DataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.File`2">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.#ctor(`0,Terrasoft.File.Abstractions.Metadata.IFileMetadataStorage{`0,`1},Terrasoft.File.FileArguments)">
+            <summary>
+            Creates a new instance of the <see cref="T:System.IO.File"/> class.
+            </summary>
+            <param name="fileLocator">File locator.</param>
+            <param name="fileMetadataStorage">File metadata storage.</param>
+            <param name="fileArguments"></param>
+        </member>
+        <member name="P:Terrasoft.File.File`2.Options">
+            <summary>
+            Gets or sets file options.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.File`2.FileLocator">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.File`2.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.File`2.Length">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.File`2.CreatedOn">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.File`2.ModifiedOn">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.File`2.Exists">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.CopyAsync(Terrasoft.File.Abstractions.IFile)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.MoveAsync(Terrasoft.File.Abstractions.IFile)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.DeleteAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.WriteAsync(System.IO.Stream,Terrasoft.File.Abstractions.FileWriteOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.ReadAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.SaveAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.SetAttribute``1(System.String,``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.GetAttribute``1(System.String,``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.File`2.GetDefinedAttributeNames">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.FileArguments">
+            <summary>
+            Represents dependencies used to create instance of <see cref="T:Terrasoft.File.File`2"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.FileArguments.Options">
+            <summary>
+            Options.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.FileArguments.StoringState">
+            <summary>
+            Storing state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.FileArguments.ContentStorageSelector">
+            <summary>
+            Content storage selector.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.FileArguments.UserConnection">
+            <summary>
+            User connection.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.FileArguments.ContentStorageInstanceFactory">
+            <summary>
+            Content storage instance factory.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.FileFactory">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.File.FileFactory.UseRights">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.FileFactory.Get(Terrasoft.File.Abstractions.IFileLocator,Terrasoft.File.Abstractions.FileOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.FileFactory.Create(Terrasoft.File.Abstractions.IFileLocator,Terrasoft.File.Abstractions.FileOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.FileFactory.Terrasoft#Core#IUserConnectionRequired#SetUserConnection(Terrasoft.Core.UserConnection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.FileFactoryUtils.GetFileFactory(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns instance of the <see cref="T:Terrasoft.File.Abstractions.IFileFactory"/>.
+            </summary>
+            <param name="source">User connection.</param>
+            <returns>Instance of the <see cref="T:Terrasoft.File.Abstractions.IFileFactory"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.File.FileFactoryUtils.GetFile(Terrasoft.Core.UserConnection,Terrasoft.File.Abstractions.IFileLocator)">
+            <summary>
+            Returns an instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type by a provided <paramref name="fileLocator"/>.
+            </summary>
+            <param name="source">User connection.</param>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> type.</param>
+            <returns>The corresponding instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.File.FileFactoryUtils.CreateFile(Terrasoft.Core.UserConnection,Terrasoft.File.Abstractions.IFileLocator)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type by a provided <paramref name="fileLocator"/>.
+            </summary>
+            <param name="source">User connection.</param>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> type.</param>
+            <returns>The corresponding instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.File.FileFactoryUtils.Get(Terrasoft.File.Abstractions.IFileFactory,Terrasoft.File.Abstractions.IFileLocator)">
+            <summary>
+            Returns an instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type by a provided <paramref name="source"/>.
+            </summary>
+            <param name="source">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileFactory"/> type.</param>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> type.</param>
+            <returns>The corresponding instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.File.FileFactoryUtils.Create(Terrasoft.File.Abstractions.IFileFactory,Terrasoft.File.Abstractions.IFileLocator)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type by a provided <paramref name="fileLocator"/>.
+            </summary>
+            <param name="source">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileFactory"/> type.</param>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> type.</param>
+            <returns>The corresponding instance of the <see cref="T:Terrasoft.File.Abstractions.IFile"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.File.FileFactoryUtils.WithRightsDisabled(Terrasoft.File.Abstractions.IFileFactory)">
+            <summary>
+            Returns instance of <see cref="T:Terrasoft.File.Abstractions.IFileFactory"/> configured to ignore rights.
+            </summary>
+            <param name="source"><see cref="T:Terrasoft.File.Abstractions.IFileFactory"/> to configure.</param>
+        </member>
+        <member name="T:Terrasoft.File.FileModule">
+            <summary>
+            File module.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.FileModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.FileReflectionUtils.GetFileInstanceFactory(System.Type,Terrasoft.File.Abstractions.Metadata.IFileMetadataStorageSelector)">
+            <summary>
+            Returns <see cref="T:Terrasoft.File.FileInstanceFactory"/> for specified <paramref name="fileLocatorType"/>.
+            </summary>
+            <param name="fileLocatorType"><see cref="T:Terrasoft.File.Abstractions.IFileLocator"/> implementation type.</param>
+            <param name="storageSelector">Metadata storage selector. </param>
+        </member>
+        <member name="T:Terrasoft.File.FileStorageConfigRepository">
+            <inheritdoc cref="T:Terrasoft.File.IFileStorageConfigRepository"/>
+        </member>
+        <member name="T:Terrasoft.File.FileStorageConfigRepository.CacheEventListener">
+            <summary>
+            An event listener for the SysFileContentStorage and SysFileMetadataStorage objects
+            that is used to refresh the <see cref="T:Terrasoft.File.FileStorageConfigRepository"/>'s cache.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.CacheEventListener.#ctor(Terrasoft.Core.Store.CacheStoreProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.FileStorageConfigRepository.CacheEventListener"/> type.
+            </summary>
+            <param name="cacheStoreProvider">An instance of the <see cref="T:Terrasoft.Core.Store.CacheStoreProvider"/> to initialize
+            current instance with.</param>
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.CacheEventListener.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.FileStorageConfigRepository.CacheEventListener"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.CacheEventListener.OnSaved(System.Object,Terrasoft.Core.Entities.EntityAfterEventArgs)">
+            <summary>
+            Handles entity Saved event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityAfterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.#ctor(Terrasoft.Core.SystemUserConnection,Terrasoft.Core.Store.CacheStoreProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.FileStorageConfigRepository"/> type.
+            </summary>
+            <param name="systemUserConnection">System user connection.</param>
+            <param name="cacheStoreProvider">Cache store provider.</param>
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.#ctor(Terrasoft.Core.SystemUserConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.FileStorageConfigRepository"/> type.
+            </summary>
+            <param name="systemUserConnection">System user connection.</param>
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.ClearCache(Terrasoft.Core.Store.CacheStoreProvider)">
+            <summary>
+            Clears cached data.
+            </summary>
+            <param name="cacheStoreProvider">Cache store provider.</param>
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.GetMetadataStorageTypes">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.FileStorageConfigRepository.GetContentStorages">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.FileStorageUtils">
+            <summary>
+            Provides extension methods for work with file storage.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.FileStorageUtils.Logger">
+            <summary>
+            Gets logger.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.IFileStorageConfigRepository">
+            <summary>
+            Provides a set of methods for getting an information about registered file content and metadata storages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.IFileStorageConfigRepository.GetMetadataStorageTypes">
+            <summary>
+            Returns registered file metadata storage types.
+            </summary>
+            <returns>List of the metadata storage types.</returns>
+        </member>
+        <member name="M:Terrasoft.File.IFileStorageConfigRepository.GetContentStorages">
+            <summary>
+            Returns registered file content storages.
+            </summary>
+            <returns>List of the <see cref="T:Terrasoft.File.Abstractions.Content.FileContentStorageInfo"/> that describes the registered file content
+            storages.</returns>
+        </member>
+        <member name="T:Terrasoft.File.IInternalFile">
+            <summary>
+            Used to provide optimized way of IO operations between file with same <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentStorage"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.IInternalFile.InitContentStorageId">
+            <summary>
+            Initializes content storage id.
+            </summary>
+            <returns>Id of content storage for current file.</returns>
+        </member>
+        <member name="M:Terrasoft.File.IInternalFile.CopyContentFrom(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <summary>
+            Returns task, representing copying content from <paramref name="sourceFileMetadata"/> into current file.
+            </summary>
+            <param name="sourceFileMetadata">Source file metadata.</param>
+        </member>
+        <member name="M:Terrasoft.File.IInternalFile.MoveContentFrom(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <summary>
+            Returns task, representing moving content from <paramref name="sourceFileMetadata"/> into current file.
+            </summary>
+            <param name="sourceFileMetadata">Source file metadata.</param>
+        </member>
+        <member name="T:Terrasoft.File.Metadata.EntityFileMetadata">
+            <summary>
+            Represents an entity file metadata record.
+            </summary>
+            <inheritdoc cref="T:Terrasoft.File.Abstractions.Metadata.FileMetadata"/>
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadata.#ctor(Terrasoft.File.EntityFileLocator,Terrasoft.File.Abstractions.FileStoringState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.Metadata.EntityFileMetadata"/> type.
+            </summary>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.EntityFileLocator"/> type to create metadata from.
+            </param>
+            <param name="storingState">An initial file storing state.</param>
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadata.#ctor(Terrasoft.File.EntityFileLocator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.Metadata.EntityFileMetadata"/> type.
+            </summary>
+            <param name="fileLocator">An instance of the <see cref="T:Terrasoft.File.EntityFileLocator"/> type to create metadata from.
+            </param>
+        </member>
+        <member name="P:Terrasoft.File.Metadata.EntityFileMetadata.CanFileContentBeStoredWithMetadata">
+            <summary>
+            Optimization. Determines whether the file content can be stored when saving the metadata
+            (with one DB request).
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Metadata.EntityFileMetadata.Stream">
+            <summary>
+            Optimization. Content to store when saving the metadata.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Metadata.EntityFileMetadata.Attributes">
+            <summary>
+            The collection of the attribute values.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Metadata.EntityFileMetadata.RecordId">
+            <summary>
+            Metadata record identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Metadata.EntityFileMetadata.EntitySchemaName">
+            <summary>
+            Metadata entity schema name.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadata.SetAttribute``1(System.String,``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadata.GetAttribute``1(System.String,``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadata.GetDefinedAttributeNames">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Metadata.EntityFileMetadataStorage">
+            <summary>
+            Represents a file metadata store that stores metadata information in the child schema tables of the File entity
+            from the Base package.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadataStorage.#ctor(Terrasoft.Core.UserConnection,Common.Logging.ILog)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.Metadata.EntityFileMetadataStorage"/> class.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="logger">Logger.</param>
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadataStorage.#ctor(Terrasoft.Core.UserConnection)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.File.Metadata.EntityFileMetadataStorage"/> class.
+            </summary>
+            <param name="userConnection">User connection.</param>
+        </member>
+        <member name="P:Terrasoft.File.Metadata.EntityFileMetadataStorage.IsFeatureEnabledToIgnoreDisplayValues">
+            <summary>
+            Gets or sets value that indicates whether the feature FeatureIgnoreDisplayValuesInDataUserTasks is enabled.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.File.Metadata.EntityFileMetadataStorage.FileOptions">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadataStorage.FindMetadata(Terrasoft.File.EntityFileLocator)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadataStorage.CreateMetadata(Terrasoft.File.EntityFileLocator)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadataStorage.SaveMetadata(Terrasoft.File.Metadata.EntityFileMetadata)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.Metadata.EntityFileMetadataStorage.Delete(Terrasoft.File.EntityFileLocator)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.Metadata.FileMetadataStorageSelector">
+            <inheritdoc cref="T:Terrasoft.File.Abstractions.Metadata.IFileMetadataStorageSelector"/>
+        </member>
+        <member name="M:Terrasoft.File.Metadata.FileMetadataStorageSelector.#ctor(Terrasoft.File.IFileStorageConfigRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.File.Metadata.FileMetadataStorageSelector"/> type.
+            </summary>
+            <param name="configRepository">An instance of the <see cref="T:Terrasoft.File.IFileStorageConfigRepository"/> type to
+            initialize current instance with.</param>
+        </member>
+        <member name="M:Terrasoft.File.Metadata.FileMetadataStorageSelector.GetStorage(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.File.IStorageInstanceFactory">
+            <summary>
+            Creates <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentStorage"/> instances.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.File.IStorageInstanceFactory.CreateContentStorage(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <summary>
+            Returns <see cref="T:Terrasoft.File.Abstractions.Content.IFileContentStorage"/> for specified <paramref name="fileMetadata"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.File.StorageInstanceFactory">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.StorageInstanceFactory.CreateContentStorage(Terrasoft.File.Abstractions.Metadata.FileMetadata)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.File.StorageInstanceFactory.SetUserConnection(Terrasoft.Core.UserConnection)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

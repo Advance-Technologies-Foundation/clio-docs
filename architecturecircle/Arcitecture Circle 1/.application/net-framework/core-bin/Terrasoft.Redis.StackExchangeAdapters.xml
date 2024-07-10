@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Redis.StackExchangeAdapters</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Redis.StackExchangeAdapters.RedisClientsManagerAdapter.#ctor">
+            <summary>
+            Creates an instance of <see cref="T:Terrasoft.Redis.StackExchangeAdapters.RedisClientsManagerAdapter"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Redis.StackExchangeAdapters.RedisClientsManagerAdapter.#ctor(System.String)">
+            <summary>
+            Creates an instance of <see cref="T:Terrasoft.Redis.StackExchangeAdapters.RedisClientsManagerAdapter"/>.
+            </summary>
+            <param name="connectionStringName">Custom connection string name to use.</param>
+        </member>
+        <member name="M:Terrasoft.Redis.StackExchangeAdapters.RedisClientsManagerAdapter.#ctor(System.String,Terrasoft.Redis.Abstractions.RedisConfigSection)">
+            <summary>
+            Creates an instance of <see cref="T:Terrasoft.Redis.StackExchangeAdapters.RedisClientsManagerAdapter"/>.
+            </summary>
+            <param name="connectionStringName">Custom connection string name to use.</param>
+            <param name="configSection">Custom config section to use.</param>
+        </member>
+        <member name="M:Terrasoft.Redis.StackExchangeAdapters.RedisClientsManagerAdapter.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Terrasoft.Redis.StackExchangeAdapters.RedisPubSubServerAdapter">
+            <summary>
+            <see cref="T:Terrasoft.Common.IPubSubServer"/> implementation which uses <see cref="T:StackExchange.Redis.IConnectionMultiplexer"/> and
+            <see cref="T:StackExchange.Redis.ISubscriber"/> under the hood.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Redis.StackExchangeAdapters.RedisPubSubServerAdapter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Redis.StackExchangeAdapters.RedisPubSubServerAdapter.Publish(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Redis.StackExchangeAdapters.RedisPubSubServerAdapter.Subscribe(System.String,System.Action{System.String,System.String})">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

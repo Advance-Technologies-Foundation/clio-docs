@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.ScriptEngine</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine">
+            <summary>
+            Class that implements the execution of expressions.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine._delegateCache">
+            <summary>
+            Dictionary of executed expressions.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.UseTypeCastExpressionValidation">
+            <summary>
+            Gets or sets value that indicates whether the feature FeatureUseTypeCastExpressionValidation is enabled.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.ReferencedTypes">
+            <summary>
+            Gets registered types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.Eval``1(System.String)">
+            <summary>
+            Executes an expression that returns the result of the specified data type.
+            </summary>
+            <typeparam name="T">The data type that the expression should return.</typeparam>
+            <param name="expression">Expression text.</param>
+            <returns>The result of executing the expression.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.Eval(System.String,System.Type)">
+            <summary>
+            Executes an expression that returns a result like <see cref = "T:System.Object" />.
+            </summary>
+            <param name="expression">Expression text.</param>
+            <param name="resultType">The expected type of the calculation result.</param>
+            <returns>The result of executing an expression with a data type <see cref="T:System.Object"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.SetVariable(System.String,System.Object)">
+            <summary>
+            Sets a variable with the specified name to the passed value.
+            </summary>
+            <param name="name">Variable name.</param>
+            <param name="value">Variable value.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.SetVariable(System.String,System.Object,System.Type)">
+            <summary>
+            Sets a variable with the specified name and type to the passed value.
+            </summary>
+            <param name="name">Variable name.</param>
+            <param name="value">Variable value.</param>
+            <param name="type">Variable value type.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.AddReference(System.Type)">
+            <summary>
+            Adds a reference to the type used in the expression.
+            </summary>
+            <param name="type">Type.</param>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.Validate(System.String,System.Type)">
+            <summary>
+            Validates the expression.
+            </summary>
+            <param name="expression">The text of expression.</param>
+            <param name="resultType">The expression result type.</param>
+            <exception cref="T:Terrasoft.Core.ValidateExpressionException">Throws, if the expression is not valid.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.ScriptEngine.DynamicExpressoEngine.Dispose">
+            <inheritdoc cref="M:System.IDisposable.Dispose"/>
+        </member>
+    </members>
+</doc>

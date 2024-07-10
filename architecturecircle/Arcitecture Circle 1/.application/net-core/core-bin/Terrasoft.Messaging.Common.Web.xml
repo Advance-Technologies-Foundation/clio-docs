@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Messaging.Common.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Messaging.Common.Controllers.GetTelephonyConfigController">
+            <summary>
+            Controller class for getting telephony config of DataService.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Controllers.GetTelephonyConfigController.GetTelephonyConfig">
+            <summary>
+            Returns telephony parameters config.
+            </summary>
+            <returns>Telephony parameters config.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Controllers.MsgUtilServiceController.LogInMsgServer(Terrasoft.Messaging.Common.NewSessionParameters)">
+            <summary>
+            Authorizes user in message service.
+            </summary>
+            <param name="paramList">Telephony session parameters.</param>
+            <returns>Unique identifier if authorization is successful, otherwise - empty string.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Controllers.MsgUtilServiceController.UpdateCall(Terrasoft.Messaging.Common.Call)">
+            <summary>
+            Updates call information in database and timestamp of last update.
+            </summary>
+            <param name="call"><see cref="T:Terrasoft.Messaging.Common.Call"/> instance.</param>
+            <returns>If update was successful - call identifier in database, otherwise - error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Messaging.Common.Controllers.MsgUtilServiceController.Ping">
+            <summary>
+            Pings messaging server.
+            </summary>
+        </member>
+    </members>
+</doc>

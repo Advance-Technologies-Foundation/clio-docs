@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.File.AzureBlobStorage</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.File.AzureBlobStorage.Content.AzureFileContentStorage.ReadAsync(Terrasoft.File.Abstractions.Content.IFileContentReadContext)">
+            <inheritdoc cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.ReadAsync(Terrasoft.File.Abstractions.Content.IFileContentReadContext)"/> 
+        </member>
+        <member name="M:Terrasoft.File.AzureBlobStorage.Content.AzureFileContentStorage.DeleteAsync(Terrasoft.File.Abstractions.Content.IFileContentDeleteContext)">
+            <inheritdoc cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.DeleteAsync(Terrasoft.File.Abstractions.Content.IFileContentDeleteContext)"/> 
+        </member>
+        <member name="M:Terrasoft.File.AzureBlobStorage.Content.AzureFileContentStorage.CopyAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)">
+            <inheritdoc cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.CopyAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)"/> 
+        </member>
+        <member name="M:Terrasoft.File.AzureBlobStorage.Content.AzureFileContentStorage.MoveAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)">
+            <inheritdoc cref="M:Terrasoft.File.Abstractions.Content.IFileContentStorage.MoveAsync(Terrasoft.File.Abstractions.Content.IFileContentCopyMoveContext)"/> 
+        </member>
+    </members>
+</doc>

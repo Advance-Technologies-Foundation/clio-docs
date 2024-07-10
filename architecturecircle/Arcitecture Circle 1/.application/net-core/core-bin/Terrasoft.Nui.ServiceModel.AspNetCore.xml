@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Nui.ServiceModel.AspNetCore</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ClientLogController">
+            <summary>
+            Controller class for client logging.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ConfigurationStatusController">
+            <summary>
+            Controller for checking configuration validity.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ConfigurationStatusController.#ctor(Terrasoft.Core.IConfigurationStatusService,Terrasoft.Core.UserConnection)">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ConfigurationStatusController"/> type.
+            </summary>
+            <param name="service">Service that collects report about current configuration validity state</param>
+            <param name="userConnection">User connection</param>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ConfigurationStatusController.#ctor(Terrasoft.Core.UserConnection,System.IServiceProvider)">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ConfigurationStatusController"/> type.
+            </summary>
+            <param name="userConnection">User connection</param>
+            <param name="serviceProvider">Service provider</param>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ConfigurationStatusController.GetConfigurationStatusReport">
+            <summary>
+            Endpoint for obtaining the configuration status report
+            </summary>
+            <returns>
+            <para>Returns a 200 OK status if request processed correctly..</para>
+            <para>Returns a 403 Forbidden if user doesn't have admin rights.</para>
+            <para>Returns a 403 Forbidden if current functionality is disabled.</para>
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.ConfigurationStatusController.GetLastCompilationResult">
+            <summary>
+            Endpoint for obtaining last compilation result.
+            </summary>
+            <returns>
+            <para>Returns a 200 OK status if request processed correctly.</para>
+            <para>Returns a 403 Forbidden if user doesn't have admin rights.</para>
+            <para>Returns a 403 Forbidden if current functionality is disabled.</para>
+            </returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.CrudDataServiceController">
+            <summary>
+            Controller class for CRUD-operations of DataService.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.HealthCheckController">
+            <summary>
+            Controller class for checking application health operations.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.OAuthHealthCheckController">
+            <summary>
+            Controller for checking OAuth functionality health status.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.OAuthHealthCheckController.#ctor(Terrasoft.OAuthIntegration.HealthCheck.IOAuthHealthCheckService)">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.OAuthHealthCheckController"/> type.
+            </summary>
+            <param name="healthCheckService">Service that performs functionality health check.</param>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.OAuthHealthCheckController.Get">
+            <summary>
+            Endpoint for obtaining the health status of OAuth functionality
+            </summary>
+            <returns>
+            <para>Returns a 200 OK status if the OAuth functionality is healthy.</para>
+            <para>Returns a 503 Service Unavailable status and json with problem details
+            if the OAuth functionality doesn't work</para>
+            </returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Probes.ProbesController">
+            <summary>
+            Controller class for checks and updates probes.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Probes.ProbesController.#ctor(Terrasoft.Core.WebFarm.IWebFarmNodeReadinessStore,Terrasoft.Core.IWebFarmInfoProvider)">
+            <summary>
+            Controller's constructor. Resolves internal dependencies.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Probes.ProbesController.RuntimeReady">
+            <summary>
+            Returns a sign that current creatio node is ready for executes client's requests.
+            Method is anonymous.
+            </summary>
+            <returns>Returns 200 when ready and 503 in other cases.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Probes.ProbesController.SetRuntimeReady(Terrasoft.Nui.ServiceModel.DataContract.Probes.ReadinessContract)">
+            <summary>
+            Sets runtime readiness status value for creatio node.
+            </summary>
+            <param name="status">New status contract.</param>
+            <returns>Returns 200 when status has been changed successfully.</returns>
+        </member>
+        <member name="M:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Probes.ProbesController.DesignReady">
+            <summary>
+            Returns flag that indicates that creatio node is ready for design.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Ssp.SspClientLogController">
+            <summary>
+            API controller providing operations with ssp user profile.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Ssp.SspCrudDataServiceController">
+            <summary>
+            Controller class for ssp CRUD-operations of DataService.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Ssp.SspStreamingController">
+            <summary>
+            Controller to provide StreamingController operations for ssp users.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Ssp.SspSysSettingsController">
+            <summary>
+            API controller providing operations with ssp system settings.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Ssp.SspUserProfileController">
+            <summary>
+            API controller providing operations with ssp user profile.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.Ssp.SspUserSchemaProfileController">
+            <summary>
+            API controller providing operations with ssp user schema profile.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.SysSettingsController">
+            <summary>
+            API controller providing operations with system settings.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.UserProfileController">
+            <summary>
+            API controller providing operations with user profile.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Nui.ServiceModel.AspNetCore.Controllers.UserSchemaProfileController">
+            <summary>
+            API controller providing operations with user schema profile.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.GlobalSearch</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.GlobalSearch.AggsSearchRequestQuery">
+            <summary>
+            Represents elastic search aggregation query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.AggsSearchRequestQuery.Size">
+            <summary>
+            <see cref="P:Terrasoft.GlobalSearch.SearchRequestQuery.Size"/>
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.AggsSearchRequestQuery.Aggregations">
+            <summary>
+            Elastic search aggregations.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.Cancellation.CancellationTokenProviderAdapter">
+            <summary>
+            Cancellation token provider adapter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Cancellation.CancellationTokenProviderAdapter.GetCancellationToken">
+            <inheritdoc cref="M:Terrasoft.ElasticSearch.Cancellation.IElasticSearchCancellationTokenProvider.GetCancellationToken"/>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESAggregationResponse">
+            <summary>
+            Represents elastic search aggregation response.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESAggregationResponse.Aggregations">
+            <summary>
+            <see cref="T:Terrasoft.GlobalSearch.ESAggregations"/> instance.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESAggregations">
+            <summary>
+            Represents elastic search aggregations.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESAggregations.GroupedAggregations">
+            <summary>
+            <see cref="T:Terrasoft.GlobalSearch.ESGroupedAggregations"/> instance.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESGroupedAggregations">
+            <summary>
+            Represents elastic search grouped aggregations.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESGroupedAggregations.Groups">
+            <summary>
+            List of <see cref="T:Terrasoft.GlobalSearch.ESAggregation"/> instances.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESAggregation">
+            <summary>
+            Represents elastic search aggregation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESAggregation.Type">
+            <summary>
+            Elastic search grouped key.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESAggregation.Count">
+            <summary>
+            Elastic search grouped count.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESConstants.AllField">
+            <summary>
+            Elastic search _all field name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESConstants.NumberColumnSuffix">
+            <summary>
+            Elastic search number field suffix.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESConstants.DetailsPrefix">
+            <summary>
+            Elastic search details object prefix.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESConstants.MinShouldMatch">
+            <summary>
+            Elastic search minimum should match query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESConstants.TypePropertyName">
+            <summary>
+            Elastic search type property name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESConstants.PrimaryColumnsSuffix">
+            <summary>
+            Elastic search primary column suffix.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESConstants.TextDetailColumnsPattern">
+            <summary>
+            Elastic search text detail column pattern.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.GlobalSearch.EShighlight._defaultPreTags">
+            <summary>
+            Default pre tags.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.GlobalSearch.EShighlight._defaultPostTags">
+            <summary>
+            Default post tags.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.EShighlight.PreTag">
+            <summary>
+            Higlhights pre tag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.EShighlight.PostTag">
+            <summary>
+            Higlhights post tag.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.EShighlight.Fields">
+            <summary>
+            Elastic highlights fields settings.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.EShighlight.RequiredFieldMatch">
+            <summary>
+            Elastic highlight field match setting.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESMatchQuery">
+            <summary>
+            Represents Elasticsearch match query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESMatchQuery.Match">
+            <summary>
+            Represents Elasticsearch match object.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESMatchQuery.Query">
+            <summary>
+            Represents Elasticsearch match query string.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESScoreQuery">
+            <summary>
+            Represents Elasticsearch custom search query with score.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.ESScoreQuery.#ctor(System.Collections.Generic.List{Terrasoft.GlobalSearch.ESFunction},System.Collections.Generic.List{Terrasoft.GlobalSearch.ESMultiMatchQuery})">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.GlobalSearch.ESScoreQuery"/>.
+            </summary>
+            <param name="functions">List of <see cref="T:Terrasoft.GlobalSearch.ESFunction"/>.</param>
+            <param name="multiMatchQueries">List of <see cref="T:Terrasoft.GlobalSearch.ESMultiMatchQuery"/> instances.</param>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.ESScoreQuery.#ctor(System.Collections.Generic.List{Terrasoft.GlobalSearch.ESFunction},Terrasoft.GlobalSearch.ESMultiMatchQuery)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.GlobalSearch.ESScoreQuery"/>.
+            </summary>
+            <param name="functions">List of <see cref="T:Terrasoft.GlobalSearch.ESFunction"/>.</param>
+            <param name="multiMatchQuery"><see cref="T:Terrasoft.GlobalSearch.ESMultiMatchQuery"/> instance.</param>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESScoreQuery.FScore">
+            <summary>
+            <see cref="T:Terrasoft.GlobalSearch.FunctionScore"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.FunctionScore">
+            <summary>
+            Represents Elasticsearch function score instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.FunctionScore.Functions">
+            <summary>
+            List of <see cref="T:Terrasoft.GlobalSearch.ESFunction"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.FunctionScore.Query">
+            <summary>
+            <see cref="T:Terrasoft.GlobalSearch.FunctionScoreQuery"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESFunction">
+            <summary>
+            Represents Elasticsearch function score query function.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESFunction.FilterType">
+            <summary>
+            Represents Elasticsearch function filter.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESFunction.Type">
+            <summary>
+            Function type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESFunction.Weight">
+            <summary>
+            Represents Elasticsearch function weight.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.FunctionScoreQuery">
+            <summary>
+            Represents Elasticsearch function score query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.FunctionScoreQuery.BoolQuery">
+            <summary>
+            Represents Elasticsearch bool query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.FunctionScoreQuery.MultiMatchQueries">
+            <summary>
+            List of <see cref="T:Terrasoft.GlobalSearch.ESMultiMatchQuery"/> instances.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.ESMultiMatchQuery">
+            <summary>
+            Represents Elasticsearch multi match query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESMultiMatchQuery.Query">
+            <summary>
+            Represents Elasticsearch multi match query string.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.GlobalSearch.ESMultiMatchQuery._minimumShouldMatch">
+            <summary>
+            Represents Elasticsearch multi match query minimum_should_match property.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.GlobalSearch.ESMultiMatchQuery._fields">
+            <summary>
+            Represents Elasticsearch multi match query fields.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESMultiMatchQuery.Type">
+            <summary>
+            Elastic multi match query type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESMultiMatchQuery.Operator">
+            <summary>
+            Elastic multi match query operator.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESSearchResponse.Took">
+            <summary>
+            Search time.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESSearchResponse.SearchResult">
+            <summary>
+            Elastic search result.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESSearchResult.Total">
+            <summary>
+            Count of selected records.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESSearchResult.Hits">
+            <summary>
+            Selected records <see cref="T:Terrasoft.GlobalSearch.ESHit"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESHit.Type">
+            <summary>
+            Type of selected record.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESHit.Id">
+            <summary>
+            Unique identifier of selected record.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESHit.Score">
+            <summary>
+            Score of selected record.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESHit.Source">
+            <summary>
+            Source of selected record.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESHit.Highlight">
+            <summary>
+            Highlights of selected record.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESSource.Includes">
+            <summary>
+            Included column names from elastic source.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.ESSource.Excludes">
+            <summary>
+            Excluded column names from elastic source.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.GlobalSearchConfigSection">
+            <summary>
+            Configuration section for Global Search.
+            </summary>
+            <seealso cref="T:System.Configuration.ConfigurationSection" />
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.GlobalSearchConfigSection.Settings">
+            <summary>
+            Gets or sets the Global Search connection settings.
+            </summary>
+            <value>
+            The settings.
+            </value>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.GlobalSearchConfigSection.ConnectionStringName">
+            <summary>
+            Gets the name of the connection string.
+            </summary>
+            <value>
+            The name of the connection string.
+            </value>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.GlobalSearchConfigSection.UserName">
+            <summary>
+            Elastic search user.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.GlobalSearchConfigSection.Password">
+            <summary>
+            Elastic search password.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.GlobalSearch.Indexing.AvailableIndexingEntities._detailNames">
+            <summary>
+            Indexing detail names.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.AvailableIndexingEntities.GetEntityNames(Terrasoft.Core.UserConnection)">
+            <summary>
+            Returns indexing entity names.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.AvailableIndexingEntities.ClearCache(Terrasoft.Core.UserConnection)">
+            <summary>
+            Clears cached indexing entity names.
+            </summary>
+            <param name="userConnection"><see cref="T:Terrasoft.Core.UserConnection"/></param>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.Indexing.GlobalSearchIndexingSchemasRepository">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.GlobalSearchIndexingSchemasRepository.GetIndexingEntityNames(Terrasoft.Core.UserConnection)">
+            <inheritdoc cref="M:Terrasoft.GlobalSearch.Indexing.IGlobalSearchIndexingSchemasRepository.GetIndexingEntityNames(Terrasoft.Core.UserConnection)"/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.GlobalSearchIndexingSchemasRepository.GetIndexingSectionUIds(Terrasoft.Core.UserConnection)">
+            <inheritdoc cref="M:Terrasoft.GlobalSearch.Indexing.IGlobalSearchIndexingSchemasRepository.GetIndexingSectionUIds(Terrasoft.Core.UserConnection)"/>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.Indexing.IGlobalSearchIndexingSchemasRepository">
+            <summary>
+            Repository for work with global search indexing schemas.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IGlobalSearchIndexingSchemasRepository.GetIndexingEntityNames(Terrasoft.Core.UserConnection)">
+            <summary>
+            Method that returns all indexing entities names.
+            </summary>
+            <returns>Indexing entities names collection.</returns>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IGlobalSearchIndexingSchemasRepository.GetIndexingSectionUIds(Terrasoft.Core.UserConnection)">
+            <summary>
+            Method that returns all indexing sections uids.
+            </summary>
+            <returns>Indexing sections uids collection.</returns>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.Indexing.IIndexingActors.IndexingEngineActor">
+            <summary>
+            Gets indexing engine actor reference.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.Indexing.IIndexingWebRequestFactory">
+            <summary>
+            Provides method for construction indexing request.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IIndexingWebRequestFactory.CreateIndexingRequest(Terrasoft.GlobalSearch.Indexing.IndexingRequestData)">
+            <summary>
+            Creates indexing request instance.
+            </summary>
+            <param name="indexingRequestData">Indexing request data.</param>
+            <returns>Indexing web request.</returns>
+            <exception cref="T:System.ArgumentException">
+            1. Argument or <see cref="P:Terrasoft.GlobalSearch.Indexing.IndexingRequestData.IndexingConfig"/> property is null
+            2. <see cref="P:Terrasoft.GlobalSearch.Indexing.IndexingRequestData.IndexingConfig"/> Ids property is null or empty or greater than 500
+            3. <see cref="P:Terrasoft.GlobalSearch.Indexing.IndexingRequestData.IndexingApiUrl"/> is null or empty.
+            </exception>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingActorsAssemblyProvider.GetActorRootAssemblies">
+            <summary>
+            Returns assemblies containing classes of the root actors.
+            </summary>
+            <returns>A list of assemblies.</returns>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingActorsAssemblyProvider.GetRegistratorAssemblies">
+            <summary>
+            Returns assemblies containing classes that implements <see cref="T:Terrasoft.ActorSystem.IActorRegistrator"/> interface.
+            </summary>
+            <returns>An array of assemblies.</returns>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingConfig.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingConfig.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingEngineActor.#ctor(Akka.Actor.IActorRef)">
+            <summary>
+            Сonstructor for test purposes.
+            </summary>
+            <param name="startProcessActor">Start process actor.</param>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingEntitySender.SendIndexingEntity(Terrasoft.GlobalSearch.Indexing.IndexingRequestData,System.Boolean)">
+            <summary>
+            Send indexing entity config to indexing entity actor.
+            </summary>
+            <param name="requestData"><see cref="T:Terrasoft.GlobalSearch.Indexing.IndexingRequestData"/> instance.</param>
+            <param name="isAsync">Send asynchronously.</param>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingEntitySender.SendIndexingEntity(Terrasoft.GlobalSearch.Indexing.IndexingRequestData)">
+            <summary>
+            Send indexing entity config to indexing entity actor.
+            </summary>
+            <param name="requestData"><see cref="T:Terrasoft.GlobalSearch.Indexing.IndexingRequestData"/> instance.</param>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.Indexing.IndexingRequestDataBuilder">
+            <summary>
+            Builder for Indexing request data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingRequestDataBuilder.BuildRequestData(Terrasoft.Core.UserConnection,Terrasoft.GlobalSearch.Indexing.IndexingOperationType,Terrasoft.Core.Entities.Entity)">
+            <summary>
+            Builds request data for indexation service.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="indexingOperationType">Indexing operation type.</param>
+            <param name="entity">Indexing entity.</param>
+            <returns>Request data DTO.</returns>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingRequestDataBuilder.BuildQueriedRequestData(Terrasoft.Core.UserConnection,Terrasoft.GlobalSearch.Indexing.IndexingOperationType,Terrasoft.Core.Entities.Entity,System.String)">
+            <summary>
+            Builds queried request data for indexation service.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="indexingOperationType">Indexing operation type.</param>
+            <param name="entity">Indexing entity.</param>
+            <param name="fieldPattern">Query field pattern.</param>
+            <returns>Request data dto.</returns>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingRequestDataBuilder.BuildQueriedRequestData(Terrasoft.Core.UserConnection,Terrasoft.GlobalSearch.Indexing.IndexingOperationType,System.Collections.Generic.List{System.Guid},System.String,System.String)">
+            <summary>
+            Builds queried request data for indexation service.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="indexingOperationType">Indexing operation type.</param>
+            <param name="ids">List of records identifier.</param>
+            <param name="entityName">Entity name.</param>
+            <param name="fieldPattern">Query field pattern.</param>
+            <returns>Request data dto.</returns>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingRequestDataBuilder.BuildQueriedDeleteRequestData(Terrasoft.Core.UserConnection,Terrasoft.GlobalSearch.Indexing.IndexingOperationType,System.Collections.Generic.List{System.Guid},System.String,System.String)">
+            <summary>
+            Builds queried delete request data for indexation service.
+            </summary>
+            <param name="userConnection">User connection.</param>
+            <param name="indexingOperationType">Indexing operation type.</param>
+            <param name="ids">List of records identifier.</param>
+            <param name="entityName">Entity name.</param>
+            <param name="fieldPattern">Query field pattern.</param>
+            <returns>Request data dto.</returns>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.Indexing.IndexingWebRequestFactory">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.GlobalSearch.Indexing.IIndexingWebRequestFactory"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Indexing.IndexingWebRequestFactory.CreateIndexingRequest(Terrasoft.GlobalSearch.Indexing.IndexingRequestData)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Monitoring.ErrorMetric.GetFieldValues">
+            <inheritdoc cref="M:Terrasoft.Monitoring.IMetric.GetFieldValues"/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Monitoring.ErrorMetric.GetTags">
+            <inheritdoc cref="M:Terrasoft.Monitoring.IMetric.GetTags"/>
+        </member>
+        <member name="T:Terrasoft.GlobalSearch.Monitoring.GlobalSearchErrorReporter">
+            <summary>
+            Implementation of <see cref="T:Terrasoft.ElasticSearch.ErrorReporting.IErrorReporter"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Monitoring.GlobalSearchErrorReporter.ReportError">
+            <see cref="M:Terrasoft.ElasticSearch.ErrorReporting.IErrorReporter.ReportError"/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Monitoring.IndexingMetric.GetFieldValues">
+            <inheritdoc cref="M:Terrasoft.Monitoring.IMetric.GetFieldValues"/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Monitoring.IndexingMetric.GetTags">
+            <inheritdoc cref="M:Terrasoft.Monitoring.IMetric.GetTags"/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Monitoring.SearchMetric.GetFieldValues">
+            <inheritdoc cref="M:Terrasoft.Monitoring.IMetric.GetFieldValues"/>
+        </member>
+        <member name="M:Terrasoft.GlobalSearch.Monitoring.SearchMetric.GetTags">
+            <inheritdoc cref="M:Terrasoft.Monitoring.IMetric.GetTags"/>
+        </member>
+        <member name="F:Terrasoft.GlobalSearch.SearchRequestQuery.DefaultSize">
+            <summary>
+            Default search size.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.SearchRequestQuery.From">
+            <summary>
+            First selected item index.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.SearchRequestQuery.Size">
+            <summary>
+            Count selected records.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.SearchRequestQuery.Query">
+            <summary>
+            Elastic search query.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.SearchRequestQuery.Highlight">
+            <summary>
+            Elastic search highlight settings <see cref="T:Terrasoft.GlobalSearch.ISearchRequestHighlight"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.GlobalSearch.SearchRequestQuery.Source">
+            <summary>
+            Elastic search source settings <see cref="T:Terrasoft.GlobalSearch.ISearchRequestSource"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

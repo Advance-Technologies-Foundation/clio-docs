@@ -1,0 +1,19 @@
+﻿{
+  "Descriptor": {
+    "UId": "b548f6ee-da61-6e38-8e8b-4fdca6a417aa",
+    "Name": "AtfRecordBoost",
+    "Type": 1,
+    "InstallBehavior": 1,
+    "ModifiedOnUtc": "\/Date(1716711130000)\/",
+    "Maintainer": "Advanced Technologies Foundation",
+    "ProjectPath": "Files/AtfRecordBoost.csproj",
+    "DependsOn": [
+      {
+        "UId": "2ecba2bd-b810-47a5-a1b1-08c888529d6c",
+        "PackageVersion": "7.8.0",
+        "Name": "CrtCustomer360App",
+        "Type": 1
+      }
+    ]
+  }
+}

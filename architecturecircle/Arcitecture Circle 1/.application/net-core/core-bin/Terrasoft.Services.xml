@@ -1,0 +1,2519 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Services</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Services.DiscoveryEndpointAvailabilityException">
+            <summary>
+            Thrown when discovery document retrieval error occured due to various reasons.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.DiscoveryEndpointAvailabilityException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.DiscoveryEndpointAvailabilityException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="T:Terrasoft.Services.TokenData">
+            <summary>
+            A model for storing access token data in a cache
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.IIdentityClient">
+            <summary>
+            IdentityService auth client.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IIdentityClient.IdentityServerAddress">
+            <summary>
+            Gets the identity server address.
+            </summary>
+            <value>
+            The identity server address.
+            </value>
+        </member>
+        <member name="M:Terrasoft.Services.IIdentityClient.RequestClientCredentialsTokenAsync(System.String,System.String,System.String)">
+            <summary>
+            Asynchronously requests the OAuth2 client credentials flow access token.
+            </summary>
+            <param name="clientId">The client identifier.</param>
+            <param name="clientSecret">The client secret.</param>
+            <param name="scopes">The scopes enumerated in string with space.</param>
+            <returns>OAuth access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IIdentityClient.RequestClientCredentialsTokenAsync(System.String)">
+            <summary>
+            Asynchronously requests the OAuth2 client credentials flow access token.
+            </summary>
+            <param name="scopes">The scopes enumerated in string with space.</param>
+            <returns>OAuth access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IIdentityClient.RequestClientCredentialsToken(System.String)">
+            <summary>
+            Synchronously requests the OAuth2 client credentials flow access token .
+            </summary>
+            <param name="scopes">The scopes enumerated in string with space.</param>
+            <returns>OAuth access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IIdentityClient.ValidateAccessToken(System.String)">
+            <summary>
+            Validates the access token using Identity Server.
+            </summary>
+            <param name="accessToken">The access token.</param>
+            <returns><see cref="T:System.Security.Claims.ClaimsPrincipal"/> object extracted from given access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IIdentityClient.RequestIdentityTokenByAuthorizationCodeAsync(System.String,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Requests the OpenID identity token using authorization code flow.
+            </summary>
+            <param name="authorizationCode">The authorization code received after Authorize request.</param>
+            <param name="redirectUri">The redirect URI that was used for Authorize request. </param>
+            <param name="scopes">The scopes that was requested in Authorize request.</param>
+            <param name="sessionState">Session state.</param>
+            <returns>OpenID identity token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IIdentityClient.ValidateTokenAtIntrospectionEndpoint(System.String,System.String,System.String)">
+            <summary>
+            Validates the access token by calling IntrospectionEndpoint at IdentityServer.
+            </summary>
+            <param name="clientId">The client identifier.</param>
+            <param name="clientSecret">The client secret.</param>
+            <param name="token">The access token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Services.IIdentityClient.GetDiscoveryResponseAsync">
+            <summary>
+            Retrieves all info from OpenID Connect discovery endpoint.
+            </summary>
+            <returns>Returns the response from OpenID Connect discovery endpoint.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.IdentityClient">
+            <summary>
+            Default IdentityService client implementation.
+            </summary>
+            <seealso cref="T:Terrasoft.Services.IIdentityClient" />
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.#ctor(Terrasoft.Services.IIdentityServiceSettingsProvider,Microsoft.IdentityModel.Tokens.ISecurityTokenValidator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.IdentityClient"/> class.
+            </summary>
+            <param name="settingsProvider">Identity settings provider.</param>
+            <param name="securityTokenValidator">The security token validator.</param>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.#ctor(Terrasoft.Services.IIdentityServiceSettingsProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.IdentityClient"/> class.
+            </summary>
+            <param name="settingsProvider">Identity settings provider.</param>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.IdentityClient"/> class.
+            </summary>
+            <param name="serverAddress">Identity server address.</param>
+            <remarks>Constructor is obsolete and will be removed in future releases.</remarks>
+        </member>
+        <member name="P:Terrasoft.Services.IdentityClient.HttpClient">
+            <summary>
+            Gets or sets the HTTP client for requesting discovery information and other Identity server endpoints.
+            </summary>
+            <value>
+            The HTTP client.
+            </value>
+        </member>
+        <member name="F:Terrasoft.Services.IdentityClient._discoveryCache">
+            <summary>
+            Gets or sets the discovery document cache.
+            </summary>
+            <value>
+            The discovery cache.
+            </value>
+        </member>
+        <member name="P:Terrasoft.Services.IdentityClient.IdentityServerAddress">
+            <summary>
+            Gets or sets the identity server address.
+            </summary>
+            <value>
+            The identity server address.
+            </value>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.GetIdentityClient(Terrasoft.Services.IIdentityServiceSettingsProvider)">
+            <summary>
+            Creates new <see cref="T:Terrasoft.Services.IdentityClient"/>.
+            </summary>
+            <returns>New instance of <see cref="T:Terrasoft.Services.IdentityClient"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.RequestClientCredentialsTokenAsync(System.String,System.String,System.String)">
+            <summary>
+            Asynchronously requests the OAuth2 client credentials flow access token.
+            </summary>
+            <param name="clientId">The client identifier.</param>
+            <param name="clientSecret">The client secret.</param>
+            <param name="scopes">The scopes enumerated in string with space.</param>
+            <returns>OAuth access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.RequestClientCredentialsTokenAsync(System.String)">
+            <summary>
+            Asynchronously requests the OAuth2 client credentials flow access token.
+            </summary>
+            <param name="scopes">The scopes enumerated in string with space.</param>
+            <returns>OAuth access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.RequestClientCredentialsToken(System.String)">
+            <summary>
+            Synchronously requests the OAuth2 client credentials flow access token .
+            </summary>
+            <param name="scopes">The scopes enumerated in string with space.</param>
+            <returns>OAuth access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.RequestIdentityTokenByAuthorizationCodeAsync(System.String,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Requests the OpenID identity token using authorization code flow.
+            </summary>
+            <param name="authorizationCode">The authorization code received after Authorize request.</param>
+            <param name="redirectUri">The redirect URI that was used for Authorize request. </param>
+            <param name="scopes">The scopes that was requested in Authorize request.</param>
+            <param name="sessionState">Session state.</param>
+            <returns>OpenID identity token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.ValidateTokenAtIntrospectionEndpoint(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.GetOpenIdAuthorizeRequestUrl(System.String,System.Uri,System.String,System.String,System.Collections.Generic.IList{System.String},System.String)">
+            <summary>
+            Returns url for authorize OpenID request to auth server.
+            </summary>
+            <param name="clientId">Oauth Client Id.</param>
+            <param name="redirectUri">Redirect uri for returning auth code. Must exactly match one of the
+            allowed redirect URIs for that client.</param>
+            <param name="state">Auth server will echo back the state value on the token response.</param>
+            <param name="nonce">Auth server will echo back the nonce value in the identity token, this is for replay
+            protection.</param>
+            <param name="additionalScopes">Additional scopes, except 'openid'.</param>
+            <param name="responseType">Response type. Possible values: 'id_token', 'token', 'id_token token', 'code',
+            'code id_token', 'code id_token token'</param>
+            <returns>Uri of the formatted request.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.GetOpenIdAuthorizeRequestUrl(System.Uri,System.String,System.String,System.Collections.Generic.IList{System.String},System.String)">
+            <summary>
+            Returns url for authorize OpenID request to auth server.
+            </summary>
+            <param name="redirectUri">Redirect uri for returning auth code. Must exactly match one of the
+            allowed redirect URIs for that client.</param>
+            <param name="state">Auth server will echo back the state value on the token response.</param>
+            <param name="nonce">Auth server will echo back the nonce value in the identity token, this is for replay
+            protection.</param>
+            <param name="additionalScopes">Additional scopes, except 'openid'.</param>
+            <param name="responseType">Response type. Possible values: 'id_token', 'token', 'id_token token', 'code',
+            'code id_token', 'code id_token token'</param>
+            <returns>Uri of the formatted request.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.GetOpenIdEndSessionRequestUrl(System.String,System.Uri,System.String)">
+            <summary>
+            Returns url for end session OpenID request to auth server.
+            </summary>
+            <param name="idTokenHint">Id token associated with the user's session.</param>
+            <param name="redirectUri">Uri for returning after Identity session finished.</param>
+            <param name="state">Custom state which will be passed as parameter to redirect URI.</param>
+            <returns>Uri of the formatted request.</returns>
+            <remarks>Logout url can be non-openid compliant and can be set using placeholders like
+            https://mydomain.auth.us.amazoncognito.com/logout?client_id={client_id}&amp;redirect_uri={redirect_uri}
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.ValidateAccessToken(System.String)">
+            <summary>
+            Validates the access token using Identity Server.
+            </summary>
+            <param name="accessToken">The access token.</param>
+            <returns><see cref="T:System.Security.Claims.ClaimsPrincipal"/> object extracted from given access token.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IdentityClient.GetDiscoveryResponseAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:Terrasoft.Services.IOpenIdIdentityClient">
+            <summary>
+            Identity service OpenID client.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.IOpenIdIdentityClient.GetOpenIdAuthorizeRequestUrl(System.String,System.Uri,System.String,System.String,System.Collections.Generic.IList{System.String},System.String)">
+            <summary>
+            Return url for authorize OpenID request to auth server.
+            </summary>
+            <param name="clientId">Oauth Client Id.</param>
+            <param name="redirectUri">Redirect uri for returning auth code. Must exactly match one of the
+            allowed redirect URIs for that client.</param>
+            <param name="state">Auth server will echo back the state value on the token response.</param>
+            <param name="nonce">Auth server will echo back the nonce value in the identity token, this is for replay
+            protection.</param>
+            <param name="scopes">Additional scopes, except 'openid'.</param>
+            <param name="responseType">Response type. Possible values: 'id_token', 'token', 'id_token token', 'code',
+            'code id_token', 'code id_token token'</param>
+            <returns>Uri of the formatted request.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IOpenIdIdentityClient.GetOpenIdAuthorizeRequestUrl(System.Uri,System.String,System.String,System.Collections.Generic.IList{System.String},System.String)">
+            <summary>
+            Return url for authorize OpenID request to auth server.
+            </summary>
+            <param name="redirectUri">Redirect uri for returning auth code. Must exactly match one of the
+            allowed redirect URIs for that client.</param>
+            <param name="state">Auth server will echo back the state value on the token response.</param>
+            <param name="nonce">Auth server will echo back the nonce value in the identity token, this is for replay
+            protection.</param>
+            <param name="scopes">Additional scopes, except 'openid'.</param>
+            <param name="responseType">Response type. Possible values: 'id_token', 'token', 'id_token token', 'code',
+            'code id_token', 'code id_token token'</param>
+            <returns>Uri of the formatted request.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IOpenIdIdentityClient.GetOpenIdEndSessionRequestUrl(System.String,System.Uri,System.String)">
+            <summary>
+            Returns url for end session OpenID request to auth server.
+            </summary>
+            <param name="idTokenHint">Id token associated with the user's session.</param>
+            <param name="redirectUri">Uri for returning after Identity session finished.</param>
+            <param name="state">Custom state which will be passed as parameter to redirect URI.</param>
+            <returns>Uri of the formatted request.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceClientFactory">
+            <summary>
+            Creates the service client instance.
+            </summary>
+            <param name="schema">The service schema.</param>
+            <param name="userConnection">The user connection.</param>
+            <returns>Service client descriptor.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.IServiceClient">
+            <summary>
+            Describes service client.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClient.CreateRequest(System.String)">
+            <summary>
+            Creates request by it's method name.
+            </summary>
+            <param name="methodName">method name to create.</param>
+            <returns>Instantiated ServiceClientRequest instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClient.Execute(Terrasoft.Services.IServiceClientRequest)">
+            <summary>
+            Executes request described by <paramref name="request"/> parameter.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Services.IServiceClientRequest"/> which describes
+            request to send.</param>
+            <returns>Filled in <see cref="T:Terrasoft.Services.IServiceClientResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClient.Execute(Terrasoft.Services.IServiceClientRequest,System.Threading.CancellationToken)">
+            <summary>
+            Executes request described by <paramref name="request"/> parameter.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Services.IServiceClientRequest"/> which describes
+            request to send.</param>
+            <param name="cancellationToken">Instance of the <see cref="T:System.Threading.CancellationToken"/> type
+            used to cancel execution.</param>
+            <returns>Filled in <see cref="T:Terrasoft.Services.IServiceClientResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClient.ExecuteAsync(Terrasoft.Services.IServiceClientRequest)">
+            <summary>
+            Returns request task described asynchronously by <paramref name="request"/> parameter.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Services.IServiceClientRequest"/> which describes
+            request to send.</param>
+            <returns>Filled in <see cref="T:Terrasoft.Services.IServiceClientResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClient.ExecuteAsync(Terrasoft.Services.IServiceClientRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns request task described asynchronously by IServiceClientRequest parameter.
+            </summary>
+            <param name="request">Instance of <see cref="T:Terrasoft.Services.IServiceClientRequest"/> which describes
+            request to send.</param>
+            <param name="cancellationToken">Instance of the <see cref="T:System.Threading.CancellationToken"/> type
+            used to cancel execution.</param>
+            <returns>Filled in <see cref="T:Terrasoft.Services.IServiceClientResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClient.Execute(Terrasoft.Services.IServiceClientRequest,System.TimeSpan)">
+            <summary>
+            Executes request described by <paramref name="request"/> parameter with specified timeout.
+            </summary>
+            <param name="request">Instance of the <see cref="T:Terrasoft.Services.IServiceClientRequest"/> which describes
+            request to send.</param>
+            <param name="timeout">Execution timeout.</param>
+            <returns>Filled in <see cref="T:Terrasoft.Services.IServiceClientResponse"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClient.Execute(Terrasoft.Services.IServiceClientRequest,System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Executes request described by <paramref name="request"/> parameter with specified timeout.
+            </summary>
+            <param name="request">Instance of the <see cref="T:Terrasoft.Services.IServiceClientRequest"/> which describes
+            request to send.</param>
+            <param name="timeout">Execution timeout.</param>
+            <param name="cancellationToken">Instance of the <see cref="T:System.Threading.CancellationToken"/> type
+            used to cancel execution.</param>
+            <returns>Filled in <see cref="T:Terrasoft.Services.IServiceClientResponse"/> instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceClientRequestFactory">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.Services.IServiceClientRequest"/> type.
+            </summary>
+            <param name="serviceSchema">Instance of the <see cref="T:Terrasoft.Services.ServiceSchema"/> type.</param>
+            <param name="serviceMethod">Instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceMethod"/> type.</param>
+            <param name="valueProvider">Instance of the <see cref="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider"/> type.</param>
+            <param name="userConnection">Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> type.</param>
+        </member>
+        <member name="T:Terrasoft.Services.IServiceClientRequest">
+            <summary>
+            Describes service request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientRequest.RequestParameters">
+            <summary>
+            Request parameter values.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientRequest.RequestBody">
+            <summary>
+            Request body value.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClientRequest.GetRequestData">
+            <summary>
+            Fills in and returns <see cref="T:Terrasoft.Services.Runtime.ServiceRequestData"/> instance.
+            </summary>
+            <returns><see cref="T:Terrasoft.Services.Runtime.ServiceRequestData"/> instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClientRequest.SetParameterDataAdapter(System.String,Terrasoft.Services.IServiceRequestDataAdapter)">
+            <summary>Sets the data adapter.</summary>
+            <param name="parameterPath">The parameter path.</param>
+            <param name="adapter">The adapter.</param>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceClientResponseFactory">
+            <summary>
+            Instantiates <see cref="T:Terrasoft.Services.IServiceClientResponse"/>.
+            </summary>
+            <param name="responseData">ServiceResponseData instance.</param>
+            <param name="valueProvider">Value provider for service parameter.</param>
+            <param name="response">Service method response metadata.</param>
+            <returns>Created IServiceClientResponse.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.IServiceClientResponse">
+            <summary>
+            Carries service response data.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientResponse.Body">
+            <summary>
+            Raw body content.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientResponse.StatusCode">
+            <summary>
+            Response status code.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientResponse.Success">
+            <summary>
+            Response success state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientResponse.RequestBody">
+            <summary>
+            Raw response body.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientResponse.RawDataRequest">
+            <summary>
+            Raw data request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientResponse.RawDataResponse">
+            <summary>
+            Raw data response.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.IServiceClientResponse.ParameterValues">
+            <summary>
+            Response parameter values.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceClientResponse.SetParameterDataAdapter``1(System.String,Terrasoft.Services.IServiceResponseDataAdapter{``0})">
+            <summary>
+            Associates specified <see cref="T:Terrasoft.Services.IServiceResponseDataAdapter`1"/> instance with
+            <see cref="T:Terrasoft.Services.Metadata.ServiceParameter"/>.
+            </summary>
+            <param name="parameterPath">Parameter path.</param>
+            <param name="adapter"><see cref="T:Terrasoft.Services.IServiceResponseDataAdapter`1"/> instance to 
+            associate with parameter.</param>
+        </member>
+        <member name="T:Terrasoft.Services.IServiceRequestDataAdapter">
+            <summary>
+            Interface for implementing custom data types support in service request parameters.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceRequestDataAdapter.TryGetValue(System.Object,System.String,System.Object@)">
+            <summary>Returns inner property value.</summary>
+            <param name="sourceValue">The service parameter value.</param>
+            <param name="propertyName">The inner service parameter name.</param>
+            <param name="value">The inner property value.</param>
+        </member>
+        <member name="T:Terrasoft.Services.IServiceResponseDataAdapter`1">
+            <summary>
+            Interface for implementing custom data types support.
+            </summary>
+            <typeparam name="T">Custom output data type.</typeparam>
+        </member>
+        <member name="M:Terrasoft.Services.IServiceResponseDataAdapter`1.Fill(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Fills target data type from IReadOnlyDictionary of values.
+            </summary>
+            <param name="value">Raw service parameter value.</param>
+            <returns>Filled target data type.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.IServiceSchemaManager">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.AuthType">
+            <summary>
+            Describes service authentification type.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.BasicAuthInfo">
+            <summary>
+            Describes metadata structure for basic service authentification.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.BasicAuthInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.BasicAuthInfo"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.BasicAuthInfo.AuthType">
+            <summary>
+            Gets service authentification type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.BasicAuthInfo.Username">
+            <summary>
+            Login of user.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.BasicAuthInfo.Password">
+            <summary>
+            Password of user.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.BasicAuthInfo.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Reads the values of schema dependency properties from metadata,
+            using the specified <see cref="T:Terrasoft.Common.DataReader" />.
+            </summary>
+            <param name="reader">The <see cref="T:Terrasoft.Common.DataReader" />
+            instance used to read metadata.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.BasicAuthInfo.CreateAuthData">
+            <summary>
+            Creates new instance of <see cref="T:Terrasoft.Services.Runtime.RequestAuthData"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.BasicAuthInfo.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <inheritdoc cref="M:Terrasoft.Common.IMetaDataSerializable.WriteMetaData(Terrasoft.Common.DataWriter)"/>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.BasicAuthInfo.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.DigestAuthInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.DigestAuthInfo"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.DigestAuthInfo.AuthType">
+            <summary>
+            Gets service authentification type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.DigestAuthInfo.CreateAuthData">
+            <summary>
+            Creates new instance of <see cref="T:Terrasoft.Services.Runtime.RequestAuthData"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.DigestAuthInfo.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.HttpMethodType">
+            <summary>
+            Describes HTTP method.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.OAuth20AuthInfo">
+            <summary>
+            Describes metadata structure for OAuth 2.0 service authentification.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.OAuth20AuthInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.BasicAuthInfo"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.OAuth20AuthInfo.AuthType">
+            <summary>
+            Gets service authentification type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.OAuth20AuthInfo.ApplicationId">
+            <summary>
+            Application Id.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.OAuth20AuthInfo.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Reads the values of schema dependency properties from metadata,
+            using the specified <see cref="T:Terrasoft.Common.DataReader" />.
+            </summary>
+            <param name="reader">The <see cref="T:Terrasoft.Common.DataReader" />
+            instance used to read metadata.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.OAuth20AuthInfo.CreateAuthData">
+            <summary>
+            Creates new instance of <see cref="T:Terrasoft.Services.Runtime.RequestAuthData"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.OAuth20AuthInfo.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <inheritdoc cref="M:Terrasoft.Common.IMetaDataSerializable.WriteMetaData(Terrasoft.Common.DataWriter)"/>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.OAuth20AuthInfo.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceAuthInfo">
+            <summary>
+            Describes metadata structure for service authentification.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceAuthInfo.AuthType">
+            <summary>
+            Gets service authentification type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceAuthInfo.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Reads the values of schema dependency properties from metadata,
+            using the specified <see cref="T:Terrasoft.Common.DataReader" />.
+            </summary>
+            <param name="reader">The <see cref="T:Terrasoft.Common.DataReader" />
+            instance used to read metadata.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceAuthInfo.CreateAuthData">
+            <summary>
+            Creates new instance of <see cref="T:Terrasoft.Services.Runtime.RequestAuthData"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceAuthInfo.GetMetaPropertyNameMap(System.Collections.Generic.Dictionary{System.String,Terrasoft.Core.DesignModePropertyMapItem},System.String)">
+            <summary>
+            Fills meta indexes map for derived classes.
+            </summary>
+            <param name="metaMap">Map of property info and meta index.</param>
+            <param name="inheritanceHierarchy">Inheritance hierarchy.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceAuthInfo.Create(Terrasoft.Services.Metadata.AuthType)">
+            <summary>
+            Create instance by <see cref="T:Terrasoft.Services.Metadata.AuthType" />.
+            </summary>
+            <param name="type">Authentification type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceAuthInfo.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceAuthInfo.ReadMetaData(Terrasoft.Common.DataReader)">
+            <inheritdoc cref="M:Terrasoft.Common.IMetaDataSerializable.ReadMetaData(Terrasoft.Common.DataReader)"/>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceAuthInfo.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <inheritdoc cref="M:Terrasoft.Common.IMetaDataSerializable.WriteMetaData(Terrasoft.Common.DataWriter)"/>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceCommunication">
+            <summary>
+            Service communication.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.#ctor(Terrasoft.Services.Metadata.ServiceCommunication)">
+            <summary>
+            Creates a new instance that is a copy of the specified instance.
+            </summary>
+            <param name="source">Instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceCommunication"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.#ctor">
+            <summary>
+            Creates a new instance ot the <see cref="T:Terrasoft.Services.Metadata.ServiceCommunication"/> type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceCommunication.HeaderParameters">
+            <summary>
+            List of response header parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceCommunication.BodyParameters">
+            <summary>
+            List of response body parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceCommunication.CookieParameters">
+            <summary>
+            List of response cookie parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceCommunication.Parameters">
+            <summary>
+            List of response cookie parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceCommunication.ContentType">
+            <summary>
+            Indicates request Content-Type. Possible values <see cref="T:Terrasoft.Services.Metadata.ServiceContentType"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Applies meta data values.
+            </summary>
+            <param name="reader">Instance of the <see cref="T:Terrasoft.Common.DataReader"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.ParametersCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>Event handler for the parameters collection changed event.</summary>
+            <param name="sender">The sender.</param>
+            <param name="notifyCollectionChangedEventArgs">The <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> instance
+            containing the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.ReadMetaData(Terrasoft.Common.DataReader)">
+            <inheritdoc cref="M:Terrasoft.Common.IMetaDataSerializable.ReadMetaData(Terrasoft.Common.DataReader)"/>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <summary>
+            Writes meta data values.
+            </summary>
+            <param name="writer">Instance of the <see cref="T:Terrasoft.Common.DataWriter"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.InitializeLocalizableValues(Terrasoft.Common.IResourceStorage,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.GetLocalizableValues(System.Collections.Generic.ICollection{Terrasoft.Common.LocalizableValue},System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceCommunication.LoadLocalizableValues">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceContentType">
+            <summary>
+            Describes method request/response content type.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceContentType.Undefined">
+            <summary>The content type is unknown.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceContentType.Json">
+            <summary>
+            Indicates that JSON data type need to be used in conversation.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceContentType.Xml">
+            <summary>
+            Indicates that XML data type need to be used in conversation.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceMethod">
+            <summary>
+            Describes service method.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethod.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceMethod"/> type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethod.Request">
+            <summary>
+            Describes API method request.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethod.Response">
+            <summary>
+            Describes API method response.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethod.Timeout">
+            <summary>Gets or sets the request timeout.</summary>
+            <value>The request timeout.</value>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethod.UseAuthInfo">
+            <summary>Gets or sets is method require authentification.</summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethod.SoapAction">
+            <summary>Gets or sets soap action.</summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethod.Caption">
+            <summary>
+            Gets or sets the caption.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethod.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethod.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Applies meta data values.
+            </summary>
+            <param name="reader">Instance of the <see cref="T:Terrasoft.Common.DataReader"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethod.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <summary>
+            Writes meta data values.
+            </summary>
+            <param name="writer">Instance of the <see cref="T:Terrasoft.Common.DataWriter"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethod.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethod.InitializeLocalizableValues(Terrasoft.Common.IResourceStorage,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethod.GetLocalizableValues(System.Collections.Generic.ICollection{Terrasoft.Common.LocalizableValue},System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethod.LoadLocalizableValues">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceMethodCollection">
+            <summary>
+            Collection of <see cref="T:Terrasoft.Services.Metadata.ServiceMethod"/> items.
+            </summary>
+            <seealso>
+            <cref>Terrasoft.Core.FactoryMetaItemCollection{Terrasoft.Services.Metadata.ServiceMethod}</cref>
+            </seealso>
+            <seealso cref="T:System.ICloneable" />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceMethodCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodCollection.#ctor(Terrasoft.Services.Metadata.ServiceMethodCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceMethodCollection"/> class.
+            </summary>
+            <param name="source">The source.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodCollection.Clone">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceMethodRequest">
+            <summary>
+            Describes method's request.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodRequest.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceMethodRequest"/> type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethodRequest.Uri">
+            <summary>
+            Relative to <see cref="P:Terrasoft.Services.ServiceSchema.BaseUri"/> method uri string.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethodRequest.MethodType">
+            <summary>
+            HTTP request type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethodRequest.BodyBuilderId">
+            <summary>
+            Body builder Id.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethodRequest.UrlSegmentParameters">
+            <summary>
+            List of request path parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceMethodRequest.QueryParameters">
+            <summary>
+            List of request query parameters.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodRequest.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Applies meta data values.
+            </summary>
+            <param name="reader">Instance of the <see cref="T:Terrasoft.Common.DataReader"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodRequest.ParametersCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Handler for the collection changed event on Parameters collection.
+            </summary>
+            <param name="sender">The event sender.</param>
+            <param name="notifyCollectionChangedEventArgs">The <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> instance
+            containing the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodRequest.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <summary>
+            Writes meta data values.
+            </summary>
+            <param name="writer">Instance of the <see cref="T:Terrasoft.Common.DataWriter"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodRequest.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceMethodResponse">
+            <summary>
+            Describes method's response.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodResponse.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceMethodResponse"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceMethodResponse.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceNamespace">
+            <summary>
+            Describes service namespace.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespace.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceNamespace"/> type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceNamespace.Prefix">
+            <summary>
+            Describes namespace prefix value for xml elements.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceNamespace.IsDefault">
+            <summary>
+            Gets or sets is the namespace use by default.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespace.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Applies meta data values.
+            </summary>
+            <param name="reader">Instance of the <see cref="T:Terrasoft.Common.DataReader"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespace.CheckIsNameValidIdentifier(System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.MetaItem.CheckIsNameValidIdentifier(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespace.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <summary>
+            Writes meta data values.
+            </summary>
+            <param name="writer">Instance of the <see cref="T:Terrasoft.Common.DataWriter"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespace.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespaceCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceNamespaceCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespaceCollection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceNamespaceCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespaceCollection.#ctor(Terrasoft.Services.Metadata.ServiceNamespaceCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceNamespaceCollection"/> class.
+            </summary>
+            <param name="source">The source.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceNamespaceCollection.Clone">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceParameter">
+            <summary>
+            Describes incoming and outgoing service parameter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceParameter"/> type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.Path">
+            <summary>
+            Path of the parameter.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.DefValue">
+            <summary>
+            Default value.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.ItemProperties">
+            <summary>
+            List of value properties.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.DataValueTypeName">
+            <summary>
+            Describes system data value type <see cref="P:Terrasoft.Core.DataValueType.Name"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.IsArray">
+            <summary>
+            Indicates that every underlied object will be rendered into an array.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.SequenceElementName">
+            <summary>
+            Name of element in sequence node.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.IsRequired">
+            <summary>
+            Indicates that parameter is required.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.Type">
+            <summary>Gets or sets the parameter type.</summary>
+            <value>The parameter type.</value>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.Caption">
+            <summary>
+            Gets or sets the caption.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameter.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Applies meta data values.
+            </summary>
+            <param name="reader">Instance of the <see cref="T:Terrasoft.Common.DataReader"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <summary>
+            Writes meta data values.
+            </summary>
+            <param name="writer">Instance of the <see cref="T:Terrasoft.Common.DataWriter"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.ReadMetaData(Terrasoft.Common.DataReader)">
+            <summary>
+            Reads meta data values.
+            </summary>
+            <param name="reader">Instance of the <see cref="T:Terrasoft.Common.DataReader"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.InitializeLocalizableValues(Terrasoft.Common.IResourceStorage,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.GetLocalizableValues(System.Collections.Generic.ICollection{Terrasoft.Common.LocalizableValue},System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameter.LoadLocalizableValues">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceParameterCollection">
+            <summary>
+            Collection if ServiceParameter values.
+            </summary>
+            <seealso>
+            <cref>Terrasoft.Core.FactoryMetaItemCollection{Terrasoft.Services.Metadata.ServiceParameter}</cref>
+            </seealso>
+            <seealso cref="T:System.ICloneable" />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceParameterCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.#ctor(Terrasoft.Services.Metadata.ServiceParameterCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceParameterCollection"/> class.
+            </summary>
+            <param name="source">The source.</param>
+        </member>
+        <member name="E:Terrasoft.Services.Metadata.ServiceParameterCollection.CollectionChanged">
+            <summary>Occurs when the collection changes.</summary>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.ClearItems">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.RemoveItem(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.InsertItem(System.Int32,Terrasoft.Services.Metadata.ServiceParameter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.SetItem(System.Int32,Terrasoft.Services.Metadata.ServiceParameter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.FindByPath(System.String)">
+            <summary>Returns the parameter by it's path.</summary>
+            <param name="parameterPath">The parameter path. Where inner parameters splitted by point.</param>
+            <example><code>FindByPath("Id")</code> or <code>FindByPath("Contact.Name")</code></example>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.GetByPath(System.String)">
+            <summary>Returns the parameter by it's path.</summary>
+            <param name="parameterPath">The parameter path. Where inner parameters splitted by point.</param>
+            <example><code>GetByPath("Id")</code> or <code>GetByPath("Contact.Name")</code></example>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterCollection.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceParameterType">
+            <summary>
+            Describes the type of the parameter.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterType.Body">
+            <summary>
+            Parameter placed in body.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterType.UrlSegment">
+            <summary>
+            Parameter placed in uri segment.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterType.QueryString">
+            <summary>
+            Parameter placed in uri query part.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterType.HttpHeader">
+            <summary>
+            Parameter placed in HTTP header collection.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterType.Cookie">
+            <summary>
+            Parameter placed in cookie collection.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceParameterValue">
+            <summary>
+            Describes metadata structure for service parameter.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.MetaItem" />
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Metadata.ServiceParameterValue"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameterValue.Value">
+            <summary>
+            Default value
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Metadata.ServiceParameterValue.Source">
+            <summary>Gets or sets the source of value.</summary>
+            <value>The value source.</value>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterValue.ReadMetaData(Terrasoft.Common.DataReader)">
+            <inheritdoc cref="M:Terrasoft.Common.IMetaDataSerializable.ReadMetaData(Terrasoft.Common.DataReader)"/>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterValue.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Metadata.ServiceParameterValue.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceParameterValueSource">
+            <summary>
+            Sources of the service parameter value.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterValueSource.None">
+            <summary>The source not specified.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterValueSource.Const">
+            <summary>The source of the value is constant.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceParameterValueSource.SysSetting">
+            <summary>The source of the value is system setting.</summary>
+        </member>
+        <member name="T:Terrasoft.Services.Metadata.ServiceType">
+            <summary>
+            Type of the web service.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceType.Undefined">
+            <summary>The type is not specified.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceType.Rest">
+            <summary>The REST service.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceType.Soap11">
+            <summary>The SOAP v1.1 service.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Metadata.ServiceType.Soap12">
+            <summary>The SOAP v1.2 service.</summary>
+        </member>
+        <member name="T:Terrasoft.Services.ProcessSchemaWebServiceParametersProvider">
+            <summary>
+            Implements methods for dynamically creating parameters of the process schema element.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Process.IProcessSchemaElementParametersProvider" />
+        </member>
+        <member name="M:Terrasoft.Services.ProcessSchemaWebServiceParametersProvider.GetActualParameters(Terrasoft.Core.Process.ProcessSchemaParametrizedFlowNode,Terrasoft.Core.SchemaManagerProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BaseResponseBodyParser.Parse(System.String,System.Collections.Generic.Dictionary{Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Services.IServiceResponseDataAdapter{System.Object}})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.BaseServiceRequestData">
+            <summary>
+            Carries request data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BaseServiceRequestData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Runtime.BaseServiceRequestData"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BaseServiceRequestData.#ctor(Terrasoft.Services.Runtime.BaseServiceRequestData.RequestData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Runtime.BaseServiceRequestData"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BaseServiceRequestData.AuthData">
+            <summary>
+            Authentification data.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BaseServiceRequestData.HttpMethodType">
+            <summary>
+            HTTP method type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BaseServiceRequestData.Uri">
+            <summary>
+            Absolute request Uri.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BaseServiceRequestData.Headers">
+            <summary>
+            Header parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BaseServiceRequestData.Cookies">
+            <summary>
+            Cookie parameters.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BaseServiceRequestData.Body">
+            <summary>
+            Body content.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BaseServiceRequestData.Timeout">
+            <summary>
+            Request timeout in miliseconds.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.BasicAuthData">
+            <summary>
+            Describes basic service authentification info.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BasicAuthData.#ctor(Terrasoft.Services.Metadata.BasicAuthInfo)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Services.Runtime.BasicAuthData"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BasicAuthData.#ctor(System.String,System.String)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Services.Runtime.BasicAuthData"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BasicAuthData.Username">
+            <summary>
+            Gets or sets username.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BasicAuthData.Password">
+            <summary>
+            Gets or sets password.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BasicAuthData.Fill(Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Fills properties of instance of <see cref="T:Terrasoft.Services.Runtime.RequestAuthData"/>.
+            </summary>
+            <param name="provider">Instance of <see cref="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider"/>.</param>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.BodyTreeNode">
+            <summary>
+            Represents a tree node for the body parametr of the service communication.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.#ctor">
+            <summary>
+            Creates a new, non-empty instance of the <see cref="T:Terrasoft.Services.Runtime.BodyTreeNode"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Runtime.BodyTreeNode"/> type.
+            </summary>
+            <param name="name">Name of the node.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.#ctor(System.String,System.Object,System.Boolean)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Runtime.BodyTreeNode"/> type.
+            </summary>
+            <param name="name">Name of the node.</param>
+            <param name="value">Node parameter value.</param>
+            <param name="isArray">Node contains an array.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.#ctor(System.String,System.Object)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Runtime.BodyTreeNode"/> type.
+            </summary>
+            <param name="name">Name of the node.</param>
+            <param name="value">Node parameter value.</param>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.Empty">
+            <summary>
+            Gets the empty node.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.Name">
+            <summary>
+            Gets the name of the current node.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.Value">
+            <summary>
+            Gets the value of the current node.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.IsArray">
+            <summary>
+            Gets value that represents whether the current node has an array content.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.Children">
+            <summary>
+            Gets the child nodes for the current node.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.IsLeaf">
+            <summary>
+            Gets value that represents whether the current node is a leaf.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.IsEmpty">
+            <summary>
+            Represents the empty node. This field is read-only.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.BodyTreeNode.ArrayIndex">
+            <summary>Gets or sets the index of current item in parent array.</summary>
+            <value>The index of current item in parent array.</value>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.Add(System.String,System.Object,System.Boolean)">
+            <summary>
+            Adds the child node.
+            </summary>
+            <param name="name">Name of the node.</param>
+            <param name="value">Value of the node.</param>
+            <param name="isArray">Indicates whether it has an array content.</param>
+            <returns>A new instance of the <see cref="T:Terrasoft.Services.Runtime.BodyTreeNode"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.Add(System.String,System.Object)">
+            <summary>Adds the child node.</summary>
+            <param name="name">Name of the node.</param>
+            <param name="value">Value of the node.</param>
+            <returns>A new instance of the <see cref="T:Terrasoft.Services.Runtime.BodyTreeNode"/> type.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.Add(Terrasoft.Services.Runtime.BodyTreeNode)">
+            <summary>
+            Adds the child node.
+            </summary>
+            <param name="node">Node to add.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through child nodes.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through
+            the child nodes.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through child nodes.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through
+            the child nodes.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.BodyTreeNode.Merge(Terrasoft.Services.Runtime.BodyTreeNode)">
+            <summary>Merges this node with specified node.</summary>
+            <param name="node">The node to merge.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.DigestAuthData.#ctor(Terrasoft.Services.Metadata.BasicAuthInfo)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Services.Runtime.DigestAuthData"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.DigestAuthData.#ctor(System.String,System.String)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Services.Runtime.DigestAuthData"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.HttpWebExtensions">
+            <summary>
+            Contains extension methods for HttpWebRequest/HttpWebResponse, used by <see cref="T:Terrasoft.Services.Runtime.ServiceClient"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.AppendBody(System.Net.WebRequest,System.String)">
+            <summary>
+            Writes body to HttpWebRequest request stream.
+            </summary>
+            <param name="source">Instance of HttpWebRequest.</param>
+            <param name="body">Body content string.</param>
+            <returns>Modified instance of HttpWebRequest.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.AppendHeaders(System.Net.HttpWebRequest,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">
+            <summary>
+            Appends header parameters to request.
+            </summary>
+            <param name="source">Instance of HttpWebRequest.</param>
+            <param name="headerParameters">Collection of header names and values.</param>
+            <returns>Modified instance of HttpWebRequest.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.AppendCookies(System.Net.HttpWebRequest,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">
+            <summary>
+            Appends cookie parameters to request.
+            </summary>
+            <param name="source">Instance of HttpWebRequest.</param>
+            <param name="cookieParameters">Collection of cookie names and values.</param>
+            <returns>Modified instance of HttpWebRequest.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.AppendAuthData(System.Net.HttpWebRequest,Terrasoft.Services.Runtime.RequestAuthData)">
+            <summary>
+            Appends authentification info to <see cref="T:System.Net.HttpWebRequest"/>.
+            </summary>
+            <param name="source"><see cref="T:System.Net.HttpWebRequest"/> instance.</param>
+            <param name="authData">Authentification info.</param>
+            <returns>Modified instance of <see cref="T:System.Net.HttpWebRequest"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.ReadoutBody(System.Net.HttpWebResponse)">
+            <summary>
+            Reads body content from HttpWebResponse.
+            </summary>
+            <param name="source">Incoming HttpWebResponse instance.</param>
+            <returns>Body content string.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.ReadoutHeaders(System.Net.HttpWebResponse)">
+            <summary>
+            Reads header parameters into Dictionary.
+            </summary>
+            <param name="source">Incoming HttpWebResponse instance.</param>
+            <returns>Dictionary with found header parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.ReadoutCookies(System.Net.HttpWebResponse,System.Uri)">
+            <summary>
+            Reads cookie parameters into Dictionary.
+            </summary>
+            <param name="source">Incoming HttpWebResponse instance.</param>
+            <param name="host">Host to fetch cookies for.</param>
+            <returns>Dictionary with found header parameters.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.IsSuccess(System.Net.HttpStatusCode)">
+            <summary>
+            Returns true if http status code lays in arrange 200-399
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.GetWebRequestAsync(Terrasoft.Services.Runtime.BaseServiceRequestData)">
+            <summary>
+            Creates HttpWebRequest by the specified service request data.
+            </summary>
+            <param name="source">Carries request data</param>
+            <returns>Returns <see cref="T:System.Threading.Tasks.Task" />.The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.GetResponseAsync(System.Net.HttpWebRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a response to an Internet request as an asynchronous operation.
+            </summary>
+            <param name="source">Web request.</param>
+            <param name="cancellationToken">Operation timeout.</param>
+            <returns>Returns <see cref="T:System.Threading.Tasks.Task" />. The task object representing the asynchronous operation.</returns>
+            <exception cref="T:System.Net.WebException">Occurs when request times out or cancellation token is signalled.</exception>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.TryGetInnerException``1(System.Exception)">
+            <summary>
+            Returns inner exception if exist, otherwise returns sourse exception.
+            </summary>
+            <param name="source">Exception.</param>
+            <returns>Inner exception.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebExtensions.BuildResponse(System.Net.HttpWebResponse,System.Net.HttpWebRequest,Terrasoft.Services.Runtime.BaseServiceRequestData)">
+            <summary>
+            Returns response data.
+            </summary>
+            <param name="requestData">Service request data.</param>
+            <param name="request">Web request.</param>
+            <param name="source">Web response.</param>
+            <returns>Response data <see cref="T:Terrasoft.Services.Runtime.ServiceResponseData" />.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.HttpWebRequestActor">
+            <summary>
+            Child actor of the services actor subsystem. Waits for web response.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebRequestActor.PostStop">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.HttpWebRequestActor.PreRestart(System.Exception,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IRequestBodyBuilder">
+            <summary>
+            Provides a constructor for request body.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IRequestBodyBuilder.Build(System.Collections.Generic.IReadOnlyList{Terrasoft.Services.Metadata.ServiceParameter},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Services.IServiceRequestDataAdapter})">
+            <summary>
+            Builds request body.
+            </summary>
+            <param name="parameters">Collection of service parameters.</param>
+            <param name="values">Represents a collection of keys and values, where key is name of the parameter
+            and value is the parameter value.</param>
+            <param name="dataAdapters">Data adapters for parameters.</param>
+            <returns>Built body string.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IRequestBodyBuilderFactory">
+            <summary>
+            Represents factory for creating <see cref="T:Terrasoft.Services.Runtime.IRequestBodyBuilder"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IRequestBodyBuilderFactory.Create(Terrasoft.Services.Metadata.ServiceType,Terrasoft.Services.Metadata.ServiceMethodRequest,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Creates <see cref="T:Terrasoft.Services.Runtime.IRequestBodyBuilder"/> instance.
+            </summary>
+            <param name="serviceType">Teh service type.</param>
+            <param name="request">The <see cref="T:Terrasoft.Services.Metadata.ServiceMethodRequest"/> instance.</param>
+            <param name="valueProvider">Service parameter value provider.</param>
+            <returns>Instance of the request body builder.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IRequestBodyRenderer">
+            <summary>
+            Provides methods to form a request body.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IRequestBodyRenderer.Render(Terrasoft.Services.Runtime.BodyTreeNode)">
+            <summary>
+            Forms a request body.
+            </summary>
+            <param name="rootNode">Root node of the tree for the request body parametr.</param>
+            <returns>Rendered body string.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IResponseBodyParser">
+            <summary>
+            Performs response body parsing.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IResponseBodyParser.Parse(System.String,System.Collections.Generic.Dictionary{Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Services.IServiceResponseDataAdapter{System.Object}})">
+            <summary>
+            Performs response body parsing.
+            </summary>
+            <param name="body">String body content.</param>
+            <param name="dataAdapters">Dictionary of parameters data adapters.</param>
+            <returns>Dictionary of parameter names and values.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IResponseBodyParserFactory">
+            <summary>
+            Factory for creating IResponseBodyParser instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IResponseBodyParserFactory.Create(Terrasoft.Services.Metadata.ServiceMethodResponse,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Creates suitable for response content-type IResponseBodyParser instance.
+            </summary>
+            <param name="response">ServiceMethodResponse instance.</param>
+            <param name="valueProvider">Value provider for service parameter.</param>
+            <returns>IResponseBodyParser instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IServiceClientActors">
+            <summary>
+            Root actors of service client
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.IServiceClientActors.ServiceClientActor">
+            <summary>
+            Service client root actor.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceParameterValueProviderFactory">
+            <summary>
+            Delegate that is used to instantiate an instance of the <see cref="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider"/> type.
+            </summary>
+            <param name="userConnection">Instance of the <see cref="T:Terrasoft.Core.UserConnection"/> to use.</param>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider">
+            <summary>
+            Represents methods for evaluating value of the service parameter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IServiceParameterValueProvider.GetParameterValue(Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Common.Option{System.Object})">
+            <summary>
+            Returns a value of the service parameter.
+            </summary>
+            <param name="parameter">Service parameter.</param>
+            <param name="value">Service parameter value.</param>
+            <returns>Value of the parameter.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IServiceParameterValueProvider.GetParameterValue``1(Terrasoft.Services.Metadata.ServiceParameterValue,System.String)">
+            <summary>
+            Returns a value of <see cref="T:Terrasoft.Services.Metadata.ServiceParameterValue"/>.
+            </summary>
+            <param name="value">Instance of <see cref="T:Terrasoft.Services.Metadata.ServiceParameterValue"/>.</param>
+            <param name="dataValueTypeName">Data type name from <see cref="T:Terrasoft.Services.Runtime.ServiceDataValueTypeNames"/>.</param>
+            <returns>Value of the <see cref="T:Terrasoft.Services.Metadata.ServiceParameterValue"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IServiceParameterValueProvider.GetTypedParameterValue(Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Common.Option{System.Object})">
+            <summary>
+            Returns a value of the service parameter.
+            </summary>
+            <param name="parameter"><see cref="T:Terrasoft.Services.Metadata.ServiceParameter"/> instance.</param>
+            <param name="value">Service parameter value.</param>
+            <returns>Value of the parameter.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IServiceParameterValueProvider.GetParameterValueType(Terrasoft.Services.Metadata.ServiceParameter)">
+            <summary>
+            Returns corresponding .Net Type for <see cref="P:Terrasoft.Services.Metadata.ServiceParameter.DataValueTypeName"/>.
+            </summary>
+            <param name="parameter"><see cref="T:Terrasoft.Services.Metadata.ServiceParameter"/> instance.</param>
+            <returns>Corresponding .Net Type.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IServiceParameterValueProvider.CreateValueCollection(Terrasoft.Services.Metadata.ServiceParameter)">
+            <summary>
+            Creates a List of described in <see cref="P:Terrasoft.Services.Metadata.ServiceParameter.DataValueTypeName"/> types.
+            </summary>
+            <param name="parameter"><see cref="T:Terrasoft.Services.Metadata.ServiceParameter"/> instance.</param>
+            <returns>List of corresponding to <see cref="P:Terrasoft.Services.Metadata.ServiceParameter.DataValueTypeName"/> data types.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IServiceParameterValueProvider.GetAuthToken(System.Guid)">
+            <summary>
+            Returns OAuth 2.0 token by application id.
+            </summary>
+            <param name="applicationId">Application id.</param>
+            <returns>Token for current user.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.IValueTypeConverter">
+            <summary>
+            Provides a unified way of converting types of values to other types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IValueTypeConverter.Convert(System.Object,System.String)">
+            <summary>
+            Converts the given value to an object, using the specified name of the data value type.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="dataValueTypeName">Name of the data value type.</param>
+            <returns>An object that represents the converted text.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IValueTypeConverter.GetValueType(System.String)">
+            <summary>
+            Returns corresponding to <c>dataValueTypeName</c> Net Framework type.
+            </summary>
+            <param name="dataValueTypeName">Date value type name.</param>
+            <returns>Returns Net Framework type corresponding to <c>dataValueTypeName</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.IValueTypeConverter.CreateValueCollection(System.String)">
+            <summary>Creates a List of items with specified data value type.</summary>
+            <param name="dataValueTypeName">Name of the data value type.</param>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.JsonPathInfo">
+            <summary>
+            Describes JSON path item.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Services.Runtime.JsonPathInfo.Name">
+            <summary>The name.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Runtime.JsonPathInfo.IsArrayItem">
+            <summary>If set to <c>true</c> current item is array element.</summary>
+        </member>
+        <member name="F:Terrasoft.Services.Runtime.JsonPathInfo.ArrayItemIndex">
+            <summary>Index of current item in parent array.</summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.JsonPathInfo.#ctor(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Runtime.JsonPathInfo"/> struct.
+            </summary>
+            <param name="name"><see cref="F:Terrasoft.Services.Runtime.JsonPathInfo.Name"/> field value.</param>
+            <param name="isArrayItem"><see cref="F:Terrasoft.Services.Runtime.JsonPathInfo.IsArrayItem"/> field value.</param>
+            <param name="arrayItemIndex"><see cref="F:Terrasoft.Services.Runtime.JsonPathInfo.ArrayItemIndex"/> field value.</param>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.JsonPathUtils">
+            <summary>
+            Provides methods for parsing JSON paths.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.JsonPathUtils.GetPathParts(System.String)">
+            <summary>
+            Returns a set of the sub-paths data.
+            </summary>
+            <param name="path">JSON path.</param>
+            <returns>Set of the sub-paths data.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.JsonPathUtils.IndexOfStartRoot(System.String)">
+            <summary>
+            Returns an index of the first occurrence of the root item.
+            </summary>
+            <param name="path">Parameter path.</param>
+            <returns>Index that represents the position of the first occurrence of the root item.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.JsonRequestBodyRenderer">
+            <inheritdoc cref="T:Terrasoft.Services.Runtime.IRequestBodyRenderer"/>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.JsonRequestBodyRenderer.Render(Terrasoft.Services.Runtime.BodyTreeNode)">
+            <inheritdoc cref="M:Terrasoft.Services.Runtime.IRequestBodyRenderer.Render(Terrasoft.Services.Runtime.BodyTreeNode)"/>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.JsonResponseBodyParser">
+            <summary>
+            Performs JSON body parsing.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.JsonResponseBodyParser.#ctor(Terrasoft.Services.Metadata.ServiceMethodResponse,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Creates JsonResponseBodyParser instance.
+            </summary>
+            <param name="methodResponse">ServiceMethodResponse instance.</param>
+            <param name="valueProvider">IServiceParameterValueProvider instance.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.JsonResponseBodyParser.Parse(System.String,System.Collections.Generic.Dictionary{Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Services.IServiceResponseDataAdapter{System.Object}})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.OAuth20AuthData">
+            <summary>
+            Describes OAuth 2.0 service authentification info.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.OAuth20AuthData.#ctor(Terrasoft.Services.Metadata.OAuth20AuthInfo)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Services.Metadata.OAuth20AuthInfo"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.OAuth20AuthData.#ctor(System.String)">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Services.Metadata.OAuth20AuthInfo"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.OAuth20AuthData.AuthToken">
+            <summary>
+            Gets or sets username.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.OAuth20AuthData.Fill(Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Fills properties of instance of <see cref="T:Terrasoft.Services.Runtime.RequestAuthData"/>.
+            </summary>
+            <param name="provider">Instance of <see cref="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider"/>.</param>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.RequestAuthData">
+            <summary>
+            Describes request authentification info.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.RequestAuthData.IsFrozen">
+            <summary>Returns a value indicating whether this instance is frozen.</summary>
+            <value><c>true</c> if this instance is in read-only (frozen) state; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.RequestAuthData.Fill(Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Fills properties of instance of <see cref="T:Terrasoft.Services.Runtime.RequestAuthData"/>.
+            </summary>
+            <param name="provider">Instance of <see cref="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider"/>.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.RequestAuthData.Freeze">
+            <summary>Freezes this instance.</summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.RequestBodyBuilder">
+            <summary>
+            Implements the <see cref="T:Terrasoft.Services.Runtime.IRequestBodyBuilder"/> interface.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.RequestBodyBuilder.#ctor(Terrasoft.Services.Runtime.IRequestBodyRenderer,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Runtime.RequestBodyBuilder"/> type.
+            </summary>
+            <param name="bodyRenderer">Provides methods to form a request body.</param>
+            <param name="valueProvider">Value provider for the service parameter.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.RequestBodyBuilder.Build(System.Collections.Generic.IReadOnlyList{Terrasoft.Services.Metadata.ServiceParameter},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Services.IServiceRequestDataAdapter})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.RequestBodyBuilderFactory">
+            <summary>
+            Implements the <see cref="T:Terrasoft.Services.Runtime.IRequestBodyBuilderFactory"/> interface.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.RequestBodyBuilderFactory.Create(Terrasoft.Services.Metadata.ServiceType,Terrasoft.Services.Metadata.ServiceMethodRequest,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ResponseBodyParserFactory">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ResponseBodyParserFactory.Create(Terrasoft.Services.Metadata.ServiceMethodResponse,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <inheritdoc cref="M:Terrasoft.Services.Runtime.IResponseBodyParserFactory.Create(Terrasoft.Services.Metadata.ServiceMethodResponse,Terrasoft.Services.Runtime.IServiceParameterValueProvider)"/>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceActorsAssemblyProvider">
+            <summary>
+            Provides assemblies which should be scanned for actors used for services interaction.
+            </summary>
+            <seealso cref="T:Terrasoft.ActorSystem.IActorAssemblyProvider" />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceActorsAssemblyProvider.GetActorRootAssemblies">
+            <summary>
+            Returns assemblies containing classes of the root actors.
+            </summary>
+            <returns>A list of assemblies.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceActorsAssemblyProvider.GetRegistratorAssemblies">
+            <summary>
+            Returns assemblies containing classes that implements <see cref="T:Terrasoft.ActorSystem.IActorRegistrator"/> interface.
+            </summary>
+            <returns>An array of assemblies.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceActorsRegistrator">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceActorsRegistrator.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceClient">
+            <summary>
+            Creates, fills, executes and retrieves WebRequest.
+            </summary>
+            <seealso cref="T:Terrasoft.Services.IServiceClient" />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.#ctor(Terrasoft.Services.ServiceSchema,Terrasoft.Services.ServiceClientRequestFactory,Terrasoft.Services.ServiceClientResponseFactory,Terrasoft.Services.Runtime.IServiceParameterValueProvider,Terrasoft.Core.UserConnection)">
+            <summary>
+            Instantiates ServiceClient.
+            </summary>
+            <param name="schema">ServiceSchema instance.</param>
+            <param name="requestFactory">Factory for creating <see cref="T:Terrasoft.Services.IServiceClientRequest"/> instance.</param>
+            <param name="responseFactory">Factory for creating <see cref="T:Terrasoft.Services.IServiceClientResponse"/>.</param>
+            <param name="parameterValueProvider">Parameters provider.</param>
+            <param name="userConnection">User connection.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.CreateRequest(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.ExecuteAsync(Terrasoft.Services.IServiceClientRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.ExecuteAsync(Terrasoft.Services.IServiceClientRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.Execute(Terrasoft.Services.IServiceClientRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.Execute(Terrasoft.Services.IServiceClientRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.Execute(Terrasoft.Services.IServiceClientRequest,System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClient.Execute(Terrasoft.Services.IServiceClientRequest,System.TimeSpan,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceClientActor">
+            <summary>
+            Root actor of the services runtime actor subsystem.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientActor.#ctor">
+            <summary>
+            Returns service client runtime root actor. Forward messages to child actors
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.CancelWebRequestMessage">
+            <summary>
+            Cancel web request actor message.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.CancelWebRequestMessage.#ctor(System.String)">
+            <summary>
+            Returns web request actor message.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.WebRequestMessageBase">
+            <summary>
+            Web request actor message base.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.WebRequestMessageBase.RequestId">
+            <summary>
+            Request identifier.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.WebRequestMessage">
+            <summary>
+            Web request actor message.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.WebRequestMessage.#ctor(Terrasoft.Services.Runtime.BaseServiceRequestData,System.Int32,System.TimeSpan)">
+            <summary>
+            Returns web request actor message.
+            </summary>
+            <param name="requestData">Request data.</param>
+            <param name="retryCount">Request retry count.</param>
+            <param name="timeout">Actor timeout.</param>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.WebRequestMessage.RequestData">
+            <summary>
+            Request data.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.WebRequestMessage.RetryCount">
+            <summary>
+            Request retry count.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.WebRequestMessage.Timeout">
+            <summary>
+            Actor timeout.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.WebResponseMessage">
+            <summary>
+            Web response actor message.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.WebResponseMessage.#ctor(Terrasoft.Services.Runtime.ServiceResponseData,System.Exception)">
+            <summary>
+            Returns web response actor message.
+            </summary>
+            <param name="responseData">Response data</param>
+            <param name="exception">Exception</param>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.WebResponseMessage.ResponseData">
+            <summary>
+            Response data.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.WebResponseMessage.Exception">
+            <summary>
+            Exception.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceClientExtension">
+            <summary>
+            <see cref="T:Terrasoft.Services.Runtime.ServiceClient"/> extension methods.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientExtension.GetRetryDelay(System.Int32)">
+            <summary>
+            Return service retry delay for the specified attempt, max 64s.
+            </summary>
+            <param name="retryAttempt">Retry attempt.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceClientRequest">
+            <summary>
+            Represents request to service method.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientRequest.#ctor(Terrasoft.Services.ServiceSchema,Terrasoft.Services.Metadata.ServiceMethod,Terrasoft.Services.Runtime.IRequestBodyBuilderFactory,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Runtime.ServiceClientRequest"/> class.
+            </summary>
+            <param name="serviceSchema">The service schema.</param>
+            <param name="serviceMethod">The method.</param>
+            <param name="bodyBuilderFactory">The body builder.</param>
+            <param name="valueProvider">Parameter value provider.</param>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientRequest.RequestParameters">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientRequest.RequestBody">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientRequest.GetRequestPathUri(System.String,System.String,System.Collections.Generic.IReadOnlyList{Terrasoft.Services.Metadata.ServiceParameter},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Builds request uri path part from serviceUri and methodUri.
+            </summary>
+            <param name="serviceUri">Base service uri.</param>
+            <param name="methodUri">Relative to serviceUri method uri part.</param>
+            <param name="parameters">Collection of parameters that describes uri path part.</param>
+            <param name="values">Collection of parameter values.</param>
+            <returns>Assembled Uri path part.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientRequest.ApplyRequestQuery(System.Collections.Generic.IReadOnlyList{Terrasoft.Services.Metadata.ServiceParameter},System.Collections.Generic.Dictionary{System.String,System.Object},System.String@)">
+            <summary>
+            Builds request uri query part.
+            </summary>
+            <param name="parameters">Collection of parameters that describes uri query part.</param>
+            <param name="values">Collection of parameter values.</param>
+            <param name="requestUri">Uri part to add parameters to.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientRequest.GetUri(System.String,Terrasoft.Services.Metadata.ServiceMethod,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Assembles Uri from base and relative parts.
+            </summary>
+            <param name="serviceUri">Base service Uri.</param>
+            <param name="method">ServiceMethod instance.</param>
+            <param name="parameterValues">Collection of paramter values.</param>
+            <returns>Fully assembled uri.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientRequest.GetRequestData">
+            <summary>
+            Returns request data.
+            </summary>
+            <returns>Initialized ServiceRequestData instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientRequest.SetParameterDataAdapter(System.String,Terrasoft.Services.IServiceRequestDataAdapter)">
+            <summary>Sets the data adapter.</summary>
+            <param name="parameterPath">The parameter path.</param>
+            <param name="adapter">The adapter.</param>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceClientResponse">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientResponse.#ctor(Terrasoft.Services.Runtime.ServiceResponseData,Terrasoft.Services.Runtime.IServiceParameterValueProvider,Terrasoft.Services.Runtime.IResponseBodyParser,Terrasoft.Services.Metadata.ServiceMethodResponse)">
+            <summary>
+            Creates <see cref="T:Terrasoft.Services.Runtime.ServiceClientResponse"/> instance.
+            </summary>
+            <param name="responseData"><see cref="T:Terrasoft.Services.Runtime.ServiceResponseData"/> instance.</param>
+            <param name="valueProvider"><see cref="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider"/> instance.</param>
+            <param name="bodyParser"><see cref="T:Terrasoft.Services.Runtime.IResponseBodyParser"/> instance.</param>
+            <param name="response"><see cref="T:Terrasoft.Services.Metadata.ServiceMethodResponse"/> instance.</param>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientResponse.ParameterValues">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientResponse.Body">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientResponse.StatusCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientResponse.Success">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientResponse.RequestBody">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientResponse.RawDataRequest">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceClientResponse.RawDataResponse">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceClientResponse.SetParameterDataAdapter``1(System.String,Terrasoft.Services.IServiceResponseDataAdapter{``0})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceDataValueTypeNames">
+            <summary>
+            Names of the data value types.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Object">
+            <summary>
+            Returns the name of the object type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Integer">
+            <summary>
+            Returns the name of the integer type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Boolean">
+            <summary>
+            Returns the name of the boolean type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Float">
+            <summary>
+            Returns the name of the float type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Text">
+            <summary>
+            Returns the name of the text type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Guid">
+            <summary>
+            Returns the name of the globally unique identifier type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.DateTime">
+            <summary>
+            Returns the name of the date and time of day type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Date">
+            <summary>
+            Returns the name of the date type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.Time">
+            <summary>
+            Returns the name of the time of day type.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceDataValueTypeNames.AllTypeNames">
+            <summary>
+            Returns all type names.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceParameterValueProvider">
+            <summary>
+            Implements the <see cref="T:Terrasoft.Services.Runtime.IServiceParameterValueProvider"/> interface.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.#ctor(Terrasoft.Services.Runtime.IValueTypeConverter,Terrasoft.Core.UserConnection,Terrasoft.Social.OAuth.ServiceOAuthAuthenticatorFactory)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Runtime.ServiceParameterValueProvider"/> type.
+            </summary>
+            <param name="typeConverter">Type converter.</param>
+            <param name="userConnection">The user connection.</param>
+            <param name="authenticatorFactory">Instance of delegate
+            <see cref="T:Terrasoft.Social.OAuth.ServiceOAuthAuthenticatorFactory"/>.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.#ctor(Terrasoft.Services.Runtime.IValueTypeConverter,Terrasoft.Core.UserConnection)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.Services.Runtime.ServiceParameterValueProvider"/> type.
+            </summary>
+            <param name="typeConverter">Type converter.</param>
+            <param name="userConnection">The user connection.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.GetAuthToken(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.GetTypedParameterValue(Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Common.Option{System.Object})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.GetParameterValue(Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Common.Option{System.Object})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.GetParameterValue``1(Terrasoft.Services.Metadata.ServiceParameterValue,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.GetParameterValueType(Terrasoft.Services.Metadata.ServiceParameter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceParameterValueProvider.CreateValueCollection(Terrasoft.Services.Metadata.ServiceParameter)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceRequestData.#ctor(Terrasoft.Services.Metadata.ServiceMethodResponse,Terrasoft.Services.Runtime.BaseServiceRequestData.RequestData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Services.Runtime.ServiceRequestData"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceRequestData.Response">
+            <summary>
+            Describes response structure.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ServiceResponseData">
+            <summary>
+            Carries service method response data.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceResponseData.#ctor(System.Boolean,System.Int32,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Returns response data.
+            </summary>
+            <param name="success">Http response success state.</param>
+            <param name="statusCode"></param>
+            <param name="body">Response body content.</param>
+            <param name="headerValues">Response header values.</param>
+            <param name="cookieValues">Response cookie values.</param>
+            <returns>Initialized ServiceResponseData instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ServiceResponseData.#ctor(System.Boolean,System.Int32,System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Returns response data.
+            </summary>
+            <param name="success">Http response success state.</param>
+            <param name="statusCode"></param>
+            <param name="body">Response body content.</param>
+            <param name="rawDataResponse">Response raw data content.</param>
+            <param name="headerValues">Response header values.</param>
+            <param name="cookieValues">Response cookie values.</param>
+            <param name="requestBody">Request body content.</param>
+            <param name="rawDataRequest">Request raw data content.</param>
+            <returns>Initialized ServiceResponseData instance.</returns>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.Body">
+            <summary>
+            Response body content, if any.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.StatusCode">
+            <summary>
+            Http response status code.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.Success">
+            <summary>
+            Http response success state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.RequestBody">
+            <summary>
+            Request body content, if any.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.RawDataRequest">
+            <summary>
+            Request raw data content.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.RawDataResponse">
+            <summary>
+            Response raw data content.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.HeaderValues">
+            <summary>
+            Response header values.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.ServiceResponseData.CookieValues">
+            <summary>
+            Response cookie values.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.SoapRequestBodyRenderer">
+            <inheritdoc cref="T:Terrasoft.Services.Runtime.IRequestBodyRenderer"/>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.SoapRequestBodyRenderer.Render(Terrasoft.Services.Runtime.BodyTreeNode)">
+            <inheritdoc cref="M:Terrasoft.Services.Runtime.IRequestBodyRenderer.Render(Terrasoft.Services.Runtime.BodyTreeNode)"/>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.SparseJArray">
+            <summary>
+            Used to build json array using any index for it's items. Cells without value will not be rendered.
+            </summary>
+            <seealso cref="T:Newtonsoft.Json.Linq.JArray" />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.SparseJArray.ChildrenTokens">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.SparseJArray.Item(System.Int32)">
+            <summary>Gets or sets the <see cref="T:Newtonsoft.Json.Linq.JToken"/> with the specified index.</summary>
+            <value>The <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</value>
+            <param name="index">The index.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Terrasoft.Services.Runtime.SparseJArray.Item(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.SparseJArray.WriteTo(Newtonsoft.Json.JsonWriter,Newtonsoft.Json.JsonConverter[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.SparseJArray.Add(Newtonsoft.Json.Linq.JToken)">
+            <inheritdoc cref="M:Newtonsoft.Json.Linq.JArray.Add(Newtonsoft.Json.Linq.JToken)"/>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.SparseJArray.Add(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.SparseJArray.ContainsItem(System.Int32)">
+            <summary>Determines whether the item with specified index exists.</summary>
+            <param name="index">The index.</param>
+            <returns>
+            <c>true</c> if the item with specified index exists; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.StringValueConvert">
+            <summary>Converts string value a base data type to another base data type, with extra value cases.</summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.StringValueConvert.ChangeType(System.Object,System.Type)">
+            <summary>Returns an object of the specified type and whose value
+            is equivalent to the specified object.</summary>
+            <param name="value">An object that implements the
+            <see cref="T:System.IConvertible"></see> interface.</param>
+            <param name="conversionType">The type of object to return.</param>
+            <returns>An object whose type is <paramref name="conversionType">conversionType</paramref> and whose value
+            is equivalent to <paramref name="value">value</paramref>. -or- A null reference (Nothing in Visual Basic),
+            if <paramref name="value">value</paramref> is null
+            and <paramref name="conversionType">conversionType</paramref> is not a value type.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.Runtime.ValueTypeConverter">
+            <summary>
+            Implements the <see cref="T:Terrasoft.Services.Runtime.IValueTypeConverter"/> interface.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ValueTypeConverter.#ctor(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Creates an instance of ValueTypeConverter.
+            </summary>
+            <param name="manager"><see cref="T:Terrasoft.Core.DataValueTypeManager"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ValueTypeConverter.Convert(System.Object,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ValueTypeConverter.GetValueType(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.ValueTypeConverter.CreateValueCollection(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.XmlResponseBodyParser.#ctor(Terrasoft.Services.Metadata.ServiceMethodResponse,Terrasoft.Services.Runtime.IServiceParameterValueProvider)">
+            <summary>
+            Creates XmlResponseBodyParser instance.
+            </summary>
+            <param name="methodResponse">ServiceMethodResponse instance.</param>
+            <param name="valueProvider">IServiceParameterValueProvider instance.</param>
+        </member>
+        <member name="M:Terrasoft.Services.Runtime.XmlResponseBodyParser.Parse(System.String,System.Collections.Generic.Dictionary{Terrasoft.Services.Metadata.ServiceParameter,Terrasoft.Services.IServiceResponseDataAdapter{System.Object}})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Services.ServiceBindings">
+            <summary>
+            Binds dependency injection types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceBindings.Initialize(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Performs DI types binding.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceRequestDataAdapters">
+            <summary>
+            Contains references to different instances of <see cref="T:Terrasoft.Services.IServiceRequestDataAdapter"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceRequestDataAdapters.CompositeObjectAdapter">
+            <summary><see cref="T:Terrasoft.Services.IServiceRequestDataAdapter"/> implementation for <see cref="T:Terrasoft.Common.ICompositeObject"/>
+            values.</summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceRequestDataAdapters.ReadOnlyDictionaryAdapter">
+            <summary><see cref="T:Terrasoft.Services.IServiceRequestDataAdapter"/> implementation for
+            <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2"/> values.</summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceRequestDataAdapters.DictionaryAdapter">
+            <summary><see cref="T:Terrasoft.Services.IServiceRequestDataAdapter"/> implementation for
+            <see cref="T:System.Collections.Generic.IDictionary`2"/> values.</summary>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceResponseDataAdapters">
+            <summary>
+            Store of predefined <see cref="T:Terrasoft.Services.IServiceResponseDataAdapter`1"/> implementations.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceResponseDataAdapters.ServiceResponseCompositeObjectDataAdapter.Fill(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.ServiceResponseDataAdapters.CompositeObjectAdapter">
+            <summary>
+            Predefined <see cref="T:Terrasoft.Services.IServiceResponseDataAdapter`1"/> implementation for converting Dictionary
+            to <see cref="T:Terrasoft.Common.CompositeObject"/> data type.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceSchema">
+            <summary>
+            Represents a schema of the service.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.#ctor(Terrasoft.Core.ISchemaManager)">
+            <summary>
+            Creates a new instance with specified schema manager.
+            </summary>
+            <param name="schemaManager">Instance that implements the <see cref="T:Terrasoft.Core.ISchemaManager"/> interface.</param>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.Manager">
+            <summary>
+            Gets instance that implements the <see cref="T:Terrasoft.Core.IManager"/> interface.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.ParentSchemaUId">
+            <summary>
+            Parent schema unique identifier.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.ParentSchema">
+            <summary>
+            Parent schema instance reference.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.BaseUri">
+            <summary>
+            Describes base service Uri, which will be used for request generation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.Type">
+            <summary>The type of the service.</summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.ServiceNamespaces">
+            <summary>
+            Stores service namespaces.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.ServiceMethods">
+            <summary>
+            Stores service methods.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.RetryCount">
+            <summary>Gets or sets the request retry count.</summary>
+            <value>The request retry count.</value>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchema.AuthInfo">
+            <summary>
+            Gets or sets information about authentification.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.ApplyMetaDataValue(Terrasoft.Common.DataReader)">
+            <summary>
+            Applies meta data values.
+            </summary>
+            <param name="reader">Instance of the <see cref="T:Terrasoft.Common.DataReader"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.WriteMetaData(Terrasoft.Common.DataWriter)">
+            <summary>
+            Writes meta data values.
+            </summary>
+            <param name="writer">Instance of the <see cref="T:Terrasoft.Common.DataWriter"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.Clone">
+            <summary>Creates a new object that is a copy of the current instance.</summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.InitializeCreatedInSchemaUId">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.InitializeModifiedInSchemaUId">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.InitializeLocalizableValues(System.String,System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.Schema.InitializeLocalizableValues(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.GetLocalizableValues(System.Collections.Generic.ICollection{Terrasoft.Common.LocalizableValue},System.Boolean)">
+            <inheritdoc>
+            <cref>Schema.GetLocalizableValues(ICollection{Terrasoft.Common.LocalizableValue}, bool)</cref>
+            </inheritdoc>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.LoadLocalizableValues">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.AssignParentSchema(Terrasoft.Services.ServiceSchema)">
+            <inheritdoc cref="M:Terrasoft.Core.ISchemaManagerSchema`1.AssignParentSchema(`0)"/>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchema.CreateServiceClient(Terrasoft.Core.UserConnection)">
+            <summary>
+            Creates service client <see cref="T:Terrasoft.Services.IServiceClient"/>.
+            </summary>
+            <returns>Service client instance.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceSchemaManager">
+            <summary>
+            Represents manager for service schema.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchemaManager.ItemTypeName">
+            <summary>
+            Gets the name of the item type.
+            </summary>
+            <value>
+            The name of the item type.
+            </value>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchemaManager.CanUseUserProperties">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchemaManager.SysSchemaUserPropertyRightsOperations">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchemaManager.Assembly">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchemaManager.ItemCaption">
+            <summary>
+            The caption for the schema manager item.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Services.ServiceSchemaManager.ResourceManagerName">
+            <summary>
+            The name of the resource manager.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchemaManager.InitializeDefSchema">
+            <summary>
+            Initializes the schema which is used as default parent schema.
+            </summary>
+            <returns>Default Dcm schema</returns>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchemaManager.CreateSchemaInstance(Terrasoft.Core.ISchemaManagerItem,System.Reflection.Assembly)">
+            <summary>
+            Creates the schema instance.
+            </summary>
+            <param name="schemaManagerItem">The schema manager item.</param>
+            <param name="assembly">Assembly contains instance type.</param>
+            <returns>Created instance.</returns>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchemaManager.GetSchemaSources(Terrasoft.Services.ServiceSchema,System.Guid,Terrasoft.Core.UserConnection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchemaManager.GetGenerator(Terrasoft.Core.UserConnection)">
+            <inheritdoc />
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchemaManager.Terrasoft#Services#IServiceSchemaManager#SaveSchema(Terrasoft.Core.ISchemaManagerItem{Terrasoft.Services.ServiceSchema},Terrasoft.Core.UserConnection)">
+            <summary>
+            Saves schema.
+            </summary>
+            <param name="designItem">The design item.</param>
+            <param name="userConnection">User connection instance.</param>
+            <returns><c>true</c> if successfully saved; otherwise - <c>false</c>.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.ServiceSchemaManagerExtensions">
+            <summary>
+            Extension methods for services metadata usage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.ServiceSchemaManagerExtensions.GetServiceSchemaManager(Terrasoft.Core.UserConnection)">
+            <summary>Returns the service schema manager.</summary>
+            <param name="source">The user connection.</param>
+            <returns>The service schema manager.</returns>
+        </member>
+        <member name="T:Terrasoft.Services.WebServiceUserTaskImplementation">
+            <summary>
+            Represents execution logic of the web service user task.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Services.WebServiceUserTaskImplementation.Execute(Terrasoft.Core.Process.ProcessWebService,Terrasoft.Core.Process.ProcessExecutingContext)">
+            <summary>
+            Provides main execution method of the web service user task.
+            </summary>
+            <param name="userTask">The instance of the ProcessWebService class.</param>
+            <param name="context">The execution context.</param>
+            <returns>If <c>true</c> - the user task completed. Otherwise - <c>false</c>.</returns>
+        </member>
+    </members>
+</doc>

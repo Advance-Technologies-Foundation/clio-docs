@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.WebApp.ActorSystem</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.WebApp.ActorSystem.UserContextProvider">
+            <summary>
+            Provides the user context.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ActorSystem.UserContextProvider.GetCurrentUserInfo">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

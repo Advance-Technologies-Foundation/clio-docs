@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.WebApp</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.WebApp.ConfigurationBuild.IConfigurationBuildNotifier">
+            <summary>
+            Provides methods for notifying of the build process.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ConfigurationBuild.IConfigurationBuildNotifier.NotifyOnBuildCompleted">
+            <summary>
+            Notifies current user when build has been completed.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ConfigurationBuild.WebConfigurationBuilder.BuildChangedParallel(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Builds configuration with asynchronous generation of static content for changed schemas.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Controllers.FaviconScriptController.GenerateFaviconScript">
+            <summary>
+            Returns scripts for adding favicon.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Controllers.ShellSessionController.StartSession">
+            <summary>
+            The endpoint to which the shell sends its first request.
+            Used to get Session id in cookies.
+            Until this request is completed, the shell does not send any other requests.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebApp.Controllers.Ssp.SspClientScriptController">
+            <summary>
+            API controller providing operations with ClientScriptController for ssp users.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Controllers.Ssp.SspClientScriptController.GenerateUserManagementScripts">
+            <summary>
+            Returns scripts for UserManagment.
+            </summary>
+            <returns>Scripts for UserManagment page.</returns>
+        </member>
+        <member name="T:Terrasoft.WebApp.Controllers.Ssp.SspFaviconScriptController">
+            <summary>
+            API controller providing operations with FaviconScriptController for ssp users.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.WebApp.Controllers.Ssp.SspShellSessionController">
+            <summary>
+            API controller providing operations with shell section for ssp users.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Formatters.NetFrameworkODataSerializerProvider.GetODataPayloadSerializer(System.Type,System.Net.Http.HttpRequestMessage)">
+            <inheritdoc />
+            <remarks>This signature uses types that are AspNet-specific.</remarks>
+        </member>
+        <member name="M:Terrasoft.WebApp.Formatters.Serialization.CustomNetFrameworkODataErrorSerializer.WriteObject(System.Object,System.Type,Microsoft.OData.ODataMessageWriter,Microsoft.AspNet.OData.Formatter.Serialization.ODataSerializerContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.WebApp.PreAppStart">
+            <summary>
+            Class that is responsible for registering of ${iis-application-name} macro for NLog.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.PreAppStart.PreApplicationStartMethod">
+            <summary>
+            Registers layout renderer.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Global.TryRedirectToWorkspaceExplorer">
+            <summary>
+            Redirects to WorkspaceExplorer ('/ClientApp/#/WorkspaceExplorer' or 'WorkspaceExplorerModule.aspx')
+            if request URL matches the alias.
+            </summary>
+            <returns>True if redirect was performed, otherwise false.</returns>
+        </member>
+        <member name="T:Terrasoft.WebApp.Modules.HostHeaderFilterModule">
+            <summary>
+            Http module for filtering Host header and predict potential vulnerability.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Modules.HostHeaderFilterModule.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Modules.HostHeaderFilterModule.Init(System.Web.HttpApplication)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.WebApp.Modules.HostHeaderFilterModule.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="F:Terrasoft.WebApp.Nui.ApplicationInstallation.Head1">
+            <summary>
+            Head1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Terrasoft.WebApp.Nui.Feedback">
+            <summary>
+            A class that allows to load feedback modules and pages.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.WebApp.Nui.Feedback._requestWrapper">
+            <summary>
+            <see cref="T:System.Web.HttpRequestBase"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebApp.Nui.Feedback.AllowedFeedbackModules">
+            <summary>
+            A set of allowed feedback modules.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebApp.Nui.Feedback.RequestedModule">
+            <summary>
+            Requested module.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebApp.Nui.Feedback.Token">
+            <summary>
+            Request token parameter.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebApp.Nui.Feedback.Point">
+            <summary>
+            Request point parameter.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebApp.Nui.Feedback.PreferredUserCulture">
+            <summary>
+            Preferred user culture from Http context.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebApp.Nui.Feedback.FeedbackSchemaName">
+            <summary>
+            Request feedback schema name parameter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.Nui.Feedback.GetIsAllowedUser(System.String)">
+            <summary>
+            Gets is user allowed.
+            </summary>
+            <param name="userName">User name.</param>
+            <returns>Always true.</returns>
+        </member>
+        <member name="M:Terrasoft.WebApp.Nui.Feedback.SetResponseImage(System.String)">
+            <summary>
+            Sets image to response from system settings.
+            </summary>
+            <param name="imageCode">System setting image code.</param>
+        </member>
+        <member name="M:Terrasoft.WebApp.Nui.Feedback.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            Page load event handler.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="F:Terrasoft.WebApp.Nui.Feedback.FeedbackForm">
+            <summary>
+            FeedbackForm control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Terrasoft.WebApp.Nui.UserManagement._requestWrapper">
+            <summary>
+            <see cref="T:System.Web.HttpRequestBase"/> instance.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.WebApp.Nui.UserManagement.PreferredUserCulture">
+            <summary>
+            Preferred user culture from Http context.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.WebApp.Nui.UserManagement.UserManagementForm">
+            <summary>
+            UserManagementForm control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Terrasoft.WebApp.LicenseIgnoreChecker">
+            <summary>
+            Checks that licenses for request to Terrasoft.WebApp application should be ignored.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.LicenseIgnoreChecker.CheckAreLicensesIgnored">
+            <summary>
+            Implements <see cref="M:Terrasoft.Core.ILicenseIgnoreChecker.CheckAreLicensesIgnored"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.LoadPackagesToFileSystem(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Load packages to file system.
+            </summary>
+            <param name="packageNames"></param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.LoadPackagesToDB(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Load packages to DB.
+            </summary>
+            <param name="packageNames"></param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.UninstallApp(System.Guid)">
+            <summary>
+            Uninstalls application.
+            </summary>
+            <param name="appId">Application identifier.</param>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.DeletePackage(System.String)">
+            <summary>
+            Deletes package.
+            </summary>
+            <param name="packageName">Package name.</param>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.GetIsDemoMode">
+            <summary>
+            Returns <c>true</c> if demo mode is on. Otherwise returns false.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.ClearRedisDb">
+            <summary>
+            Clear redis database.
+            </summary>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.CreateApp(Terrasoft.Core.ServiceModelContract.NewAppInfo)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.RunApp(Terrasoft.Core.ServiceModelContract.BaseAppRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.GetAppCurrentPackage(Terrasoft.Core.ServiceModelContract.BaseAppRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.GetDesignPackageUId(Terrasoft.Core.ServiceModelContract.DesignPackageRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.ExportApp(Terrasoft.Core.ServiceModelContract.BaseAppRequest)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.AppInstallerService.GetAppNamesByPackageUId(System.Guid)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.UploadPackage(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.InstallPackage(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.GetLogFile">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.GetZipPackages(System.Collections.Generic.IList{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.CreateBackup(Terrasoft.Core.ServiceModelContract.InstalledAppInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.CreatePackageBackup(Terrasoft.Core.ServiceModelContract.CreatePackageBackupRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.RestoreFromBackup(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.RestorePackageFromBackup(Terrasoft.Core.ServiceModelContract.RestorePackageFromBackupRequest)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.PackageInstallerService.Validate(Terrasoft.Core.ServiceModelContract.InstalledAppInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Terrasoft.WebApp.ServiceModel.RestServiceHostFactory">
+            <summary>
+            Overriden version of the <see cref="T:System.ServiceModel.Activation.WebServiceHostFactory"/> class that enables the WCF Help page.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.ServiceModel.RestServiceHostFactory.CreateServiceHost(System.String,System.Uri[])">
+            <summary>
+            Initializes endpoint with WCF help page.
+            </summary>
+            <param name="constructorString">The initialization data passed to the System.ServiceModel.ServiceHostBase
+            instance being constructed by the factory.</param>
+            <param name="baseAddresses">The System.Array of type System.Uri that contains the base addresses for the
+            service hosted.</param>
+            <returns>A System.ServiceModel.ServiceHost with specific base addresses.</returns>
+            <exception cref="T:System.ArgumentNullException">baseAddress is null.</exception>
+            <exception cref="T:System.InvalidOperationException">There is no hosting context provided or constructorString is
+            null or empty.</exception>
+        </member>
+        <member name="T:Terrasoft.WebApp.WebAppModule">
+            <summary>
+            Provides DI bindings for the current project.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.WebAppModule.#ctor(System.Func{Terrasoft.Core.AppConnection},Terrasoft.Core.DI.IClassFactoryInitializer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ninject.Modules.NinjectModule" /> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.WebApp.WebAppModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            When implemented in a derived class, performs registration of the dependencies.
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>

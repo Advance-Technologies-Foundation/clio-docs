@@ -1,0 +1,605 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.TestFramework</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.TestFramework.ActionAssertions.ShouldThrowWithMessage``1(System.Action,System.String)">
+            <summary>
+            Performs an action and checks that was received the expected error with the expected error message.
+            </summary>
+            <param name="source">Action to perform.</param>
+            <param name="expectedErrorMessage">Expected error message.</param>
+            <typeparam name="TException">Expected error type.</typeparam>
+        </member>
+        <member name="T:Terrasoft.TestFramework.Actors.ActorSystemTestHelper">
+            <summary>
+            Provides helper methods for setup actor system test environment.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.TestFramework.Actors.ActorSystemTestHelper.GetSetupMethod``1">
+            <summary>
+            Returns delegate which registers custom actors root implementation.
+            </summary>
+            <typeparam name="TActors">The type of the actors root.</typeparam>
+        </member>
+        <member name="T:Terrasoft.TestFramework.Actors.Test`1">
+            <summary>
+            Used to setup test actors root implementation.
+            </summary>
+            <typeparam name="TActors">The type of the actors root.</typeparam>
+        </member>
+        <member name="M:Terrasoft.TestFramework.Actors.Test`1.Setup(`0)">
+            <summary>
+            Setups the specified actors root implementation.
+            </summary>
+            <param name="actors">The actors.</param>
+            <returns><see cref="T:System.IDisposable"/> which will restore original implementation.</returns>
+        </member>
+        <member name="T:Terrasoft.TestFramework.Actors.TestProps`1">
+            <summary>
+            This class represents a configuration object used in creating an Akka.Actor.ActorBase for test purposes.
+            </summary>
+            <typeparam name="TActor">The type of the actor.</typeparam>
+            <seealso cref="T:Akka.Actor.IIndirectActorProducer" />
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.FluentAssertionsArgumentMatcher`1.IsSatisfiedBy(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.FluentAssertionsArgumentMatcher`1.DescribeFor(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.ContainsQueryParametersByValue(System.Object[])">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that contains parameters with all specified values.
+            </summary>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.NotContainsQueryParametersByValue(System.Object[])">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that not contains parameters with all specified
+            values.
+            </summary>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.NotContainsParametersByValue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that not contains parameters with all specified
+            values.
+            </summary>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.ContainsParametersByValue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that contains parameters with all specified values.
+            </summary>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.ContainsQueryParametersOnlyByValue(System.Object[])">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that contains parameters with all specified values
+            and it's count is equal to the count of specified values.
+            </summary>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.ContainsQueryParametersOnlyByValue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that contains parameters with all specified values
+            and it's count is equal to the count of specified values.
+            </summary>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.ContainsParameters(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that contains parameters with all specified
+            names and values.
+            </summary>
+            <param name="paramsDictionary">Names and values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified names and values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.ContainsParameters(System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that contains parameters with all specified
+            names and values.
+            </summary>
+            <param name="expected">Names and values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with all specified names and values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.EquivalentToValuesCollection(System.Object[])">
+            <summary>
+            Matches <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> instance that contains parameters with only specified
+            values.
+            </summary>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for <see cref="T:Terrasoft.Core.DB.QueryParameterCollection"/> that contains parameters
+            with only specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.HasQueryParametersByValue``1(System.Object[])">
+            <summary>
+            Matches instance of specified query type that contains parameters with all specified values.
+            </summary>
+            <typeparam name="T">Type derived from <see cref="T:Terrasoft.Core.DB.Query"/>.</typeparam>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for specified type derived from <see cref="T:Terrasoft.Core.DB.Query"/> that contains
+            parameters with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.HasInsertParametersByValue``1(System.Object[])">
+            <summary>
+            Matches instance of specified query type that contains parameters with all specified values.
+            </summary>
+            <typeparam name="T">Type derived from <see cref="T:Terrasoft.Core.DB.BaseInsert"/>.</typeparam>
+            <param name="values">Values of parameters to match.</param>
+            <returns>Argument matcher for specified type derived from <see cref="T:Terrasoft.Core.DB.BaseInsert"/> that contains parameters
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.EqualsQueryConditions``1(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Matches conditions of specified query type that contains condition with all specified values.
+            </summary>
+            <typeparam name="T">Type derived from <see cref="T:Terrasoft.Core.DB.BaseInsert"/>.</typeparam>
+            <param name="conditions">Values of conditions to match.</param>
+            <returns>Argument matcher for specified type derived from <see cref="T:Terrasoft.Core.DB.BaseInsert"/> that contains conditions
+            with all specified values.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.SelectFrom(System.String)">
+            <summary>
+            Matches instance of query with source schema name.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <returns>Select query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Select(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Matches instance of select query with source schema name, selected columns and conditions.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="columns">Names of selected columns.</param>
+            <param name="conditions">Values of conditions to match.</param>
+            <returns>Select query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Select(System.String,System.Collections.Generic.IEnumerable{System.String},System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Matches instance of select query with source schema name, selected columns and conditions.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="columns">Names of selected columns.</param>
+            <param name="conditions">Values of conditions to match.</param>
+            <returns>Select query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Select(System.String,System.Collections.Generic.IEnumerable{System.String},System.Predicate{Terrasoft.Core.DB.QueryCondition})">
+            <summary>
+            Matches instance of select query with source schema name, selected columns and conditions.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="columns">Names of selected columns.</param>
+            <param name="checkCondition">Function to check select conditions.</param>
+            <returns>Select query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Insert(System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Matches instance of insert query with source schema name and inserted column values.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="columnValues">Names and values of columns to check.</param>
+            <returns>Insert query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.InsertInto(System.String)">
+            <summary>
+            Matches instance of insert query with source schema name.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <returns>Insert query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Update(System.String)">
+            <summary>
+            Matches instance of update query with source schema name.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <returns>Update query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Update(System.String,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.Object}},System.Predicate{Terrasoft.Core.DB.QueryCondition})">
+            <summary>
+            Matches instance of update query with source schema name, column values and conditions.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="columnValues">Names and values of selected columns.</param>
+            <param name="checkCondition">Predicate to check condition.</param>
+            <returns>Update query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Update(System.String,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.Object}},System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Matches instance of update query with source schema name, column values and conditions.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="columnValues">Names and values of selected columns.</param>
+            <param name="conditions">Values of conditions to match.</param>
+            <returns>Update query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Delete(System.String,System.Predicate{Terrasoft.Core.DB.QueryCondition})">
+            <summary>
+            Matches instance of delete query with source schema name and conditions.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="checkCondition">Predicate to check condition.</param>
+            <returns>Delete query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.DeleteFrom(System.String)">
+            <summary>
+            Matches instance of delete query with source schema name.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <returns>Delete query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Delete(System.String,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Matches instance of delete query with source schema name and column condition values.
+            </summary>
+            <param name="schemaName">Name of the source schema.</param>
+            <param name="conditions">Values of conditions to match.</param>
+            <returns>Delete query matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.ContainsItems``1(``0[])">
+            <summary>
+            Matches the sequences contains exact same items using the default equality comparer.
+            </summary>
+            <typeparam name="TItem">Item type.</typeparam>
+            <param name="items">Sequences items.</param>
+            <returns><see cref="M:NSubstitute.Arg.Is``1(``0)"/> matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsSequence``1(``0[])">
+            <summary>
+            Matches the sequences contains exact same items (and their count) using the default equality comparer.
+            </summary>
+            <typeparam name="TItem">Item type.</typeparam>
+            <param name="items">Sequences items.</param>
+            <returns><see cref="M:NSubstitute.Arg.Is``1(``0)"/> matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsSequence``2(System.Func{``0,``1},``1[])">
+            <summary>
+            Matches the sequences contains exact same items (and their count) using the default equality comparer
+            and specified selector function.
+            </summary>
+            <typeparam name="TSource">Item type of source collection to assert.</typeparam>
+            <typeparam name="TResult">Item type of collection to match.</typeparam>
+            <param name="selector">Selector function.</param>
+            <param name="items">Sequences items.</param>
+            <returns><see cref="M:NSubstitute.Arg.Is``1(``0)"/> matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsCollection``1(``0[])">
+            <summary>
+            Matches the collection contains exact same items (and their count) using the default equality comparer.
+            </summary>
+            <typeparam name="TItem">Item type.</typeparam>
+            <param name="items">Sequences items.</param>
+            <returns><see cref="M:NSubstitute.Arg.Is``1(``0)"/> matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsArray``1(``0[])">
+            <summary>
+            Matches the array contains exact same items (and their count) using the default equality comparer.
+            </summary>
+            <typeparam name="TItem">Item type.</typeparam>
+            <param name="items">Array items.</param>
+            <returns><see cref="M:NSubstitute.Arg.Is``1(``0)"/> matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsNullOrEmpty``1">
+            <summary>
+            Matches empty or null sequences.
+            </summary>
+            <typeparam name="TSequence">The type of the sequence.</typeparam>
+            <returns><see cref="M:NSubstitute.Arg.Is``1(``0)"/> matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.WhenNotThrows``1(System.Action{``0})">
+            <summary>
+            Returns expression that return <c>True</c> in executing of <paramref name="assertion"/>
+            will not throw exception.
+            </summary>
+            <typeparam name="T">Type of action argument.</typeparam>
+            <param name="assertion">The assertion action.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsNotThrows``1(System.Action{``0})">
+            <summary>
+            Returns argument matcher that matches if executing of <paramref name="assertion"/>
+            will not throw exception.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="assertion">The assertion.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsDictionaryContains``2(``0,``1)">
+            <summary>
+            Returns argument matcher that matches when the argument contains <paramref name="expectedKey"/> with
+            <paramref name="expectedValue"/>.
+            </summary>
+            <param name="expectedKey">Key to find.</param>
+            <param name="expectedValue">Value to find.</param>
+            <typeparam name="TKey">Key type.</typeparam>
+            <typeparam name="TValue">Value type.</typeparam>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.IsNotEmptyGuid">
+            <summary>
+            Matches the guid contains some value.
+            </summary>
+            <returns><see cref="M:NSubstitute.Arg.Is``1(``0)"/> matcher.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.EquivalentTo``1(``0)">
+            <summary>
+            Returns argument matcher that matches if argument is equivalent to <paramref name="expected"/>.
+            </summary>
+            <param name="expected">Expected value.</param>
+            <typeparam name="T">.</typeparam>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ArgExt.Verify``1(System.Action{``0})">
+            <summary>
+            Matches value only when it passes assertion.
+            </summary>
+            <param name="assertion">Assertion.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.DateTestUtilities.TransitionTimeToDateTime(System.Int32,System.TimeZoneInfo.TransitionTime)">
+            <summary>
+            Converts a year and TransitionTime into a DateTime
+            </summary>
+            <remarks>This is a copy of BCL internal TimeZoneInfo.TransitionTimeToDateTime.</remarks>
+            <param name="year">Year.</param>
+            <param name="transitionTime">Transition time.</param>
+            <returns>Date time.</returns>
+        </member>
+        <member name="T:Terrasoft.TestFramework.Process.DummyProcessMessageStore">
+            <summary>
+            Provides empty implementation of <see cref="T:Terrasoft.Core.IProcessMessageStore"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.TestFramework.Process.DummyProcessMessageStore.Register``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.TestFramework.Process.DummyProcessMessageStore.Remove``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.TestFramework.Process.DummyProcessMessageStore.GetMessages``1(System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.TestFramework.StringTestUtilities.AssertStringEqualsIgnoringEol(System.String,System.String)">
+            <summary>
+            Asserts that two strings are equal, ignoring any differences in end-of-line characters.
+            </summary>
+            <param name="source">The string to be compared.</param>
+            <param name="expected">The expected string.</param>
+            <exception cref="T:FluentAssertions.Execution.AssertionFailedException">
+            Thrown when the assertion fails.
+            </exception>
+        </member>
+        <member name="M:Terrasoft.TestFramework.StringTestUtilities.AssertStringContainAdjustEol(System.String,System.String)">
+            <summary>
+            Asserts that a string contains another (fragment of a) string, cast end-of-line characters
+            to LF for source and expected value.
+            </summary>
+            <param name="source">The string to be compared.</param>
+            <param name="expected">The expected string.</param>
+            <exception cref="T:FluentAssertions.Execution.AssertionFailedException">
+            Thrown when the assertion fails.
+            </exception>
+        </member>
+        <member name="M:Terrasoft.TestFramework.SubstituteUtilities.SetupDataValueType``1(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Setups data value type object.
+            </summary>
+            <typeparam name="TValueType">Type to process.</typeparam>
+            <param name="source">Manager to setup with.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.SubstituteUtilities.SetupTypeConverter(Terrasoft.Core.UserConnection)">
+            <summary>
+            Sets up DbTypeConverter for UserConnection with substitute
+            </summary>
+            <param name="source">Connection to setup</param>
+            <returns>Returns substitute</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestAppConnection.InstallAssemblyResolution">
+            <summary>
+            Installs assembly resolution for loaded assemblies with different version..
+            </summary>
+            <returns>Disposable.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestAppConnection.UninstallAssemblyResolution">
+            <summary>
+            Uninstalls assembly resolution installed via <see cref="M:Terrasoft.TestFramework.TestAppConnection.InstallAssemblyResolution"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestAppConnection.SetSamlNameFieldName(System.String)">
+            <summary>
+            Sets SamlNameFieldName property by <paramref name="samlNameFieldName"/>.
+            </summary>
+            <param name="samlNameFieldName">Name of field name.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestAppConnection.SetSamlRoleFieldName(System.String)">
+            <summary>
+            Sets SamlRoleFieldName property by <paramref name="samlRoleFieldName"/>.
+            </summary>
+            <param name="samlRoleFieldName">Name of field role.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestAppConnection.SetDefUserType(System.String)">
+            <summary>
+            Sets DefUserType property by <paramref name="defUserType"/>.
+            </summary>
+            <param name="defUserType">Name of default user type.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestAppConnection.SetLicManager(Terrasoft.Core.LicManager)">
+            <summary>
+            Sets LicManager property by <paramref name="licManager"/>.
+            </summary>
+            <param name="licManager"><see cref="T:Terrasoft.Core.LicManager"/> instance.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestCoreModule.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            When implemented in a derived class, performs registration of the dependencies.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestCoreUserConnection.ResetCurrent">
+            <inheritdoc cref="M:Terrasoft.Core.UserConnection.ResetCurrent"/>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestCoreUserConnection.InitializeCurrent">
+            <inheritdoc cref="M:Terrasoft.Core.UserConnection.InitializeCurrent"/>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestDIUtilities.Load(Terrasoft.Core.DI.IModule[])">
+            <summary>
+            Resets services config and loads the module(s) into the kernel.
+            </summary>
+            <param name="modules">The modules to load.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestDIUtilities.Bind``1">
+            <summary>
+            Declares a binding for the specified service.
+            </summary>
+            <typeparam name="TService">The service to bind.</typeparam>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestDIUtilities.Unbind``1">
+            <summary>
+            Unregisters all bindings for the specified service.
+            </summary>
+            <typeparam name="TService">The service to unbind.</typeparam>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestResourceManagerProvider.Initialize">
+            <summary>
+            Creates <see cref="T:Terrasoft.TestFramework.TestResourceManagerProvider"/> instance and registers it in 
+            <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> as resource manager provider.
+            </summary>
+            <returns>Instance.</returns>
+            <exception cref="T:Terrasoft.Common.InvalidObjectStateException">Previous instance is not disposed.</exception>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestResourceManagerProvider.Initialize(System.Action{Terrasoft.Common.IResourceManager})">
+            <summary>
+            Creates <see cref="T:Terrasoft.TestFramework.TestResourceManagerProvider"/> instance and registers it in 
+            <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> as resource manager provider. Registers single resource manager mock
+            for any resource manager name.
+            </summary>
+            <param name="managerSetupAction">The manager setup action. Invoked using created resource manager 
+            mock.</param>
+            <returns>Instance.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestResourceManagerProvider.Initialize(System.String)">
+            <summary>
+            Creates <see cref="T:Terrasoft.TestFramework.TestResourceManagerProvider"/> instance and registers it in 
+            <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> as resource manager provider. Registers single resource manager mock
+            for any resource manager name. Registers string value for any resource key.
+            </summary>
+            <param name="anyString">Any resource key value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestResourceManagerProvider.Initialize(System.String,System.Action{Terrasoft.Common.IResourceManager})">
+            <summary>
+            Creates <see cref="T:Terrasoft.TestFramework.TestResourceManagerProvider"/> instance and registers it in 
+            <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> as resource manager provider. Registers single resource manager mock 
+            for specified resource manager name.
+            </summary>
+            <param name="managerName">Name of the manager.</param>
+            <param name="managerSetupAction">The manager setup action. Invoked using created resource manager 
+            mock.</param>
+            <returns>Instance.</returns>
+            <exception cref="T:Terrasoft.Common.InvalidObjectStateException">Previous instance is not disposed.</exception>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestResourceManagerProvider.Dispose">
+            <summary>
+            Performs reset <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> settings made by current 
+            <see cref="T:Terrasoft.TestFramework.TestResourceManagerProvider"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestResourceManagerProvider.SetupManager(System.String,Terrasoft.Common.IResourceManager)">
+            <summary>
+            Setups <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> to provide the resource manager.
+            </summary>
+            <param name="managerName">Name of the manager. If not defined, current manager instance will be 
+            provided by <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> for any resource manager name.</param>
+            <param name="manager">The manager. If it's not defined, <see cref="M:NSubstitute.Substitute.For``1(System.Object[])"/> 
+            will be used to create new one.</param>
+            <returns>Resource manager.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestResourceManagerProvider.SetupManager(System.Func{System.String},Terrasoft.Common.IResourceManager)">
+            <summary>
+            Setups <see cref="T:Terrasoft.Common.GeneralResourceStorage"/> to provide the resource manager.
+            </summary>
+            <param name="managerNameFunc">Function that returns manager name, used to support 
+            <see cref="M:NSubstitute.Arg.Is``1(``0)"/> like expressions.</param>
+            <param name="manager">The manager instance. If it's not defined, <see cref="M:NSubstitute.Substitute.For``1(System.Object[])"/> 
+            will be used to create new one.</param>
+            <returns>Resource manager.</returns>
+        </member>
+        <member name="T:Terrasoft.TestFramework.TestSchemaContentReader">
+            <summary>
+            test class provides methods for saving/deleting/editing schema in the filesystem.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestSystemUserConnection.ResetCurrent">
+            <inheritdoc cref="M:Terrasoft.Core.UserConnection.ResetCurrent"/>
+        </member>
+        <member name="M:Terrasoft.TestFramework.TestSystemUserConnection.InitializeCurrent">
+            <inheritdoc cref="M:Terrasoft.Core.UserConnection.InitializeCurrent"/>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ThreadingUtilities.WaitUntil(System.Func{System.Boolean},System.Int32,System.Int32)">
+            <summary>
+            Blocks until condition is true or timeout occurs.
+            </summary>
+            <param name="condition">The break condition.</param>
+            <param name="frequency">The frequency at which the condition will be checked.</param>
+            <param name="timeout">The timeout in milliseconds.</param>
+        </member>
+        <member name="M:Terrasoft.TestFramework.ThreadingUtilities.WaitWhile(System.Func{System.Boolean},System.Int32,System.Int32)">
+            <summary>
+            Blocks while condition is true or timeout occurs. Returns <c>true</c> if <paramref name="condition"/>
+            evaluates to <c>false</c> and <c>false</c> in case of timeout.
+            </summary>
+            <param name="condition">The condition that will perpetuate the block.</param>
+            <param name="frequency">The frequency at which the condition will be check, in milliseconds.</param>
+            <param name="timeout">Timeout in milliseconds.</param>
+            <exception cref="T:System.TimeoutException"></exception>
+        </member>
+        <member name="M:Terrasoft.TestFramework.UsageContextTestUtilities.SetupUsageContextState">
+            <summary>
+            Setups usage context state.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.TestFramework.UsageContextTestUtilities.SetupUsageContext(Terrasoft.Core.UsageContext.UsageContextState)">
+            <summary>
+            Setups usage context.
+            </summary>
+            <param name="state">State.</param>
+            <returns>Usage context.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.UsageContextTestUtilities.SetupCreateContext(Terrasoft.Core.UsageContext.IUsageContextFactory,System.String)">
+            <summary>
+            Creates and config usage context related to specified key.
+            </summary>
+            <param name="source">Usage context factory.</param>
+            <param name="key">Context key.</param>
+            <returns>Usage context.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.UsageContextTestUtilities.HasUsageContext(Terrasoft.Core.Entities.EntitySchemaQuery,Terrasoft.Core.UsageContext.UsageContext,Terrasoft.Core.Entities.CrudOperationType)">
+            <summary>
+            Check if the entity schema query uses the same usage context and crud operation.
+            </summary>
+            <param name="source">Entity schema query for check.</param>
+            <param name="context">Usage context to check.</param>
+            <param name="operationType">Crud operation to check.</param>
+            <returns>Returns true if usage context and crud operation the same in entity schema query.</returns>
+        </member>
+        <member name="M:Terrasoft.TestFramework.UsageContextTestUtilities.SetupUsageContext">
+            <summary>
+            Setups usage context.
+            </summary>
+            <returns>Usage context.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.Process.Serialization</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackCollectionMetadataFormatter">
+            <inheritdoc cref="T:MessagePack.Formatters.IMessagePackFormatter`1" />
+            <summary>
+            Message pack formatter for the <see cref="T:Terrasoft.Core.Process.CollectionMetadata"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackCollectionMetadataFormatter.Serialize(MessagePack.MessagePackWriter@,Terrasoft.Core.Process.CollectionMetadata,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Serialize(MessagePack.MessagePackWriter@,`0,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackCollectionMetadataFormatter.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackExtensions">
+            <summary>
+            MessagePack extensions.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackExtensions.ReadGuid(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <summary>
+            Reads Guid value.
+            </summary>
+            <param name="reader">Reader.</param>
+            <param name="options">Options.</param>
+            <returns>Guid.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackExtensions.ReadEnum``1(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <summary>
+            Reads Enum value.
+            </summary>
+            <param name="reader">Reader.</param>
+            <param name="options">Options.</param>
+            <typeparam name="T">Enum type to read.</typeparam>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackExtensions.ReadDictionary``2(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <summary>
+            Reads Dictionary value.
+            </summary>
+            <param name="reader">Reader.</param>
+            <param name="options">Options.</param>
+            <typeparam name="TKey">Key type.</typeparam>
+            <typeparam name="TValue">Value type.</typeparam>
+            <returns>Dictionary.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackExtensions.Write``2(MessagePack.MessagePackWriter@,System.Collections.Generic.Dictionary{``0,``1},MessagePack.MessagePackSerializerOptions)">
+            <summary>
+            Writes Dictionary value.
+            </summary>
+            <param name="writer">Writer.</param>
+            <param name="value">Value.</param>
+            <param name="options">Options.</param>
+            <typeparam name="TKey">Key type.</typeparam>
+            <typeparam name="TValue">Value type.</typeparam>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackExtensions.Write(MessagePack.MessagePackWriter@,System.Guid,MessagePack.MessagePackSerializerOptions)">
+            <summary>
+            Writes Guid value.
+            </summary>
+            <param name="writer">Writer.</param>
+            <param name="value">Value.</param>
+            <param name="options">Options.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackExtensions.Write``1(MessagePack.MessagePackWriter@,``0,MessagePack.MessagePackSerializerOptions)">
+            <summary>
+            Writes Enum value.
+            </summary>
+            <param name="writer">Writer.</param>
+            <param name="value">Value.</param>
+            <param name="options">Options.</param>
+            <typeparam name="T">Enum type to write.</typeparam>
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackICompositeObjectValuesFormatter">
+            <inheritdoc cref="T:MessagePack.Formatters.IMessagePackFormatter`1" />
+            <summary>
+            Message pack composite object formatter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackICompositeObjectValuesFormatter.#ctor(MessagePack.IFormatterResolver,Terrasoft.Core.Process.ICompositeObjectValuesMetadata)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.Process.Serialization.MessagePackICompositeObjectValuesFormatter" /> type.
+            </summary>
+            <param name="resolver">An instance of the <see cref="T:MessagePack.IFormatterResolver"/> type.</param>
+            <param name="header">An instance of the <see cref="T:Terrasoft.Core.Process.CollectionMetadata"/> type.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackICompositeObjectValuesFormatter.Serialize(MessagePack.MessagePackWriter@,Terrasoft.Common.ICompositeObjectValues,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Serialize(MessagePack.MessagePackWriter@,`0,MessagePack.MessagePackSerializerOptions)" />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackICompositeObjectValuesFormatter.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)" />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackICompositeObjectValuesFormatter.GetFormatter``1">
+            <inheritdoc cref="M:MessagePack.IFormatterResolver.GetFormatter``1"/>
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackISerializableObjectFormatter`1">
+            <inheritdoc cref="T:MessagePack.Formatters.IMessagePackFormatter`1" />
+            <summary>
+            MessagePack ISerializableObject formatter.
+            </summary>
+            <typeparam name="T">.</typeparam>
+        </member>
+        <member name="P:Terrasoft.Core.Process.Serialization.MessagePackISerializableObjectFormatter`1.Instance">
+            <summary>
+            Instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackISerializableObjectFormatter`1.Serialize(MessagePack.MessagePackWriter@,`0,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Serialize(MessagePack.MessagePackWriter@,`0,MessagePack.MessagePackSerializerOptions)" />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackISerializableObjectFormatter`1.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)" />
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackLocalizableStringFormatter">
+            <summary>
+            MessagePack LocalizableString formatter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackLocalizableStringFormatter.Serialize(MessagePack.MessagePackWriter@,Terrasoft.Common.LocalizableString,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Serialize(MessagePack.MessagePackWriter@,`0,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackLocalizableStringFormatter.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer">
+            <inheritdoc cref="T:Terrasoft.Core.Process.IProcessDataSerializer" />
+        </member>
+        <member name="F:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.CompositeObjectMetadataFormat">
+            <summary>
+            Old format byte order mark.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.CompositeObjectValuesMetadataFormat">
+            <summary>
+            New format byte order mark.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.Serialize``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.Serialize(System.Object,Terrasoft.Core.Process.ParameterValueType@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.TrySerialize(Terrasoft.Common.ICompositeObject,Terrasoft.Core.Process.ICompositeObjectValuesMetadata,System.Byte[]@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.Deserialize``1(System.Byte[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.Deserialize(System.Byte[],Terrasoft.Core.Process.ParameterValueType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessDataSerializer.Deserialize(System.Byte[],Terrasoft.Core.Process.ICompositeObjectValuesMetadata)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackProcessParameterErrorInfoFormatter">
+            <summary>
+            MessagePack ProcessParameterErrorInfo formatter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessParameterErrorInfoFormatter.Serialize(MessagePack.MessagePackWriter@,Terrasoft.Core.Process.ProcessParameterErrorInfo,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Serialize(MessagePack.MessagePackWriter@,`0,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessParameterErrorInfoFormatter.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackProcessParameterInfoFormatter">
+            <summary>
+            MessagePack ProcessParameterInfo formatter.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessParameterInfoFormatter.Serialize(MessagePack.MessagePackWriter@,Terrasoft.Core.Process.ProcessParameterInfo,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Serialize(MessagePack.MessagePackWriter@,`0,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackProcessParameterInfoFormatter.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)">
+            <inheritdoc cref="M:MessagePack.Formatters.IMessagePackFormatter`1.Deserialize(MessagePack.MessagePackReader@,MessagePack.MessagePackSerializerOptions)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Process.Serialization.MessagePackTerrasoftTypeResolver">
+            <inheritdoc cref="T:MessagePack.IFormatterResolver" />
+        </member>
+        <member name="P:Terrasoft.Core.Process.Serialization.MessagePackTerrasoftTypeResolver.Instance">
+            <summary>
+            Static instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Process.Serialization.MessagePackTerrasoftTypeResolver.GetFormatter``1">
+            <inheritdoc cref="M:MessagePack.IFormatterResolver.GetFormatter``1"/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,35 @@
+2024-05-25 08:57:58,639 [.NET ThreadPool Worker] INFO  Execute - ML model batch prediction job started
+2024-05-25 08:57:58,639 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 08:57:58,688 [.NET ThreadPool Worker] INFO  Execute - Start to process (training, state sync) ML models
+2024-05-25 08:57:58,688 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:00:26,589 [.NET ThreadPool Worker] WARN Supervisor <GetModelsGroupedByEntityName>b__1_0 - PredictedResultColumnName is empty for model b624f2fd-81e1-4e8d-890b-5184994d1154
+Metadata: {
+}
+Entity schemaUid: 56143364-4580-4561-8814-8612fad2e5c0
+
+2024-05-25 09:02:39,217 [.NET ThreadPool Worker] WARN Supervisor <GetModelsGroupedByEntityName>b__1_0 - PredictedResultColumnName is empty for model b624f2fd-81e1-4e8d-890b-5184994d1154
+Metadata: {
+}
+Entity schemaUid: 56143364-4580-4561-8814-8612fad2e5c0
+
+2024-05-25 09:03:04,795 [.NET ThreadPool Worker] INFO  Execute - ML model batch prediction job started
+2024-05-25 09:03:04,815 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:03:04,898 [.NET ThreadPool Worker] INFO  Execute - Start to process (training, state sync) ML models
+2024-05-25 09:03:04,898 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:03:05,593 [.NET ThreadPool Worker] INFO  Execute - ML model batch prediction job started
+2024-05-25 09:03:05,593 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:03:05,631 [.NET ThreadPool Worker] INFO  Execute - Start to process (training, state sync) ML models
+2024-05-25 09:03:05,631 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:10:48,925 [.NET ThreadPool Worker] INFO  Execute - ML model batch prediction job started
+2024-05-25 09:10:48,925 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:10:48,972 [.NET ThreadPool Worker] INFO  Execute - Start to process (training, state sync) ML models
+2024-05-25 09:10:48,972 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:11:27,003 [.NET ThreadPool Worker] WARN Supervisor <GetModelsGroupedByEntityName>b__1_0 - PredictedResultColumnName is empty for model b624f2fd-81e1-4e8d-890b-5184994d1154
+Metadata: {
+}
+Entity schemaUid: 56143364-4580-4561-8814-8612fad2e5c0
+
+2024-05-25 09:14:45,748 [.NET ThreadPool Worker] INFO  Execute - ML model batch prediction job started
+2024-05-25 09:14:45,748 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl
+2024-05-25 09:14:45,786 [.NET ThreadPool Worker] INFO  Execute - Start to process (training, state sync) ML models
+2024-05-25 09:14:45,786 [.NET ThreadPool Worker] DEBUG  CheckIsServiceUrlSet - There are no ML problem types with set ServiceUrl

@@ -1,0 +1,543 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.ActorSystem</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.ActorSystem.ActorReference">
+            <summary>
+            Represents an actor wrapper. Acts as a handle to an actor. Used to send messages to an actor,
+            whether an actor is local or remote.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorReference.#ctor(Akka.Actor.IActorRef,Terrasoft.ServiceBus.IAppContextProvider,Terrasoft.ServiceBus.IUserContextProvider)">
+            <summary>
+            Creates an instance of the <see cref="T:Terrasoft.ActorSystem.ActorReference"/> type.
+            </summary>
+            <param name="actorRef">An actor reference. Acts as a handle to an actor.</param>
+            <param name="appContextProvider">Provider of the application context.</param>
+            <param name="userContextProvider">Provider of the user context.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorReference.Tell(Terrasoft.ServiceBus.AppContextMessage)">
+            <summary>
+            Asynchronously tells a message in a non-blocking fashion.
+            </summary>
+            <param name="message">The message to be sent to the target.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorReference.Ask``1(Terrasoft.ServiceBus.AppContextMessage)">
+            <summary>
+            Asynchronously asks a message in a blocking fashion.
+            </summary>
+            <param name="message">The message to be sent to the target.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.Actors`1">
+            <summary>
+            Provides access to instance of the root actors.
+            </summary>
+            <typeparam name="TActors">The type of the root actors.</typeparam>
+        </member>
+        <member name="P:Terrasoft.ActorSystem.Actors`1.Instance">
+            <summary>
+            Returns instance of the actors root.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.Actors`1.InitializeImplementation(`0)">
+            <summary>
+            Initializes current root actors using concrete implementation. This method used by reflection in unit tests.
+            </summary>
+            <param name="actors">The actors root implementation.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.Actors`1.Initialize(System.Collections.Generic.IReadOnlyDictionary{System.Reflection.PropertyInfo,Terrasoft.ActorSystem.IActorReference})">
+            <summary>
+            Initializes current root actors using actors map. This method used by reflection in ProcessService.
+            </summary>
+            <param name="actorRefs">The actor refs.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.Actors`1.Reset">
+            <summary>
+            Resets this instance to initial state.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.ActorService">
+            <summary>
+            Represents service of the actor system.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorService.Start(System.String)">
+            <summary>
+            Starts an actor system service.
+            </summary>
+            <param name="hocon">The configuration used to create the actor system.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorService.Stop">
+            <summary>
+            Terminates the current actor system service.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorService.GetActorSystem">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.ActorSystem.ActorsInitializer`1">
+            <summary>
+            Used for actors root initialization.
+            </summary>
+            <typeparam name="TActors">The type of the actors root.</typeparam>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorsInitializer`1.Initialize(System.Collections.Generic.IReadOnlyDictionary{System.Reflection.PropertyInfo,Terrasoft.ActorSystem.IActorReference})">
+            <summary>
+            Initializes the actor root using specified actor reference map.
+            </summary>
+            <param name="actorReferenceMap">The actor reference map.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.ActorSystemExtension">
+            <summary>
+            Represents auxiliary methods of the actor system.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ActorSystemExtension.WithRouter(Akka.Actor.Props,Akka.Actor.IUntypedActorContext,Akka.Routing.RouterConfig,System.String)">
+            <summary>
+            Creates a new <see cref="T:Akka.Actor.Props"/> with a given configuration.
+            </summary>
+            <param name="source">The configuration object used in creating an actor.</param>
+            <param name="context">The actor context.</param>
+            <param name="defConfig">The router is used when deploying the actor.</param>
+            <param name="name">The name of this actor.</param>
+            <returns>A new <see cref="T:Akka.Actor.Props"/> with the provided configuration.</returns>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BaseActorsRegistrator">
+            <summary>
+            Represents base class for the actors registrator.
+            </summary>
+            <seealso cref="T:Terrasoft.ActorSystem.IActorRegistrator"/>
+            <seealso cref="T:Terrasoft.ActorSystem.IInitializableActorsRegistrator"/>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod">
+            <summary>
+            Represents actor's registration method class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod"/> class.
+            </summary>
+            <param name="actorName">Name of the actor.</param>
+        </member>
+        <member name="P:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod.RegistrationFunc">
+            <summary>
+            Gets the registration method of the actor.
+            </summary>
+            <value>
+            The registration method.
+            </value>
+        </member>
+        <member name="P:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod.ActorName">
+            <summary>
+            Gets the name of the actor.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod.From(Akka.Actor.Props)">
+            <summary>
+            Defines the method of registration using the properties of the actor.
+            </summary>
+            <param name="props">The properties of the actor.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod.From(System.Func{Akka.Configuration.Config,Akka.Actor.Props})">
+            <summary>
+            Defines the method of registration using the properties of the actor provided using config.
+            </summary>
+            <param name="props">The properties of the actor.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod.From``1">
+            <summary>
+            Defines the method of registration using the specified actor type.
+            </summary>
+            <typeparam name="TActor">The type of the actor.</typeparam>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.ActorRegistrationMethod.From(Akka.Actor.IActorRef)">
+            <summary>
+            Defines the method of registration using the specified <see cref="T:Akka.Actor.IActorRef"/> instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.BaseActorsRegistrator"/> class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.Register(System.String)">
+            <summary>
+            Registers the actor using its specified name.
+            </summary>
+            <param name="actorName">Name of the actor.</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">This method should be called in constructor only.</exception>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.RegisterActor(Akka.Actor.ActorSystem,System.Reflection.PropertyInfo)">
+            <summary>
+            Registers a new actor by its metadata.
+            </summary>
+            <param name="system">Actor system.</param>
+            <param name="metaData">Metadata of the actor.</param>
+            <returns>Instance that implements the <see cref="T:Terrasoft.ActorSystem.IActorReference"/> interface.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.GetReferencesContainerType">
+            <summary>
+            Returns the type of the class containing references to root actors .
+            </summary>
+            <returns>Type of the root actor.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BaseActorsRegistrator.Terrasoft#ActorSystem#IInitializableActorsRegistrator#Initialize">
+            <summary>
+            Initializes an actor.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BufferedRouting.ActorPool">
+            <summary>
+            Pool of actors with "busy" state.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BufferedRouting.ActorPool.#ctor(System.Int32,System.Func{Akka.Actor.IActorRef})">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.ActorSystem.BufferedRouting.ActorPool"/> type.
+            </summary>
+            <param name="workersCount">Count of the workers in the pool.</param>
+            <param name="actorFactory">Factory instantiating workers.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BufferedRouting.ActorPool.TryRent(Akka.Actor.IActorRef@)">
+            <summary>
+            Try to get a not busy worker from the pool.
+            </summary>
+            <param name="worker">Worker if found not busy one; otherwise, <c>null</c>.</param>
+            <returns><c>True</c> if queue contains an item; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BufferedRouting.ActorPool.Return(Akka.Actor.IActorRef)">
+            <summary>
+            Marks the worker not busy.
+            </summary>
+            <param name="actorRef">Worker.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BufferedRouting.ActorSupportsBufferedRoutingAttribute">
+            <summary>
+            Specifies an <see cref="T:Akka.Actor.ReceiveActor"/> class that supports buffered routing capabilities.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BufferedRouting.BufferedRouting">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BufferedRouting.BufferedRouting.ActorReadyMessage">
+            <summary>
+            Message notifying that the worker from <see cref="T:Terrasoft.ActorSystem.BufferedRouting.BufferingRouter"/>
+            pool has become free.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ActorSystem.BufferedRouting.BufferedRouting.ActorReady">
+            <summary>
+            Gets an instance of <see cref="T:Terrasoft.ActorSystem.BufferedRouting.BufferedRouting.ActorReadyMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BufferedRouting.BufferedRouting.WithBufferedRouting(Akka.Actor.Props,Akka.Configuration.Config,System.String,Akka.Actor.IActorRef)">
+            <summary>
+            Extends actor props with message buffering capabilities.
+            </summary>
+            <param name="source">Actor properties.</param>
+            <param name="config">ActorSystem config.</param>
+            <param name="actorName">Actor name.</param>
+            <param name="parent">Parent actor's reference.</param>
+            <returns>Extended actor properties</returns>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BufferedRouting.BufferingRouter">
+            <summary>
+            A pool router that supports message buffering. When all the workers in the pool are busy, it stores the message
+            to the internal queue. When the worker becomes free, the message from the queue is tells to the worker.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BufferedRouting.BufferingRouter.#ctor(Akka.Configuration.Config,Akka.Actor.Props)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.ActorSystem.BufferedRouting.BufferingRouter"/> type.
+            </summary>
+            <param name="config">ActorSystem config</param>
+            <param name="workerProps">Pool worker's properties.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.BufferedRouting.QueueUtils">
+            <summary>
+            Provides extension methods for work with Queue.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.BufferedRouting.QueueUtils.TryDequeue``1(System.Collections.Generic.Queue{``0},``0@)">
+            <summary>
+            Attempts to retrieve an item from the queue.
+            Returns <c>true</c> if queue contains an item; otherwise, <c>false</c>.
+            </summary>
+            <param name="source">The queue.</param>
+            <param name="item">Item from the queue.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.DI.CoreApiContainerDependencyResolver">
+            <summary>
+            Provides methods to resolve instances of specified types using <see cref="T:Terrasoft.Core.DI.CoreApiContainer"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.CoreApiContainerDependencyResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.DI.CoreApiContainerDependencyResolver"/> class.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.ActorSystem.DI.CoreApiContainerDependencyResolver.Instance">
+            <summary>Returns the <see cref="T:Terrasoft.ActorSystem.DI.CoreApiContainerDependencyResolver"/> instance.</summary>
+            <value>The instance.</value>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.CoreApiContainerDependencyResolver.Resolve``1">
+            <summary>
+            Resolves instance of the specified type.
+            </summary>
+            <typeparam name="T">Type to resolve instance of.</typeparam>
+            <returns>Resolved instance.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.CoreApiContainerDependencyResolver.CreateScope">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.ActorSystem.DI.DependencyResolver">
+            <summary>
+            Actor system extension that provides dependency resolving capabilities.
+            </summary>
+            <seealso cref="T:Akka.Actor.IExtension" />
+            <seealso cref="T:Terrasoft.ActorSystem.DI.IDependencyResolver" />
+        </member>
+        <member name="P:Terrasoft.ActorSystem.DI.DependencyResolver.Resolver">
+            <summary>
+            Gets or sets the resolver instance.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.DependencyResolver.Resolve``1">
+            <summary>
+            Resolves instance of the specified type..
+            </summary>
+            <typeparam name="T">Type to resolve instance of.</typeparam>
+            <returns>
+            Resolved instance.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.DependencyResolver.CreateScope">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.ActorSystem.DI.DependencyResolverActor">
+            <summary>
+            Provides methods to obtain implementation for provided types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.DependencyResolverActor.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terrasoft.ActorSystem.DI.DependencyResolverActor"/> type.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.DependencyResolverActor.Resolve``1">
+            <summary>
+            Resolves implementation for provided type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">Type to resolve.</typeparam>
+            <returns>Concrete implementation of type <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.DependencyResolverActor.CreateActivationScope">
+            <summary>
+            Initializes activation scope for current execution context.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.DI.DependencyResolverExtensionProvider">
+            <summary>
+            Dependency resolver extension provider.
+            </summary>
+            <seealso cref="T:Terrasoft.ActorSystem.DI.DependencyResolver" />
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.DependencyResolverExtensionProvider.CreateExtension(Akka.Actor.ExtendedActorSystem)">
+            <summary>
+            Creates the current extension using a given actor system.
+            </summary>
+            <param name="system">The actor system to use when creating the extension.</param>
+            <returns>The extension created using the given actor system.</returns>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.DI.IDependencyResolver">
+            <summary>
+            Provides methods to resolve instances of specified types.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.IDependencyResolver.Resolve``1">
+            <summary>
+            Resolves instance of the specified type.
+            </summary>
+            <typeparam name="T">Type to resolve instance of.</typeparam>
+            <returns>Resolved instance.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.DI.IDependencyResolver.CreateScope">
+            <summary>
+            Creates the activation scope for current execution context.
+            </summary>
+            <returns>Activation scope disposer.</returns>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.RootNotInitializedException">
+            <summary>
+            Exception thrown during access to not initialized actors root instance.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Terrasoft.ActorSystem.RootNotInitializedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.RootNotInitializedException"/> class.
+            </summary>
+            <param name="rootTypeName">Name of the root type.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.RootNotInitializedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.RootNotInitializedException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the 
+            serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains 
+            contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.RootTypeNotSupportedException">
+            <summary>
+            Exception thrown when <see cref="T:Terrasoft.ActorSystem.Actors`1"/> used to resolve instance for invalid root type.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Terrasoft.ActorSystem.RootTypeNotSupportedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.RootTypeNotSupportedException"/> class.
+            </summary>
+            <param name="rootTypeName">Name of the root type.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.RootTypeNotSupportedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.RootTypeNotSupportedException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the 
+            serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains 
+            contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.IActorAssemblyProvider">
+            <summary>
+            Represents provider that defines assemblies where types of actors are declared.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorAssemblyProvider.GetActorRootAssemblies">
+            <summary>
+            Returns assemblies containing classes of the root actors.
+            </summary>
+            <returns>A list of assemblies.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorAssemblyProvider.GetRegistratorAssemblies">
+            <summary>
+            Returns assemblies containing classes that implements <see cref="T:Terrasoft.ActorSystem.IActorRegistrator"/> interface.
+            </summary>
+            <returns>An array of assemblies.</returns>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.IActorReference">
+            <summary>
+            Represents an actor reference. Acts as a handle to an actor. Used to send messages to an actor,
+            whether an actor is local or remote.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorReference.Tell(Terrasoft.ServiceBus.AppContextMessage)">
+            <summary>
+            Asynchronously tells a message in a non-blocking fashion.
+            </summary>
+            <param name="message">The message to be sent to the target.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorReference.Ask``1(Terrasoft.ServiceBus.AppContextMessage)">
+            <summary>
+            Asynchronously tells a message in a non-blocking fashion.
+            </summary>
+            <param name="message">The message to be sent to the target.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.IActorService">
+            <summary>
+            Represents service of the actor system.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorService.Start(System.String)">
+            <summary>
+            Starts an actor system service.
+            </summary>
+            <param name="config">The configuration used to create the actor system.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorService.Stop">
+            <summary>
+            Terminates the current actor system service.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorService.GetActorSystem">
+            <summary>
+            Returns current actor system instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.IActorRegistrator">
+            <summary>
+            Represents actor registration mechanism.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorRegistrator.RegisterActor(Akka.Actor.ActorSystem,System.Reflection.PropertyInfo)">
+            <summary>
+            Registers a new actor by its metadata.
+            </summary>
+            <param name="system">Actor system.</param>
+            <param name="metaData">Metadata of the actor.</param>
+            <returns>Instance that implements the <see cref="T:Terrasoft.ActorSystem.IActorReference"/> interface.</returns>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IActorRegistrator.GetReferencesContainerType">
+            <summary>
+            Returns the type of the class containing references to root actors .
+            </summary>
+            <returns>Type of the root actor.</returns>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.IInitializableActorsRegistrator">
+            <summary>
+            Represents method of initialization an actor.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.IInitializableActorsRegistrator.Initialize">
+            <summary>
+            Initializes an actor.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.Logging.CommonsLogger">
+            <summary>
+            This class is used to receive log events and sends them to
+            the configured logger from <see cref="T:Common.Logging.LogManager"/>. The following log events are
+            recognized: <see cref="T:Akka.Event.Debug"/>, <see cref="T:Akka.Event.Info"/>, <see cref="T:Akka.Event.Warning"/> and <see cref="T:Akka.Event.Error"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.Logging.CommonsLogger.OnReceive(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.ActorSystem.ManualPoolResizer">
+            <summary>
+            Manual actor pool resizer.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ManualPoolResizer.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.ActorSystem.ManualPoolResizer"/> type.
+            </summary>
+            <param name="initialPoolSize">Initial pool size.</param>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ManualPoolResizer.IsTimeForResize(System.Int64)">
+            <inheritdoc cref="M:Akka.Routing.Resizer.IsTimeForResize(System.Int64)"/>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ManualPoolResizer.Resize(System.Collections.Generic.IEnumerable{Akka.Routing.Routee})">
+            <inheritdoc cref="M:Akka.Routing.Resizer.Resize(System.Collections.Generic.IEnumerable{Akka.Routing.Routee})"/>
+        </member>
+        <member name="M:Terrasoft.ActorSystem.ManualPoolResizer.UpdatePoolSize(System.Func{System.Int32})">
+            <summary>
+            Updates pool size.
+            </summary>
+            <param name="sizeFactory">Delegate that returns new pool size.</param>
+        </member>
+        <member name="T:Terrasoft.ActorSystem.RootActorsAttribute">
+            <summary>
+            Attribute that indicates that the class represents references to root actors .
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,646 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.DB.PostgreSql</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlTextDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a text data value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlTextDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlTextDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlDBObjectNameDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a DBObject name data value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlDBObjectNameDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlDBObjectNameDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlIntegerDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a integer data value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlIntegerDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlIntegerDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlFloatDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a float data value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlFloatDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlFloatDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlBooleanDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a booleant data value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlBooleanDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlBooleanDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlDateTimeDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a text date and/or time value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlDateTimeDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlDateTimeDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlGuidDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a guid data value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlGuidDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlGuidDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlBinaryDataValueTypeFactory">
+            <summary>
+            Provides functionality to creating instance of a binary data value class.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlBinaryDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlBinaryDataValueTypeFactory.CreateDataValueType(Terrasoft.Core.DataValueTypeManager,Terrasoft.Core.ISchemaColumnsInfoDataReader)">
+            <summary>
+            Returns a new instance of the DBDataValueType class.
+            </summary>
+            <param name="dataValueTypeManager">Data value type manager.</param>
+            <param name="dataReader">Data reader that contains schema columns information.</param>
+            <returns>A new instance of the DBDataValueType class.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlDataValueTypeResolver">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbDataValueTypeResolver"/>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlEngine">
+            <summary>
+            Provides methods for queries building.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.DB.PostgreSql.PostgreSqlEngine.AllowsMars">
+            <summary>
+            Represents whether the database allows multiple active result sets.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.DB.PostgreSql.PostgreSqlEngine.ImplicitBooleanIntegerCastQueryText">
+            <summary>
+            Returns query text of implicit boolean/integer types cast.
+            </summary>
+            <value>
+            The implicit boolean integer cast query text.
+            </value>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsDefSystemValue(Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Determines if column default value is a system value.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <returns>Value that indicates whether column default value is a system value.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.WrapColumnDefValue(System.Text.StringBuilder,System.Boolean)">
+            <summary>
+            Wraps string with brackets if necessary.
+            </summary>
+            <param name="sb">String.</param>
+            <param name="isWrapped">Value that indicates whether column need wrap.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetNeedDefaultValue(Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Determines if column need default value.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <returns>Value that indicates whether column need default value.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetDbDataValueType(Terrasoft.Core.DataValueType)">
+            <summary>
+            Returns DB data value type.
+            </summary>
+            <param name="dataValueType">Data value Type.</param>
+            <returns><see cref="T:Terrasoft.Core.TextDataValueType"/> without unicode if data value type is text.
+            Otherwise returns <see cref="T:Terrasoft.Core.DBDataValueType"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetColumnDefSystemValue(Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Returns default system value for the column.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <returns>Default system value.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsMaxSize(System.String)">
+            <summary>
+            Determines whether the specified data type value is max size.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is max size; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetDateTimeValueKind(System.String)">
+            <summary>
+            Returns <see cref="T:Terrasoft.Common.DateTimeValueKind"/> that corresponds to data type value.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><see cref="T:Terrasoft.Common.DateTimeValueKind"/> that corresponds to data type value.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsIntegerDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is integer.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is integer; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsTextDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is text.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is text; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsFloatDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is float.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is float; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsBooleanDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is boolean.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is boolean; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsDateTimeDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is DateTime.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is DateTime; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsGuidDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is guid.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is guid; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsBinaryDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is binary.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is binary; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIsDbObjectNameDataValueType(System.String)">
+            <summary>
+            Determines whether the specified data type value is DBObject name.
+            </summary>
+            <param name="dataTypeValue">Data type value.</param>
+            <returns><b>true</b> if the specified data type value is DBObject name; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.BuildReCreateSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for recreating sequence in DB.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.BuildDropSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for droping sequence from DB. <paramref name="sb"/>.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.BuildNextValueSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for creting sequence in DB. <paramref name="sb"/>.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.BuildCurrentValueSequenceQuerySqlText(System.Text.StringBuilder,Terrasoft.Core.DB.Sequence)">
+            <summary>
+            Builds SQL text for getting current value for sequence. <paramref name="sb"/>.
+            </summary>
+            <param name="sb">Builder for sql text string.</param>
+            <param name="sequence">Sequence object.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetColumnDefValue(Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Returns SQL text for default value of a column.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <returns>SQL text for default value of a column.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetColumnDefValue(Terrasoft.Core.Entities.EntitySchemaColumn,System.Boolean)">
+            <summary>
+            Returns SQL text for default value of a column.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <param name="isWrapped">Flag that indicates whether value in text is wrapped in parentheses.</param>
+            <returns>SQL text for default value of a column.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetColumnDefValue(Terrasoft.Core.Entities.EntitySchemaColumn,System.String)">
+            <summary>
+            Returns SQL text for default value of a column.
+            </summary>
+            <param name="entitySchemaColumn">Column.</param>
+            <param name="dbDefValue">Default value format on database level.</param>
+            <returns>SQL text for default value of a column.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetColumnsQuerySqlText(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetIndexesQuerySqlText">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.NeedCastOrderedTextColumn(Terrasoft.Core.DataValueType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsTextDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsDbObjectNameDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsIntegerDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsFloatDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsBooleanDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsDateTimeDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsGuidDataValueType(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsMaxSizeText(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.IsUnicodeText(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlEngine.GetDateTimeValueKind(Terrasoft.Core.DB.DbStructureReader.DbColumnDto)">
+            <inheritdoc cref="T:Terrasoft.Core.DB.DbStructureReader.IDbDataValueTypeEngine"/>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlExecutor">
+            <summary>
+            Provides methods for queries execution.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.DB.DBExecutor" />
+            <seealso cref="T:Terrasoft.Core.DB.INonMarsDbExecutor" />
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.SetDbParameterPrecisionOrSize(Terrasoft.Core.DBDataValueType,System.Data.Common.DbParameter)">
+            <summary>
+            Set DB precision or size.
+            </summary>
+            <param name="parameterType">Parameter type.</param>
+            <param name="dbParameter">DB paramater.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.GetParameterType(Terrasoft.Core.DB.QueryParameter)">
+            <summary>
+            Return parameter type.
+            </summary>
+            <param name="queryParameter">Query parameter.</param>
+            <returns>Parameter type.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.QueryParameterTypeIsBlob(Terrasoft.Core.DB.QueryParameter,Terrasoft.Core.DataValueType)">
+            <summary>
+            Return true if query parameter type is Blob.
+            </summary>
+            <param name="queryParameter">Query parameter.</param>
+            <param name="parameterType">Parameter type.</param>
+            <returns>true if query parameter type is blob, and false otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.QueryParameterTypeIsGuid(Terrasoft.Core.DB.QueryParameter,Terrasoft.Core.DataValueType)">
+            <summary>
+            Return true if query parameter type is Guid.
+            </summary>
+            <param name="queryParameter">Query parameter.</param>
+            <param name="parameterType">Parameter type.</param>
+            <returns>true if query parameter type is guid, and false otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.QueryParameterTypeIsDate(Terrasoft.Core.DBDataValueType)">
+            <summary>
+            Return true if query parameter type is Date.
+            </summary>
+            <param name="parameterType">Parameter type.</param>
+            <returns>true if query parameter type is date, and false otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.QueryParameterTypeIsDateTime(Terrasoft.Core.DBDataValueType)">
+            <summary>
+            Return true if query parameter type is DateTime.
+            </summary>
+            <param name="parameterType">Parameter type.</param>
+            <returns>true if query parameter type is date time, and false otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.GetDbValue(Terrasoft.Core.DB.QueryParameter,Terrasoft.Core.DataValueType)">
+            <summary>
+            Return DB value.
+            </summary>
+            <param name="queryParameter">Query parameter.</param>
+            <param name="parameterType">Parameter type.</param>
+            <returns>DB value.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.AddStreamDbParameterToParameterCollection(Npgsql.NpgsqlParameterCollection,Terrasoft.Core.DB.QueryParameter,System.IO.Stream)">
+            <summary>
+            Add blob DB parameter into parameter collection.
+            </summary>
+            <param name="parameters">Parameter collection.</param>
+            <param name="queryParameter">Query parameter.</param>
+            <param name="streamValue">Stream value.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.AddDbParameterToParameterCollection(Npgsql.NpgsqlParameterCollection,Terrasoft.Core.DB.QueryParameter,Terrasoft.Core.DBDataValueType,System.Object,System.Boolean)">
+            <summary>
+            Add DB parameter into parameter collection.
+            </summary>
+            <param name="parameters">Parameter collection.</param>
+            <param name="queryParameter">Query parameter.</param>
+            <param name="parameterType">Parameter type.</param>
+            <param name="dbValue">Value.</param>
+            <param name="needTypedParameter">true if parameterType shouldn't be null, false otherwise.</param>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.GetResourceItemName(Terrasoft.Core.DB.QueryParameter)">
+            <summary>
+            Return resource item name for InvalidObjectStateException.
+            </summary>
+            <param name="queryParameter">Query parameter.</param>
+            <returns>Resource item name.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.IsNeedTypedParameter(Terrasoft.Core.DB.QueryParameter,System.Object)">
+            <summary>
+            Return true for typed parameter.
+            </summary>
+            <param name="queryParameter">Query parameter.</param>
+            <param name="dbValue">Value.</param>
+            <returns>true if need typed parameter, false otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteReader(System.String,Terrasoft.Core.DB.QueryParameterCollection,System.Data.CommandBehavior,System.Threading.CancellationToken)">
+            <summary>
+            Sends SQL command text and its parameters to the connection, and builds a DataReader 
+            using one of the CommandBehavior values.
+            Command execution can be cancelled with the token.
+            </summary>
+            <param name="sqlText">SQL command text.</param>
+            <param name="queryParameters">Query parameters that will be converted into 
+            <see cref="T:System.Data.Common.DbParameterCollection"/>.</param>
+            <param name="behavior">Provides a description of the results of the query 
+            and its effect on the database.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>Instance implementing <see cref="T:System.Data.IDataReader"/> 
+            for the resulting set of records.</returns>
+            <exception cref="T:Terrasoft.DB.PostgreSql.PostgreSqlExecutorException"> Executor was created in another thread. </exception>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteReaderAsync(System.String,Terrasoft.Core.DB.QueryParameterCollection,System.Data.CommandBehavior,System.Threading.CancellationToken)">
+            <summary>
+            An asynchronous version of InternalExecuteReader, which sends SQL command text and its parameters to the
+            connection, and builds a DataReader using one of the CommandBehavior values.
+            Command execution can be cancelled with the token.
+            </summary>
+            <param name="sqlText">SQL command text.</param>
+            <param name="queryParameters">Query parameters that will be converted into 
+            <see cref="T:System.Data.Common.DbParameterCollection"/>.</param>
+            <param name="behavior">Provides a description of the results of the query 
+            and its effect on the database.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>Instance implementing <see cref="T:System.Data.IDataReader"/> 
+            for the resulting set of records.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteScalar``1(System.String,Terrasoft.Core.DB.QueryParameterCollection)">
+            <summary>
+            Executes a SQL statement with parameters, and returns the first column of the first row 
+            in the result set returned by the query. Additional columns or rows are ignored.
+            </summary>
+            <param name="sqlText">SQL command text.</param>
+            <param name="queryParameters">Query parameters that will be converted into 
+            <see cref="T:System.Data.Common.DbParameterCollection"/>.</param>
+            <returns>Scalar value of the given result type.</returns>
+            <exception cref="T:Terrasoft.DB.PostgreSql.PostgreSqlExecutorException"> Executor was created in another thread. </exception>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteScalarAsync``1(System.String,Terrasoft.Core.DB.QueryParameterCollection)">
+            <summary>
+            An asynchronous version of InternalExecuteScalar, which executes a SQL statement with parameters.
+            </summary>
+            <param name="sqlText">SQL command text.</param>
+            <param name="queryParameters">Query parameters that will be converted into 
+            <see cref="T:System.Data.Common.DbParameterCollection"/>.</param>
+            <returns>Scalar value of the given result type.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecute(System.String,Terrasoft.Core.DB.QueryParameterCollection)">
+            <summary>
+            Executes a SQL statement with parameters, if any, against a connection object.
+            </summary>
+            <param name="sqlText">SQL command text.</param>
+            <param name="queryParameters">Query parameters that will be converted into 
+            <see cref="T:System.Data.Common.DbParameterCollection"/></param>
+            <returns>The number of rows affected.</returns>
+            <exception cref="T:Terrasoft.DB.PostgreSql.PostgreSqlExecutorException"> Executor was created in another thread. </exception>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteAsync(System.String,Terrasoft.Core.DB.QueryParameterCollection)">
+            <summary>
+            An asynchronous version of InternalExecute, which executes a SQL statement with parameters, if any,
+            against a connection object.
+            </summary>
+            <param name="sqlText">SQL command text.</param>
+            <param name="queryParameters">Query parameters that will be converted into 
+            <see cref="T:System.Data.Common.DbParameterCollection"/></param>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlExecutorException">
+            <summary> Represents the exception that is thrown when errors are generated using
+            <see cref="T:Terrasoft.DB.PostgreSql.PostgreSqlExecutor" />.</summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlExecutorException.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:System.IndexOutOfRangeException" /> class with a
+            specified error message.</summary>
+            <param name="message">The message that describes the error. </param>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlMetaEngine">
+            <summary>
+            Provides methods for meta script queries building.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlMetaScript">
+            <summary>
+            Provides methods for meta script queries execution.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlMetaScript.IsNotLocalizationTextDataValueType(Terrasoft.Core.Entities.EntitySchemaColumn,Terrasoft.Core.DBDataValueType)">
+            <summary>
+            Determines if column isn't localization text.
+            </summary>
+            <param name="entitySchemaColumn">Column in schema.</param>
+            <param name="dbDataValueType">DB data value type.</param>
+            <returns>Value that indicates whether column isn't localization text.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlMetaScript.CreateDBDataValueType(System.Data.IDataReader)">
+            <summary>
+            Creates and returns DBDataValueType corresponding to infromation from DataReader.
+            </summary>
+            <param name="dataReader">Data reader containing information about entity schema column.</param>
+            <returns>Column type.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlMetaScript.GetIsDBLevelRequirementTypeColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Determines if column value is required on database level.
+            </summary>
+            <param name="entitySchema">Schema.</param>
+            <param name="entitySchemaColumn">Column in schema.</param>
+            <returns>Value that indicates whether column value is required on database level.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlMetaScript.GetIsForeignKeyCascade(System.Data.IDataReader)">
+            <summary>
+            Determines whether foreign key is cascade.
+            </summary>
+            <param name="dataReader">>Instance of <see cref="T:Terrasoft.Core.DataReader"/> to read property.</param>
+            <returns><c>true</c> if foreign key is cascade. Otherwise returns <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlMetaScript.GetIsNotNullColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Determines if column is not nullable.
+            </summary>
+            <param name="entitySchema">Schema.</param>
+            <param name="entitySchemaColumn">Column in schema.</param>
+            <returns>Value that indicates whether column is not nullable.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlMetaScript.ApplyTypesCastOptions">
+            <summary>
+            Sets the boolean to integer types implicit cast in db.
+            </summary>
+            <returns>Query execute status.</returns>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlSecurityEngine">
+            <summary>
+            Provides methods for objects administration.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlStub">
+            <summary>
+            Provides marker methods for implementation PostgreSql.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlStub.Mark(System.String)">
+            <summary>
+            Provides marker method for implementation PostgreSql.
+            </summary>
+            <param name="message">Marker message.</param>
+        </member>
+        <member name="T:Terrasoft.DB.PostgreSql.PostgreSqlTypeConverter">
+            <summary>
+            Provides methods for type conversion of query paramaters.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlTypeConverter.DBValueToGuid(System.Object)">
+            <summary>
+            Convert db value to Guid value.
+            </summary>
+            <param name="value">Db value.</param>
+            <returns>Guid value.</returns>
+        </member>
+        <member name="M:Terrasoft.DB.PostgreSql.PostgreSqlTypeConverter.ValueToDBValue(System.Object)">
+            <summary>
+            Convert value to db value.
+            </summary>
+            <param name="value">Value.</param>
+            <returns>Db value.</returns>
+        </member>
+    </members>
+</doc>

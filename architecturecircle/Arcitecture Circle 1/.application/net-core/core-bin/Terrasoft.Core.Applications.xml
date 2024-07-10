@@ -1,0 +1,1470 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Core.Applications</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Core.Applications.AppManager">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.IAppManager"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.IsBaseApplication(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetAppPackages(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetAllAppPackagesData(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetOrInitAppCurrentPackage(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.InitAppCurrentPackage(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetAppIdByCode(System.String)">
+            <summary>
+            Returns application Id by application code.
+            </summary>
+            <param name="appCode">Application code.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.FindAppIdsByPackageUId(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.FindAppIdsByPackageUId(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetAppIdsByPackageUId(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.GetAppIdsByPackageUId(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.CreatePackageInApp(System.Guid,Terrasoft.Core.PackageData)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.CreatePackageInApp(System.Guid,Terrasoft.Core.PackageData)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetExistingPackagesForAddingInApp(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.GetExistingPackagesForAddingInApp(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.AddExistingPackagesToApp(System.Guid,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.AddExistingPackagesToApp(System.Guid,System.Collections.Generic.IEnumerable{System.String},System.Boolean)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.SetCurrentPackageInApp(System.Guid,System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.SetCurrentPackageInApp(System.Guid,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetAppNamesByPackageUId(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.ConnectInactivePackagesToApp(System.Guid,System.Collections.Generic.IEnumerable{System.Guid})">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.ConnectInactivePackagesToApp(System.Guid,System.Collections.Generic.IEnumerable{System.Guid})"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppManager.GetAppCodeByAppId(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppManager.GetAppCodeByAppId(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.AppRepository.GetAppById(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.IAppRepository.GetAppById(System.Guid)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Content.AppContentUniqueNameGenerator">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.Content.IAppContentUniqueNameGenerator"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Content.AppContentUniqueNameGenerator.GeneratePackageName(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Content.AppPackageElementDependencyApplier">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Content.IAppPackageElementDependencyApplier"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Content.AppPackageElementDependencyApplier.ApplyAppEntitySchemaDependencies(System.Collections.Generic.IEnumerable{System.Guid},System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Content.AppSectionManager.Create(Terrasoft.Core.Applications.Abstractions.Content.AppSectionInfo)">
+            <summary>
+            Creates new section at application.
+            </summary>
+            <param name="sectionInfo">Information about section to create.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">When required data was not passed.</exception>
+            <exception cref="T:System.Security.SecurityException">When has not right for CanManageSolution.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Content.AppSectionManager.Update(Terrasoft.Core.Applications.Abstractions.Content.AppSectionInfo)">
+            <summary>
+            Updates existing section at application.
+            </summary>
+            <param name="sectionInfo">Information about changed section to update.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">When required data was not passed.</exception>
+            <exception cref="T:System.Security.SecurityException">When has not right for CanManageSolution.</exception>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Content.IAppPackageElementDependencyApplier">
+            <summary>
+            Dependency applier for application.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Content.IAppPackageElementDependencyApplier.ApplyAppEntitySchemaDependencies(System.Collections.Generic.IEnumerable{System.Guid},System.String)">
+            <summary>
+            Applies dependency for application by the entity schema name.
+            </summary>
+            <param name="appPackageUIds">UIds of application packages.</param>
+            <param name="entitySchemaName">Name of entity shema.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Content.ISectionCreator">
+            <summary>
+            Application section creator.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Content.ISectionCreator.Create(Terrasoft.Core.Applications.Abstractions.Content.AppSectionInfo,System.Guid)">
+            <summary>
+            Creates new section.
+            </summary>
+            <param name="sectionInfo">Section info.</param>
+            <param name="appPackageUId">Section package UId.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Content.SectionCreator">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Content.ISectionCreator"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Content.SectionCreator.Create(Terrasoft.Core.Applications.Abstractions.Content.AppSectionInfo,System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.AppCreator">
+            <summary>
+            Class containing logic for creation new applications.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppCreator.Create(Terrasoft.Core.Applications.Abstractions.Creation.INewAppInfo)">
+            <summary>
+            <inheritdoc />
+            </summary>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">When required data was not passed.</exception>
+            <exception cref="T:System.ArgumentException">When application name is not valid.</exception>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.AppTemplateInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateInfo.TemplateCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateInfo.AppCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateInfo.AppName">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateInfo.AppIconBase64">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateInfo.AppColor">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateInfo.OptionalTemplateData">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.AppTemplateLoader">
+            <summary>
+            Class containing logic for load application template.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplateLoader.LoadAppTemplatePackages(Terrasoft.Core.Applications.Creation.AppTemplateInfo)">
+            <summary>
+            <inheritdoc />
+            </summary>
+            <exception cref="T:System.AggregateException">Error, while load package failed.</exception>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.AppTemplateMacro">
+            <summary>
+            Class that holds application template macros and applies those macros when creating an application.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateMacro.AppCode">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateMacro.SchemaNamePrefix">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.AppTemplateMacro.AdditionalTextMacros">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplateMacro.ApplyToTextStream(System.IO.Stream,System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplateMacro.ApplyToText(System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplateMacro.ApplyToGuid(System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplateMacro.ApplyToName(System.String,Terrasoft.Core.Packages.PackageStorageObjectType)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplateMacro.RestoreOriginalName(System.String,Terrasoft.Core.Packages.PackageStorageObjectType)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageContentProvider.GetPackageDirectoryName(System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageContentProvider.GetPackageElementDirectoryName(System.String,Terrasoft.Core.Packages.PackageStorageObjectType)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageContentProvider.GetPackageElementDirectoryName(Terrasoft.Core.Packages.SqlScriptDescriptor)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageContentProvider.GetPackageElementFileName(Terrasoft.Core.Packages.SqlScriptDescriptor)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageContentProvider.ReadTextFile(System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageContentProvider.ReadStringValue(Terrasoft.Common.DataReader)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorage">
+            <summary>
+            Storage used to load content of application template packages.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorage.GetPackageContentProvider">
+            <summary>
+            Creates instance of <see cref="T:Terrasoft.Core.Packages.IPackageContentProvider"/> that is used to load content of application
+            template packages content.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorage.Save(Terrasoft.Core.Packages.IPackageContentProvider)">
+            <summary>
+            Throws a <see cref="T:System.NotImplementedException"/> - saving of application template is not implemented yet.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorageFactory">
+            <summary>
+            Factory class used to create new instances of <see cref="T:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorage"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorageFactory.Create(Terrasoft.Core.Applications.Creation.IAppTemplateMacro,System.String,System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.IAppTemplateFileSchemaContentProvider">
+            <summary>
+            Interface for work with content of schema.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.IAppTemplateLoader">
+            <summary>
+            Interface used to application template loading.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.IAppTemplateLoader.LoadAppTemplatePackages(Terrasoft.Core.Applications.Creation.AppTemplateInfo)">
+            <summary>
+            Loads application template packages by <paramref name="templateInfo"/>.
+            </summary>
+            <param name="templateInfo">Information for load template.</param>
+            <returns>Array of loaded <see cref="T:Terrasoft.Core.Packages.Package"/>.</returns>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.AppCode">
+            <summary>
+            Application code.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.SchemaNamePrefix">
+            <summary>
+            Value of "SchemaNamePrefix" system setting.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.AdditionalTextMacros">
+            <summary>
+            Dictionary text macros.
+            Key - macro. Value - replaced value.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.ApplyToTextStream(System.IO.Stream,System.String)">
+            <summary>
+            Applies all macros to <see cref="T:System.IO.Stream"/> containing a text.
+            </summary>
+            <param name="stream">Instance of <see cref="T:System.IO.Stream"/> that contains a text.</param>
+            <param name="fileExtension">Instance of <see cref="T:System.String"/> that contains a file extension.</param>
+            <returns>Instance of <see cref="T:System.IO.Stream"/> with a text that was processed by macros.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.ApplyToText(System.String)">
+            <summary>
+            Applies all macros to a text.
+            </summary>
+            <param name="text">Text to process.</param>
+            <returns>Processed text.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.ApplyToGuid(System.String)">
+            <summary>
+            Applies one of macros to get new or previously generated GUID.
+            </summary>
+            <param name="text">Text with GUID macro.</param>
+            <returns>GUID generated according to macro.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.ApplyToName(System.String,Terrasoft.Core.Packages.PackageStorageObjectType)">
+            <summary>
+            Applies macros those gives a valid name for package or package element. If at least one macro was applied,
+            stores generated name to have a possibility to restore original name.
+            </summary>
+            <param name="name">Name containing macros.</param>
+            <param name="type">TODO</param>
+            <returns>Name with applied macros.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.IAppTemplateMacro.RestoreOriginalName(System.String,Terrasoft.Core.Packages.PackageStorageObjectType)">
+            <summary>
+            Returns original name if passed text is equal to one of previously generated names. In case when it is not
+            the one, returns passed name.
+            </summary>
+            <param name="name">Name to check.</param>
+            <param name="type">TODO</param>
+            <returns>Original name if exists.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Creation.IAppTemplatePackageStorageFactory">
+            <summary>
+            Interface used to create new instances of <see cref="T:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorage"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Creation.IAppTemplatePackageStorageFactory.Create(Terrasoft.Core.Applications.Creation.IAppTemplateMacro,System.String,System.String)">
+            <summary>
+            Creates new instance of <see cref="T:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorage"/> with specified parameters.
+            </summary>
+            <param name="appTemplateMacro">Object that holds application template macros and applies those macros
+            when creating an application.</param>
+            <param name="storageDirectoryPath">Path to directory used to unzip and load packages.</param>
+            <param name="packagesZipPath">Path to directory containing packages ZIP files.</param>
+            <returns>Instance of <see cref="T:Terrasoft.Core.Applications.Creation.AppTemplatePackageStorage"/>.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Export.AppExporter.Export(System.Guid,System.String,System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Export.AppExporter.Export(System.Guid)">
+            <summary>
+            Returns stream with specified application.
+            </summary>
+            <param name="applicationId">Identifier of the application to export.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.GenAI.GenAIException">
+            <summary>
+            Exception occurred at GenAI operations.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.GenAI.GenAIException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.GenAI.GenAIException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.GenAI.GenAIException.#ctor(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.GenAI.GenAIException.#ctor(System.String,System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.GenAI.IGenAIApplicationContentGenerator">
+            <summary>
+            Interface for generator of the application content (entities, pages, etc)
+            with generative AI models. Implementation of the interface is located in
+            Terrasoft.Configuration assembly.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.GenAI.IGenAIApplicationContentGenerator.GenerateApplicationByDescription(System.String)">
+            <summary>
+            Generates application by its description.
+            </summary>
+            <param name="description">Application description.</param>
+            <returns>Information about generated content.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.GenAI.IGenAIApplicationContentGenerator.SaveContentBeforeBuild(Terrasoft.Core.Applications.Abstractions.Creation.ApplicationGenerationResult,System.String,System.String)">
+            <summary>
+            Saves generated content in configuration before it was built.
+            </summary>
+            <param name="generationResult">Information about generated content. Could be enriched by this method.</param>
+            <param name="appCode">Application code.</param>
+            <param name="appName">Application name.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.GenAI.IGenAIApplicationContentGenerator.SaveContentAfterBuild(Terrasoft.Core.Applications.Abstractions.Creation.ApplicationGenerationResult,System.String,System.String)">
+            <summary>
+            Saves generated content in configuration after it was built.
+            </summary>
+            <param name="generationResult">Information about generated content. Could be enriched by this method.</param>
+            <param name="appCode">Application code.</param>
+            <param name="appName">Application name.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Installation.InstalledAppInfo">
+            <summary>
+            Installed application info.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.Id">
+            <summary>
+            Id.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.Description">
+            <summary>
+            Description.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.Code">
+            <summary>
+            Code.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.ZipPackageName">
+            <summary>
+            Zip package name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.Maintainer">
+            <summary>
+            Maintainer.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.SupportEmail">
+            <summary>
+            Support email.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.LastUpdate">
+            <summary>
+            Last update.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.Version">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.MarketplaceAppId">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.IsHidden">
+            <inheritdoc />
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.MarketplaceLink">
+            <summary>
+            Marketplace link.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.FileLink">
+            <summary>
+            File link.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.HelpLink">
+            <summary>
+            Help link.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.OrderLink">
+            <summary>
+            Order link.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.IsLicenseRequired">
+            <summary>
+            Is license required.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.InstalledAppInfo.SysInstalledAppStatusId">
+            <summary>
+            Application status.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.AppInstaller.SetInstalledAppWithDescriptorNeedUpdate(Terrasoft.Core.Applications.Abstractions.Installation.IInstalledAppInfo,Terrasoft.Core.Applications.Synchronization.AppInfo)">
+            <summary>
+            Sets the "NeedUpdate" flag for the installed application with app descriptor.
+            </summary>
+            <remarks>Set "NeedUpdate" property to <c>false</c> for installation from Marketplace.
+            In other case calculates it by comparing current and available version, if such version has been specified
+            in app descriptor. Does not change "NeedUpdate" property if all previous conditions are not met.</remarks>
+            <param name="installedAppInfo"></param>
+            <param name="appInfo"></param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.AppInstaller.Install(System.String,System.String,Terrasoft.Core.Packages.PackageInstallOptions,Terrasoft.Core.Applications.Abstractions.Installation.IInstalledAppInfo)">
+            <summary>
+            Install application packages.
+            </summary>
+            <param name="sourcePath">Packages source path.</param>
+            <param name="destinationPath">Packages destination path.</param>
+            <param name="installOptions">Install options.</param>
+            <param name="installedAppInfo">Installed application info.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.AppInstaller.Uninstall(Terrasoft.Core.Applications.Abstractions.Packages.ISystemPackageManager,System.Guid,System.Collections.Generic.IList{System.String},Terrasoft.Core.Packages.PackageInstallOptions)">
+            <summary>
+            Uninstalls application packages.
+            </summary>
+            <param name="systemPackageManager">System package manager.</param>
+            <param name="appId">Application identifier.</param>
+            <param name="errorMessages">Error messages.</param>
+            <param name="installOptions">Installation options <see cref="T:Terrasoft.Core.Packages.PackageInstallOptions"/>.</param>
+            <returns>
+            Returns <c>true</c> if application have been uninstalled successfully. Otherwise returns <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.AppInstaller.DeletePackage(Terrasoft.Core.Packages.IPackageManager,System.String,System.Collections.Generic.IList{System.String},Terrasoft.Core.Packages.PackageInstallOptions)">
+            <summary>
+            Deletes package.
+            </summary>
+            <param name="packageManager">Package manager.</param>
+            <param name="packageName">Package name.</param>
+            <param name="errorMessages">Error messages.</param>
+            <param name="installOptions">Installation options <see cref="T:Terrasoft.Core.Packages.PackageInstallOptions"/>.</param>
+            <returns>
+            Returns <c>true</c> if package has been deleted successfully. Otherwise returns <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.AppInstaller.IsAppInstalledWithError(System.String,System.Guid@)">
+            <summary>
+            Checks whether application installed with errors.
+            </summary>
+            <param name="appCode">Application code.</param>
+            <param name="appId">Application id.</param>
+            <returns>
+            Returns <c>true</c> if application already installed with error. Otherwise returns <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.AppInstaller.GetAppNamesByPackageUId(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Installation.Backup.IPackageBackupRepository">
+            <summary>
+            Defines methods for backup storage operations.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.IPackageBackupRepository.SaveBackup(Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs)">
+            <summary>
+            Saves packages data to backup.
+            </summary>
+            <param name="args">Saving backup arguments.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.IPackageBackupRepository.GetBackup(System.String)">
+            <summary>
+            Gets data from backup.
+            </summary>
+            <param name="backupPath">Path to backup.</param>
+            <returns>Backup data.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs">
+            <summary>
+            Arguments for creating backup.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs.ChangedPackages">
+            <summary>
+            Collection of changed packages.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs.BackupPath">
+            <summary>
+            Path to which backup will be saved.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs.AppInfos">
+            <summary>
+            Installed applications.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs.DependentPackagesUIds">
+            <summary>
+            Application dependent packages UIds
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs.PackageInInstalledApp">
+            <summary>
+            Deleted packages in application info.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs.PackageInstallationInfos">
+            <summary>
+            Collection of information about packages installation.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.BackupCreationArgs.ChangedInactivePackagesInfo">
+            <summary>
+            Information about changed inactive packages.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Installation.Backup.Models.ChangedInactivePackagesInfo">
+            <summary>
+            Represents information about inactive packages and their associations with applications.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.ChangedInactivePackagesInfo.InactivePackagesInfo">
+            <summary>
+            Gets or sets information about inactive packages.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.ChangedInactivePackagesInfo.InactivePackagesInAppsInfo">
+            <summary>
+            Gets or sets information about inactive packages and their associations with applications.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Installation.Backup.Models.PackageInstallationInfo">
+            <summary>
+            Package installation information.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.PackageInstallationInfo.Package">
+            <summary>
+            Package information.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Installation.Backup.Models.PackageInstallationInfo.Source">
+            <summary>
+            Package installation source information.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Installation.Backup.Models.PackageInstallationSource">
+            <summary>
+            Package installation source
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Applications.Installation.Backup.Models.PackageInstallationSource.PackageStore">
+            <summary>
+            Installation source is internal store.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Applications.Installation.Backup.Models.PackageInstallationSource.External">
+            <summary>
+            Installation source is external.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.ZipPackageBackupManager.CreateBackup(System.String,System.String,System.String,System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Installation.Backup.IPackageBackupCreator.CreateBackup(System.String,System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.ZipPackageBackupManager.CreateBackup(System.String,System.String,System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Installation.Backup.IPackageBackupCreator.CreateBackup(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.ZipPackageBackupManager.CreateBackup(System.String,System.String,System.String,System.String[])">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Installation.Backup.IPackageBackupCreator.CreateBackup(System.String,System.String,System.String,System.String[])"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.ZipPackageBackupManager.CreateBackup(Terrasoft.Core.Applications.Abstractions.Installation.Backup.CreateBackupOptions)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Installation.Backup.IPackageBackupCreator.CreateBackup(Terrasoft.Core.Applications.Abstractions.Installation.Backup.CreateBackupOptions)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.ZipPackageBackupManager.RestoreFromBackup(System.String,System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Installation.Backup.IPackageBackupRestorer.RestoreFromBackup(System.String,System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Installation.Backup.ZipPackageBackupManager.RestoreFromBackup(System.String,Terrasoft.Core.Packages.PackageInstallOptions)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Installation.Backup.IPackageBackupRestorer.RestoreFromBackup(System.String,Terrasoft.Core.Packages.PackageInstallOptions)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Marketplace.InstalledMarketplaceAppsDuplicateResolver">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.Marketplace.IInstalledMarketplaceAppsDuplicateResolver"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Marketplace.InstalledMarketplaceAppsDuplicateResolver.ResolveAppsDuplicates(System.Func{System.String,System.String},System.Predicate{Terrasoft.Core.Applications.Marketplace.InstalledMarketplaceAppsDuplicateResolver.InstalledApp},System.Collections.Generic.IReadOnlyCollection{System.String})">
+            <summary>
+            Receives all apps and executes resolving of duplicates.
+            </summary>
+            <param name="getAppCodeToSetByMarketplaceAppIdFunc">Function to get code to be set to each app my it's
+            <c>MarketplaceAppId</c>.</param>
+            <param name="needSetCodePredicate">Function that returns flag indicating whether it is required
+            to change code of certain app.</param>
+            <param name="marketplaceAppIdsToResolve">Collection of <c>MarketplaceAppId</c> of apps to be resolved.
+            If <c>null</c> is passed, all apps will be resolved.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Marketplace.InstalledMarketplaceAppsDuplicateResolver.ResolveAppsDuplicates">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Marketplace.InstalledMarketplaceAppsDuplicateResolver.ResolveAppsDuplicates(System.ValueTuple{System.String,System.String}[])">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.AppPackagesRepository">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.Packages.IAppPackagesRepository"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppPackagesRepository.MarkAppPackagesAsNotPrimary(System.Guid,System.Collections.Generic.IEnumerable{System.Guid})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppPackagesRepository.ExcludePackageFromAppSilently(System.Guid,System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppPackagesRepository.FindAppsByPackageUId(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Packages.IAppPackagesRepository.FindAppsByPackageUId(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppPackagesRepository.GetAppsByPackageUId(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Packages.IAppPackagesRepository.GetAppsByPackageUId(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppPackagesRepository.GetAvailableForAddingToAppPackages(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Packages.IAppPackagesRepository.GetAvailableForAddingToAppPackages(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppPackagesRepository.GetIsPackagePrimaryInAnyApp(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Packages.IAppPackagesRepository.GetIsPackagePrimaryInAnyApp(System.Guid)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppPackagesRepository.ConnectInactivePackagesToApp(System.Guid,System.Collections.Generic.IEnumerable{System.Guid})">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Packages.IAppPackagesRepository.ConnectInactivePackagesToApp(System.Guid,System.Collections.Generic.IEnumerable{System.Guid})"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.AppVirtualPackageConverter">
+            <summary>
+            Contains logic of converting virtual packages to real ones.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackageConverter.ConvertPackageToRealIfVirtual(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Packages.IAppVirtualPackagesRepository"/>.
+            Default implementation of <see cref="T:Terrasoft.Core.Packages.IVirtualPackagesRepository"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository.CreateAppPackage(System.Guid,System.String,Terrasoft.Core.Applications.Abstractions.Packages.AppPackageConnectionInfo)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository.TryRemoveAppPackage(System.Guid,Terrasoft.Core.Applications.Packages.AppVirtualPackageInfo@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository.GetAppPackages(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository.TryGetPackageData(System.Guid,Terrasoft.Core.PackageData@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository.TryGetPackage(System.Guid,Terrasoft.Core.Packages.Package@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository.GetAllPackages">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.AppVirtualPackagesRepository.RemoveAppPackages(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Composer.IPackageComposer">
+            <summary>
+            Provides two package collections composing method.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Composer.IPackageComposer.Compose(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Compares two package collections and forms new one which contents depends on final method implementation.
+            </summary>
+            <param name="source">Source package collection.</param>
+            <param name="target">Target package collection.</param>
+            <returns>Resulting package collection. Depends on final method implementation.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Compression.IPackageArchiver">
+            <summary>
+            Provides methods for creation of package archive.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Compression.IPackageArchiver.Compress(System.String,System.String)">
+            <summary>
+            Creates a zip archive that contains the files and directories from the specified directory.
+            </summary>
+            <param name="sourceDirectory">The path to the directory to be archived.</param>
+            <param name="archiveName">The path of the archive to be created.</param>
+            <exception cref="T:Terrasoft.Common.ArgumentNullOrEmptyException">If <paramref name="sourceDirectory"/> or
+            <paramref name="archiveName"/> is <c>null</c> or empty string.</exception>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.FeatureUseSqlScriptBackwardCompatibility">
+            <summary>
+            Indicates whether to use BackwardCompatibility property in configuration.
+            </summary>
+            <inheritdoc cref="T:Creatio.FeatureToggling.FeatureMetadata"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.FeatureUseSqlScriptBackwardCompatibility.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Core.Applications.Packages.FeatureUseSqlScriptBackwardCompatibility"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.IAppVirtualPackagesRepository">
+            <summary>
+            Provides methods for CRUD operations on virtual packages that are included into applications.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.IAppVirtualPackagesRepository.CreateAppPackage(System.Guid,System.String,Terrasoft.Core.Applications.Abstractions.Packages.AppPackageConnectionInfo)">
+            <summary>
+            Creates new virtual application package.
+            </summary>
+            <param name="appId">Application identifier.</param>
+            <param name="packageName">Name of the package to add.</param>
+            <param name="appPackageConnectionInfo">Additional information about connection between the application
+            and package.</param>
+            <returns>Created application virtual package.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.IAppVirtualPackagesRepository.GetAppPackages(System.Guid)">
+            <summary>
+            Retrieves all virtual packages included into the specified application.
+            </summary>
+            <param name="appId">Identifier of the application to retrieve virtual packages for.</param>
+            <returns>A read-only list of virtual package information objects.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.IAppVirtualPackagesRepository.TryRemoveAppPackage(System.Guid,Terrasoft.Core.Applications.Packages.AppVirtualPackageInfo@)">
+            <summary>
+            Attempts to remove the specified application package from the virtual packages repository.
+            </summary>
+            <param name="uId">UId of the application package to remove.</param>
+            <param name="virtualPackageInfo">When this method returns, contains the information about the
+            removed virtual package, if the removal was successful; otherwise, null.</param>
+            <returns>Flag indicating whether package with the specified UId was found and removed.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.IAppVirtualPackagesRepository.RemoveAppPackages(System.Guid)">
+            <summary>
+            Removes packages of the specified application from the virtual packages repository.
+            </summary>
+            <param name="appId">Id of the application.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.CommonPackageOperations.Save(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},Terrasoft.Core.Packages.PackageInstallOptions)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Packages.Operations.SystemPackageOperations.Save(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},Terrasoft.Core.Packages.PackageInstallOptions)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.IPackageLoader">
+            <summary>
+            Provides methods for package data loading from external sources.
+            </summary>
+            <remarks>
+            The primary use of this interface is to load packages data from external sources such as file system, 
+            version control system, web URI etc.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.IPackageLoader.Load">
+            <summary>
+            Loads packages from external source.
+            </summary>
+            <returns>Collection of loaded packages.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.IPackageLoader.Load(System.Func{Terrasoft.Core.Packages.Package,System.Boolean})">
+            <summary>
+            Loads packages that meet criteria specified by <paramref name="packageFilter"/> from external source.
+            </summary>
+            <param name="packageFilter">Specifies criteria for package loading.</param>
+            <returns>Collection of loaded packages.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.IPackageLoaderCreator">
+            <summary>
+            Represents an abstract factory for <see cref="T:Terrasoft.Core.Applications.Packages.Operations.IPackageLoader"/> creation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.IPackageLoaderCreator.CreatePackageLoader(System.String,System.String)">
+            <summary>
+            Creates package loader depending on <paramref name="sourcePath"/>
+            using <paramref name="storageDirectoryPath"/> as a directory for temporary files.
+            </summary>
+            <param name="sourcePath">Path to packages location. 
+            This parameter can represent file path or web URI.</param>
+            <param name="storageDirectoryPath">Path for temporary files used by <see cref="T:Terrasoft.Core.Applications.Packages.Operations.IPackageLoader"/>.</param>
+            <returns>Package loader.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.PackageSavingResult">
+            <summary>
+            Package saving result enum.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Applications.Packages.Operations.PackageSavingResult.Success">
+            <summary>
+            Package has been saved successfully.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Applications.Packages.Operations.PackageSavingResult.Warning">
+            <summary>
+            Package has been saved with warnings.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Core.Applications.Packages.Operations.PackageSavingResult.Error">
+            <summary>
+            Package has been saved with errors.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.IPackageSaver">
+            <summary>
+            Provides methods for packages data saving.
+            </summary>
+            <remarks>
+            The primary use of this interface is to save packages data to different persistence storages 
+            such as file system, version control system, database etc.
+            </remarks>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.IPackageSaver.Save(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},Terrasoft.Core.Packages.PackageInstallOptions)">
+            <summary>
+            Saves collection of packages to persistence storage.
+            </summary>
+            <param name="packages">Collection of packages.</param>
+            <param name="options">Package saving options.</param>
+            <returns>Returns result of packages saving as <see cref="T:Terrasoft.Core.Applications.Packages.Operations.PackageSavingResult"/> value.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.ISystemPackageLoader">
+            <summary>
+            Provides methods for package data loading from system persistence storage.
+            </summary>
+            <remarks>
+            This interface loads package data from system persistence storage: DB, SVN or file system. 
+            Particular system persistence storage depends on current application settings.
+            </remarks>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.ISystemPackageSaver">
+            <summary>
+            Defines methods to save package data to system persistence storage.
+            </summary>
+            <remarks>
+            Defines methods to save package data to system persistence storage: DB, SVN or file system. 
+            Particular system persistence storage depends on current application settings.
+            </remarks>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.ISystemPackageSaverFactory">
+            <summary>
+            Defines method to create a package saver.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.ISystemPackageSaverFactory.Create(Terrasoft.Core.Applications.Packages.Operations.PackageSaverOptions)">
+            <summary>
+            Creates a package saver.
+            </summary>
+            <param name="packageSaverOptions">Options for creation a package saver.</param>
+            <returns>Package saver, instance of <see cref="T:Terrasoft.Core.Applications.Packages.Operations.ISystemPackageSaver"/>.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.PackageSaverOptions">
+            <summary>
+            Package saver options for of <see cref="T:Terrasoft.Core.Applications.Packages.Operations.CommonPackageOperations"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Packages.Operations.PackageSaverOptions.DeactivatedPackagesInfos">
+            <summary>
+            Deactivated packages info <see cref="P:Terrasoft.Core.Applications.Packages.Operations.PackageSaverOptions.DeactivatedPackagesInfos"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.PackageZipSaver.Save(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.PackageZipSaver.Save(Terrasoft.Core.Packages.PackageZipSaveOptions)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Packages.Operations.SystemPackageSaverFactory">
+            <summary>
+            Implements interface <see cref="T:Terrasoft.Core.Applications.Packages.Operations.ISystemPackageSaverFactory"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.Operations.SystemPackageSaverFactory.Create(Terrasoft.Core.Applications.Packages.Operations.PackageSaverOptions)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Packages.Operations.ISystemPackageSaverFactory.Create(Terrasoft.Core.Applications.Packages.Operations.PackageSaverOptions)"/>.
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Packages.SystemPackageManager.Deactivate(System.Guid,Terrasoft.Core.Packages.PackageDeactivationSource)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Packages.ISystemPackageManager.Deactivate(System.Guid,Terrasoft.Core.Packages.PackageDeactivationSource)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.AppRunnerEntryPoint">
+            <summary>
+            Represents any action that should be executed during application startup in the context of specific runner.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Startup.AppRunnerEntryPoint.Id">
+            <summary>
+            Gets or sets the unique identifier of the entry point.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Startup.AppRunnerEntryPoint.Caption">
+            <summary>
+            Gets or sets the caption to display it in UI.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.AppStartupManager">
+            <summary>
+            Manages of application runners.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.AppStartupManager.RunApp(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.AppStartupManager.GetAppStartupOptions(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.AppStartupManager.SetActiveStartupOption(System.Guid,System.Guid,System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.AppStartupManager.ClearActiveStartupOption(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.BaseAppParametrizedRunner`1.RunAppWithParams(System.Guid,`0)">
+            <summary>
+            Implements actual application startup logic depending on run parameters.
+            </summary>
+            <param name="appId">Application identifier.</param>
+            <param name="runParams">Deserialized run parameters.</param>
+            <returns>Object that represent result of application startup.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.BaseAppParametrizedRunner`1.CreateEntryPointFromRunParams(System.Guid,`0)">
+            <summary>
+            Created an entry point that represents specified run parameters.
+            </summary>
+            <param name="appId">Application identifier.</param>
+            <param name="runParams">Deserialized run parameters.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.BaseAppParametrizedRunner`1.GetEntryPointRunParams(System.Guid,System.Guid)">
+            <summary>
+            Retrieves an entry point run parameters.
+            </summary>
+            <param name="appId">Application identifier.</param>
+            <param name="entryPointId">Identifier of the specified entry point.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.BaseAppParametrizedRunner`1.GetAppEntryPoints(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.BaseAppParametrizedRunner`1.RunAppWithParams(System.Guid,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.BaseAppParametrizedRunner`1.DeserializeRunParamsToEntryPoint(System.Guid,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.BaseAppParametrizedRunner`1.SerializeEntryPointToRunParams(System.Guid,System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.DefaultAppRunner">
+            <summary>
+            Default logic of running application.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.DefaultAppRunner.RunApp(System.Guid)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.HomePageAppRunner">
+            <summary>
+            Logic of running application with home page.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.HomePageAppRunner.RunAppWithParams(System.Guid,Terrasoft.Core.Applications.Startup.AppWithHomePageRunParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.HomePageAppRunner.CreateEntryPointFromRunParams(System.Guid,Terrasoft.Core.Applications.Startup.AppWithHomePageRunParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.HomePageAppRunner.RunApp(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.HomePageAppRunner.GetAppEntryPoints(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.IAppParametrizedRunner">
+            <summary>
+            Provides methods to run the application with params.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.IAppParametrizedRunner.RunAppWithParams(System.Guid,System.String)">
+            <summary>
+            Runs the execution of action necessary for the correct work of the application with params specified for
+            this application.
+            </summary>
+            <param name="appId">Identifier of application being started.</param>
+            <param name="serializedParams">Parameters for the runner in JSON format.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.IAppParametrizedRunner.GetAppEntryPoints(System.Guid)">
+            <summary>
+            Retrieves the all runner entry points available in the specified application.
+            </summary>
+            <param name="appId">Application identifier.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.IAppParametrizedRunner.DeserializeRunParamsToEntryPoint(System.Guid,System.String)">
+            <summary>
+            Deserialized specified parameters and created an entry point that represents these parameters.
+            </summary>
+            <param name="appId">Application identifier.</param>
+            <param name="serializedParams">Parameters for the runner in JSON format.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.IAppParametrizedRunner.SerializeEntryPointToRunParams(System.Guid,System.Guid)">
+            <summary>
+            Retrieves serialized run params that is represented by the specified entry point.
+            </summary>
+            <param name="appId">Application identifier.</param>
+            <param name="entryPointId">Identifier of the specified entry point.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.IAppRunner">
+            <summary>
+            Interface used to run the application.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.IAppRunner.RunApp(System.Guid)">
+            <summary>
+            Runs the execution of action necessary for the correct work of the application.
+            </summary>
+            <param name="appId">Identifier of application being started.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.IDefaultAppRunner">
+            <summary>
+            Default logic of running application.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.InstalledAppStartupOptionEventListener">
+            <summary>
+            Class provides logic to handle event for an installed app startup option.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.InstalledAppStartupOptionEventListener.OnSaving(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.InstalledAppStartupOptionQueryExecutor">
+            <summary>
+            Query executor for entity schemas of installed app startup option.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Startup.SectionAppRunner">
+            <summary>
+            Logic of running application with section.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.SectionAppRunner.RunAppWithParams(System.Guid,Terrasoft.Core.Applications.Startup.AppWithSectionRunParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.SectionAppRunner.CreateEntryPointFromRunParams(System.Guid,Terrasoft.Core.Applications.Startup.AppWithSectionRunParams)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.SectionAppRunner.RunApp(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Startup.SectionAppRunner.GetAppEntryPoints(System.Guid)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppDescriptorDto">
+            <summary>
+            Class containing application descriptor data in dto format.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppDescriptorMapper">
+            <summary>
+            Class for mapping application information to Dto or vice versa.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppDescriptorMapper.MapToDto(Terrasoft.Core.Applications.Synchronization.AppInfo,System.Collections.Generic.ICollection{Terrasoft.Core.Applications.Synchronization.AppDescriptorDtoBase})">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppDescriptorMapper.MapToAppInfo(Terrasoft.Core.Applications.Synchronization.AppDescriptorDto,System.Collections.Generic.IEnumerable{Terrasoft.Core.Applications.Synchronization.AppDescriptorExtensionDto})">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppDescriptorPackageDto">
+            <summary>
+            Class containing application descriptor package data in dto format.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppInfo">
+            <summary>
+            Class containing data with transfer application information.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorage">
+            <summary>
+            Class for reading or writing a descriptor in file system.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorage.ReadAndParseAppDescriptorFileSafe``1(Terrasoft.Core.Packages.Package,System.String)">
+            <summary>
+            Reads and parses app descriptor file safely (without throwing any exceptions).
+            </summary>
+            <param name="filePath">Path to app descriptor file.</param>
+            <param name="package">Package containing descriptor.</param>
+            <typeparam name="T">Type of app descriptor dto.</typeparam>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorage.WriteAppInfo(Terrasoft.Core.Applications.Synchronization.AppSyncToFilesInfo,Terrasoft.Core.Applications.Synchronization.AppInfoFileStorageWriteOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorage.ReadAppSyncInfos(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorage.TryReadSingleAppInfo(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},Terrasoft.Core.Applications.Synchronization.AppInfo@)">
+            <inheritdoc />
+            <exception cref="T:Terrasoft.Common.ValidateException">When more than one package contains application descriptor
+            file.</exception>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorage.TryReadAppInfos(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},System.Collections.Generic.IEnumerable{Terrasoft.Core.Applications.Synchronization.AppInfo}@)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppInfoRepository">
+            <summary>
+            Class for reading or writing app data from a database.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoRepository.GetAppInfo(System.Guid,Terrasoft.Core.Applications.Synchronization.AppInfoRepositoryLoadOptions)">
+            <summary>
+            <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoRepository.SaveAppInfo(Terrasoft.Core.Applications.Synchronization.AppSyncFromFilesInfo,System.Nullable{System.Guid}@)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Synchronization.IAppInfoRepository.SaveAppInfo(Terrasoft.Core.Applications.Synchronization.AppSyncFromFilesInfo,System.Nullable{System.Guid}@)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoRepository.ClearChecksum(System.Guid)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Synchronization.IAppInfoRepository.ClearChecksum(System.Guid)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppInfoSynchronizer">
+            <summary>
+            Class for synchronization database and file system.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoSynchronizer.SaveToFileContent(System.Guid,Terrasoft.Core.Applications.Abstractions.Synchronization.AppInfoSyncToFileOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoSynchronizer.Terrasoft#Core#Applications#Abstractions#Synchronization#IAppInfoSynchronizer#LoadFromFile(Terrasoft.Core.Packages.Package)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoSynchronizer.LoadFromFiles(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoSynchronizer.GetCanPrimaryPackageBeModified(System.Guid,System.Nullable{System.Guid},System.String@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoSynchronizer.GetCanPrimaryPackageBeModified(System.Guid,System.String@)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppInfoValidator">
+            <summary>
+            Implements <see cref="T:Terrasoft.Core.Applications.Synchronization.IAppInfoValidator"/>
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.AppInfoValidator.Validate(Terrasoft.Core.Applications.Synchronization.AppInfo)">
+            <summary>
+            <inheritdoc /> If not valid then throws ValidateException.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.BaseAppSyncInfo">
+            <summary>
+            Base class containing data for synchronization database and file system.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppSyncFromFilesInfo">
+            <summary>
+            Class containing data for synchronization database.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppSyncToFilesInfo">
+            <summary>
+            Class containing data for synchronization file system.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.IAppDescriptorMapper">
+            <summary>
+            Interface for mapping application information to Dto or vice versa.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppDescriptorMapper.MapToDto(Terrasoft.Core.Applications.Synchronization.AppInfo,System.Collections.Generic.ICollection{Terrasoft.Core.Applications.Synchronization.AppDescriptorDtoBase})">
+            <summary>
+            Maps application information to application descriptor in Dto format. Returns only data that is not
+            contained in descriptors specified in parameter <paramref name="descriptorsToExclude"/>.
+            </summary>
+            <remarks>Returns <c>null</c> if all application information is already contained in descriptors
+            to exclude.</remarks>
+            <param name="appInfo">Application information.</param>
+            <param name="descriptorsToExclude">Descriptors with data that should not be included into result.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppDescriptorMapper.MapToAppInfo(Terrasoft.Core.Applications.Synchronization.AppDescriptorDto,System.Collections.Generic.IEnumerable{Terrasoft.Core.Applications.Synchronization.AppDescriptorExtensionDto})">
+            <summary>
+            Mapping dto of application descriptor in application information.
+            </summary>
+            <param name="baseDescriptorDto">Dto of base application descriptor.<see cref="T:Terrasoft.Core.Applications.Synchronization.AppDescriptorDto"/></param>
+            <param name="extensionDescriptorDtos">Dto of application descriptor extensions.
+            <see cref="T:Terrasoft.Core.Applications.Synchronization.AppDescriptorExtensionDto"/></param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorageWriteOptions">
+            <summary>
+            Options to manage behavior of saving application info to file.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Synchronization.AppInfoFileStorageWriteOptions.DeleteRedundantAppInfoFiles">
+            <summary>
+            Specifies whether to delete application info files (app-descriptor.json) which are no longer needed.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.IAppInfoFileStorage">
+            <summary>
+            Interface for reading or writing a descriptor in file system.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoFileStorage.WriteAppInfo(Terrasoft.Core.Applications.Synchronization.AppSyncToFilesInfo,Terrasoft.Core.Applications.Synchronization.AppInfoFileStorageWriteOptions)">
+            <summary>
+            Writes application information to descriptor in file system.
+            </summary>
+            <param name="appSyncInfo">Data for synchronization database and file system.</param>
+            <param name="options">Options to specify certain parts of behavior.</param>
+            <returns>Result of writing application information to descriptor in file system.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoFileStorage.TryReadSingleAppInfo(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},Terrasoft.Core.Applications.Synchronization.AppInfo@)">
+            <summary>
+            Tries to read info from application descriptor file in one of the specified package. Throws an exception
+            when more than one package contains application descriptor file.
+            </summary>
+            <param name="packages">Packages those could contain application descriptor file.</param>
+            <param name="appInfo">Object that will contain application information if it was successfully read.</param>
+            <returns>Flag indicating that application information was successfully read.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoFileStorage.TryReadAppInfos(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package},System.Collections.Generic.IEnumerable{Terrasoft.Core.Applications.Synchronization.AppInfo}@)">
+            <summary>
+            Tries to read info from application descriptor file in all of the specified packages.
+            </summary>
+            <param name="packages">Packages those could contain application descriptor file.</param>
+            <param name="appInfos">Collection of objects that will contain application information
+            if it was successfully read.</param>
+            <returns>Flag indicating that application information was successfully read.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoFileStorage.ReadAppSyncInfos(System.Collections.Generic.IEnumerable{Terrasoft.Core.Packages.Package})">
+            <summary>
+            Reads info from application descriptor (including extensions) file in all specified packages.
+            </summary>
+            <param name="packages">Packages those could contain application descriptor file.</param>
+            <returns>Collection with information about every application found in packages.</returns>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.AppInfoRepositoryLoadOptions">
+            <summary>
+            Options to manage behavior of loading application information from database.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Synchronization.AppInfoRepositoryLoadOptions.AutoAdjustPrimaryPackage">
+            <summary>
+            Specifies whether to automatically specify primary package of application in case of detection invalid
+            amount of packages marked as "Primary".
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.IAppInfoRepository">
+            <summary>
+            Interface for working with database.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoRepository.GetAppInfo(System.Guid,Terrasoft.Core.Applications.Synchronization.AppInfoRepositoryLoadOptions)">
+            <summary>
+            Gets application information.
+            </summary>
+            <param name="appId">Application identifier.</param>
+            <param name="options">Options to specify certain parts of behavior.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoRepository.SaveAppInfo(Terrasoft.Core.Applications.Synchronization.AppSyncFromFilesInfo,System.Nullable{System.Guid}@)">
+            <summary>
+            Save application information.
+            </summary>
+            <param name="syncInfo">Application info.</param>
+            <param name="applicationId">Application Id.</param>
+            <returns>Saving executed.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoRepository.ClearChecksum(System.Guid)">
+            <summary>
+            Clear application checksum.
+            </summary>
+            <param name="appId">Application id.</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.IAppInfoValidator">
+            <summary>
+            Interface for application info validation.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Synchronization.IAppInfoValidator.Validate(Terrasoft.Core.Applications.Synchronization.AppInfo)">
+            <summary>
+            Validate application info.
+            </summary>
+            <param name="appInfo">Application Info</param>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Synchronization.WriteAppInfoResult">
+            <summary>
+            Result of writing application information to descriptor in file system.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Synchronization.WriteAppInfoResult.NotChangedState">
+            <summary>
+            Result of writing application information with NotChanged state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Synchronization.WriteAppInfoResult.EmptyState">
+            <summary>
+            Result of writing application information with empty state.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Synchronization.WriteAppInfoResult.MainPrimaryPackage">
+            <summary>
+            Base primary package of application.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Core.Applications.Synchronization.WriteAppInfoResult.State">
+            <summary>
+            State of storing object.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Validators.AppPackageIncludingValidator">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.Validators.IAppPackageIncludingValidator"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.AppPackageIncludingValidator.GetEditableValidationErrorMessage(System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.GetEditableValidationErrorMessage(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.AppPackageIncludingValidator.GetIsValid(Terrasoft.Core.Packages.Package,System.Guid,System.String@)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.GetIsValid(Terrasoft.Core.Packages.Package,System.Guid,System.String@)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Validators.AppValidator">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.Validators.IAppValidator"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.AppValidator.ValidateName(System.String,System.String@)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Validators.IAppValidator.ValidateName(System.String,System.String@)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.AppValidator.ValidateSectionName(System.String,System.String@)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Validators.IAppValidator.ValidateSectionName(System.String,System.String@)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.Validators.IBaseAppPackageActionValidator"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.GetErrorMessage(System.String,System.String)">
+            <summary>
+            Returns validation error message for package.
+            </summary>
+            <param name="templateKey">Message template key.</param>
+            <param name="packageName">Name of the package.</param>
+            <returns>Error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.GetEditableValidationErrorMessage(System.String)">
+            <summary>
+            Specify error message for editable validations message.
+            </summary>
+            <param name="packageName">Package name.</param>
+            <returns>Error message.</returns>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.GetIsValid(Terrasoft.Core.Packages.Package,System.Guid,System.String@)">
+            <summary>
+            Returns bool flag if package is valid or error message if not valid.
+            </summary>
+            <param name="package">Package for validate.</param>
+            <param name="appId">Application identifier.</param>
+            <param name="errorMessage">In case when the <paramref name="package"/> is not valid, contains
+            validation error; otherwise equals to <c>empty</c>.</param>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.Validate(Terrasoft.Core.Packages.Package,System.Guid,System.String@)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Abstractions.Validators.IBaseAppPackageActionValidator.Validate(Terrasoft.Core.Packages.Package,System.Guid,System.String@)"/>
+        </member>
+        <member name="T:Terrasoft.Core.Applications.Validators.SetCurrentAppPackageValidator">
+            <summary>
+            Default implementation of <see cref="T:Terrasoft.Core.Applications.Abstractions.Validators.ISetCurrentAppPackageValidator"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.SetCurrentAppPackageValidator.GetEditableValidationErrorMessage(System.String)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.GetEditableValidationErrorMessage(System.String)"/>
+        </member>
+        <member name="M:Terrasoft.Core.Applications.Validators.SetCurrentAppPackageValidator.GetIsValid(Terrasoft.Core.Packages.Package,System.Guid,System.String@)">
+            <inheritdoc cref="M:Terrasoft.Core.Applications.Validators.BaseAppPackageActionValidator.GetIsValid(Terrasoft.Core.Packages.Package,System.Guid,System.String@)"/>
+        </member>
+    </members>
+</doc>

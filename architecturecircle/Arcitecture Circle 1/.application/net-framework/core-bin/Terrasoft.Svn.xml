@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Svn</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Svn.IBaseSvnClient">
+            <summary>
+            Интерфейс клиента в системе контроля версий.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Svn.IBaseSvnClient.Authenticate(System.String,System.String)">
+            <summary>
+            Выполняет настройку аутентификаци клиента контроля версий.
+            </summary>
+            <param name="login">Логин к хранилищу.</param>
+            <param name="password">Пароль к хранилищу.</param>
+        </member>
+        <member name="M:Terrasoft.Svn.IBaseSvnClient.CheckOut(System.Uri,System.String,System.Int32)">
+            <summary>
+            Выполняет полную загрузку папок и файлов заданной ревизиии из системы контроля версий в локальную папку 
+            рабочей копии.
+            </summary>
+            <param name="sourceUri">Путь к корневой папке системы контроля версий.</param>
+            <param name="workingCopyPath">Путь к рабочей копии.</param>
+            <param name="revision">Номер ревизии, изменения которой должны быть загружены.</param>
+            <returns><c>true</c>, если загрузка данных из системы контроля версий неуспешна; 
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.IBaseSvnClient.CheckOut(System.Uri,System.String)">
+            <summary>
+            Выполняет полную загрузку папок и файлов последней ревизии из системы контроля версий в локальную папку 
+            рабочей копии.
+            </summary>
+            <param name="sourceUri">Путь к корневой папке системы контроля версий.</param>
+            <param name="workingCopyPath">Путь к рабочей копии.</param>
+            <returns><c>true</c>, если загрузка данных из системы контроля версий прошла успешно; 
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.IBaseSvnClient.Export(System.Uri,System.String)">
+            <summary>
+            Экспортирует заданный элемент из системы контроля версий в локальную папку.
+            </summary>
+            <param name="sourceUri">Путь к элементу в системе контроля версий.</param>
+            <param name="destinationPath">Путь к локальной папке.</param>
+            <returns><c>true</c>, если экспорт данных из системы контроля версий прошел успешно;
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.IBaseSvnClient.GetInfo(System.Uri,Terrasoft.Svn.SvnInformation@)">
+            <summary>
+            Получает информацию по указанному элементу из системы контроля версий.
+            </summary>
+            <param name="sourceUri">Путь к элементу в системе контроля версий.</param>
+            <param name="svnInformation">Информация об объекте <paramref name = "sourceUri"/>.</param>
+            <returns><c>true</c>, если операция завершена успешно;
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.IBaseSvnClient.Merge(System.String,System.String)">
+            <summary>
+            Apply the differences between two sources to a working copy path
+            </summary>
+            <param name="sourceRepositoryUri">URI of repository containing latest changes.</param>
+            <param name="destinationWorkingCopyPath">Local working directory of repository to apply changes.</param>
+        </member>
+        <member name="T:Terrasoft.Svn.NodeKind">
+            <summary>
+            Тип узла.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Svn.NodeKind.None">
+            <summary>
+            Отсутствует.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Svn.NodeKind.File">
+            <summary>
+            Файл.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Svn.NodeKind.Directory">
+            <summary>
+            Каталог.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Svn.NodeKind.Unknown">
+            <summary>
+            Неизвестно.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Svn.SharpSvn.SvnClientFactory">
+            <summary>
+            Фабрика классов для генерации клиентов системы контроля версий.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Svn.SharpSvn.SvnClientFactory.CreateInstance">
+            <summary>
+            Возвращает экземпляр интерфейса <see cref="T:Terrasoft.Svn.IBaseSvnClient"/>.
+            </summary>
+            <returns>Экземпляр интерфейса <see cref="T:Terrasoft.Svn.IBaseSvnClient"/>.</returns>
+        </member>
+        <member name="T:Terrasoft.Svn.SharpSvn.SvnClientWrapper">
+            <summary>
+            Обертка клиента системы контроля версий.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Svn.SharpSvn.SvnClientWrapper.Authenticate(System.String,System.String)">
+            <summary>
+            Выполняет настройку аутентификаци клиента контроля версий.
+            </summary>
+            <param name="login">Логин к хранилищу.</param>
+            <param name="password">Пароль к хранилищу.</param>
+        </member>
+        <member name="M:Terrasoft.Svn.SharpSvn.SvnClientWrapper.CheckOut(System.Uri,System.String,System.Int32)">
+            <summary>
+            Выполняет полную загрузку папок и файлов заданной ревизиии из системы контроля версий в локальную папку 
+            рабочей копии.
+            </summary>
+            <param name="sourceUri">Путь к корневой папке системы контроля версий.</param>
+            <param name="workingCopyPath">Путь к рабочей копии.</param>
+            <param name="revision">Номер ревизии, изменения которой должны быть загружены.</param>
+            <returns><c>true</c>, если загрузка данных из системы контроля версий неуспешна; 
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.SharpSvn.SvnClientWrapper.CheckOut(System.Uri,System.String)">
+            <summary>
+            Выполняет полную загрузку папок и файлов последней ревизии из системы контроля версий в локальную папку 
+            рабочей копии.
+            </summary>
+            <param name="sourceUri">Путь к корневой папке системы контроля версий.</param>
+            <param name="workingCopyPath">Путь к рабочей копии.</param>
+            <returns><c>true</c>, если загрузка данных из системы контроля версий прошла успешно; 
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.SharpSvn.SvnClientWrapper.Export(System.Uri,System.String)">
+            <summary>
+            Экспортирует заданный элемент из системы контроля версий в локальную папку.
+            </summary>
+            <param name="sourceUri">Путь к элементу в системе контроля версий.</param>
+            <param name="destinationPath">Путь к локальной папке.</param>
+            <returns><c>true</c>, если экспорт данных из системы контроля версий прошел успешно;
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.SharpSvn.SvnClientWrapper.GetInfo(System.Uri,Terrasoft.Svn.SvnInformation@)">
+            <summary>
+            Получает информацию по указанному элементу из системы контроля версий.
+            </summary>
+            <param name="sourceUri">Путь к элементу в системе контроля версий.</param>
+            <param name="svnInformation">Информация об объекте <paramref name = "sourceUri"/>.</param>
+            <returns><c>true</c>, если операция завершена успешно;
+            в противном случае — значение <c>false</c>.</returns>
+        </member>
+        <member name="M:Terrasoft.Svn.SharpSvn.SvnClientWrapper.Merge(System.String,System.String)">
+            <summary>
+            Apply the differences between two sources to a working copy path
+            </summary>
+            <param name="sourceRepositoryUri">URI of repository containing latest changes.</param>
+            <param name="destinationWorkingCopyPath">Local working directory of repository to apply changes.</param>
+        </member>
+        <member name="T:Terrasoft.Svn.SvnCredentials">
+            <summary>
+            Учетные данные в системе контроля версий.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Svn.SvnCredentials.#ctor(System.String,System.String)">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Terrasoft.Svn.SvnCredentials"/>.
+            </summary>
+            <param name="userName">Имя пользователя.</param>
+            <param name="password">Пароль.</param>
+        </member>
+        <member name="P:Terrasoft.Svn.SvnCredentials.UserName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Svn.SvnCredentials.Password">
+            <summary>
+            Пароль.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Svn.SvnInformation">
+            <summary>
+            Информация об элементе в системе контроля версий.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Svn.SvnInformation.NodeKind">
+            <summary>
+            Тип узла элемента.
+            </summary>
+        </member>
+    </members>
+</doc>

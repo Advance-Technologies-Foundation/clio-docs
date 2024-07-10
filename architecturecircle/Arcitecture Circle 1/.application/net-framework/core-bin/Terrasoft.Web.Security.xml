@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Web.Security</name>
+    </assembly>
+    <members>
+        <member name="T:Terrasoft.Web.Security.Csp.CspDirectiveNameListener">
+            <summary>
+            Listener for 'CspDirectiveNameListener' entity events.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Entities.Events.BaseEntityEventListener" />
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspDirectiveNameListener.OnSaving(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Saving event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspDirectiveNameListener.OnDeleting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Deleting event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspDirectiveNameListener.OnInserting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Saving event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityAfterEventArgs" /> instance containing the
+            event data.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspDirectiveNameListener.OnUpdating(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Updating event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing
+            the event data.</param>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Csp.CspFeatures">
+            <summary>
+            Represents features for CSP functionality. 
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Csp.CspFeatures.IsCspReportToEnabled">
+            <summary>
+            Indicates whether to enable CSP ReportTo header.
+            </summary>
+            <inheritdoc cref="T:Creatio.FeatureToggling.FeatureMetadata"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspFeatures.IsCspReportToEnabled.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Csp.CspFeatures.IsCspReportToEnabled"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Csp.ICspHeaderActualizer">
+            <summary>
+            Provides methods for CSP header actualizing.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.ICspHeaderActualizer.ActualizeAsync">
+            <summary>
+            Builds CSP header and sends it to SysHttpHeader.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspHeaderActualizer.ActualizeAsync">
+            <inheritdoc cref="T:Terrasoft.Web.Security.Csp.ICspHeaderActualizer"/>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Csp.CspUserTrustedSourceListener">
+            <summary>
+            Listener for 'SysCspUserTrustedSrc' entity events.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Entities.Events.BaseEntityEventListener" />
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspUserTrustedSourceListener.OnInserting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Saving event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityAfterEventArgs" /> instance containing the
+            event data.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.CspUserTrustedSourceListener.OnUpdating(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Updating event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing
+            the event data.</param>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Csp.CspViolation">
+            <summary>
+            Represent properties of CSP violation report.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Csp.Feature.EnableXssDetectionInCspViolation">
+            <summary>
+            Indicates whether to enable enable Xss detection in Csp violation.
+            </summary>
+            <inheritdoc cref="T:Creatio.FeatureToggling.FeatureMetadata"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.Feature.EnableXssDetectionInCspViolation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Csp.Feature.EnableXssDetectionInCspViolation"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Csp.SysCspViolationListener">
+            <summary>
+            Listener for 'SysCspViolation' entity events.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Entities.Events.BaseEntityEventListener" />
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.SysCspViolationListener.OnInserting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Saving event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityAfterEventArgs" /> instance containing the
+            event data.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Csp.SysCspViolationListener.OnUpdating(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Updating event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing
+            the event data.</param>
+        </member>
+        <member name="F:Terrasoft.Web.Security.CustomHttpHeader.CorsConstants.Origin">
+            <summary>
+            The Origin request header.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Security.CustomHttpHeader.CorsConstants.AccessControlAllowOrigin">
+            <summary>
+            The Access-Control-Allow-Origin response header.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.Extensions.HttpHeaderServiceCollectionExtensions">
+            <summary>
+            Class provides extension methods for custom HTTP headers.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.HttpHeader">
+            <summary>
+            Represent properties of HTTP header.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderProvider">
+            <summary>
+            Provides a mechanism for getting HTTP headers.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderProvider.GetHeaders(System.String,System.String,System.String)">
+            <summary>
+            Returns HTTP header for specified endpoint and method.
+            Returns common HTTP headers which Endpoint and/or method is *.
+            </summary>
+            <param name="endpoint">Endpoint.</param>
+            <param name="requestMethod">Request Method.</param>
+            <param name="origin">Request Origin.</param>
+            <returns>HTTP headers for specified endpoint and common HTTP headers.</returns>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderProvider">
+            <summary>
+            Represents provider to get HTTP headers.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderProvider.GetHeaders(System.String,System.String,System.String)">
+            <inheritdoc cref="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderProvider"/>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository">
+            <summary>
+            Provides a mechanism for working with data storage of HTTP headers.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository.GetHeaders">
+            <summary>
+            Returns HTTP headers.
+            </summary>
+            <returns>HTTP headers.</returns>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository.DeleteHeadersByNameIfExistsAsync(System.String)">
+            <summary>
+            Deletes all HTTP headers with specified name.
+            </summary>
+            <param name="headerName">Header name.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository.DeleteHeadersByNamesIfExistsAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Deletes HTTP headers with specified names.
+            </summary>
+            <param name="headerNames">Header names.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository.AddHeaderAsync(Terrasoft.Web.Security.CustomHttpHeader.HttpHeader)">
+            <summary>
+            Adds HTTP header with specified properties.
+            </summary>
+            <param name="header">Header properties.</param>
+            <returns><b>true</b>, if HTTP header added successfully; <b>false</b> - otherwise.</returns>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository.AddOrUpdateHeaderByNameAsync(Terrasoft.Web.Security.CustomHttpHeader.HttpHeader)">
+            <summary>
+            Adds or update HTTP header by specifeid header name with specified properties.
+            </summary>
+            <param name="header">Header properties.</param>
+            <returns><b>true</b>, if HTTP header added or updated successfully; <b>false</b> - otherwise.</returns>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepositoryCache">
+            <summary>
+            Provides a mechanism for invalidating cache of HTTP headers data storage.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepositoryCache.ClearCache">
+            <summary>
+            Clears cache of HTTP headers that returns in the method <see cref="M:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository.GetHeaders"/>.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderRepository">
+            <summary>
+            Represent CRUD operations on HTTP headers.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderRepository.AddHeaderAsync(Terrasoft.Web.Security.CustomHttpHeader.HttpHeader)">
+            <inheritdoc cref="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderRepository.AddOrUpdateHeaderByNameAsync(Terrasoft.Web.Security.CustomHttpHeader.HttpHeader)">
+            <inheritdoc cref="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderRepository.DeleteHeadersByNameIfExistsAsync(System.String)">
+            <inheritdoc cref="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderRepository.DeleteHeadersByNamesIfExistsAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc cref="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderRepository.GetHeaders">
+            <inheritdoc cref="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.HttpHeaderRepository.ClearCache">
+            <inheritdoc cref="T:Terrasoft.Web.Security.CustomHttpHeader.IHttpHeaderRepository"/>
+        </member>
+        <member name="T:Terrasoft.Web.Security.CustomHttpHeader.SysHttpHeaderListener">
+            <summary>
+            Listener for 'SysHttpHeader' entity events.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Entities.Events.BaseEntityEventListener" />
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.SysHttpHeaderListener.OnUpdating(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Updating event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing
+            the event data.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.CustomHttpHeader.SysHttpHeaderListener.OnDeleting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Deleting event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing the
+            event data.</param>
+        </member>
+        <member name="T:Terrasoft.Web.Security.IHttpRequestHostHeaderValidator">
+            <summary>
+            Interface for validating Host header in <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.IHttpRequestHostHeaderValidator.IsValid(Terrasoft.Web.Http.Abstractions.HttpRequest)">
+            <summary>
+            Validates Host header in <paramref name="request"/>.
+            </summary>
+            <param name="request">Instance of current HttpRequest.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Terrasoft.Web.Security.HttpRequestHostHeaderValidator">
+            <summary>
+            Class for validating Host header in <see cref="T:Terrasoft.Web.Http.Abstractions.HttpRequest"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.HttpRequestHostHeaderValidator.IsValid(Terrasoft.Web.Http.Abstractions.HttpRequest)">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Web.Security.IHttpResponseCustomHeaderInjector">
+            <summary>
+            Represents methods to inject custom headers in HTTP response.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.IHttpResponseCustomHeaderInjector.AddHeadersFromProvider">
+            <summary>
+            Adds custom HTTP headers from provider.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.HttpResponseCustomHeaderInjector">
+            <summary>
+            Represents custom headers in HTTP response.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.HttpResponseCustomHeaderInjector.AddHeadersFromProvider">
+            <inheritdoc cref="T:Terrasoft.Web.Security.IHttpResponseCustomHeaderInjector"/>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValue">
+            <summary>
+            Used to provide entity column value data to <see cref="T:Terrasoft.Web.Security.Xss.Entities.IEntityXssDetector"/>.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValue.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValue"/> struct.
+            </summary>
+            <param name="columnName">Name of the column.</param>
+            <param name="value">The value of the column.</param>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.Entities.EntityColumnValue.ColumnName">
+            <summary>
+            Gets the name of the column.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.Entities.EntityColumnValue.Value">
+            <summary>
+            Gets the value.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult">
+            <summary>
+            Used to provide XSS detection for entity column values result.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.IsXssDetected">
+            <summary>
+            Indicates whether potential XSS code was found in column value.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.Schema">
+            <summary>
+            The schema.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.Column">
+            <summary>
+            The column.
+            </summary>
+        </member>
+        <member name="F:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.Result">
+            <summary>
+            Detection result.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.#ctor(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn,Terrasoft.Security.XssDetectionResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult"/> struct.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="column">The column.</param>
+            <param name="result">The detection result.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.Cleanly">
+            <summary>
+            Returns the result used when no XSS is detected.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.Create(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn,Terrasoft.Security.XssDetectionResult)">
+            <summary>
+            Returns the result with detected XSS.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="column">The column.</param>
+            <param name="result">The detection result.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssDetectionResult.EnsureXssNotFound">
+            <summary>
+            Ensures the XSS not found. Otherwise throws <see cref="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException"/>.
+            </summary>
+            <exception cref="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException"> When XSS is detected. </exception>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException">
+            <summary>
+            Exception that indicate that specified schema column value include potential XSS code.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds
+            the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains
+            contextual information about the source or destination.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException.#ctor(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException"/> class.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="column">The column.</param>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException.ColumnName">
+            <summary>
+            Returns the name of the column.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException.SchemaName">
+            <summary>
+            Returns the name of the schema.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityColumnValueXssException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds
+            the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains
+            contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.Entities.EntityXssDetector">
+            <inheritdoc />
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityXssDetector.#ctor(Terrasoft.Core.SystemUserConnection,Terrasoft.Security.IXssDetector,Terrasoft.Security.IXssDetectorOptionsProvider{Terrasoft.Web.Security.Xss.ExtendedXssDetectorOptions},Terrasoft.Web.Security.Xss.IXssLogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Xss.Entities.EntityXssDetector"/> class.
+            </summary>
+            <param name="connection">The system user connection.</param>
+            <param name="detector">The XSS detector.</param>
+            <param name="xssProtectionOptionsProvider">The XSS protection options provider.</param>
+            <param name="xssLogger">The XSS logger.</param>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.Entities.EntityXssDetector.Logger">
+            <summary>
+            Gets or sets logger.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.EntityXssDetector.Detect(System.String,System.Collections.Generic.IEnumerable{Terrasoft.Web.Security.Xss.Entities.EntityColumnValue})">
+            <inheritdoc />
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.Entities.IEntityXssDetector">
+            <summary>
+            Used to detect XSS code in entity column values.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.Entities.IEntityXssDetector.Detect(System.String,System.Collections.Generic.IEnumerable{Terrasoft.Web.Security.Xss.Entities.EntityColumnValue})">
+            <summary>
+            Detects the XSS code in specified schema column values.
+            </summary>
+            <param name="schemaName">Name of the schema.</param>
+            <param name="columnValues">The column values.</param>
+            <returns>Detection result.</returns>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.ExtendedXssDetectorOptions.ExcludedSchemas">
+            <summary>
+            Gets or sets the list of entity schemas to exclude from detection.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.SysXssProtectRuleViolationLogListener">
+            <summary>
+            Listener for 'SysXssProtectRuleViolationLog' entity events.
+            </summary>
+            <seealso cref="T:Terrasoft.Core.Entities.Events.BaseEntityEventListener" />
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.SysXssProtectRuleViolationLogListener.OnInserting(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Saving event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityAfterEventArgs" /> instance containing the
+            event data.</param>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.SysXssProtectRuleViolationLogListener.OnUpdating(System.Object,Terrasoft.Core.Entities.EntityBeforeEventArgs)">
+            <summary>
+            Handles entity Updating event.
+            </summary>
+            <param name="sender">Event sender.</param>
+            <param name="e">The <see cref="T:Terrasoft.Core.Entities.EntityBeforeEventArgs" /> instance containing
+            the event data.</param>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.XssFeatures">
+            <summary>
+            Represents features for XSS functionality. 
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.Security.Xss.XssFeatures.UseXssProtectionSettingsFromDb">
+            <summary>
+            Indicates whether to use XSS protection settings from Db or not.
+            </summary>
+            <inheritdoc cref="T:Creatio.FeatureToggling.FeatureMetadata"/>
+        </member>
+        <member name="M:Terrasoft.Web.Security.Xss.XssFeatures.UseXssProtectionSettingsFromDb.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.Security.Xss.XssFeatures.UseXssProtectionSettingsFromDb"/>.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssLogResult.HasAnyBlockExecutionProtectionMode">
+            <summary>
+            Returns null when there is no any rules with protection mode.
+            Returns true when there is at least one rule specified with BlockExecution protection mode.
+            Otherwise returns false
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.BlockedUrl">
+            <summary>
+            Blocked URL.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.Agent">
+            <summary>
+            Agent.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.IpAddress">
+            <summary>
+            IP address.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.UserLogin">
+            <summary>
+            User login.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.ViolationDate">
+            <summary>
+            Violation date.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.EntitySchemaName">
+            <summary>
+            Entity schema name.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.ViolatedRule">
+            <summary>
+            Violated rule.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.Security.Xss.XssProtectionRuleViolation.ViolatedRuleTypeId">
+            <summary>
+            Violated rule type Id.
+            </summary>
+        </member>
+    </members>
+</doc>

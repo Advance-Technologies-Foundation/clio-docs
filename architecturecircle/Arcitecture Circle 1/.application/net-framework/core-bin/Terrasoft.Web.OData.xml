@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Terrasoft.Web.OData</name>
+    </assembly>
+    <members>
+        <member name="M:Terrasoft.Web.OData.Controllers.BaseGenericODataController`1.CreateUsageContext">
+            <summary>
+            Creates usage context.
+            </summary>
+            <returns>Usage context.</returns>
+        </member>
+        <member name="T:Terrasoft.Web.OData.Controllers.ODataFeatures">
+            <summary>
+            OData features.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.OData.Controllers.ODataFeatures.UseColumnUsageTracker">
+            <summary>
+            Indicates whether to use mechanism that optimizes the loading of entity column values.
+            </summary>
+            <inheritdoc cref="T:Creatio.FeatureToggling.FeatureMetadata" />
+        </member>
+        <member name="M:Terrasoft.Web.OData.Controllers.ODataFeatures.UseColumnUsageTracker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Terrasoft.Web.OData.Controllers.ODataFeatures.UseColumnUsageTracker" /> type.
+            </summary>
+        </member>
+        <member name="T:Terrasoft.Web.OData.IODataEntityModelBuilder">
+            <summary>
+            Provides methods for working with entity model builder.
+            </summary>
+        </member>
+        <member name="P:Terrasoft.Web.OData.IODataEntityModelBuilder.EdmModel">
+            <summary>
+            Returns EDM model.
+            </summary>
+        </member>
+        <member name="M:Terrasoft.Web.OData.IODataEntityModelBuilder.ClearEdmModel">
+            <summary>
+            Clear EDM model.
+            </summary>
+        </member>
+    </members>
+</doc>
